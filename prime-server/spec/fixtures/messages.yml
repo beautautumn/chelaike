@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: messages # 消息
+#
+#  id                  :integer          not null, primary key # 消息
+#  user_id             :integer                                # 用户ID
+#  operation_record_id :integer                                # 操作历史ID
+#  read                :boolean          default(FALSE)        # 是否已读
+#  read_at             :datetime                               # 阅读时间
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  user_type           :string
+#
+
+aodi_created_message:
+  user: zhangsan
+  operation_record: aodi_created_record
+
+aodi_1_stock_out_sold_message:
+  user: zhangsan
+  operation_record: aodi_1_stock_out_sold_record
+  read: true
+
+aodi_priced_message:
+  user: zhangsan
+  operation_record: aodi_priced

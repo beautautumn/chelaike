@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: users # 用户
+#
+#  id              :integer          not null, primary key
+#  username        :string                                 # 用户名
+#  phone           :string                                 # 手机号
+#  password_digest :string                                 # 加密密码
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  tenant_id       :integer                                # 所属平台租户
+#
+
+zhangsan:
+  username: Zhangsan
+  phone: "18668237882"
+  password_digest : <%= BCrypt::Password.create("Zhangsan") %>
+  tenant: human
+
+nolan:
+  username: Nolan
+  phone: 1234
+  password_digest: <%= BCrypt::Password.create("Nolan") %>
+  tenant: orc

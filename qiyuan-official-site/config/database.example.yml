@@ -1,0 +1,30 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: qiyuan_official_site_dev
+
+test:
+  <<: *default
+  database: qiyuan_official_site_test
+
+staging:
+  <<: *default
+  host: <%= ENV["DATABASE_HOST"] %>
+  port: 3433
+  database: qiyuan_official_site_staging
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  pool: 40
+
+production:
+  <<: *default
+  host: <%= ENV["DATABASE_HOST"] %>
+  port: 5432
+  database: qiyuan_official_site_production
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  pool: 100

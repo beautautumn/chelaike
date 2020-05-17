@@ -1,0 +1,14 @@
+.car {
+  display: flex;
+}
+
+.carInfo {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carPrice {
+  margin-top: 10px;
+}

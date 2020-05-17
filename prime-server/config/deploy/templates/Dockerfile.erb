@@ -1,0 +1,55 @@
+FROM ubuntu:14.04
+MAINTAINER LcpMarvel <lcpmarvel@gmail.com>
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# -------------- libs ----------------
+RUN sudo apt-get update && apt-get -y install \
+  make \
+  curl \
+  libcurl4-openssl-dev \
+  git \
+  autoconf \
+  build-essential \
+  ca-certificates \
+  libyaml-dev \
+  libreadline-dev \
+  libffi-dev \
+  libgdbm-dev \
+  libssl-dev \
+  libxml2-dev \
+  libxslt1-dev \
+  libtool \
+  zlib1g-dev \
+  netbase \
+  libpq-dev \
+  libmysqlclient-dev \
+  postgresql \
+  postgresql-contrib \
+  redis-server \
+  memcached \
+  nodejs
+
+# -------- Install Ruby 2.2.4 --------
+
+ENV RUBY_VERSION 2.2.4
+
+RUN echo 'gem: --no-document' >> /usr/local/etc/gemrc &&\
+    mkdir /src && cd /src && git clone https://github.com/LcpMarvel/ruby-build.git &&\
+    cd /src/ruby-build && ./install.sh &&\
+    cd / && rm -rf /src/ruby-build && ruby-build $RUBY_VERSION /usr/local
+
+RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/ &&\
+    gem update --system &&\
+    gem install bundler --no-ri --no-rdoc
+
+RUN /bin/bash -cl "bundle config 'mirror.https://rubygems.org' 'https://ruby.taobao.org'"
+
+WORKDIR "/<%= fetch(:application) %>"
+
+# configure ssh
+ADD docker /
+RUN \
+  chmod 600 /docker && \
+  echo "IdentityFile /docker" >> /etc/ssh/ssh_config && \
+  echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config

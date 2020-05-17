@@ -1,0 +1,10 @@
+<tr>
+  <td> <%= company.id %> </td>
+  <td> <%= link_to company.name, company_dac_daily_actives_path(company_id: company.id, start_date: 1.day.ago, end_date: Time.zone.now.to_date) %> </td>
+  <td> <%= company.cars.count %> </td>
+  <td> <%= "#{company.owner.try(:name)}（#{company.owner.try(:phone)}）" %> </td>
+  <td> <%= company.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+  <% service = ::DailyActiveService.new(start_date, end_date) %>
+  <td> <%= service.company_dac(company.id)[:total] %>
+  </td>
+</tr>

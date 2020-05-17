@@ -1,0 +1,78 @@
+<h2>统计报表: <%= @company.name %></h2>
+
+<%= render partial: "filter", locals: { company: @company, year: @year, month: @month } %>
+
+<div class="ui piled segment">
+  <h3 class="ui header"> 员工管理情况 </h3>
+
+  <div class="ui statistics">
+  </div>
+</div>
+
+<div class="ui piled segment">
+  <h3 class="ui header"> 库存管理情况 </h3>
+
+  <div class="ui statistics">
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:acquisition_count], label: "累计入库量" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:acquisition_amount], label: "累计入库金额（万元）" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:out_stock_count], label: "累计出库量" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:out_stock_amount], label: "累计出库金额（万元）" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:in_stock_count], label: "在库总量" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:in_stock_amount], label: "在库总金额（万元）" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:in_stock_averge_show_price], label: "在库平均标价（万元）" }
+    %>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui statistics">
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:monthly_acquisition_count], label: "当月入库量" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:monthly_out_stock_avg_price], label: "当月出库平均成交价（万元）" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @car_data[:monthly_reservations_count], label: "当月预订量" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @operation_data[:monthly_operations_count], label: "当月车辆操作计数" }
+    %>
+  </div>
+</div>
+
+<div class="ui piled segment">
+  <h3 class="ui header"> 客户管理情况 </h3>
+
+  <div class="ui statistics">
+    <%= render partial: "statistic_item",
+      locals: { value: @customer_data[:customers_count], label: "累计客户数" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @customer_data[:imported_customers_count], label: "累计导入客户数" }
+    %>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui statistics">
+    <%= render partial: "statistic_item",
+      locals: { value: @customer_data[:monthly_customers_count], label: "当月新增客户数" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @customer_data[:monthly_imported_customers_count], label: "当月导入客户数" }
+    %>
+    <%= render partial: "statistic_item",
+      locals: { value: @intention_data[:monthly_car_appointments_count], label: "当月在线预约数" }
+    %>
+  </div>
+</div>

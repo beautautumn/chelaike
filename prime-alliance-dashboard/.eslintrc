@@ -1,0 +1,24 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint-config-airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+  "rules": {
+    "no-shadow": 0, // 命名是个很头疼的问题
+    "semi": [2, "never"],
+    "no-constant-condition": 0, // saga 需要 while(ture)
+    "no-param-reassign": [2, { "props": false }],
+    "react/no-multi-comp": [2, { "ignoreStateless": true }],
+    "func-names": 0,
+    "no-unused-vars": [2, { "argsIgnorePattern": "^_" }]
+  },
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "import/resolver": { "webpack": { "config": "webpack/dev.config.js" } }
+  }
+}

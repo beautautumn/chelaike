@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= "#{@tenant&.name} #{@title}" %></title>
+    <meta charset=utf-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <% if @tenant&.site_configuration&.icon&.url&.present? %>
+      <link rel="icon" href="<%= @tenant&.site_configuration&.icon %>">
+    <% else %>
+      <link rel="icon" href="/favicon.ico">
+    <% end %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'desktop', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'desktop', 'data-turbolinks-track': 'reload' %>
+    <%= yield :attach_assets %>
+
+    <% if Rails.env.production? %>
+      <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?d7f32e4668848431ca1408129e2e657a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <% end %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+    <!-- navbar -->
+    <div class="container">
+      <div class="tc-navbar">
+        <div class="top">
+          <div class="slogan">
+            <% if @tenant.try(:site_configuration).try(:slogan).try(:url) %>
+              <%= image_tag @tenant.try(:site_configuration).try(:slogan) %>
+            <% end %>
+          </div>
+          <ul class="links">
+            <li <%= nav_active(request.path, home_path) %>><%= link_to "首页", home_path %></li>
+            <li <%= nav_active(request.path, cars_path) %>><%= link_to "买车", cars_path %></li>
+            <li <%= nav_active(request.path, contact_path) %>><%= link_to "联系", contact_path %></li>
+          </ul>
+          <div class="phone-num">
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+            <%= contact_phone %>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="logo">
+            <a href="<%= home_path %>">
+              <% if @tenant.try(:site_configuration).try(:logo).try(:url) %>
+                <%= image_tag @tenant.try(:site_configuration).try(:logo) %>
+              <% end %>
+            </a>
+          </div>
+          <div class="search">
+            <%= form_tag cars_path, method: :get do %>
+              <input name="query[name_cont]" type="text" placeholder="输入感兴趣的品牌、车系">
+              <button class="btn btn-default" type="submit">搜索</button>
+            <% end %>
+          </div>
+          <div class="user-info">
+            <% if @current_user %>
+              <div class="has-login">
+                <% if @wechat_user.avatar %>
+                  <%= image_tag "#{@wechat_user.avatar}" %>
+                <% else %>
+                  <%= image_tag "common/avatar.png" %>
+                <% end %>
+                <div class="detail">
+                  <div class="name">
+                    <%= @wechat_user.nick_name %>
+                  </div>
+                  <div class="actions">
+                    <%= link_to "账户信息", me_enquiries_path %>
+                    <span> | </span>
+                    <%= link_to "退出", wechat_path(@current_user.id), method: :delete %>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <%= link_to new_wechat_path, remote: true, class: "no-login" do %>
+                <%= image_tag "common/avatar.png" %>
+                <span>扫码登录</span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- desktop login modal -->
+    <%= render 'desktop/home/login_modal'  %>
+    <% if content_for?(:navigation_bar) %>
+      <div class="page-navigation-bar">
+        <div class="container">
+          当前位置：<%= yield :navigation_bar %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-che-service">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h4>服务联系</h4>
+              <p>公司：<%= @tenant.company.name %></p>
+              <p>电话：<%= @tenant.company.contact_mobile %></p>
+              <p>地址：<%= "#{@tenant.company.province}#{@tenant.company.city}#{@tenant.company.street}" %></p>
+            </div>
+            <div class="col-xs-2">
+              <h4>交易指南</h4>
+              <ul>
+                <li><%= link_to "买车流程", home_intro_path %></li>
+                <li><%= link_to "服务承诺", home_intro_path %></li>
+              </ul>
+            </div>
+            <div class="col-xs-4">
+              <ul class="list-inline pull-right">
+                <li><%= link_to "首页", home_path %></li>
+                <li><%= link_to "买车", cars_path %></li>
+                <li><%= link_to "联系", contact_path %></li>
+              </ul>
+              <%= form_tag cars_path, method: :get, class: "navbar-form che-search pull-right" do %>
+                <div class="input-group">
+                  <input name="query[name_cont]" type="text" class="form-control black-backgroup" placeholder="输入感兴趣的品牌、车系">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">搜索</button>
+                  </span>
+                </div>
+              <% end %>
+              <a href="javascript:" class="telephone pull-right">
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                <%= contact_phone %>
+              </a>
+            </div>
+            <div class="col-xs-2">
+              <div class="tc-qrcode">
+                <div class="tc-qrcode-img">
+                  <% if @tenant.company.qrcode %>
+                    <%= image_tag @tenant.company.qrcode %>
+                  <% end %>
+                </div>
+                <h4>关注微信</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-che-copyright">
+        <div class="container">&copy; 2016 chelaike.com 浙ICP备15033244号</div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= search_form_for @q, url: orders_path do |f| %>
+        <%= f.label "充值日期" %>
+        <%= f.date_select :created_at_gt, prompt: {day: "日", month: "月", year: "年"} %>-
+        <%= f.date_select :created_at_lt, prompt: {day: "日", month: "月", year: "年"} %>
+        <br />
+        <br />
+        <%= f.label "省份" %>
+        <% cond_value = ""
+           cond_value = params[:province_cond] unless params[:province_cond].nil?
+        %>
+        <%= text_field_tag :province_cond, cond_value, placeholder: "搜索所属省份", size: 10 %>
+        <%= f.label "城市" %>
+        <% cond_value = ""
+           cond_value = params[:city_cond] unless params[:city_cond].nil?
+        %>
+        <%= text_field_tag :city_cond, cond_value, placeholder: "搜索所属城市", size: 10 %>
+        <%= f.label "服务顾问" %>
+        <%= select_tag :staff_id,
+                      options_for_select(
+                        Dashboard::Staff.consultants.collect { |s| [s.name, s.id] },
+                        selected = params[:staff_id]
+                      ),
+                      { include_blank: true, class: "ui search dropdown"}
+        %>
+        <%= f.label "车商" %>
+        <% cond_value = ""
+           cond_value = params[:company_name_cond] unless params[:company_name_cond].nil?
+        %>
+        <%= text_field_tag :company_name_cond, cond_value, placeholder: "搜索车商名称", size: 12 %>
+        <%= f.submit "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

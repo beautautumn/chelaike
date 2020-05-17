@@ -1,0 +1,5 @@
+<% if @oper_type == "add" %>
+  $('<%= j render 'give_token' %>').modal('show')
+<% else %>
+  $('<%= j render 'deduct_token' %>').modal('show')
+<% end %>

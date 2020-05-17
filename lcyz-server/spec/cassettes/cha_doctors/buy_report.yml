@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.chaboshi.cn/report/buy_report
+    body:
+      encoding: UTF-8
+      string: callbackurl=http://prime.lina.che3bao.com/api/v1/cha_doctor/notify&nonce=8f643fe8-6b24-4213-86bb-6e6916327660&signature=fgIItxWAHz%2Bp%2FPKj4wEk%2BQee3Fg%3D&timestamp=1478233834000&userid=49&vin=LFPH3ACC7A1A61382
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '212'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.1
+      Date:
+      - Tue, 08 Nov 2016 07:05:57 GMT
+      Content-Type:
+      - text/html;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Expires:
+      - Wed, 31 Dec 1969 23:59:59 GMT
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKpW8k0tLk5MT1WyUnrWMeFp13wlHaX8opTUIs8UoFCqmYWx
+        haWBqYGZiamJgaFpoqmlqbFxUpqxYZqppbm5MVCxc34KSLOBUi0gAAD//+bk
+        wh5MAAAA
+    http_version: 
+  recorded_at: Fri, 04 Nov 2016 04:30:34 GMT
+recorded_with: VCR 3.0.1

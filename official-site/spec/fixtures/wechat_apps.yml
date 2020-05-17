@@ -1,0 +1,49 @@
+# == Schema Information
+#
+# Table name: wechat_apps # 微信应用
+#
+#  id                :integer          not null, primary key
+#  app_id            :string                                 # 微信公众号app id
+#  tenant_id         :integer                                # 租户 id
+#  user_name         :string                                 # 微信公众号username
+#  refresh_token     :string                                 # 重置令牌的token
+#  authorities       :text             is an Array           # 可操作的app权限
+#  nick_name         :string                                 # 授权方昵称
+#  alias             :string                                 # 授权方公众号所设置的微信号
+#  menus_state       :string                                 # 菜单存储状态
+#  head_img          :string(500)
+#  service_type_info :integer                                # 公众号类型
+#  verify_type_info  :integer                                # 认证类型
+#  business_info     :jsonb                                  # 功能的开通状况（0代表未开通，1代表已开通）
+#  qrcode_url        :string(500)                            #  二维码图片的URL
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  state             :string           default("enabled")    # 应用状态
+#
+
+human_mp:
+  app_id: aaaa
+  tenant: human
+  user_name: gh_001
+  authorities: ["1", "2", "3", "4", "6", "7", "11"]
+  service_type_info: 2
+  verify_type_info: 0
+  state: enabled
+
+orc_mp:
+  app_id: bbbb
+  tenant: orc
+  user_name: gh_007
+  authorities: ["1", "2", "3", "4", "6", "7", "11"]
+  service_type_info: 2
+  verify_type_info: 0
+  state: enabled
+
+undead_mp:
+  app_id: cccc
+  tenant: undead
+  user_name: gh_008
+  authorities: ["1", "2", "3", "4", "6", "7", "11"]
+  service_type_info: 2
+  verify_type_info: 0
+  state: enabled

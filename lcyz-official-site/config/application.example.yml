@@ -1,0 +1,123 @@
+# 微信开放平台
+OFFICIAL_SITE_ID: wx36fee8a5da4ac490
+OFFICIAL_SITE_SECRET: 1c696a70389e96785c454aa391d4d1ac
+OFFICIAL_SITE_TOKEN: 1Uot6F3vcCmd1udwkyZfGkDzu0ZN7KE
+OFFICIAL_SITE_AES_KEY: 3MwG8i2U12hTjQAXCELWasCrdKALij0hxEFc4pvZWsx
+WECHAT_IN_TEST: "ON"
+SERVER_HOST: "site.lcyzauto.com"
+
+# 车来客通信 API
+CHELAIKE_URL: http://prime.lina.che3bao.com/api/open/v2
+OPEN_APP_SECRET: JFPHp3CxcfTybCaXzFKx3qQgzGNCyP
+CHELAIKE_DOMAIN: http://prime.lina.che3bao.com
+
+# 百度地图
+BAIDU_MAP_AK: 0W5XnLxvueOWCFSgszkxIheji3HVKoDK
+
+# 阿里云存储
+OSS_ACCESS_KEY_ID: LTAI6Nr0ABefaM4J
+OSS_ACCESS_KEY_SECRET: lSGf7dJvihnEXSE4sR4fydSxUq6oZG
+
+OSS_AREA: cn-hangzhou
+OSS_BUCKET_NAME: tianche-playground
+OSS_ENDPOINT: http://oss-cn-hangzhou.aliyuncs.com
+OSS_BUCKET_HOST: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com
+OSS_BUCKET_HOST_INTERNAL: http://tianche-playground.oss-cn-hangzhou-internal.aliyuncs.com
+OSS_IMAGE_FOLDER: official_site/images
+OSS_ASSET_FOLDER: assets
+
+IMAGE_HOST: http://oss-playground.che3bao.com
+ASSET_HOST: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com
+
+# Ping++ 支付
+PINGPP_KEY: sk_test_PaD8G84qr1O8vH0CCOHGKa10
+PINGPP_APP_ID: app_yDSCaLe5G0KKSWfD
+
+staging:
+  OFFICIAL_SITE_ID: wxa2c9447bc95e0558
+  OFFICIAL_SITE_SECRET: 37f397f58baff76991b0d9d0e02c14db
+  OFFICIAL_SITE_TOKEN: hww8773084123token
+  OFFICIAL_SITE_AES_KEY: CgAKz6nxnZBkxUQfYHTWnxYcyCetrbGEfay3QyBWQPo
+  WECHAT_IN_TEST: "ON"
+  SERVER_HOST: "lina-site.chelaike.com"
+
+  PINGPP_KEY: "sk_live_TmDarPafvz1OvLyD48PebLiD"
+
+  SECRET_KEY_BASE: 8b32fb2751a6c087b108cff772de95c39ad4f04deff5036ce1473c92f442dfa8272e92119fb04a87b0654193940bd032bcaefd0dc5597a200841970a7531510b
+  WECHAT_IN_TEST: "OFF"
+  CACHE_HOST: 0cb4e80b5b894b3f.m.cnhzaliqshpub001.ocs.aliyuncs.com
+  DATABASE_PASSWORD: AcokakAUEkea3D9sGydU
+  DATABASE_HOST: rds100sp585h2bsguk2p.pg.rds.aliyuncs.com
+
+  OSS_ACCESS_INTERNAL: true
+
+production: &production
+  SECRET_KEY_BASE: cbe2a6a3d14a8ed9e722564679fd06fad14c6a71b7f03cb7cfe07df2cc6590de8857ac97f85afa666b005fd0180af406b0774c61657b127ad8a80558c17e52cd
+
+  # WECHAT_OPEN_APP_ID: wxefe9e45b217bc492
+  # WECHAT_OPEN_APP_SECRET: a461135ba1fa834e94b0a545c4f4c30d
+  # WECHAT_IN_TEST: "OFF"
+
+  # 微信开放平台
+  OFFICIAL_SITE_ID: wxa2c9447bc95e0558
+  OFFICIAL_SITE_SECRET: 701f932d6036afdd1b6eb30270df4548
+  OFFICIAL_SITE_TOKEN: hww8773084123token
+  OFFICIAL_SITE_AES_KEY: CgAKz6nxnZBkxUQfYHTWnxYcyCetrbGEfay3QyBWQPo
+
+  WECHAT_OPEN_APP_ID: wxa2c9447bc95e0558 # 良车驿站app_id
+  WECHAT_OPEN_APP_SECRET: 701f932d6036afdd1b6eb30270df4548
+  WECHAT_IN_TEST: "OFF"
+
+  # CHELAIKE_URL: http://server.chelaike.com/api/open/v2
+  CHELAIKE_URL: http://server.lcyzauto.com/api/open/v2
+  CHELAIKE_DOMAIN: http://server.lcyzauto.com
+
+  OSS_ENDPOINT: http://oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_HOST: http://lcyz-prime.oss-cn-hangzhou.aliyuncs.com
+  OSS_BUCKET_HOST_INTERNAL: http://lcyz-prime.oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_NAME: lcyz-prime
+  OSS_IMAGE_FOLDER: images
+  OSS_VOICE_FOLDER: voices
+  OSS_IPA_FOLDER: versions/ios
+  OSS_PRICE_TAG_TEMPLATES: price_tag_templates
+  OSS_ACCESS_INTERNAL: true
+
+  IMAGE_HOST: http://lcyz-prime.oss-cn-hangzhou.aliyuncs.com
+  ASSET_HOST: http://lcyz-prime.oss-cn-hangzhou.aliyuncs.com
+
+  PRIME_DATABASE_PASSWORD: hxwOoBU3aCe6XQ==
+  CACHE_HOST: m-bp112c27e7fb99d4.memcache.rds.aliyuncs.com
+
+  PINGPP_KEY: "sk_live_TmDarPafvz1OvLyD48PebLiD"
+
+bm_production:
+  SECRET_KEY_BASE: cbe2a6a3d14a8ed9e722564679fd06fad14c6a71b7f03cb7cfe07df2cc6590de8857ac97f85afa666b005fd0180af406b0774c61657b127ad8a80558c17e52cd
+  WECHAT_OPEN_APP_ID: wxefe9e45b217bc492
+  WECHAT_OPEN_APP_SECRET: a461135ba1fa834e94b0a545c4f4c30d
+  WECHAT_IN_TEST: "OFF"
+  # CHELAIKE_URL: http://server.chelaike.com/api/open/v2
+  CHELAIKE_URL: http://bm_server.chelaike.cn/api/open/v2
+  CHELAIKE_DOMAIN: http://bm_server.chelaike.cn
+
+  OSS_ENDPOINT: http://oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_HOST: http://prime.oss-cn-hangzhou.aliyuncs.com
+  OSS_BUCKET_HOST_INTERNAL: http://prime.oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_NAME: prime
+  OSS_IMAGE_FOLDER: images
+  OSS_VOICE_FOLDER: voices
+  OSS_IPA_FOLDER: versions/ios
+  OSS_PRICE_TAG_TEMPLATES: price_tag_templates
+  OSS_ACCESS_INTERNAL: true
+
+  IMAGE_HOST: http://image.chelaike.com
+  ASSET_HOST: http://asset.chelaike.com
+
+  PRIME_DATABASE_PASSWORD: UJwx8qjymkbF2TaLnFmr
+  CACHE_HOST: 38a2de3b031b4ff0.m.cnhzaliqshpub001.ocs.aliyuncs.com
+
+  PINGPP_KEY: "sk_live_TmDarPafvz1OvLyD48PebLiD"
+
+prerelease:
+  <<: *production
+  SECRET_KEY_BASE: e60c29f0d7a9081ac32cecdc5f263efeef21b695e46afdf2f62839eac61a10e6a7b2e9116f5f6aaa39a79930031c932285bff75414efec59e54fbde2e0999a2b
+  SERVER_HOST: pre.chelaike.com

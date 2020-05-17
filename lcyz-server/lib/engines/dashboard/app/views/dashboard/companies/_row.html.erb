@@ -1,0 +1,47 @@
+<tr> <% property = Dashboard::CompanyProperty.find_by(company_id: company.id) %>
+  <td> <%= company.try(:id)%> </td>
+  <td> <%= company.try(:province) %> - <%= company.try(:city)%> </td>
+  <td> <%= company.name %><br/>注册：<%= company.created_at.try(:strftime, "%Y-%m-%d") %></td>
+  <td> <%= company.in_stock_cars.count %>台</td>
+  <td>
+    <%= "#{company.owner.try(:name)}" %><br/><%= "#{company.owner.try(:phone)}" %>
+    <% if policy(:dashboard_company).reset_boss?  && !company.owner.nil?%>
+      <br/><%= link_to '恢复老板权限', reset_boss_company_path(company, user_id: company.owner.try(:id)), method: :post,  data: { confirm: '确定要恢复该老板的全部权限吗?' } %>
+    <% end %>
+ </td>
+  <td> <%=  property.try(:staff).try(:name)  %> </td>
+  <td> <%= Token.find_or_create_by(company_id: company.id).balance %> </td>
+  <td> <% active_tag = (!company.active_tag.nil?) && company.active_tag? %>
+      <%= toggle_button(url: company_active_tag_path(company_id: company.id, active: !active_tag), http_method: :put, active: active_tag) %>
+  </td>
+  <td> <% active_tag = (!property.nil?) && (!property.active_tag.nil?) && property.active_tag? %>
+      <%= toggle_button(url: company_manage_active_tag_path(company_id: company.id, active: !active_tag), http_method: :put, active: active_tag) %>
+  </td>
+  <td>
+    <% if property.present?
+          property.labels.each do  |l| %>
+            <div class="ui label"> <%=l["label"]%>
+              <%= link_to update_label_company_path(company, oper_type: :delete, label: l["label"]), method: "post" do %>
+                  <i class="delete icon"></i>
+              <% end %>
+            </div>
+          <% end %>
+    <% end %>
+    <br/>
+    <% if policy(:dashboard_company).add_label? %>
+      <%= link_to '添加标签', add_label_company_path(company), remote: true %> <br/>
+    <% end %>
+  </td>
+  <td>
+      <% if policy(:dashboard_company).destroy? %>
+        <%= link_to '删除', company_path(company), method: :delete, data: { confirm: '确定要删除吗?' } %>  <br/>
+      <% end %>
+      <% if policy(:dashboard_company).edit_advisor? %>
+        <%= link_to '分配顾问', edit_advisor_company_path(company) %> <br/>
+      <% end %>
+      <% if policy(:dashboard_company).edit_token? %>
+        <%= link_to '赠送车币', edit_token_company_path(company, oper_type: :add), remote: true %> <br/>
+        <%= link_to '扣除车币', edit_token_company_path(company, oper_type: :sub), remote: true %> <br/>
+      <% end %>
+  </td>
+</tr>

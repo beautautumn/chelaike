@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: favorite_cars # 收藏车辆
+#
+#  id             :integer          not null, primary key
+#  wechat_user_id :integer
+#  car_id         :integer                                # 车辆 ID
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  tenant_id      :integer                                # 所属平台租户
+#
+
+paladin_like_1:
+  wechat_user: paladin
+  car_id: 1
+
+paladin_like_2:
+  wechat_user: paladin
+  car_id: 2
+
+orge_like_11:
+  wechat_user: orge
+  car_id: 11
+
+orge_like_22:
+  wechat_user: orge
+  car_id: 22

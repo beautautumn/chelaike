@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.2</jsp-version>
+ <short-name>t</short-name>
+ <uri>/easyui-tags</uri>
+ <display-name>"自定义标签"</display-name>
+ 
+ <tag>
+  <name>comboBox</name>
+  <tag-class>com.ct.erp.core.tag.ComboBoxTag</tag-class>
+  <body-content>jsp</body-content>
+  <description>下拉选择框</description>
+  <attribute>
+   <name>name</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>控件名称</description>
+  </attribute>
+  <attribute>
+   <name>url</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>远程数据</description>
+  </attribute>
+  <attribute>
+   <name>id</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>ID对应字段</description>
+  </attribute>
+  <attribute>
+   <name>text</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>text对应字段</description>
+  </attribute>
+  <attribute>
+   <name>width</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>width对应字段</description>
+  </attribute>
+  <attribute>
+   <name>listWidth</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>listWidth对应字段</description>
+  </attribute>
+  <attribute>
+   <name>listHeight</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>listHeight对应字段</description>
+  </attribute>
+  <attribute>
+   <name>multiple</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>boolean</type>
+   <description>是否多选</description>
+  </attribute>  
+    
+  <attribute>
+   <name>editable</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>boolean</type>
+   <description>是否编辑</description>
+  </attribute>  
+  
+  <attribute>
+   <name>disabled</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>boolean</type>
+   <description>是否可用</description>
+  </attribute>      
+ </tag>
+ 
+ 
+ <tag>
+  <name>auth</name>
+  <tag-class>com.ct.erp.core.tag.AuthenticationTag</tag-class>
+  <body-content>jsp</body-content>
+  <description>权限判断</description>
+  <attribute>
+   <name>rightCode</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>权限编码</description>
+  </attribute>
+  <attribute>
+   <name>rightType</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>权限类型</description>
+  </attribute>
+ </tag> 
+ 
+ 
+
+ <tag>
+  <name>shareinfo</name>
+  <tag-class>com.ct.erp.core.tag.AuthShareInfoTag</tag-class>
+  <body-content>jsp</body-content>
+  <description>信息分享权限判断</description>
+  <attribute>
+   <name>rightCode</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>权限编码</description>
+  </attribute>
+  <attribute>
+   <name>rightType</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>权限类型</description>
+  </attribute>
+  <attribute>
+   <name>infoDepartId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>信息部门编码</description>
+  </attribute>  
+    <attribute>
+   <name>userDepartId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>用户部门编码</description>
+  </attribute>  
+    <attribute>
+   <name>subDepartId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <description>子部门编码</description>
+  </attribute>  
+ </tag>  
+
+</taglib>

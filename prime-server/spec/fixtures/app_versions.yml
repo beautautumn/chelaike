@@ -1,0 +1,45 @@
+# == Schema Information
+#
+# Table name: app_versions # app版本控制
+#
+#  id               :integer          not null, primary key # app版本控制
+#  version_number   :string                                 # 版本号
+#  version_type     :string                                 # 版本类型
+#  note             :text                                   # 发布说明
+#  android_source   :string                                 # 安卓版本下载地址
+#  ipa_source       :string                                 # 苹果版本ipa地址
+#  plist_source     :string                                 # 苹果版本plist地址
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  version_category :string           default("chelaike")   # 版本类别，如车来客与鸿升车来客
+#  app_id           :integer
+#  force_update     :boolean          default(FALSE)        # 强制更新
+#
+
+v100:
+  version_number: 1.0.0
+  version_type: production
+  note: 这是正式版
+  android_source: http://test.android.com
+  ipa_source: http://test.ipa.com
+  plist_source: http://test.plist.com
+  app: chelaike
+
+v102:
+  version_number: 1.0.2
+  version_type: development
+  note: 这是测试版
+  android_source: http://test.android.com
+  ipa_source: http://test.ipa.com
+  plist_source: http://test.plist.com
+  app: chelaike
+
+
+hongsheng_v101:
+  version_number: 1.0.1
+  version_type: production
+  note: 这是鸿升正式版
+  android_source: http://test.android.com
+  ipa_source: http://test.ipa.com
+  plist_source: http://test.plist.com
+  app: hongsheng

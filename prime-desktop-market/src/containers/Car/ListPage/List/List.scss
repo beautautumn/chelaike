@@ -1,0 +1,25 @@
+.textCenter {
+  text-align: center;
+}
+
+.yellow {
+  background-color: #FAF4B2;
+
+  &:hover {
+    background-color: #FDF161 !important;
+  }
+}
+
+.red {
+  color: #E01515;
+  background-color: #F9CCD6;
+
+  &:hover {
+    background-color: #FFA5B4 !important;
+  }
+}
+
+.pagination {
+  margin-bottom: 10px;
+  float: right;
+}

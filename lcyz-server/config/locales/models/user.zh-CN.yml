@@ -1,0 +1,44 @@
+zh-CN:
+  enumerize:
+    user:
+      state:
+        enabled: 已启用
+        disabled: 已禁用
+      mobile_app_car_detail_menu:
+        basic_info: 基本信息
+        public_praise: 产品口碑
+        configuration: 产品配置
+        similar: 相似推荐
+        maintenance_record: 维保与保险
+        transaction_information: 成交信息
+        transfer_record: 牌证信息
+        prepare_record: 整备信息
+        micro_contract: 联盟微合同
+  activerecord:
+    models:
+      user: 用户
+    attributes:
+      user:
+        id: 用户
+        alliance_contacts: 联盟联系人
+        name: 姓名
+        username: 用户名
+        password: 密码
+        email: 邮箱
+        pass_reset_token: 重置密码token
+        phone: 手机号码
+        state: 状态
+        is_alliance_contact: 是否联盟联系人
+        pass_reset_expired_at: 重置密码token过期时间
+        last_sign_in_at: 最后登录时间
+        current_sign_in_at: 当前登录时间
+        company_id: 所属公司
+        shop_id: 所属分店
+        manager_id: 所属经理
+        note: 员工描述
+        authority_type: 权限选择类型
+        authorities: 权限
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        deleted_at: 删除时间
+        avatar: 头像URL

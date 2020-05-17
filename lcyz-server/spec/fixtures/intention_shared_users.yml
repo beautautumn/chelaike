@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: intention_shared_users # 意向共享用户中间表
+#
+#  id           :integer          not null, primary key # 意向共享用户中间表
+#  intention_id :integer                                # 关联的意向
+#  user_id      :integer                                # 分享给的用户
+#  customer_id  :integer                                # 客户ID
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+doraemon_seeking_aodi_share_to_lisi:
+  intention: doraemon_seeking_aodi
+  user: lisi

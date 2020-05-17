@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiyuan.dao.CarsDao">
+    <!--<update id="updateCarsState">
+        update cars set state = #{stateSet} where id = #{carsId}
+        <if test="stateWhere != null">
+            and state in
+            <foreach item="item" index="index" collection="stateWhere"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </update>-->
+    <update id="updateCarsState">
+        update tf_c_trade set state = #{stateSet}, update_time = now(), oper_staff_id = #{staffId} where vehicle_id = #{carsId}
+        <if test="stateWhere != null">
+            and state in
+            <foreach item="item" index="index" collection="stateWhere"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </update>
+    <update id="updateCarsStateIn">
+        update tf_c_trade set state = #{stateSet}, update_time = now(), oper_staff_id = #{staffId}
+        <if test="comeDate != null">
+            , come_date = #{comeDate}
+        </if>
+        where vehicle_id = #{carsId}
+        <if test="stateWhere != null">
+            and state in
+            <foreach item="item" index="index" collection="stateWhere"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </update>
+    <update id="updateCheckState">
+        update qiyuan_detection_reports set state = #{stateSet}, updated_at = now() where car_id = #{carsId}
+        <if test="stateWhere != null">
+            and state in
+            <foreach item="item" index="index" collection="stateWhere"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        ;update tf_c_trade set update_time = now(), oper_staff_id = #{staffId} where vehicle_id = #{carsId}
+    </update>
+</mapper>

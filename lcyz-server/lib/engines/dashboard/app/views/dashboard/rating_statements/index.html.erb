@@ -1,0 +1,31 @@
+
+<% (1..3).each do |item| %>
+  <% case item
+    when 1 %>
+    <h2>经营健康评级说明</h1>
+    <% @statements = EasyLoan::RatingStatement.where(rate_type: "operating_health").order(score: :asc) %>
+    <% when 2 %>
+    <h2>行业风评等级说明</h1>
+    <% @statements = EasyLoan::RatingStatement.where(rate_type: "industry_rating").order(score: :asc) %>
+    <% when 3 %>
+    <h2>综合指数等级说明</h1>
+    <% @statements = EasyLoan::RatingStatement.where(rate_type: "comprehensive_rating").order(score: :asc) %>
+  <% end %>
+  <div class="ui segment">
+    <table class="ui celled table">
+      <thead>
+        <tr>
+          <th> 分数 </th>
+          <th> 说明 </th>
+          <th> 操作 </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @statements.each do |statement| %>
+          <%= render partial: "row", locals: { statement: statement } %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+<div class="append-modal"></div>

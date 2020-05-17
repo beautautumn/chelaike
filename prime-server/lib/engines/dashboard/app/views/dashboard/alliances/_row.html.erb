@@ -1,0 +1,33 @@
+<tr>
+  <td> <%= alliance.id %> </td>
+  <td> <%= alliance.name %> </td>
+  <td> <%= alliance.owner.try(:name) %> </td>
+  <td>
+    <% if alliance.avatar.present? %>
+      <%= image_tag(alliance.avatar, class: "ui medium bordered image", width: "50") %>
+    <% end %>
+  </td>
+  <td>
+    <% if alliance.honesty_tag %>
+      <%= toggle_button(url: alliance_honesty_tag_path(alliance_id: alliance.id), http_method: :put) %>
+    <% else %>
+      <%= toggle_button(url: alliance_honesty_tag_path(alliance_id: alliance.id, active: true), http_method: :put, active: false) %>
+    <% end %>
+  </td>
+  <td>
+    <% if alliance.active_tag %>
+      <%= toggle_button(url: alliance_active_tag_path(alliance_id: alliance.id), http_method: :put) %>
+    <% else %>
+      <%= toggle_button(url: alliance_active_tag_path(alliance_id: alliance.id, active: true), http_method: :put, active: false) %>
+    <% end %>
+  </td>
+  <td>
+    <% if alliance.own_brand_tag %>
+      <%= toggle_button(url: alliance_own_brand_tag_path(alliance_id: alliance.id), http_method: :put) %>
+    <% else %>
+      <%= toggle_button(url: alliance_own_brand_tag_path(alliance_id: alliance.id, active: true), http_method: :put, active: false) %>
+    <% end %>
+  </td>
+  <td> <%= alliance.companies_count %> </td>
+  <td> <%= alliance.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+</tr>

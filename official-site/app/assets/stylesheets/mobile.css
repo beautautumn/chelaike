@@ -1,0 +1,8 @@
+/*
+ *= require ./mobile/weui.css
+ *= require ./mobile/jquery-weui.css
+ *= require ./common.css.scss
+ *= require ./mobile/import.css.scss
+ *= require_tree ./mobile/
+ *= require_self
+ */

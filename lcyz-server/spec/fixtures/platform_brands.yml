@@ -1,0 +1,59 @@
+# == Schema Information
+#
+# Table name: platform_brands
+#
+#  id                 :integer          not null, primary key
+#  platform_code      :integer
+#  brand_name         :string
+#  brand_code         :string
+#  price              :integer
+#  start_time         :time
+#  end_time           :time
+#  need_engine_number :boolean
+#  mode               :string
+#  comment            :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  status             :boolean          default(FALSE)
+#
+
+platform_ant_queen_honda:
+  platform_code: 1
+  brand_name: "东风本田"
+  brand_code: "17"
+  price: 19
+  mode: "mix"
+  status: true
+
+platform_cha_doctor:
+  platform_code: 2
+  price: 14
+  status: true
+
+platform_dasheng_dfhonda:
+  platform_code: 3
+  brand_name: "本田(东风本田)"
+  brand_code: "16"
+  price: 29
+  status: true
+
+platform_dasheng_gzhonda:
+  platform_code: 3
+  brand_name: "本田(广汽本田)"
+  brand_code: "15"
+  price: 29
+  status: true
+
+platform_dasheng_benz:
+  platform_code: 3
+  brand_name: "奔驰"
+  brand_code: "19"
+  price: 29
+  status: true
+
+platform_dasheng_audi:
+  platform_code: 3
+  brand_name: "奥迪"
+  brand_code: "11"
+  price: 29
+  status: true

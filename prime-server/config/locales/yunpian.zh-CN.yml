@@ -1,0 +1,5 @@
+zh-CN:
+  yunpian:
+    message: "验证码: %{pass_reset_token}（该验证码用于忘记密码后的密码变更），工作人员不会向您索要，请勿向任何人泄露。（十分钟内有效）"
+    dash_board: "验证码: %{code}（该验证码用于 Dashbaord 登录）。（十分钟内有效）"
+    easy_loan:  "您的登录验证码是：%{code} ，十分钟内有效。"

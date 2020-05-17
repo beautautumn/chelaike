@@ -1,0 +1,42 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: official_site_development
+
+test:
+  <<: *default
+  database: official_site_test
+
+staging:
+  <<: *default
+  host: <%= ENV["DATABASE_HOST"] %>
+  port: 3433
+  database: official_site_staging
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  pool: 40
+
+production: &production
+  <<: *default
+  database: official_site_production
+  username: prime
+  host: rm-bp10d397lcd8rhqry.pg.rds.aliyuncs.com
+  port: 3433
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 100
+
+bm_production:
+  <<: *default
+  database: bm_official_site_production
+  username: prime
+  host: rds7a3h2hm8j81r211g5.pg.rds.aliyuncs.com
+  port: 3433
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 100
+
+prerelease:
+  <<: *production

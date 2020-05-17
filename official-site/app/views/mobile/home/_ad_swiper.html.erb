@@ -1,0 +1,11 @@
+<div class="ad-swiper">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% @ads.each do |ad| %>
+        <div class="swiper-slide">
+          <%= link_to image_tag(ad.image_url), ad.link %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

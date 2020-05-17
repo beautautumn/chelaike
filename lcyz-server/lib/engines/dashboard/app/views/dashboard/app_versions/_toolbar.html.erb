@@ -1,0 +1,70 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= form_tag app_app_versions_path(@app), method: :get do %>
+        <%= text_field_tag "q[version_number_cont]",
+            nil, placeholder: "搜索 版本号"
+        %>
+        <%= submit_tag "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+    <button id="app-version-new-button" class="ui right floated teal button">
+      发布
+    </button>
+      <div id="app-version-new-modal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          为“<%= @app.name %>”发布新版本
+        </div>
+        <div class="content">
+          <%= form_for :app_version, html: { class: "ui form" } do |f| %>
+            <div class="required field">
+              <label>版本号</label>
+              <%= f.text_field :version_number %>
+            </div>
+            <div class="field">
+              <label>发布说明</label>
+              <%= f.text_area :note %>
+            </div>
+            <div class="field">
+              <label>安卓版本</label>
+              <%= f.text_field :android_source %>
+            </div>
+            <div class="field">
+              <label>IPA</label>
+              <%= f.text_field :ipa_source %>
+            </div>
+            <div class="field">
+              <label>是否强制更新</label>
+              <%= f.select :force_update, [["否", false], ["是", true]], {}, class: "ui search dropdown" %>
+            </div>
+            <div class="field">
+              <label>版本类型</label>
+              <%= f.select :version_type,
+                [["正式", "production"], ["测试", "development"]],
+                {}, class: "ui search dropdown"
+              %>
+            </div>
+            <div class="field">
+              <label>车商</label>
+              <%= f.select :company_ids,
+                Company.all.collect { |s| [s.name, s.id] },
+                {}, {
+                  id: "app-version-new-companies-select",
+                  class: "ui search dropdown",
+                  multiple: "true"
+                }
+              %>
+            </div>
+            <button type="submit" class="ui positive right labeled icon button">
+              保存
+              <i class="checkmark icon"></i>
+            </button>
+            <div class="ui black deny button">
+              取消
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

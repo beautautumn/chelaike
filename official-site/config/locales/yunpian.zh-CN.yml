@@ -1,0 +1,3 @@
+zh-CN:
+  yunpian:
+    dash_board: "验证码: %{code}（该验证码用于 Dashbaord 登录）。（十分钟内有效）"

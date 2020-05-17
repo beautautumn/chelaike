@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="com.sys" namespace="/sys" extends="erp-default">
+		<action name="home" class="sys.homeAction">
+			<result name="home">/WEB-INF/jsp/sys/home.jsp </result>
+		</action>
+			
+		<action name="staff_*"  method="{1}" class="sys.staffAction">                                                          
+	        <result name="staff-view">/WEB-INF/jsp/sys/staff-view.jsp </result><!--员工查看-->
+			<result name="toDelete">/WEB-INF/jsp/sys/staff_cancel.jsp </result>
+			<result name="account">/WEB-INF/jsp/sys/account.jsp </result>
+			<result name="changePwd1">/WEB-INF/jsp/sys/change_pwd_1.jsp </result>
+			<result name="changePwd2">/WEB-INF/jsp/sys/change_pwd_2.jsp </result>
+			<result name="changePwd3">/WEB-INF/jsp/sys/change_pwd_3.jsp </result>
+			<result name="changePhone1">/WEB-INF/jsp/sys/change_phone_1.jsp </result>
+			<result name="changePhone2">/WEB-INF/jsp/sys/change_phone_2.jsp </result>
+			<result name="changePhone3">/WEB-INF/jsp/sys/change_phone_3.jsp </result>
+		</action>
+		<action name="corp_*"  method="{1}" class="sys.corpAction">                                                          
+	        <result name="corp-view">/WEB-INF/jsp/sys/corp-view.jsp </result><!--公司信息-->	       
+	    </action>	
+		<action name="param_*"  method="{1}" class="sys.sysParamAction">                                                          
+	        <result name="param-tab">/WEB-INF/jsp/sys/param-tab.jsp </result><!--参数设置tab-->	 
+	         <result name="toStockWarningConf">/WEB-INF/jsp/sys/stock_warning_conf.jsp</result> 
+	    </action>	 
+	    <action name="accountInfo_*" method="{1}" class="sys.accountInfoAction">
+	    	<result name="toRegist">/WEB-INF/jsp/sys/regist.jsp</result>
+	    	<result name="toChangePwd">/WEB-INF/jsp/sys/change_pwd.jsp</result>
+	    	<result name="toFindPwd">/WEB-INF/jsp/sys/find_pwd.jsp</result>
+	    </action>
+	    <action name="feedOpinion_*" method="{1}" class="sys.feedOpinionAction">
+	    </action>
+	    <action name="params_list_*" method="{1}" class="sys.setSysParamAction">
+	    	<result name="toUpdateParams">/WEB-INF/jsp/sys/update_sys_params.jsp </result>
+	    </action>
+	    
+	    		
+		
+		  <action  name="comm" class="sys.commInfoAction">
+	 		   
+			</action>
+	    
+	</package>
+</struts>

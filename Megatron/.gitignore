@@ -1,0 +1,18 @@
+/Megatron-server/node_modules/
+
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# Ignore application configuration
+/config/application.yml
+/config/database.yml
+/config/secrets.yml
+/config/mongoid.yml
+/config/unicorn.rb
+
+.DS_Store
+.idea

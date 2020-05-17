@@ -1,0 +1,78 @@
+inventory: &inventory
+  stock_out_inventory_type: sold
+  completed_at: <%= Time.zone.parse("2015-04-20") %>
+  seller_id: <%= zhangsan.id %>
+  customer_channel_id: <%= individual.id %>
+  closing_cost_wan: 20
+  carried_interest_wan: 1
+  sales_type: retail
+
+  customer_location_province: 浙江省
+  customer_location_city: 杭州
+  customer_location_address: 创意园
+  customer_name: 机器猫
+  customer_phone: 100
+  customer_idcard: 123456
+  proxy_insurance: true
+  insurance_company_id: <%= pingan.id %>
+  commercial_insurance_fee_yuan: 400
+  compulsory_insurance_fee_yuan: 500
+  invoice_fee_yuan: 100
+  note: abc
+  current: true
+
+cash: # 现金方式
+  <<: *inventory
+
+  payment_type: cash
+  deposit_wan: 5
+  remaining_money_wan: 15
+  transfer_fee_yuan: 400
+  commission_yuan: 5000
+  other_fee_yuan: 400
+
+mortgage: # 贷款方式
+  <<: *inventory
+
+  payment_type: mortgage
+  mortgage_company_id: <%= cmb_china.id %>
+  down_payment_wan: 5
+  loan_amount_wan: 30
+  mortgage_period_months: 12
+  mortgage_fee_yuan: 6000
+  foregift_yuan: 5000
+  transfer_fee_yuan: 400
+  commission_yuan: 5000
+  other_fee_yuan: 400
+
+sold: # 销售出库
+  completed_at: 2019-03-23
+  seller_id: <%= zhangsan.id %>
+  customer_channel_id: <%= individual.id %>
+  closing_cost_wan: 20
+  sales_type: "wholesale"
+  payment_type: "cash"
+  deposit_wan: 34
+  remaining_money_wan: 67
+  transfer_fee_yuan: 450
+  commission_yuan: 90
+  other_fee_yuan: 122
+  customer_location_province: "湖北省"
+  customer_location_city: "武汉市"
+  customer_location_address: "我在这里"
+  customer_name: "杨军"
+  customer_phone: "18668237777"
+  customer_idcard: "350302199105290022"
+  proxy_insurance: false
+  note: "我是一块大备注"
+  stock_out_inventory_type: "sold"
+  total_transfer_fee_yuan: 400
+
+acquisition_refunded: # 收购退车
+  stock_out_inventory_type: "acquisition_refunded"
+  refunded_at: 2019-03-23
+  refund_price_wan: 456
+
+driven_back: # 车主开回
+  stock_out_inventory_type: "driven_back"
+  driven_back_at: <%= Time.zone.parse("2019-03-23") %>

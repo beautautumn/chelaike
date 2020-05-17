@@ -1,0 +1,35 @@
+zh-CN:
+  enumerize:
+    finance_car_fee:
+      prepare_cost:
+        repair: 维修费
+        detailing: 美容费
+        wash: 清洗费
+        other_prepare: 其它
+      handling_charge:
+        acquire_license: 收购办牌证
+        acquire_bu_licence: 收购补证件
+        sale_license: 销售办牌证
+        sale_bu_licence: 销售补证件
+        settle: 落户费用
+      commission:
+        commission_acquire: 收购佣金
+        commission_sale: 销售佣金
+      percentage:
+        percentage_acquire: 收购提成
+        percentage_sale: 销售提成
+        percentage_fencheng: 销售分成
+      other_cost:
+        other_cost_butie: 补贴
+        other_cost_food: 餐饮
+        other_cost_post: 邮递
+        other_cost_print: 文印
+        other_cost_public_relation: 公关
+        other_cost_travel: 差旅
+        other_cost_other: 其它
+      other_profit:
+        other_profit_return_commercial_ensure: 退商业险
+        other_profit_ensure_return_commission: 保险返佣
+        other_profit_mortgage_service: 按揭服务费
+        other_profit_mortgage_return_commission: 按揭返佣
+        other_profit_other: 其它

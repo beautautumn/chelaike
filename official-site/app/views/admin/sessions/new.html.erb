@@ -1,0 +1,52 @@
+<div class="admin-login-holder">
+</div>
+
+<div class="admin-login-content">
+  <h2>登录</h2>
+  <% if Rails.env.production?%>
+    <div class="panel panel-default">
+      <%= form_tag code_admin_session_path,
+        method: :get, class: "form-inline", remote: true do %>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+            </div>
+            <%= text_field_tag "phone", nil, placeholder: "手机", class: "form-control cell-phone" %>
+          </div>
+        </div>
+        <%= submit_tag "发送验证码", class: "btn btn-info pull-right " %>
+      <% end %>
+
+      <%= form_tag admin_session_path,
+        method: :post, class: "form_horizontal" do %>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-barcode" aria-hidden="true"></span>
+            </div>
+            <%= text_field_tag "code", nil, placeholder: "验证码", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= submit_tag "登录", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="panel panel-default">
+      <%= form_tag admin_session_path,
+        method: :post, class: "form_horizontal" do %>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+            </div>
+            <%= text_field_tag "phone", nil, placeholder: "手机", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= submit_tag "登录", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

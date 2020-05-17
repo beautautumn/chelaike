@@ -1,0 +1,19 @@
+<div class="tc-gallery">
+  <div class="tc-gallery-img">
+    <div class="tc-gallery-mask"></div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <% @car.images.each do |image| %>
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <%= image_tag img_scale(image.url,"810x540") %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="tc-gallery-desc">
+    <div class="tc-gallery-page-info"></div>
+  </div>
+</div>

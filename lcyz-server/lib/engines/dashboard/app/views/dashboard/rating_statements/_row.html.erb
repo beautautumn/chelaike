@@ -1,0 +1,7 @@
+<tr>
+  <td> <%= statement.score %> </td>
+  <td> <%= statement.content %> </td>
+  <td>
+    <%= link_to "编辑", edit_rating_statement_path(statement), remote: true %>
+  </td>
+</tr>

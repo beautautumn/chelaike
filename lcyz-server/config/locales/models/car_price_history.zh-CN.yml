@@ -1,0 +1,34 @@
+zh-CN:
+  activerecord:
+    models:
+      car_price_history: 车辆定价
+    attributes:
+      car_price_history:
+        car_id: 车辆ID
+        user_id: 调价人ID
+        user_name: 调价人
+        previous_show_price_wan: 旧展厅价格
+        previous_show_price_cents: 旧展厅价格
+        show_price_wan: 展厅价格
+        show_price_cents: 展厅价格
+        previous_online_price_wan: 旧网络价格
+        previous_online_price_cents: 旧网络价格
+        online_price_wan: 网络价格
+        online_price_cents: 网络价格
+        previous_sales_minimun_price_wan: 旧销售底价
+        previous_sales_minimun_price_cents: 旧销售底价
+        sales_minimun_price_wan: 新销售底价
+        sales_minimun_price_cents: 新销售底价
+        previous_manager_price_wan: 旧经理底价
+        previous_manager_price_cents: 旧经理底价
+        manager_price_wan: 新经理底价
+        manager_price_cents: 新经理底价
+        previous_alliance_minimun_price_wan: 旧联盟底价
+        previous_alliance_minimun_price_cents: 旧联盟底价
+        alliance_minimun_price_wan: 新联盟底价
+        alliance_minimun_price_cents: 新联盟底价
+        yellow_stock_warning_days: 黄色库存预警时间
+        red_stock_warning_days: 红色库存预警时间
+        note: 说明
+        created_at: 创建时间
+        updated_at: 最后更新时间

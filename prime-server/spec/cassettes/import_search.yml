@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.che168.com/handler/SeachDealer.ashx?kw=%25u8F66%25u6765%25u8F66%25u5F80&num=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 08 Sep 2015 04:42:10 GMT
+      Server:
+      - nginx
+      Content-Type:
+      - text/plain; charset=gb2312
+      Content-Length:
+      - '889'
+      Cache-Control:
+      - public,max-age=1800
+      Web-S:
+      - '2'
+      Powered-By-Scs:
+      - MISS BY SCS13 FROM c1
+      X-Via:
+      - 1.1 tjtg80:8106 (Cdn Cache Server V2.0), 1.1 jinzhong193:8106 (Cdn Cache Server
+        V2.0), 1.1 shwtxz23:8 (Cdn Cache Server V2.0)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siQ29tcGFueU5hbWUiOiK62sH6va2ztcC0s7XN+bb+ytaztb6tz/rT0M/e
+        uavLviIsIkRlYWxlcklkIjo3MDUxNCwiVXJsIjpudWxsLCJDYXJDb3VudCI6
+        MjZ9LHsiQ29tcGFueU5hbWUiOiLMqNbdytCztcC0s7XN+b7Ju/q2r7O1vq28
+        zdPQz965q8u+IiwiRGVhbGVySWQiOjc5NjUwLCJVcmwiOm51bGwsIkNhckNv
+        dW50Ijo3fSx7IkNvbXBhbnlOYW1lIjoizanP57O1wLSztc35tv7K1rO10MXP
+        otfJ0a+3/s7xsr8iLCJEZWFsZXJJZCI6MTIxMTU2LCJVcmwiOm51bGwsIkNh
+        ckNvdW50IjoyfSx7IkNvbXBhbnlOYW1lIjoiutPEz7O1wLSztc35vsm7+rav
+        s7W+rbzN09DP3rmry74iLCJEZWFsZXJJZCI6MTIzMzcxLCJVcmwiOm51bGws
+        IkNhckNvdW50Ijo4fSx7IkNvbXBhbnlOYW1lIjoi1tDJvcrQs7XAtLO1zfnG
+        +7O109DP3rmry74iLCJEZWFsZXJJZCI6MTM3NzY2LCJVcmwiOm51bGwsIkNh
+        ckNvdW50Ijo5fSx7IkNvbXBhbnlOYW1lIjoizv3Jvcf4tqvNpLO1wLSztc35
+        xvuztbf+zvGyvyIsIkRlYWxlcklkIjoxNTA3OTYsIlVybCI6bnVsbCwiQ2Fy
+        Q291bnQiOjB9LHsiQ29tcGFueU5hbWUiOiLEz9H0ytCztcC0s7XN+bb+ytaz
+        tdDQIiwiRGVhbGVySWQiOjE3Mzg2NSwiVXJsIjpudWxsLCJDYXJDb3VudCI6
+        N30seyJDb21wYW55TmFtZSI6IsClyb2ztcC0s7XN+cb7s7XXydGvsr8iLCJE
+        ZWFsZXJJZCI6MTg5ODY5LCJVcmwiOm51bGwsIkNhckNvdW50IjowfSx7IkNv
+        bXBhbnlOYW1lIjoiwKXD97O1wLSztc35tv7K1rO1vq28zdPQz965q8u+Iiwi
+        RGVhbGVySWQiOjIwNDE4MCwiVXJsIjpudWxsLCJDYXJDb3VudCI6MTJ9LHsi
+        Q29tcGFueU5hbWUiOiLEz8T+s7XAtLO1zfm2/srWs7XQ0CIsIkRlYWxlcklk
+        IjoyMDc0MjYsIlVybCI6bnVsbCwiQ2FyQ291bnQiOjR9XQ==
+    http_version: 
+  recorded_at: Tue, 08 Sep 2015 04:42:10 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.ct.erp.lib.entity.Authorization" table="authorization_records">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="carId" type="java.lang.Long">
+            <column name="car_id"/>
+        </property>
+        <property name="grantorId" type="java.lang.Long">
+            <column name="grantor_id"/>
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note"/>
+        </property>
+        <property name="operatorId" type="java.lang.Long">
+            <column name="operator_id"/>
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at"/>
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at"/>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
+
+

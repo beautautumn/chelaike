@@ -1,0 +1,89 @@
+zh-CN:
+  enumerize:
+    transfer_record:
+      items:
+        registration_license: 登记证
+        driving_license: 行驶证
+        compulsory_insurance: 交强险
+        commercial_insurance: 商业险
+        original_vehicle_archive: 原车辆档案
+        instructions: 说明书
+        purchase_tax: 购置税证
+        maintenance_manual: 保养手册
+        original_owner_idcard: 原车主身份证件
+        original_vehicle_invoice: 原车发票
+        original_license: 原牌照
+        new_owner_idcard: 新车主身份证件
+        provisional_license: 临时牌照
+        used_vehicle_trade_invoice: 二次交易发票
+        nameplate: 铭牌
+        environment_mark: 环保标记
+      state:
+        archiving: 提档中
+        transfering: 落户中
+        finished: 已完成
+      environment_mark:
+        yellow: 黄标
+        green: 绿标
+        none: 无
+      usage_type:
+        personal_use: 非营运
+        business_use: 营运
+        b2p_use: 营转非
+        rental_use: 公户
+      inspection_state:
+        valid: 已验车
+        invalid: 未验车
+  activerecord:
+    models:
+      transfer_record: 牌证信息
+    attributes:
+      transfer_record:
+        car_id: 车辆ID
+        vin: 车架号
+        transfer_record_type: 过户类型
+        state: 状态
+        items: 手续项目
+        key_count: 车钥匙
+        environment_mark: 车辆环保标识
+        contact_person: 手续联系人
+        contact_mobile: 手续联系方式
+        original_location_province: 车辆原属地省份
+        original_location_city: 车辆原属地城市
+        current_location_province: 车辆现属地省份
+        current_location_city: 车辆现属地省份
+        original_plate_number: 原车牌
+        current_plate_number: 现车牌
+        new_plate_number: 新车牌
+        original_owner: 原车主
+        original_owner_idcard: 原车主证件号
+        original_owner_contact_mobile: 原车主联系方式
+        transfer_recevier: 落户人
+        transfer_recevier_idcard: 落户人证件号
+        new_owner: 新车主
+        new_owner_idcard: 新车主证件号
+        new_owner_contact_mobile: 新车主联系方式
+        inspection_state: 验车状态
+        user_id: 收购/销售员ID
+        archive_estimated_time: 提档预计完成时间
+        archive_fee_yuan: 提档费用
+        archive_fee_cents: 提档费用
+        estimated_transferred_at: 过户预计完成时间
+        transferred_at: 过户实际完成时间
+        transfer_fee_yuan: 过户费用
+        transfer_fee_cents: 过户费用
+        compulsory_insurance_end_at: 交强险到期日期
+        annual_inspection_end_at: 年审到期日期
+        commercial_insurance_end_at: 商业险到期日
+        commercial_insurance_amount_yuan: 商业险金额
+        commercial_insurance_amount_cents: 商业险金额
+        usage_type: 使用性质
+        registration_number: 登记证书号
+        transfer_count: 过户次数
+        engine_number: 发动机号
+        allowed_passengers_count: 核定载客人数
+        note: 补充说明
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        user_name: 收购/销售员名字
+        data_completeness: 资料完整程度

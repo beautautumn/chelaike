@@ -1,0 +1,28 @@
+<h1>车架号图片识别</h1>
+
+<div class="ui segment">
+  <%= render partial: "search" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th width="50px"> ID </th>
+        <th width="260px"> 基本信息</th>
+        <th width="160px"> 服务商／查询状态 </th>
+        <th> 图片 </th>
+        <th width="400px"> 车架号 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vin_images.each do |record| %>
+        <%= render partial: "row", locals: { record: record } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@counter%> 条记录
+          <%= paginate @vin_images %>
+        </th>
+    </tfoot>
+  </table>
+</div>

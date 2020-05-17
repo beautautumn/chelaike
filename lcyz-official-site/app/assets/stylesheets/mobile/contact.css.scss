@@ -1,0 +1,51 @@
+.contact-backgroup {
+  background-color: #ffffff;
+  padding: 12px 10px 14px;
+}
+
+.contact-info {
+  border: solid 1px #d9d9d9;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+
+  h2 {
+    font-size: 16px;
+    line-height: 1.88;
+    text-align: center;
+    margin: 12px 0px;
+  }
+
+  .tc-contact-detail {
+    padding: 0 19px 15px;
+    font-size: 14px;
+    .tc-contact-detail-row {
+      div {
+        float: left;
+      }
+      p {
+        margin-left: 60px;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: bottom
+  }
+}
+
+.contact-me {
+  margin-top: 22px;
+
+  a {
+    height: 40px;
+    background-color: #fac72c;
+    color: #9e6108;
+  }
+}
+
+#shop_address_map {
+  height: 180px;
+  clear: both;
+}

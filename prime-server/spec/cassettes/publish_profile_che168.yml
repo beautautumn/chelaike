@@ -1,0 +1,134 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dealer.che168.com/Handler/CreateImgCode.ashx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 26 Jan 2016 07:48:50 GMT
+      Server:
+      - AHS/1.48
+      Content-Type:
+      - image/Gif
+      Content-Length:
+      - '1290'
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - DealerCheckCode=945A0134C7912220; domain=.che168.com; path=/
+      S:
+      - '106'
+      X-Via:
+      - 1.1 czdx83:88 (Cdn Cache Server V2.0), 1.1 jdxxz37:8080 (Cdn Cache Server
+        V2.0), 1.1 hzhdx117:12 (Cdn Cache Server V2.0)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        R0lGODlhMgAUAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQAr
+        zAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACq
+        MwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/
+        zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNV
+        MzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOq
+        zDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYA
+        M2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZV
+        zGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbV
+        M2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkA
+        zJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmA
+        M5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnV
+        zJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwr
+        M8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyA
+        zMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/
+        M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8r
+        zP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+q
+        M/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//
+        zP///wAAAAAAAAAAAAAAACH5BAEAAPwALAAAAAAyABQAAAj/AAEIHEiwoMGD
+        CBMa3MewocOHDgVCdIhgosV9Emnp27exI8ePHjdiBACyZEiTJSUyFPlxZUOW
+        LFXCfLkPVMub+gR67NZSpMeeLQH4dDm0ZFCSB1y6I+CCwCafjVpIbaGDoTFe
+        LK6wgOOSnZUqVdTgZBhvpMt99Ao0bRqnYSAXU2lA28erhVYrVlQwxFrla5Ux
+        Zz1K9PmIQFtfLoBspEf1ob5AW/e1Y0FG6B8rmyT3jXZ2pcx99bAQsElPNOd2
+        LqqGBNRimeSs0drhjaZP32VlY826dPGCtj4XLiLt6zVgKpCVjSLzsnKc5T52
+        Va5wNppT6Md3BAhMx+IilD5HLeBK59XRMdDdHDj1AQr78+hIAGl9+OZuat/b
+        U/vcST3NQlYLKwe41pFt0U03lkoMDeDCAAIJwF0oNOlzSwtxPMZCZvNY0cJ0
+        6vW1zE8/DcZQPbzhRw8BLACwywAscKZPVKC0Y5eLgFhxSm21FBiYQ9UN5QgB
+        xy0VBEeCtLACAAK0wIJ3GmoimRUsuGYLlALuKNJn+4CzFlNc7UPMVFLFAUAA
+        SrLAApRizdMXWGBZUSVNIl7HFAEQdkTMKlJ1uVEvGlpx5HNfWfFCm3MRxRCC
+        RTl30440XdTeRnEmahR1jaLU3lkKZarppgUFBAA7
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 07:48:50 GMT
+- request:
+    method: get
+    uri: http://dealer.che168.com/Handler/Login/Login.ashx?name=che168%B5%C4%D5%CB%BA%C5&pwd=che168%25u7684%25u5BC6%25u7801&remember=false&req=0.8654572488740087&validcode=0582
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Referer:
+      - http://dealer.che168.com/login.html?backurl=/car/carlist/?s=3
+      User-Agent:
+      - 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+      Cookie:
+      - DealerCheckCode=945A0134C7912220
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 26 Jan 2016 07:48:51 GMT
+      Server:
+      - Ahs/1.50
+      Content-Type:
+      - text/html; charset=gb2312
+      Content-Length:
+      - '37'
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      S:
+      - '105'
+      X-Via:
+      - 1.1 czdx82:80 (Cdn Cache Server V2.0), 1.1 jdxxz36:8108 (Cdn Cache Server
+        V2.0), 1.1 ncdx22:1 (Cdn Cache Server V2.0)
+      X-Cache:
+      - MISS from ubuntu
+      X-Cache-Lookup:
+      - MISS from ubuntu:6666
+      Via:
+      - 1.1 ubuntu (squid/3.3.8)
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        dmFyIGNvZGU9J9PDu6fD+8Pcwuu07c7zo6y1x8K8yqew3KOhJw==
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 07:48:51 GMT
+recorded_with: VCR 3.0.0

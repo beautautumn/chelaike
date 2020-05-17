@@ -1,0 +1,76 @@
+<% if @maintenance_summary %>
+  <div class="container">
+    <div class="tc-sub-title">维保记录</div>
+    <div class="evaluate-container">
+      <div class="title">记录概要</div>
+      <div class="content">
+        <% if @maintenance_summary&.record_abstract&.summary.present? %>
+          <%= @maintenance_summary&.record_abstract&.summary %>
+        <% else %>
+          <%= @maintenance_summary&.items&.last&.date %> <%= @maintenance_summary&.items&.last&.category %>
+          <br>
+          项目: <%= @maintenance_summary&.items&.last&.item %>
+        <% end %>
+        </div>
+      <div class="items">
+        <div class="item">
+          <div>最大里程</div>
+          <div><%= @maintenance_summary&.record_abstract&.last_record_mileage %> 公里</div>
+        </div>
+        <div class="item">
+          <div>记录条数</div>
+          <div>共有 <%= @maintenance_detail&.items&.size %> 条记录</div>
+        </div>
+        <div class="item">
+          <div>最后记录时间</div>
+          <div><%= @maintenance_summary&.record_abstract&.last_record_date %></div>
+        </div>
+        <div class="item">
+          <div>安全气囊</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.ab == '正常' ? 'normal' : 'error' %>">
+            <%= @maintenance_summary&.record_abstract&.ab %>
+          </div>
+        </div>
+        <div class="item">
+          <div>结构部件</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.sd == '正常' ? 'normal' : 'error' %>">
+            <%= @maintenance_summary&.record_abstract&.sd %>
+          </div>
+        </div>
+        <div class="item">
+          <div>发动机</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.en == '正常' ? 'normal' : 'error' %>">
+            <%= @maintenance_summary&.record_abstract&.en %>
+          </div>
+        </div>
+        <div class="item">
+          <div>变速箱</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.tr == '正常' ? 'normal' : 'error' %>">
+            <%= @maintenance_summary&.record_abstract&.tr %>
+          </div>
+        </div>
+        <div class="item">
+          <div>里程表</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.mi == '正常' ? 'normal' : 'error' %>">
+            <%= @maintenance_summary&.record_abstract&.mi %>
+          </div>
+        </div>
+        <div class="item">
+          <div>火烧维修记录</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.fire == '有' ? 'error' : 'normal' %>">
+            <%= @maintenance_summary&.record_abstract&.fire || "无" %>
+          </div>
+        </div>
+        <div class="item">
+          <div>水泡维修记录</div>
+          <div class="<%= @maintenance_summary&.record_abstract&.water == '有' ? 'error' : 'normal' %>">
+            <%= @maintenance_summary&.record_abstract&.water || "无" %>
+          </div>
+        </div>
+      </div>
+      <div class="see-report-button">
+        <%= car_detail_pay_report_link(@car, @tenant, @current_user, @maintenance_summary) %>
+      </div>
+    </div>
+  </div>
+<% end %>

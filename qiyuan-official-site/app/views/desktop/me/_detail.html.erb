@@ -1,0 +1,37 @@
+<% content_for :navigation_bar do %>
+  账户信息
+<% end %>
+
+<div class="container content-panel">
+  <div class="slide-bar">
+    <div class="placeholder"></div>
+    <div class="actions">
+      <div class="action-enquiries">
+        <%= slide_bar_action_menu "我的询价", me_enquiries_path %>
+      </div>
+      <div class="action-favorites">
+        <%= slide_bar_action_menu "我的收藏", me_favorites_path %>
+      </div>
+    </div>
+  </div>
+  <div class="cars-panel">
+    <% if @total == nil || @total == 0 %>
+      <div class="empty-panel">
+        无内容<br/>您还未进行任何操作～
+      </div>
+    <% else %>
+      <%
+        paginatable_array = Kaminari
+          .paginate_array([], total_count: @total)
+          .page(params[:page])
+          .per(30)
+      %>
+      <div class="car-list">
+        <%= render partial: "desktop/cars/car_card", collection: @cars, as: :car %>
+      </div>
+      <div class="tc-paginate-wraper">
+        <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+      </div>
+    <% end %>
+  </div>
+</div>

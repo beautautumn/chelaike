@@ -1,0 +1,32 @@
+<h1>活跃车商列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "search" %>
+  <div class="ui label">
+    <i class="icon"></i>总共：<%= @companies.total_count %>
+  </div>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 车商ID </th>
+        <th> 名称 </th>
+        <th> 车辆数 </th>
+        <th> 老板 </th>
+        <th> 注册时间 </th>
+        <th> <%= @start_date %>操作数 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @companies.each do |company| %>
+        <%= render partial: "row", locals: { company: company, start_date: @start_date, end_date: @end_date } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="6">
+          共 <%=@counter%> 条记录
+          <%= paginate @companies %>
+        </th>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,122 @@
+*{
+    	margin: 0;
+    	padding: 0;
+    }
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px #f3f3f3 inset !important;
+}
+    .back-car{
+    	position: absolute;left: 0;bottom: 0;
+    }
+    .login-content{
+    	background-image: url(../img/login-bg-market.png);
+    	background-size: 100% 100%;
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	height: 100%;
+    }
+	.login-content .center{
+	  width: 1200px;
+	  height: 550px;
+	  margin: auto;
+	  position: relative;top: 50%;
+	  margin-top: -275px;
+	}
+	.left{
+		text-align: center;
+		color: #fff;
+	}
+	.left .logo{
+		font-size: 60px;
+		margin-bottom:10px;
+	}
+	.left .text{
+		font-family: PangMenZhengDao;
+		font-size: 45.9px; 
+		padding-top: 6px;
+	}
+	.right{
+			width: 500px; 
+			margin: auto;
+			margin-top: 20px;
+	}
+    .login-title{
+		font-family: PangMenZhengDao;
+		font-size: 40px;
+		letter-spacing: 2px;
+		text-align: center;
+		color: #ffffff;
+		margin-bottom: 58px;
+		margin-left:-25px;
+		margin-top:30px;
+    }
+    .login-user{
+		width: 340px;
+		height: 44px;
+		border-radius: 18px;
+		background-color: #f3f3f3;
+		line-height: 44px;
+		font-size: 18px;
+		position: relative;
+		margin: 20px auto 0 auto;
+	}
+	.login-user img{
+		position: absolute;
+		left: 30px;top: 13px;
+	}
+	.login-user label{
+		color: #a6a6a6;
+		padding-left: 50px;
+	}
+	.login-user input{
+		line-height: 35px;
+		height: 35px;
+		margin-left: 5px;
+		padding-left: 5px;
+		border:none;
+		background: none;
+		outline:none;
+		font-size: 18px;
+		margin-top:4px;
+		width:270px;
+	}
+span.login-btn{
+		width: 340px;
+		height: 44px;
+		border-radius: 18px;
+		background-color: #b94b10;
+		border:none;
+		font-size: 24px;
+		color: #fff;
+		line-height: 44px;
+		letter-spacing: 10px;
+		margin-top: 40px;
+		outline:none;
+		cursor: pointer;
+		display:inline-block;
+	}
+span.login-btn:active{
+		background-color:  #d65713;
+	}
+	.login-select{
+		width: 320px;
+		margin: auto;
+		line-height: 50px;
+		color: #fff;
+		font-size: 14px;
+		padding: 0 5px;
+	}
+	.login-select input{
+		position: relative;
+		top: 2px;
+	}
+	.login-select label{
+		padding-left: 5px;
+	}
+	.login-select a{
+		float: right;
+		color: #fff;
+		text-decoration: none;
+
+	}

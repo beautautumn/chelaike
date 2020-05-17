@@ -1,0 +1,24 @@
+<%
+  company = maintenance.company
+  maintenance_hub = maintenance.maintenance_record_hub
+  car = maintenance.car
+  user = User.find_by(id: maintenance.last_fetch_by)
+  property = Dashboard::CompanyProperty.find_by(company_id: company.id)
+%>
+<tr>
+  <td> <%= maintenance.id %> </td>
+  <td> <%= company.try(:province) %>，<%= company.try(:city) %> </td>
+  <td>
+    <%= company.try(:name).try(:truncate, 12) %>
+    <% active_tag = (!company.nil?) && (!company.active_tag.nil?) && company.active_tag? %>
+    <% if active_tag %><br/><font color="red">（活跃）</font> <% end %>
+  </td>
+  <td><%= maintenance.try(:last_fetch_at).try(:strftime, "%Y-%m-%d %H:%M:%S") %> </td>
+  <td> <%= get_state_name (maintenance.state) %><br/><%= maintenance_hub.try(:notify_message) %> </td>
+  <td> <%= user.try(:name) %><br/><%= user.try(:username) %> - <%= user.try(:phone) %></td>
+  <td> <%= "#{maintenance.brand_name} #{maintenance.series_name} #{maintenance.style_name}"  %> </td>
+  <td> <%= maintenance.vin %> </td>
+  <td> <%= maintenance_hub.try(:origin) %> </td>
+  <td> <%= maintenance.token_price %> </td>
+  <td> <%= property.try(:staff).try(:name)%> </td>
+</tr>

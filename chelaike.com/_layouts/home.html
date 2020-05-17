@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body id="home">
+
+    {% include header.html home="active" %}
+
+    <div class="banner">
+      <div>
+        <img data-lazy="assets/images/banner1.png" />
+      </div>
+      <div>
+        <img data-lazy="assets/images/banner2.png" />
+      </div>
+      <div>
+        <img data-lazy="assets/images/banner3.png" />
+      </div>
+    </div>
+
+    <div class="dots"></div>
+
+    <link rel="stylesheet" type="text/css" href="/assets/javascripts/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/javascripts/slick/slick-theme.css"/>
+
+    <script type="text/javascript" src="/assets/javascripts/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript" src="/assets/javascripts/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.banner').slick({
+          lazyLoad: 'ondemand',
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          appendDots: $('.dots')
+        });
+      });
+    </script> 
+
+    <div class="home">
+      <div class="features">
+        <div class="feature">
+          <div class="image">
+            <img src="/assets/images/feature1.png" />
+          </div>
+          <div class="text">
+            <p>实时库存</p>
+            <p>共享车源销售</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="image">
+            <img src="/assets/images/feature2.png" />
+          </div>
+          <div class="text">
+            <p>发展联盟</p>
+            <p>自建流量官网</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="image">
+            <img src="/assets/images/feature3.png" />
+          </div>
+          <div class="text">
+            <p>精准统计</p>
+            <p>生意清楚明白</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="image">
+            <img src="/assets/images/feature4.png" />
+          </div>
+          <div class="text">
+            <p>客户留存</p>
+            <p>网络服务推广</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="image">
+            <img src="/assets/images/feature5.png" />
+          </div>
+          <div class="text">
+            <p>实时库存</p>
+            <p>共享车源销售</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
+
+

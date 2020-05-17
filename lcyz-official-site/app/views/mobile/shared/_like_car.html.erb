@@ -1,0 +1,11 @@
+<% if @device_detect_helper.wechat? %>
+  <a href="javascript:;" data-behavior="toggle-like" data-id="<%= car.id %>">
+    <div class="bargain-fav">
+      <% if favorite_car?(car) %>
+        <i class="fav_button fa liked"></i>
+      <% else %>
+        <i class="fav_button fa"></i>
+      <% end %>
+    </div>
+  </a>
+<% end %>

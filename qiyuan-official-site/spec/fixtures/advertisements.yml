@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: advertisements # 广告
+#
+#  id         :integer          not null, primary key
+#  ad_type    :string                                 # 广告类型
+#  image_url  :string                                 # 图片地址
+#  link       :string                                 # 广告链接地址
+#  tenant_id  :integer                                # 所归属租户
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  platform   :string                                 # 平台类型(移动/桌面)
+#
+
+ad_1:
+  image_url: http://image.chelaike.com/images/e06983be-e616-4017-8a14-e39c553d3be4.png
+  link: http://www.chelaike.com
+  tenant: human
+
+ad_2:
+  image_url: http://image.chelaike.com/images/a5444df6-357a-4834-bc7d-018a0d84cec1.png
+  link: http://www.chelaike.com
+  tenant: orc
+
+ad_3:
+  image_url: http://image.chelaike.com/images/46c46f59-2337-4f21-97cf-ef4956e3aa24.png
+  link: http://www.chelaike.com
+  tenant: human

@@ -1,0 +1,179 @@
+if ENV.key?("CHINA")
+  source "https://gems.ruby-china.org"
+else
+  source "https://rubygems.org"
+end
+
+ruby "2.2.4"
+
+gem "rails", "4.2.5.1"
+
+gem "pg" # ubuntu 下需要安装 libpq-dev
+
+gem "mysql2"
+# Ubuntu 需要安装 libmysqlclient-dev
+# Red Hat/CentOS 需要安装 mysql-devel
+
+gem "safe_attributes", require: false # 旧车3宝数据库中有ActiveRecord不支持的字段
+gem "redis"
+gem "activerecord-import"
+gem "upsert"
+
+gem "rails-api"
+
+gem "figaro"
+gem "rails-i18n"
+gem "enumerize"
+gem "enumerize_with_groups"
+gem "aasm"
+gem "multi_json"
+gem "active_model_serializers"
+gem "honey_sheet", github: "LcpMarvel/honey_sheet"
+gem "bcrypt"
+gem "rails_param"
+gem "pundit"
+gem "money-rails"
+gem "ransack"
+gem "jwt"
+
+gem "paranoia"
+gem "paranoia_uniqueness_validator"
+
+gem "autobots_license"
+gem "china_region_fu"
+gem "yunpian"
+gem "nokogiri"
+gem "carrierwave-aliyun", "~> 0.3.6"
+gem "aliyun-sdk"
+gem "rest-client"
+gem "sidekiq"
+gem "sinatra"
+
+gem "sidekiq-status"
+gem "rubyzip", require: "zip"
+gem "chinese_pinyin"
+
+gem "whenever", require: false
+gem "spreadsheet"
+
+gem "activerecord-typedstore"
+gem "nested-hstore"
+
+gem "puma"
+
+gem "letter_avatar", github: "Darmody/letter_avatar", branch: "support-chinese"
+gem "rqrcode" # 二维码
+
+gem "kaminari" # pagination
+gem "api-pagination" # Link header pagination
+
+gem "rack-cors", require: "rack/cors"
+gem "rack-jsonp-middleware", require: "rack/jsonp"
+
+gem "jpush", git: "git://github.com/jpush/jpush-api-ruby-client.git"
+
+gem "liquid"
+gem "therubyracer"
+
+gem "connection_pool"
+gem "kgio" # kgio is for Dalli
+gem "dalli"
+gem "exception_notification"
+
+gem "roxml"
+
+gem "kiba"
+
+gem "shortener"
+
+gem "url_safe_base64" # 阿里云水印需要
+# gem "car_publisher", git: "git@git.che3bao.com:autobots/car_publisher.git", branch: "prepare_test"
+# gem "car_publisher", git: "git@git.che3bao.com:autobots/car_publisher.git", branch: "ganji_test"
+
+gem "autohome_public_praise", "0.3.5.2",
+    git: "git@git.chelaike.com:autobots/autohome_public_praise.git"
+
+gem "rack_utf8_validator",
+    git: "git@git.chelaike.com:serverbots/rack_utf8_validator.git",
+    require: "rack/utf8_validator",
+    tag: "v0.1.1"
+
+gem "pingpp", "~> 2.0.12"
+
+gem "newrelic_rpm"
+# 封装的融云api
+gem "rongcloud", "0.1.1", git: "git@git.chelaike.com:autobots/rongcloud.git", branch: "master"
+
+gem "deep_cloneable" # 处理联盟出库中的车辆相关model复制
+gem "htmlentities" # 处理 html entities
+
+gem "writeexcel" # 导出数据到 excel
+gem "virtus"
+gem "redis-rails" # redis缓存
+
+group :development do
+  gem "annotate"
+  gem "rubocop", require: false
+
+  # Deployment
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-rvm"
+  gem "capistrano3-puma"
+  gem "capistrano-slackify"
+  gem "capistrano-sidekiq", github: "LcpMarvel/capistrano-sidekiq"
+  gem "capistrano-db-tasks", require: false
+
+  gem "dokku-cli"
+  gem "grit"
+  gem "ruby-mass"
+  gem "get_process_mem"
+
+  # Debug tools
+  gem "letter_opener"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "meta_request"
+end
+
+group :test do
+  gem "rspec-rails", "~> 3.0"
+  gem "database_cleaner"
+  gem "vcr"
+  gem "webmock"
+  gem "params_builder"
+  gem "test_after_commit"
+end
+
+group :development, :test do
+  gem "byebug"
+  gem "pry-byebug"
+  gem "migration_comments"
+  gem "spring"
+end
+
+group :development, :staging, :test do
+  gem "bullet"
+  gem "act-fluent-logger-rails"
+  gem "lograge"
+end
+
+group :dashboard, :download, :staging, :development do
+  gem "uglifier"
+  gem "sass-rails"
+end
+
+# dashboard
+group :dashboard, :staging, :development, :test do
+  gem "dashboard", path: "./lib/engines/dashboard"
+end
+
+# download page
+group :download, :staging, :development, :test do
+  gem "download", path: "./lib/engines/download"
+end
+
+# silent log for /test in production
+group :production do
+  gem "silencer", "~> 1.0.0.rc3"
+end

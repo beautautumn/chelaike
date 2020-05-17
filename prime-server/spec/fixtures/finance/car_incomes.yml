@@ -1,0 +1,37 @@
+# == Schema Information
+#
+# Table name: finance_car_incomes # 财务管理-单车成本和收益
+#
+#  id                      :integer          not null, primary key # 财务管理-单车成本和收益
+#  car_id                  :integer                                # 关联车辆
+#  company_id              :integer                                # 所属公司
+#  payment_cents           :integer                                # 入库付款
+#  prepare_cost_cents      :integer                                # 整备费用
+#  handling_charge_cents   :integer                                # 手续费
+#  commission_cents        :integer                                # 佣金
+#  percentage_cents        :integer                                # 提成/分成
+#  fund_cost_cents         :integer                                # 资金成本
+#  other_cost_cents        :integer                                # 其他成本
+#  receipt_cents           :integer                                # 出库收款
+#  other_profit_cents      :integer                                # 其他收益
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  acquisition_price_cents :integer                                # 收购价格
+#  closing_cost_cents      :integer                                # 成交价格
+#  fund_rate               :decimal(, )                            # 单车对应的资金利率
+#  loan_cents              :integer                                # 单车融资数额
+#
+
+aodi_sold_income:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_sold) %>
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  acquisition_price_cents: 20_000_000
+  loan_cents: 5_000_000
+  payment_cents: 10_000_000
+  closing_cost_cents: 30_000_000
+  receipt_cents: 30_000_000
+  fund_rate: 1.0
+
+tumbler_income:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:tumbler) %>
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>

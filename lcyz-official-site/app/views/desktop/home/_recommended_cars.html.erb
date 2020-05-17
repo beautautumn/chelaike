@@ -1,0 +1,19 @@
+<% recommended_car_count = @recommended_cars.count %>
+
+<% if recommended_car_count > 0 %>
+  <div class="container home-recommended-cars">
+    <div class="top">
+      <div class="default-img">
+        <%= image_tag asset_path("desktop/home/recommended_cars.png") %>
+      </div>
+      <div class="car-list">
+        <%= render partial: "/cars/car_card", collection: @recommended_cars.take(6), as: :car, locals: { ignore_recommended_car_tag: true } %>
+      </div>
+    </div>
+    <% if recommended_car_count > 6 %>
+      <div class="car-list">
+        <%= render partial: "/cars/car_card", collection: @recommended_cars.drop(6).take(4), as: :car, locals: { ignore_recommended_car_tag: true } %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

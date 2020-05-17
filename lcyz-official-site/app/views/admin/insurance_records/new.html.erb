@@ -1,0 +1,188 @@
+<% content_for :content_header do %>
+  <h1>保险理赔记录</h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to "在库车辆", admin_cars_path %>
+    </li>
+    <li class="active">保险理赔记录</li>
+  </ol>
+<% end %>
+
+<% car_id = @car.id %>
+<section class="content">
+  <% if flash[:notice] %>
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <span class="hidden-car-id" style="visibility: hidden" id="insurance-car-id"><%= @car_id %></span>
+
+  <div class="page-header">
+    <h2><%= @car.name %></h2>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>外观颜色</td>
+        <td>出厂年份</td>
+        <td>公里数</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @car.exterior_color %></td>
+        <td><%= @car.manufactured_at %></td>
+        <td><%= @car.mileage %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= form_for(@insurance_record, url: admin_car_insurance_records_path, method: :post, html: { class: "form-horizontal" }) do |f| %>
+    <%= f.hidden_field :car_id %>
+    <%= f.hidden_field :order_id %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading row">
+        <label class="col-md-2 control-label">基本信息</label>
+        <%= link_to "导入保险理赔报告", new_admin_car_insurance_record_path(car_id: car_id, import_report: true), html: { class: "btn btn-info col-sm-2" } %>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <%= f.label :make, "品牌车型：", class: "col-sm-2 control-label" %>
+
+          <div class="col-sm-4">
+            <%= f.text_field :make, class: "form-control"%>
+          </div>
+
+          <%= f.label :vin, "车架号：", class: "col-sm-2 control-label"%>
+          <div class="col-sm-4">
+            <%= f.text_field :vin, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :total_records_count, "总记录数：", class: "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <%= f.text_field :total_records_count, class: "form-control" %>
+          </div>
+
+          <%= f.label :mileage, "里程数：", class: "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <%= f.text_field :mileage, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :mileage, "事故次数：", class: "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <%= f.text_field :claims_count, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 记录概要 -->
+    <div class="panel panel-default">
+      <%= f.fields_for :record_abstract, @insurance_record.record_abstract do |record_abstract| %>
+        <div class="panel-heading">记录概要</div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">最新记录时间：</label>
+            <div class="col-sm-4">
+              <%= record_abstract.text_field "latest_record_time", class: "form-control" %>
+            </div>
+
+            <label class="col-sm-2 control-label">车辆性质：</label>
+            <div class="col-sm-4">
+              <%= record_abstract.text_field :used_type, class: "form-control"%>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">生成年份：</label>
+            <div class="col-sm-4">
+              <%= record_abstract.text_field :made_year, class: "form-control"%>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="radio">
+              <label class="col-sm-2 control-label">里程表记录：</label>
+              <div class="col-sm-4">
+                <label class="radio-inline">
+                  <input type="radio" name="mileage_record" value="true">正常
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="mileage_record" value="false">异常
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">排放标准：</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control"/>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 出险事故摘要 -->
+    <div class="panel panel-default claim-abstract-part">
+      <%= f.fields_for :claims_abstract do |claims_abstract_form| %>
+        <div class="panel-heading">出险事故摘要</div>
+
+        <div class="panel-body">
+          <div class="claim-abstract-forms">
+            <% if @insurance_record.claims_abstract.present? %>
+              <% @insurance_record.claims_abstract["periods"].each do |period| %>
+                <div class="claim-abstract-form">
+                  <%= render partial: "claim_abstract", locals: { period: period, form: claims_abstract_form } %>
+                </div>
+              <% end %>
+            <% else %>
+              <%= render partial: "claim_abstract", locals: { period: {}, form: claims_abstract_form } %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">事故总损失(元)：</label>
+            <div class="col-sm-4">
+              <%= claims_abstract_form.text_field :total_lose_amount, value: "#{@insurance_record.claims_abstract['total_lose_amount']}", class: "form-control" %>
+            </div>
+          </div>
+          <button type="button" class="btn btn-info col-sm-2" id="add-claim-abstract-button">添加摘要</button>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 详细记录 -->
+    <div class="panel panel-default claims-details-part">
+      <%= f.fields_for :claims_details, @insurance_record.claims_details do |claims_details_form| %>
+        <div class="panel-heading">详细记录</div>
+        <div class="panel-body">
+          <div class="claim-details-forms">
+            <% if @insurance_record.claims_details.size > 0 %>
+              <% @insurance_record.claims_details.each do |claim_detail| %>
+                <%= render partial: "claim_detail", locals: { form: claims_details_form, detail: claim_detail } %>
+              <% end %>
+            <% else %>
+              <%= render partial: "claim_detail", locals: { form: claims_details_form, detail: {} } %>
+            <% end %>
+          </div>
+
+          <button type="button" class="btn btn-info col-sm-2" id="add-claim-detail-button">添加记录</button>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 保存表单 -->
+    <button class="btn btn-primary" type="submit">保存</button>
+  <% end %>
+</section>

@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test-pif.chejianding.com/publicif/2.0/buy
+    body:
+      encoding: UTF-8
+      string: uid=f39d0a454e63829b014e709691d606b8&time=2016-05-19%2019%3A15%3A44&sign=LXPV9PnQP0X2hhCt07tyurkGWq1b%2BznE9sJ0KpqBjRHYoFwFEWN9xmo9le85n4a0xI%2Bb%2BWSfYdEbhmI0LIll1XR7ltA4%2B%2F0Ll2o0chYb%2B14CgHGu9c8n4nW8F6CT4AVm%2FJwBtE4UDtCRds40%2B6gWM8xMymIC%2B9AxS2bM%2FtJDOGs%3D&vin=LHGRB186072026733&licensePlate=%E9%B2%81LD8888&engine=246764K&mobile=15157126128&orderNo=1463656544
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '371'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 May 2016 11:15:44 GMT
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Length:
+      - '93'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7Im9yZGVySWQiOiIyMTY4YTI5MDI1YTg0ZDk0OWMzOGI0Yzdl
+        OGI2MjMyZiIsInN0YXR1cyI6IjEiLCJtZXNzYWdlIjoi6LSt5Lmw5oiQ5Yqf
+        In19
+    http_version: 
+  recorded_at: Thu, 19 May 2016 11:15:44 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+ 	<package name="erp.form" namespace="/form" extends="erp-default">
+		<action  name="report" class="form.formAction">
+			<result name="salesVolume">
+				/WEB-INF/jsp/form/sales_volume.jsp
+			</result>
+			<result name="auctionVehicle">
+				/WEB-INF/jsp/form/auction_vehicle.jsp
+			</result>
+			<result name="corpVehiclePer">
+				/WEB-INF/jsp/form/corp_vehiclePer.jsp
+			</result>
+			<result name="corpParkPer">
+				/WEB-INF/jsp/form/corp_parkPer.jsp
+			</result>
+			<result name="auctionSale">
+				/WEB-INF/jsp/form/auction_sale.jsp
+			</result>
+		</action>
+	</package>
+	
+</struts>

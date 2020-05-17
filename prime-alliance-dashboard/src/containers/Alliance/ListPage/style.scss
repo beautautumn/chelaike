@@ -1,0 +1,32 @@
+.tableTitle {
+  text-align: center;
+}
+
+.image {
+  width: 230px;
+}
+
+.watermarkContainer {
+  margin-top: 15px;
+
+  :global(.ant-select) {
+    margin-bottom: 13px;
+  }
+
+  input {
+    margin-bottom: 15px;
+  }
+}
+
+.uploadButton {
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+  }
+}

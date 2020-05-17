@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.che300.com/service/getCarModelList?seriesId=1&token=3cab9f677fa8dc71126f48c7e91b0c58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jul 2017 08:12:36 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=t6ba2q0hib1feuchm5367mn3g5; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1797'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+WcXWsbRxSG/8qiqxbSzczOzmrXd70pFHJRSKAXTTGqLWxR
+        +aPSGjeEgCm0/ghJSi9q0pRSWkKLU6h70eIaGv8Zr2z/i44kx5Fmz8ycWW8k
+        zQZy49WMJT1+zznvOyvlfq2bNtKNbm2uRms3aitri832fLvVTWtzn9y//LG1
+        2H+UBnE9YVdrVhsrTXE5ILTe++Ollz1/fn5y8H54y/uovdH1QuLd+eD2h975
+        ybPsyffZTw/Fvu7yWieV9ylXD59lvdNaGCxP/CS+unqv2ehc/o7+tdbqfKe5
+        JF9tfAlcbbfS5uBHn9wRPy6JB+fTe+v9pzjfPsj2fhcXF1vdheVGZ6k5L9Cs
+        LjY6/befPfuP999DsyHewsbKZ4Pf0r+ysb7YSJvzaevqbb1HxL/Eo3SOx3NB
+        WHtwYwwkC+okMGNEEywbXjTr8CgeXm//n+zwBwS80YXj8BirDLxhCSO0N1aU
+        RobK1RLI0Of16pQwwavw4tfHOBWOLpTgRX5cKRUi8Emj4Vvx6vCD5PVqCWTd
+        DyozSKIksRkkBoJlw3NAhYhRMqYrYyUrV+dAhtURYYwQIR8i+WKjkaadNURL
+        1GwYZxmSarXGGIFzKDMJEbJFanZJYGmlWmXdXqXmlvmGYDqgUsTkAfWGbKH4
+        8qdVaaWCaxQHmIkuwTnb/TfbeXG2u4OV6egGiSarhkaDOCTQWUU0TpK9Si27
+        D8XLOt/57mLrK1iag43q5VLgVvikCATJjSCpH8sghy9hAiCTkECSVIDMvj46
+        338ilOUN/9JopLqNEtzYH7G9bwTuJFUa4uFaIjWCTHxaEY5JSKFAKXPksNZ6
+        P29n29/oiCI2SgZfMe6Lwp1yK+V4uJZI3yaQQqVQ4DSq9LbXbq02zXWP2Jg7
+        2wzKbKVTVmlkq1I0UlMrrRhIKCrpQWqCEgRSfcIU+lXhKKod4UDDXNFemvTT
+        o4Pe1m9GsBb7cyfKkNd3kXSMmv5SCLLk+zZSJdBJlH7s7231fvwTP/ZHluNO
+        ml0EKRoBdM8NO/b/OsgePS4y9kc2SnATn1Wly8a4eDo+frBI88tzR89BZThi
+        vKnUDW27p+Z4NPLDqCIo6yGHBj8fR8nJGJre/v75ziGMcrBTs34cJa/7MZTr
+        OYgyNKJkPrllizIsCWUYcuh8hBc9xeNlnOIVBTnNUzwBEsrwCpDmdMRLOGgq
+        kePEapuTOqK2X82Ps6cvT4+2z44PspO/e0+PL35RnIjw0aGj2iTNcOJzqGHC
+        UGe7YQpxQtFdAdV8wMTLOGAqqs5pghTqxLRLQGiieE+P+3eELAUq7ZPQBj6t
+        kEahUxGtRs0N9JrHSy5qNAwjKKzza4Z1XiSsczCsu0mVQ2Fd30I1YR1qodZh
+        3VGQUJ7U17kmT0J1bpsn3eQYQXlSX+a2Ba7Jk3Wf4UfPTKOE5MgKZ0lWSpZk
+        IMYAxBjNRpaE1Mh0OdLTjW+WD5KefZIsirFIkiwrkuMxDv+yeIzAelSOLJHi
+        pMQIZUiZ4tjM8HR5h+VnjKcJPAT+QktRjEVaY0kYobCjx2gWo3p9LtyAH0Ny
+        ECMUbCSMIbH042z0GwVYPw7f/IWJslkmCp21GepbY8bB+la78agy9Q2dChnq
+        W2PFwfrW3SSrSHlDwVBf3raFrb2vk0A+3EGM4GcMgnGOwlKgLeRgq24DzkMG
+        IEkKkgxnw0OCdxpVJPEIrY1jiegmJkLIf0voRI0MgLxDWfD5x+9qreNgq24D
+        zjsWJTnNcoY8uIGkUYu6DTj76CJJyIabNKmxO7Amrf2OiyQh32jSpMbxwJq0
+        tTwugoScoxIk5wMuGtMjgcxvkFxP4LOqSBIKhwaS2eHe6fELC5KjG/KfC+IV
+        IQn5cFrA9dDruR4KoiMgOjYjrgc6A6fFXQ8tx/UUJTlFEQZQiDGQNGrx+q7H
+        RZJQiDFpUuN6YE1aux4XSUKZxqRJjeuBNWnrelwECUUaJUiz66HluB4XSUKR
+        xkBS53pAkhrXU/cp9EEAF0lCkUYiyfzAQ96+HuzUrMfdvi7KUTzx1D4KTQk4
+        u4n2AFI3uglw/qg9foRIEojk8BsZOZKB3kxO7A42lA1VGPEArX14iegmJkIo
+        DBK4LWoNOBnthwWcd1F202yEUPxTsTPKDlyJ89ousoPyn1J3GpMt6c7aXTvI
+        jiGmxms1aWy1pDtbP+0iOijiKdFpjLSEztpBu8gOCnWksO8jpfi+ohyn6PsY
+        kOlIYj9yh3sQI1e4Fei/UxxSyrGLQXZ0RjQIpDglO83IldhZj1wn2QG5Ta07
+        9ciVdacbubQqugMShlp36pEr6049cmM/Bj5l4yQ7IGLI7PBzY7gTPzdYub1v
+        onPjU7Gq0xaPLqfp+tzdm3dvbm5u+gvLTUaIv7C2UnvwPy2Ym+zsYQAA
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 08:12:42 GMT
+- request:
+    method: get
+    uri: http://api.che300.com/service/getCarModelList?seriesId=1&token=3cab9f677fa8dc71126f48c7e91b0c58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jul 2017 08:12:36 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=9o6muar8ep461pt8l9u4ohpp55; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1797'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+WcXWsbRxSG/8qiqxbSzczOzmrXd70pFHJRSKAXTTGqLWxR
+        +aPSGjeEgCm0/ghJSi9q0pRSWkKLU6h70eIaGv8Zr2z/i44kx5Fmz8ycWW8k
+        zQZy49WMJT1+zznvOyvlfq2bNtKNbm2uRms3aitri832fLvVTWtzn9y//LG1
+        2H+UBnE9YVdrVhsrTXE5ILTe++Ollz1/fn5y8H54y/uovdH1QuLd+eD2h975
+        ybPsyffZTw/Fvu7yWieV9ylXD59lvdNaGCxP/CS+unqv2ehc/o7+tdbqfKe5
+        JF9tfAlcbbfS5uBHn9wRPy6JB+fTe+v9pzjfPsj2fhcXF1vdheVGZ6k5L9Cs
+        LjY6/befPfuP999DsyHewsbKZ4Pf0r+ysb7YSJvzaevqbb1HxL/Eo3SOx3NB
+        WHtwYwwkC+okMGNEEywbXjTr8CgeXm//n+zwBwS80YXj8BirDLxhCSO0N1aU
+        RobK1RLI0Of16pQwwavw4tfHOBWOLpTgRX5cKRUi8Emj4Vvx6vCD5PVqCWTd
+        DyozSKIksRkkBoJlw3NAhYhRMqYrYyUrV+dAhtURYYwQIR8i+WKjkaadNURL
+        1GwYZxmSarXGGIFzKDMJEbJFanZJYGmlWmXdXqXmlvmGYDqgUsTkAfWGbKH4
+        8qdVaaWCaxQHmIkuwTnb/TfbeXG2u4OV6egGiSarhkaDOCTQWUU0TpK9Si27
+        D8XLOt/57mLrK1iag43q5VLgVvikCATJjSCpH8sghy9hAiCTkECSVIDMvj46
+        338ilOUN/9JopLqNEtzYH7G9bwTuJFUa4uFaIjWCTHxaEY5JSKFAKXPksNZ6
+        P29n29/oiCI2SgZfMe6Lwp1yK+V4uJZI3yaQQqVQ4DSq9LbXbq02zXWP2Jg7
+        2wzKbKVTVmlkq1I0UlMrrRhIKCrpQWqCEgRSfcIU+lXhKKod4UDDXNFemvTT
+        o4Pe1m9GsBb7cyfKkNd3kXSMmv5SCLLk+zZSJdBJlH7s7231fvwTP/ZHluNO
+        ml0EKRoBdM8NO/b/OsgePS4y9kc2SnATn1Wly8a4eDo+frBI88tzR89BZThi
+        vKnUDW27p+Z4NPLDqCIo6yGHBj8fR8nJGJre/v75ziGMcrBTs34cJa/7MZTr
+        OYgyNKJkPrllizIsCWUYcuh8hBc9xeNlnOIVBTnNUzwBEsrwCpDmdMRLOGgq
+        kePEapuTOqK2X82Ps6cvT4+2z44PspO/e0+PL35RnIjw0aGj2iTNcOJzqGHC
+        UGe7YQpxQtFdAdV8wMTLOGAqqs5pghTqxLRLQGiieE+P+3eELAUq7ZPQBj6t
+        kEahUxGtRs0N9JrHSy5qNAwjKKzza4Z1XiSsczCsu0mVQ2Fd30I1YR1qodZh
+        3VGQUJ7U17kmT0J1bpsn3eQYQXlSX+a2Ba7Jk3Wf4UfPTKOE5MgKZ0lWSpZk
+        IMYAxBjNRpaE1Mh0OdLTjW+WD5KefZIsirFIkiwrkuMxDv+yeIzAelSOLJHi
+        pMQIZUiZ4tjM8HR5h+VnjKcJPAT+QktRjEVaY0kYobCjx2gWo3p9LtyAH0Ny
+        ECMUbCSMIbH042z0GwVYPw7f/IWJslkmCp21GepbY8bB+la78agy9Q2dChnq
+        W2PFwfrW3SSrSHlDwVBf3raFrb2vk0A+3EGM4GcMgnGOwlKgLeRgq24DzkMG
+        IEkKkgxnw0OCdxpVJPEIrY1jiegmJkLIf0voRI0MgLxDWfD5x+9qreNgq24D
+        zjsWJTnNcoY8uIGkUYu6DTj76CJJyIabNKmxO7Amrf2OiyQh32jSpMbxwJq0
+        tTwugoScoxIk5wMuGtMjgcxvkFxP4LOqSBIKhwaS2eHe6fELC5KjG/KfC+IV
+        IQn5cFrA9dDruR4KoiMgOjYjrgc6A6fFXQ8tx/UUJTlFEQZQiDGQNGrx+q7H
+        RZJQiDFpUuN6YE1aux4XSUKZxqRJjeuBNWnrelwECUUaJUiz66HluB4XSUKR
+        xkBS53pAkhrXU/cp9EEAF0lCkUYiyfzAQ96+HuzUrMfdvi7KUTzx1D4KTQk4
+        u4n2AFI3uglw/qg9foRIEojk8BsZOZKB3kxO7A42lA1VGPEArX14iegmJkIo
+        DBK4LWoNOBnthwWcd1F202yEUPxTsTPKDlyJ89ousoPyn1J3GpMt6c7aXTvI
+        jiGmxms1aWy1pDtbP+0iOijiKdFpjLSEztpBu8gOCnWksO8jpfi+ohyn6PsY
+        kOlIYj9yh3sQI1e4Fei/UxxSyrGLQXZ0RjQIpDglO83IldhZj1wn2QG5Ta07
+        9ciVdacbubQqugMShlp36pEr6049cmM/Bj5l4yQ7IGLI7PBzY7gTPzdYub1v
+        onPjU7Gq0xaPLqfp+tzdm3dvbm5u+gvLTUaIv7C2UnvwPy2Ym+zsYQAA
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 08:12:42 GMT
+recorded_with: VCR 3.0.1

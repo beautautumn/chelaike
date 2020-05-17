@@ -1,0 +1,30 @@
+zh-CN:
+  activerecord:
+    models:
+      alliance_stock_out_inventory: 联盟出库清单
+    attributes:
+      alliance_stock_out_inventory:
+        from_car_id: 出库车辆
+        to_car_id: 入库车辆
+        alliance_id: 联盟
+        from_company_id: 出库公司
+        to_company_id: 入库公司
+        completed_at: 出库时间
+        closing_cost: 成交价
+        closing_cost_cents: 成交价
+        closing_cost_wan: 成交价
+        deposit: 定金
+        deposit_cents: 定金
+        deposit_wan: 定金
+        remaining_money: 余款
+        remaining_money_cents: 余款
+        remaining_money_wan: 余款
+        note: 备注
+        refunded_at: 退车日期
+        refunded_price: 退车金额
+        refunded_price_wan: 退车金额
+        refunded_price_cents: 退车金额
+        seller_id: 成交员工
+        current: 当前记录
+        created_at: 创建时间
+        updated_at: 最后更新时间

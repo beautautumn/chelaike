@@ -1,0 +1,60 @@
+<% if include_title %>
+  <div class="container">
+    <div class="tc-sub-title tc-purchase-process-title">买车流程与服务承诺</div>
+  </div>
+<% end %>
+
+<!-- purchase process -->
+<div class="tc-purchase-process">
+  <div class="container">
+    <h3>—买车流程—</h3>
+    <div class="row">
+      <div class="col-xs-2">
+        <div>
+          <%= image_tag "common/step1.png" %>
+          <h4>确定意向</h4>
+        </div>
+        <p>确定预算、选中几款喜欢的车型</p>
+      </div>
+      <div class="col-xs-2">
+        <div>
+          <%= image_tag "common/step2.png" %>
+          <h4>到店看车</h4>
+        </div>
+        <p>到店看车、试车与销售员交谈</p>
+      </div>
+      <div class="col-xs-2">
+        <div>
+          <%= image_tag "common/step3.png" %>
+          <h4>签约成交</h4>
+        </div>
+        <p>签订合同、付首款</p>
+      </div>
+      <div class="col-xs-2">
+        <div>
+          <%= image_tag "common/step4.png" %>
+          <h4>办理过户</h4>
+        </div>
+        <p>专员陪同提档过户，全部帮您搞定</p>
+      </div>
+      <div class="col-xs-2">
+        <div>
+          <%= image_tag "common/step5.png" %>
+          <h4>车辆全款</h4>
+        </div>
+        <p>交付剩余车款</p>
+      </div>
+      <div class="col-xs-2">
+        <div>
+          <%= image_tag "common/step6.png" %>
+          <h4>提车</h4>
+        </div>
+        <p>开走车辆</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- service promise -->
+<%= render '/cars/service_promise' %>
+

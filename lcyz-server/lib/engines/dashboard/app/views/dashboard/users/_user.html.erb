@@ -1,0 +1,23 @@
+<% is_owner = user.company.owner_id == user.id  %>
+
+<tr class="<%= is_owner ? "error" : "" %>" >
+  <td> <%= user.id %> </td>
+  <td> <%= user.phone %> </td>
+  <td> <%= user.username %> </td>
+  <td> <%= user.name %> </td>
+  <td>
+    <%= is_owner ? "是" : "否" %>
+  </td>
+  <td> <%= user.company.try(:name) %> </td>
+  <td> <%= user.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+  <% if current_staff.admin? %>
+    <td>
+      <%= link_to '查看', token_user_path(user), remote: true %>
+    </td>
+  <% end %>
+  <td>
+    <% unless is_owner %>
+      <%= link_to '删除', user_path(user), method: :delete, data: { confirm: '确定要删除吗?' } %>
+    <% end %>
+  </td>
+</tr>

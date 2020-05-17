@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title><%= content_for?(:title) ? yield(:title) : @tenant&.name %></title>
+    <% if @tenant&.site_configuration&.icon&.url&.present? %>
+      <link rel="icon" href="<%= @tenant&.site_configuration&.icon %>">
+    <% else %>
+      <link rel="icon" href="/favicon.ico">
+    <% end %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'mobile', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'mobile', 'data-turbolinks-track': 'reload' %>
+    <%# if Rails.env.development? %>
+        <%#= javascript_include_tag 'dev' %>
+    <%# end %>
+    <%= yield :attach_assets %>
+    <% if Rails.env.production? %>
+      <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?d7f32e4668848431ca1408129e2e657a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <% end %>
+</head>
+<script>
+  window.primeMobileShareParams = JSON.stringify({
+    title: "<%= @tenant&.company&.name %>",
+    description: "逛二手车-" + "<%= @tenant&.company&.name %>",
+    cover: "<%= @tenant&.company&.logo&.to_s %>"
+  });
+</script>
+<body class="<%= controller_name %> <%= action_name %>" ontouchstart>
+  <div class="container">
+    <div class="weui-tab">
+      <div class="weui-tab__panel">
+        <%= yield %>
+      </div>
+      <% if @without_menu.present? %>
+        <%= yield :bottom_bar %>
+      <% else %>
+        <%= mobile_menu %>
+      <% end %>
+    </div>
+    <a href="javascript:;" class="tc-go-top" title="回到顶部"></a>
+  </div>
+
+  <%= yield :append_doms %>
+</body>
+</html>

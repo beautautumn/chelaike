@@ -1,0 +1,31 @@
+<h1>老司机查询记录</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> id </th>
+        <th> vin码 </th>
+        <th> 对应报告ID </th>
+        <th> 查询状态 </th>
+        <th> 对方订单号 </th>
+        <th>创建时间</th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <%= render partial: "row", locals: { order: order }%>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="6">
+          共 <%= @counter %> 条记录
+          <%= paginate @orders %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,12 @@
+<% hub = order.old_driver_record_hub || OldDriverRecordHub.new(vin: order.vin) %>
+<tr>
+  <td><%= order.id %></td>
+  <td><%= hub.vin %></td>
+  <td><%= hub.id %></td>
+  <td><%= order.state_text %></td>
+  <td><%= hub.order_id %></td>
+  <td><%= hub.created_at %></td>
+  <td>
+    <%= link_to "查看", old_driver_path(order) %>
+  </td>
+</tr>

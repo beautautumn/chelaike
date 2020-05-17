@@ -1,0 +1,46 @@
+<% if @histories && @histories.size > 0 %>
+<div class="tc-car-detail-part">
+  <div class="title">过户历史</div>
+  <div class="content">
+    <table>
+      <tr>
+        <th width="50%">车主使用过户</th>
+        <th>车商流通过户</th>
+      </tr>
+      <tr>
+        <% person_count = @histories.select { |h| h.transfer_type == "person"}.size %>
+        <% business_count = @histories.size - person_count %>
+        <td><%= person_count %>次</td>
+        <td><%= business_count %>次</td>
+      </tr>
+    </table>
+    <div class="button-container">
+      <button id="transferHistoryDetail">查看过户详情</button>
+    </div>
+  </div>
+</div>
+
+<% content_for :append_doms do %>
+<div id="transferHistoryDialog" class="transfer-history-detail" style="display:none">
+  <div id="transferHistoryMask" class="mask"></div>
+  <div class="dialog">
+    <div class="header">
+      过户详情
+      <a id="closeTHDialog" href="javascript:;">退出</a>
+    </div>
+    <div class="body">
+      <table>
+        <% @histories.each do |history| %>
+          <tr>
+            <td width="90px"><%= history.transfer_at.strftime("%Y-%m-%d") %></td>
+            <td width="70px"><%= history.home_location %></td>
+            <td width="50px"><%= history.transfer_type == "person" ? "个人" : "商家" %></td>
+            <td><%= history.description %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+ 	<package name="erp.core" namespace="/core" extends="erp-default">
+		<action name="catalogue_*" method="{1}" class="core.catalogueAction"></action>
+		<action name="region_*" method="{1}" class="core.regionAction"></action> 
+		<action name="security_*" method="{1}" class="core.sysrightSecurityAction"></action> 
+		<action name="infosource_*" method="{1}" class="core.infosourceAction">
+			<result name="infosource-view">/WEB-INF/jsp/core/infosource-view.jsp</result>
+		</action>   
+		<action name="insurance_*" method="{1}" class="core.insuranceAction"></action>  
+		<action name="catagroup_*" method="{1}" class="core.catalogueGroupAction">
+			<result name="cataloguegroup-view">/WEB-INF/jsp/core/cataloguegroup-view.jsp</result>
+		</action> 
+		<action name="stock_locate_*" method="{1}" class="core.stockLocateAction">
+			<result name="stocklocate-view">/WEB-INF/jsp/core/stocklocate-view.jsp</result>
+		</action>   
+		<action name="depart_*" method="{1}" class="core.departAction"></action>   
+		<action name="staff_*" method="{1}" class="core.staffAction">
+			<result name="choose_role_staff">/WEB-INF/jsp/sale/choose_role_staff.jsp</result>
+		</action>   
+		<action name="oper_his_*" method="{1}" class="core.operHisAction">
+			<result name="oper_his_list">/WEB-INF/jsp/core/oper_his_list.jsp</result>
+		</action>   
+		<action name="warranty_level_*" method="{1}" class="core.warrantyLevelAction">
+			<result name="warrantylevel-view">/WEB-INF/jsp/core/warrantylevel-view.jsp</result>
+		</action>
+
+	</package>
+	
+</struts>

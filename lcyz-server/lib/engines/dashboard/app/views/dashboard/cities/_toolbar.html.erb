@@ -1,0 +1,13 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= form_tag cities_path, method: :get do %>
+        <%= text_field_tag "q[name_or_pinyin_or_zip_code_cont]",
+            @q.try(:[], "name_or_pinyin_or_zip_code_cont"),
+            placeholder: "搜索 名称/拼音/邮政编码"
+        %>
+        <%= submit_tag "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

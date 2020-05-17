@@ -1,0 +1,154 @@
+create_parameters:
+  car:
+    acquirer_id: <%= user.id %> # 收购员
+    acquired_at: <%= Time.zone.now %> # 收购日期
+    # 获取所有 channels
+    # /api/v1/companies/:company_id/channels
+    channel_id: 1 # 收购渠道
+    shop_id: <%= shop.id %> # 分店id
+    acquisition_type: :cooperation # 收购类型
+    name: no_vin
+    # acquisition[收购] consignment[寄卖] cooperation[合作] permute[置换]
+
+    # 合作模式下选填
+    cooperation_company_relationships_attributes: [
+      {
+        cooperation_company_id: <%= cooperation_company.id %>, # 合作商家ID
+        cooperation_price_wan: 200 # 合作金额
+      }
+    ]
+
+    # 寄卖模式下
+    # consignor_name: "张三" # 寄卖人姓名
+    # consignor_phone: "110" # 寄卖人电话
+    # consignor_price_wan: 3 # 寄卖价格
+
+    # 厂家配置
+    manufacturer_configuration: {
+      "基本参数": {
+        "厂商": {
+          "value": "一汽无大众奥迪",
+          "type": "text"
+        },
+        "级别": {
+          "value": "紧凑型车",
+          "type": "text"
+        },
+        "发动机": {
+          "value": "1.4T 150马力 L4",
+          "type": "text"
+        },
+        "变速箱": {
+          "value": "7挡双离合",
+          "type": "text"
+        },
+        "车身结构": {
+          "value": "5门5座两厢车",
+          "type": "text"
+        }
+      }
+    }
+
+    # 收购/置换 都是收购价格
+    acquisition_price_wan: 3 # 收购价格
+
+    # 车辆基本信息
+    # stock_number: "abc" # 库存编号
+    vin: "" # 车辆VIN码
+    state: "preparing" # 车辆状态
+    # preparing[整备] shipping[在途] renting[出租] transferred[转场] loaning[外借]
+    state_note: "正在整备中..."
+    brand_name: "奥迪"
+    manufacturer_name: "一汽-大众奥迪"
+    series_name: "奥迪A3"
+    style_name: "2014款 Sportback 35 TFSI 自动豪华型"
+    car_type: :suv # 车型
+    door_count: 2 # 车门数
+    displacement: "1.7L" # 排气量 如果 is_turbo_charger = true, 即为: 1.7T
+    is_turbo_charger: false # 自然吸气(L) or 涡轮增压(T)
+    fuel_type: :gasoline # 燃油类型
+    # gasoline[汽油] diesel[柴油] electric[电动] hybrid[混合] other[其他]
+    transmission: :auto # 变速箱
+    # manual[手动挡]  auto[自动]  manual_automatic[手自一体]  other[其他]
+    exterior_color: "FFF" # 外饰颜色
+    interior_color: "FFF" # 内饰颜色
+    mileage: 300.9 # 表显里程
+    mileage_in_fact: 323.1 # 实际里程
+    emission_standard: :guo_5 # 排放标准 guo_1 ~ guo_5
+    license_info: :licensed # 牌证信息
+    # licensed[已经上牌] unlicensed[未上牌] new_car[新车]
+    licensed_at: <%= 1.year.ago %> # 首次上牌日期
+
+    manufactured_at: <%= 5.year.ago.to_date %> # 出厂日期
+
+    # 车辆定价信息
+    show_price_wan: 20 # 展厅价格
+    online_price_wan: 19 # 网络标价
+    sales_minimun_price_wan: 17 # 销售底价
+    manager_price_wan: 16 # 经理价
+    alliance_minimun_price_wan: 16 # 联盟底价
+    new_car_guide_price_wan: 30 # 新车指导价
+    new_car_additional_price_wan: 0.5 # 新车加个
+    new_car_discount: 0.05 # 新车折扣
+    new_car_final_price_wan: 27 # 新车完税价
+
+    # 车况描述(内部)
+    interior_note: "还不错" # 车况描述
+
+    # 销售描述
+    star_rating: "A" # 车辆星级 (1..5)
+    # 获取所有 warranties
+    # /api/v1/companies/:company_id/warranties
+    warranty_id: <%= warranty.id %> # 质保等级
+    warranty_fee_yuan: 100 # 质保费用
+    # 接口会提供一个价格, 自动填写上, 允许用户针对改车辆修改
+    is_fixed_price: true # 是否一口价
+    allowed_mortgage: true # 是否可以按揭
+    mortgage_note: "ABC" # 按揭说明
+    selling_point: "没描述, 就是好用" # 卖点描述
+    yellow_stock_warning_days: 10 # 预警天数
+    is_special_offer: true
+
+    # 车辆图片
+    images_attributes: [
+      {
+        url: "aa.jpg",
+        location: "xxx",
+        is_cover: true,
+        sort: 0
+      },
+      {
+        url: "xxx.avi",
+        location: "xxx",
+        is_cover: false,
+        sort: 1
+      }
+    ]
+
+    # 车辆保养
+    maintain_mileage: 200.0 # 保养里程
+    has_maintain_history: true # 有无保养记录
+    new_car_warranty: :manufacturer # 新车质保  manufacturer[厂商] seller[商家] none[无]
+
+  # 牌证信息
+  acquisition_transfer:
+    key_count: 2 # 钥匙数量
+    compulsory_insurance_end_at: <% Time.zone.now %>
+    commercial_insurance_end_at: <% Time.zone.now %>
+    commercial_insurance_amount_yuan: 5
+    compulsory_insurance: true
+    commercial_insurance: true
+
+    images_attributes:
+      -
+        url: "aa111.jpg"
+        location: "xxx"
+        is_cover: true
+      -
+        url: "xx22x.avi"
+        location: "xxx"
+        is_cover: false
+
+  publishers:
+    che168:
+      syncable: false

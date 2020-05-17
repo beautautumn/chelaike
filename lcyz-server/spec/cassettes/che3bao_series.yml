@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://megatron.lina.che3bao.com/api/v1/series/?brand%5Bname%5D=%E5%A5%A5%E8%BF%AA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Timeout:
+      - '5'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 15 Sep 2015 06:38:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"9efb6da412e126b0109f46de4edeb327"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d13d0f1e-356c-4df3-9756-27093630f399
+      X-Runtime:
+      - '0.009052'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJzZXJpZXMiOlt7Im5hbWUiOiLlpaXov6pBMyJ9LHsibmFt
+        ZSI6IuWlpei/qkE0In0seyJuYW1lIjoi5aWl6L+qQTRMIn0seyJuYW1lIjoi
+        5aWl6L+qQTYifSx7Im5hbWUiOiLlpaXov6pBNkwifSx7Im5hbWUiOiLlpaXo
+        v6pRMyJ9LHsibmFtZSI6IuWlpei/qlE1In1dLCJtYW51ZmFjdHVyZXJfbmFt
+        ZSI6IuS4gOaxvS3lpKfkvJflpaXov6oifSx7InNlcmllcyI6W3sibmFtZSI6
+        IkFsbHJvYWQifSx7Im5hbWUiOiLlpaXov6oxMDAifSx7Im5hbWUiOiLlpaXo
+        v6oyMDAifV0sIm1hbnVmYWN0dXJlcl9uYW1lIjoi5YW25LuWIn0seyJzZXJp
+        ZXMiOlt7Im5hbWUiOiLlpaXov6pBMSJ9LHsibmFtZSI6IuWlpei/qkEzKOi/
+        m+WPoykifSx7Im5hbWUiOiLlpaXov6pBNCjov5vlj6MpIn0seyJuYW1lIjoi
+        5aWl6L+qQTUifSx7Im5hbWUiOiLlpaXov6pBNijov5vlj6MpIn0seyJuYW1l
+        Ijoi5aWl6L+qQTcifSx7Im5hbWUiOiLlpaXov6pBOCJ9LHsibmFtZSI6IuWl
+        pei/qlEzKOi/m+WPoykifSx7Im5hbWUiOiLlpaXov6pRNSjov5vlj6MpIn0s
+        eyJuYW1lIjoi5aWl6L+qUTcifSx7Im5hbWUiOiLlpaXov6pSOCJ9LHsibmFt
+        ZSI6IuWlpei/qlMzIn0seyJuYW1lIjoi5aWl6L+qUzUifSx7Im5hbWUiOiLl
+        paXov6pTNiJ9LHsibmFtZSI6IuWlpei/qlM3In0seyJuYW1lIjoi5aWl6L+q
+        UzgifSx7Im5hbWUiOiLlpaXov6pTUTUifSx7Im5hbWUiOiLlpaXov6pUVCJ9
+        LHsibmFtZSI6IuWlpei/qlRUUyJ9XSwibWFudWZhY3R1cmVyX25hbWUiOiLl
+        paXov6oo6L+b5Y+jKSJ9LHsic2VyaWVzIjpbeyJuYW1lIjoi5aWl6L+qUlMg
+        NSJ9LHsibmFtZSI6IuWlpei/qlJTIDcifV0sIm1hbnVmYWN0dXJlcl9uYW1l
+        Ijoi5aWl6L+qUlMifV19
+    http_version: 
+  recorded_at: Tue, 15 Sep 2015 06:38:11 GMT
+recorded_with: VCR 2.9.3

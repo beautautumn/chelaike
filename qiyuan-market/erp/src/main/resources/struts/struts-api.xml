@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+ 	<package name="erp.api" namespace="/api" extends="erp-default">
+		<action  name="auctionInfoAction" class="api.auctionInfoAction">
+      <!--商户车辆登记			-->
+			<result name="auctionInfo">
+				/WEB-INF/jsp/api/auction_info.jsp
+			</result>
+			<result name="auctionInfoPhone">
+				/WEB-INF/jsp/api/auction_info_phone.jsp
+			</result>
+		</action>
+		<action name="che300_*" method="{1}" class="api.Che300Action"></action>
+	</package>	
+	
+</struts>

@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: districts
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  city_id     :integer
+#  pinyin      :string
+#  pinyin_abbr :string
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+dongcheng:
+  name: 东城区
+  city: beijing
+  pinyin: dongcheng
+  pinyin_abbr: dc
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

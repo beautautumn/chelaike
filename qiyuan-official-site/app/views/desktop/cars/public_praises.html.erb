@@ -1,0 +1,58 @@
+<% content_for :navigation_bar do %>
+  <%= link_to  @car.system_name, car_path(@car.id) %> > 车型口碑
+<% end %>
+
+<%
+  paginatable_array = Kaminari
+    .paginate_array([], total_count: @praises_count)
+    .page(params[:page])
+    .per(15)
+%>
+<div class="container content-panel <%= @praises_count <= 15 ? 'no-paginate': '' %>">
+  <% @praises&.each do |praise| %>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+            <div class="avatar-name">
+              <div><%= image_tag praise.logo %></div>
+              <div><%= praise.username %></div>
+            </div>
+          </td>
+          <td>
+            <div class="praise-detail">
+              <div class="date"><%= praise.content.content.date %></div>
+
+              <% praise.content.content.body.take(3).each do |body| %>
+                <div class="detail-item">
+                  <div class="title"><%= body[0] %></div>
+                  <div class="value"><%= body[1] %></div>
+                </div>
+              <% end %>
+              <% praise.content.content.body.drop(3).each do |body| %>
+                <div class="detail-item-toggle">
+                  <div class="title"><%= body[0] %></div>
+                  <div class="value"><%= body[1] %></div>
+                </div>
+              <% end %>
+              <div class="detail-toggle-button">
+                <div class="toggle-button toggle-button-down">
+                  展开全部口碑
+                  <%= image_tag asset_path("desktop/arrow_down.png") %>
+                </div>
+                <div class="toggle-button toggle-button-up">
+                  收起全部口碑
+                  <%= image_tag asset_path("desktop/arrow_up.png") %>
+                </div>
+                <div class="tip">*内容来源于汽车之家，版权归汽车之家及其用户所有</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+  <div class="tc-paginate-wraper">
+    <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+  </div>
+</div>

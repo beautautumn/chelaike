@@ -1,0 +1,14 @@
+zh-CN:
+  enumerize:
+    che168_publish_record:
+      state:
+        pending: 未同步
+        processing: 同步中
+        finished: 同步完成
+        failed: 同步失败
+      publish_state:
+        pending: 未同步
+        reviewing: 审核中
+        published: 已发布
+        failed: 审核失败
+        sold: 已下架

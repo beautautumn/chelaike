@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.che300.com/service/getUsedCarPrice?mile=4&modelId=58&regDate=2012-3&token=3cab9f677fa8dc71126f48c7e91b0c58&zone=11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Jul 2017 06:59:53 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=hg7o7e2sm649354q9399m2mbj5; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '319'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2WPzUoDMRSFX2XIekwmM21tCyJuBMGdLgNDOomZSGYyJJkO
+        RXwALa5dKLoqiPQJCurLOMXHMJXW+rO859x77vkugHXU1RYMAQYh4GOq0srI
+        jINhHMHBIARKNxsFD+BuCITW7M9OLkX+LcUwiUPAOFXcpKN68uO61wmBLJkc
+        S1b/e7S+2IgYeq02yjfLnavskCCCmqaBWc6TKIKZLgiqZClETdAY4wzjots3
+        cYTjnUR09s+MLvYmdZnlVHuydSxI+jDxI5PWG0bw1POXjBrmvfbupes9J51a
+        rbaz2cfb80HvOAhWqcv5a7CVTg9PjoLl1bS9fmofF8v7efswDYL25vZ9MfcZ
+        GTWp0kKnW4IvAGotd/YXg8t5wQmSBRXcEjQyvg9BalXOTxieVwJcfgJaaVoj
+        qAEAAA==
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:59:55 GMT
+- request:
+    method: get
+    uri: http://api.che300.com/service/getUsedCarPrice?mile=4&modelId=58&regDate=2012-3&token=3cab9f677fa8dc71126f48c7e91b0c58&zone=11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Jul 2017 06:59:53 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=fb62gf22n2oen6dbajgi9reme6; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '319'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2WPzUoDMRSFX2XIekwmM21tCyJuBMGdLgNDOomZSGYyJJkO
+        RXwALa5dKLoqiPQJCurLOMXHMJXW+rO859x77vkugHXU1RYMAQYh4GOq0srI
+        jINhHMHBIARKNxsFD+BuCITW7M9OLkX+LcUwiUPAOFXcpKN68uO61wmBLJkc
+        S1b/e7S+2IgYeq02yjfLnavskCCCmqaBWc6TKIKZLgiqZClETdAY4wzjots3
+        cYTjnUR09s+MLvYmdZnlVHuydSxI+jDxI5PWG0bw1POXjBrmvfbupes9J51a
+        rbaz2cfb80HvOAhWqcv5a7CVTg9PjoLl1bS9fmofF8v7efswDYL25vZ9MfcZ
+        GTWp0kKnW4IvAGotd/YXg8t5wQmSBRXcEjQyvg9BalXOTxieVwJcfgJaaVoj
+        qAEAAA==
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:59:55 GMT
+recorded_with: VCR 3.0.1

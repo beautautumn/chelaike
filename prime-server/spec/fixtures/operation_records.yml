@@ -1,0 +1,148 @@
+# == Schema Information
+#
+# Table name: operation_records # 操作历史
+#
+#  id                    :integer          not null, primary key # 操作历史
+#  targetable_id         :integer                                # 多态ID
+#  targetable_type       :string                                 # 多态类型
+#  operation_record_type :string                                 # 事件类型
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  user_id               :integer                                # 操作人ID
+#  messages              :jsonb                                  # 操作信息
+#  company_id            :integer                                # 公司ID
+#  shop_id               :integer                                # 店ID
+#  detail                :jsonb                                  # 详情
+#  user_type             :string           default("User")
+#  user_passport         :jsonb                                  # 操作用户信息
+#
+
+<%
+  aodi_id = ActiveRecord::FixtureSet.identify(:aodi)
+  intention_id = ActiveRecord::FixtureSet.identify(:doraemon_seeking_aodi)
+%>
+
+
+aodi_created_record:
+  targetable_id: <%= aodi_id %>
+  targetable_type: Car
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  operation_record_type: car_created
+  messages:
+    imported: false
+    title: 新车入库
+    stock_number: abc
+    user_name: Zhangsan
+    name: "奥迪 A3 2014款 Sportback 35 TFSI 自动豪华型"
+    acquirer_name: Zhangsan
+
+aodi_1_stock_out_sold_record:
+  targetable_id: <%= ActiveRecord::FixtureSet.identify(:aodi_1) %>
+  targetable_type: Car
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  operation_record_type: stock_out
+  messages:
+    name: 福特 福克斯 2013款 两厢经典 1.8L 自动基本型
+    title: 销售出库
+    car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_1) %>
+    seller_id: <%= ActiveRecord::FixtureSet.identify(:zhangsan) %>
+    user_name: ABC
+    seller_name: Zhangsan
+    stock_number: abc1
+    stock_out_type: sold
+
+alliance_invitation_record:
+  targetable_id: <%= ActiveRecord::FixtureSet.identify(:tianche_invitation) %>
+  targetable_type: AllianceInvitation
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  operation_record_type: alliance_invitation_created
+  messages:
+    title: 联盟邀请
+    state: unprocessed
+    user_name: Git
+    alliance_id: <%= ActiveRecord::FixtureSet.identify(:avengers) %>
+    company_name: 同性交友网站
+    alliance_info: info
+    alliance_name: 裆中央
+    invited_company_ids: []
+
+tianche_daily_report:
+  operation_record_type: daily_report
+  user_id: zhangsan
+  company: tianche
+  messages:
+    cars_sold_today:
+      - <%= aodi_id %>
+    cars_created_today: []
+    cars_reserved_today: []
+    cars_sold_current_month: []
+    cars_created_current_month: []
+
+alliance_aodi_created_record:
+  targetable_id: <%= aodi_id %>
+  targetable_type: Car
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  operation_record_type: alliance_cars_created_statistic
+  messages:
+    title: 联盟新车入库
+    result:
+      <%= aodi_id %>: [<%= intention_id %>]
+    cars_count: 1
+    car_ids: [<%= aodi_id %>]
+    intentions: [<%= intention_id %>]
+    intentions_count: 1
+    alliance_name: "复仇者联盟"
+
+aodi_stock_warning_record:
+  targetable_id: <%= aodi_id %>
+  targetable_type: Car
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  operation_record_type: stock_warning
+  shop_id: disney.id
+  messages:
+    title: 库存预警
+    user_name: Zhangsan
+    name: "奥迪 A3 2014款 Sportback 35 TFSI 自动豪华型"
+    car_id: <%= aodi_id %>
+    stock_status: "红色预警"
+
+aodi_priced:
+  targetable_id: <%= aodi_id %>
+  targetable_type: Car
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  operation_record_type: car_priced
+  shop_id: disney.id
+  messages:
+    name: "奥迪 A3 2014款 Sportback 35 TFSI 自动豪华型"
+    title: 车辆定价
+    car_id: <%= aodi_id %>
+    user_name: Zhangsan
+    show_price_wan: 20
+    previous_show_price_wan: 21
+    sales_minimun_price_wan: 17
+    previous_sales_minimun_price_wan: 18
+    manager_price_wan: 16
+    previous_manager_price_wan: 17
+
+token_recharged:
+  operation_record_type: token_recharge
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  user: zhangsan
+  company: tianche
+  messages:
+    info: "你充值的10.00车币已到账，当前剩余110.23车币"
+    title: 车币充值
+    token: 10.00
+    action: notify

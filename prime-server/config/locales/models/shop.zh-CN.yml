@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    models:
+      shop: 分店
+    attributes:
+      shop:
+        name: 名称
+        company_id: 公司ID
+        deleted_at: 删除时间
+        created_at: 创建时间
+        updated_at: 最后更新时间

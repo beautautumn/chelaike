@@ -1,0 +1,37 @@
+# == Schema Information
+#
+# Table name: alliance_companies # 联盟公司
+#
+#  id                  :integer          not null, primary key # 联盟公司
+#  name                :string                                 # 名称
+#  contact             :string                                 # 联系人
+#  contact_mobile      :string                                 # 联系人电话
+#  sale_mobile         :string                                 # 销售电话
+#  logo                :string                                 # LOGO
+#  note                :string                                 # 备注
+#  province            :string                                 # 省份
+#  city                :string                                 # 城市
+#  district            :string                                 # 区
+#  street              :string                                 # 详细地址
+#  owner_id            :integer                                # 公司拥有者ID
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  settings            :jsonb                                  # 设置
+#  deleted_at          :datetime                               # 删除时间
+#  slogan              :text                                   # 宣传语
+#  qrcode              :string                                 # 商家二维码
+#  banners             :string           is an Array           # 网站Banners
+#  alliances_count     :integer                                # 联盟数量
+#  water_mark_position :jsonb                                  # 水印位置
+#  water_mark          :string                                 # 水印图片url
+#
+
+alliance_tianche:
+  name: 天车二手车联盟公司
+  owner: alliance_zhangsan
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  updated_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  qrcode: "http://google.com"
+  banners:
+    - "http://google.com/image/1"
+    - "http://google.com/image/2"

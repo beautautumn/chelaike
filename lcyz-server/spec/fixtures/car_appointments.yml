@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: car_appointments # 预约看车
+#
+#  id         :integer          not null, primary key # 预约看车
+#  car_id     :integer                                # 车辆ID
+#  phone      :string                                 # 手机
+#  name       :string                                 # 姓名
+#  seller_id  :integer                                # 销售员ID
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  company_id :integer                                # 公司ID
+#
+
+aodi_car_appointment:
+  company: tianche
+  phone: "110"
+  name: "小丽"
+  seller: zhangsan
+  car: aodi

@@ -1,0 +1,26 @@
+<h1>APP 管理</h1>
+
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="ui column">
+      <%=link_to "添加", new_app_path,  { class: "ui teal button" } %>
+    </div>
+  </div>
+
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Logo</th>
+        <th>名称</th>
+        <th>别名</th>
+        <th>域名</th>
+        <th>Slogan</th>
+        <th>PC版地址</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @apps %>
+    </tbody>
+  </table>
+</div>

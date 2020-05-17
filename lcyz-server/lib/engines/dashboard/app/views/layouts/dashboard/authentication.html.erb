@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>内部运营分析系统</title>
+    <%= stylesheet_link_tag "//cdn.bootcss.com/semantic-ui/2.1.6/semantic.min.css" %>
+    <%= stylesheet_link_tag    "dashboard/application", media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="login ui middle aligned center aligned grid">
+      <div class="column">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= javascript_include_tag "dashboard/application" %>
+    <%= javascript_include_tag "//cdn.bootcss.com/semantic-ui/2.1.6/semantic.min.js" %>
+  </body>
+</html>
+

@@ -1,0 +1,63 @@
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/*.log
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/puma.rb
+
+# Ignore application configuration
+/config/application.yml
+/config/database.yml
+/config/secrets.yml
+/config/unicorn.rb
+**/*.swp
+
+# Ignore Byebug command history file.
+.byebug_history
+
+
+# Created by https://www.gitignore.io/api/rails,ruby
+
+### Rails ###
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/public/assets
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+config/initializers/secret_token.rb
+.env
+/vendor/bundle
+.rvmrc
+
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+.byebug_history
+
+*.gem
+/.config
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+*.DS_Store
+/config/pingpp/*_key.pem
+
+TAGS

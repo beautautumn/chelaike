@@ -1,0 +1,87 @@
+<tr>
+  <td> <%= "#{record.staff.name}(#{record.staff.phone})" %> </td>
+  <td> <%= record.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+  <td>
+    <% case record.operation_type %>
+    <% when "company_deletion" %>
+      <u>删除公司</u><br/><%= "#{record.content["company_name"]}（#{record.content["company_id"]}），老板 #{record.content["owner_name"]}（#{record.content["owner_id"]}）" %>
+
+    <% when "user_deletion" %>
+      <u>删除用户</u><br/><%= "#{record.content["user_name"]}:#{record.content["user_phone"]}（#{record.content["user_id"]}），所属公司 #{record.content["company_name"]}（#{record.content["company_id"]}）" %>
+
+    <% when "enable_alliance_active_tag" %>
+      <u>设置联盟活跃</u> <br/>联盟：<%= "#{record.content["alliance_name"]}【#{record.content["alliance_id"]}】"%>
+      <br/> 车商：<%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "disable_alliance_active_tag" %>
+      <u>设置联盟不活跃</u> <br/>联盟：<%= "#{record.content["alliance_name"]}【#{record.content["alliance_id"]}】"%>
+      <br/> 车商：<%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "company_update_token" %>
+      <u>修改车商车币</u> <br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】"%>
+      <br/> 车币：<%= "#{record.content["old_value"]}" %>=><%= "#{record.content["new_value"]}" %>
+
+    <% when "company_update_advisor" %>
+      <u>修改服务顾问</u> <br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】"%>
+      <br/> 原顾问：
+      <%= if record.content["old_value"].nil?
+            ""
+          else
+            record.content["old_value"]["name"]
+          end %>
+      <br/> 新顾问：
+      <%= if record.content["new_value"].nil?
+            ""
+          else
+            record.content["new_value"]["name"]
+          end %>
+
+    <% when "enable_company_active_tag" %>
+      <u>设置车商活跃</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "disable_company_active_tag" %>
+      <u>设置车商非活跃</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "enable_company_honesty_tag" %>
+      <u>设置车商诚信</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "disable_company_honesty_tag" %>
+      <u>设置车商非诚信</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "enable_company_own_brand_tag" %>
+      <u>设置车商品牌</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "disable_company_own_brand_tag" %>
+      <u>设置车商非品牌</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "companies_clear_active_tag" %>
+      <u>清除所有车商活跃标记</u>
+    <% when "companies_clear_honesty_tag" %>
+      <u>清除所有车商诚信标记</u>
+    <% when "companies_clear_own_brand_tag" %>
+      <u>清除所有车商品牌标记</u>
+    <% when "enable_manage_active_tag" %>
+
+      <u>设置车商考核活跃</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "disable_manage_active_tag" %>
+      <u>设置车商考核非活跃</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+
+    <% when "company_add_label" %>
+      <u>增加车商标签</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+      <br/> 标签：<%= "#{record.content["value"]}" %>
+
+    <% when "company_delete_label" %>
+      <u>删除车商标签</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+      <br/> 标签：<%= "#{record.content["value"]}" %>
+
+    <% when "reset_boss_authority" %>
+      <u>恢复车商老板权限</u><br/><%= "#{record.content["company_name"]}【#{record.content["company_id"]}】" %>
+      <br/> 老板：<%= "#{record.content["name"]} 【#{record.content["user_name"]}，#{record.content["phone"]}】" %>
+
+
+    <% else %>
+      <%= "#{record.content}" %>
+    <% end %>
+  </td>
+</tr>

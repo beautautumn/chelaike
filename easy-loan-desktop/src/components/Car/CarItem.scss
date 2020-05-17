@@ -1,0 +1,64 @@
+.carItem {
+  &.column {
+    display: flex;
+    flex: 1;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    &.col {
+      flex: 1;
+    }
+  }
+
+  .alignRight {
+    text-align: right;
+  }
+
+  .car {
+    flex: none;
+    border-right: none;
+  }
+
+  .carImg {
+    flex: none;
+    margin-right: 20px;
+    position: relative;
+    img {
+      height: 75px;
+    }
+    .carImageMark {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  .carInfo {
+    flex: none;
+    margin-right: 20px;
+    div {
+      max-width: 260px;
+      width: 260px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .certificate {
+    flex: 1;
+    text-align: right;
+    a {
+      display: block;
+    }
+  }
+}

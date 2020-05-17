@@ -1,0 +1,284 @@
+# 品牌
+brands:
+  中欧:
+    name: 中欧
+    first_letter: Z
+    code: 201509000
+  Dutchmen:
+    name: Dutchmen
+    first_letter: D
+    code: 20150935
+  乔治巴顿:
+    name: 乔治巴顿
+    first_letter: Q
+    code: 20150939
+# 车系
+series:
+  奔驰房车:
+    name: 奔驰房车
+    manufacturer: 中欧
+    brand_code: 201509000
+    code: 201509006
+  Aspen拖挂式房车:
+    name: Aspen拖挂式房车
+    manufacturer: Dutchmen
+    brand_code: 20150935
+    code: 20150936
+
+  挑战者:
+    name: 挑战者
+    manufacturer: 道奇(进口)
+    brand_code: 41
+    code: 20150937
+
+  科尔维特:
+    name: 科尔维特
+    manufacturer: 雪佛兰(进口)
+    brand_code: 71
+    code: 20150938
+
+  乔治巴顿:
+    name: 乔治巴顿
+    manufacturer: 乔治巴顿
+    brand_code: 20150939
+    code: 20150940
+
+  Amarok:
+    name: Amarok
+    manufacturer: 大众(进口)
+    brand_code: 1
+    code: 20150941
+  致尚:
+    name: 致尚
+    manufacturer: 长安汽车
+    brand_code: 76
+    code: 20150942
+  五菱鸿图:
+    name: 五菱鸿图
+    manufacturer: 上汽通用五菱
+    brand_code: 114
+    code: 20150947
+
+  E450:
+    name: 福特E450
+    manufacturer: 福特(进口)
+    brand_code: 8
+    code: 20150943
+
+  特使:
+    name: 特使
+    manufacturer: 雪佛兰(进口)
+    brand_code: 71
+    code: 20150944
+  GLC:
+    name: GLC
+    manufacturer: 奔驰(进口)
+    brand_code: 36
+    code: 20150945
+  金牛座:
+    name: 金牛座
+    manufacturer: 福特(进口)
+    brand_code: 8
+    code: 20160301
+  塔库玛:
+    name: 塔库玛
+    manufacturer: 丰田(进口)
+    brand_code: 3
+    code: 20160307
+# 车款
+styles:
+  2016款320Li时尚型:
+    series_code: 66
+    year: 2016款
+    name: 2016款 320Li时尚型
+    id: 20150948
+  2011款Cyenne3.6L美规版:
+    series_code: 172
+    year: 2011款
+    name: 2011款 Cyenne3.6L美规版
+    id: 20150949
+  # 奔驰 奔驰GL级(进口)
+  2013款GL4504MATIC中东版:
+    series_code: 467
+    year: 2013款
+    name: 2013款 GL450 4MATIC(中东版)
+    id: 201509002
+  2013款GL550(中东版):
+    series_code: 467
+    year: 2013款
+    name: 2013款 GL550(中东版)
+    id: 201509004
+
+  # 宝马 宝马X5(进口)
+  2013款xDrive35i领先型(美规版):
+    series_code: 159
+    year: 2013款
+    name: 2013款 xDrive35i 领先型(美规版)
+    id: 201509003
+
+  # 保时捷 卡宴
+  2008款3.6L(美规版):
+    series_code: 172
+    year: 2008款
+    name: 2008款 3.6L (美规版)
+    id: 201509005
+
+  # 中欧 奔驰房车
+  2015款适豪A豪华旅居车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 适豪A 豪华旅居车
+    id: 201509007
+  2015款适豪B豪华旅居车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 适豪B 豪华旅居车
+    id: 201509008
+  2015款适豪C豪华旅居车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 适豪C 豪华旅居车
+    id: 201509009
+
+  2015款适尊A豪华旅居车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 适尊A 豪华旅居车
+    id: 201509010
+  2015款适尊B豪华旅居车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 适尊B 豪华旅居车
+    id: 201509011
+  2015款适尊C豪华旅居车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 适尊C 豪华旅居车
+    id: 201509012
+
+  2015款尊旅豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊旅 豪华商务车
+    id: 201509013
+  2015款尊逸豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊逸 豪华商务车
+    id: 201509014
+  2015款尊致豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊致 豪华商务车
+    id: 201509015
+  2015款尊铂A豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊铂A 豪华商务车
+    id: 201509016
+  2015款尊铂B豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊铂B 豪华商务车
+    id: 201509017
+  2015款尊铂C豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊铂C 豪华商务车
+    id: 201509018
+  2015款尊适B豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊适B 豪华商务车
+    id: 201509019
+  2015款尊适A豪华商务车:
+    series_code: 201509006
+    year: 2015款
+    name: 2015款 尊适A 豪华商务车
+    id: 201509020
+
+  2011款晶钻商旅房车:
+    series_code: 201509006
+    year: 2011款
+    name: 2011款 晶钻商旅房车
+    id: 201509021
+  2011款尊逸A型旅居房车:
+    series_code: 201509006
+    year: 2011款
+    name: 2011款 尊逸A型旅居房车
+    name: 2011款 晶钻商旅房车
+    id: 201509022
+  2011款尊铂A型商务房车:
+    series_code: 201509006
+    year: 2011款
+    name: 2011款 尊铂A型商务房车
+    id: 201509023
+  2011款尊逸B型旅居房车:
+    series_code: 201509006
+    year: 2011款
+    name: 2011款 尊逸B型旅居房车
+    id: 201509024
+  2011款尊逸C型商旅房车:
+    series_code: 201509006
+    year: 2011款
+    name: 2011款 尊逸C型商旅房车
+    id: 201509025
+  2011款尊致商旅房车:
+    series_code: 201509006
+    year: 2011款
+    name: 2011款 尊致商旅房车
+    id: 201509026
+
+  2008款商务之星凌特315CDI:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 商务之星 凌特315CDI
+    id: 201509027
+  2008款凌特315:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 凌特315
+    id: 201509028
+  2008款商旅车凌特315CDI:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 商旅车 凌特315CDI
+    id: 201509029
+  2008款商旅车凌特324:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 商旅车 凌特324
+    id: 201509030
+  2008款商务之星凌特324:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 商务之星 凌特324
+    id: 201509031
+  2008款 凌特324:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 凌特324
+    id: 201509032
+  2008款 维雅诺:
+    series_code: 201509006
+    year: 2008款
+    name: 2008款 维雅诺
+    id: 201509033
+
+  2009款1.5L精英版AT:
+    series_code: 3876
+    year: 2009款
+    name: 2009款 1.5L 精英版AT
+    id: 201509034
+
+  2016款 2700 阿曼版:
+    series_code: 46
+    year: 2016款
+    name: 2016款 2700 阿曼版
+    id:  201603171
+
+  2009款 第八代雅阁2.0自动周年典藏版:
+    series_code: 78
+    year: 2009款
+    name: 2009款 第八代雅阁2.0自动周年典藏版
+    id:  201606153

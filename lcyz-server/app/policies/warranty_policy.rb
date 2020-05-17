@@ -1,0 +1,2 @@
+class WarrantyPolicy < SystemSettingPolicy
+end

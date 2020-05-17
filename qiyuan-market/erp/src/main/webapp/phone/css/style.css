@@ -1,0 +1,569 @@
+/*!
+ * copyright (c) 2014-2015, Autohome.2sc v1.0.0
+ * description: Autohome.2sc FE Group
+ * build time: Thu Mar 03 2016 15:05:57 GMT+0800 (中国标准时间)
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+	acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s,
+	samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+	dd, ol, ul, li, fieldset, form, input, select, textarea, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	background-color: #eceef0;
+	font: 16px/1 "STHeiti", "Arial", "sans-serif";
+	color: #717886;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+a {
+	color: #717886;
+	outline: none;
+	text-decoration: none;
+}
+
+.list-infor01 li .anchor {
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.list-infor01 li .colors-area {
+	float: right;
+	/* margin-right: 15px; */
+}
+
+.list-infor01 li .colors {
+	width: 16px;
+	height: 16px;
+	background-color: #f60;
+	margin-right: 3px;
+	display: inline-block;
+	box-shadow: 1px 1px 1px #d0d0d0;
+	vertical-align: -1px;
+}
+
+a:hover {
+	color: #717886;
+	text-decoration: none;
+}
+
+a {
+	color: #717886;
+	outline: none;
+	text-decoration: none;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+.nav-final {
+	position: relative;
+	height: 2.625rem;
+	line-height: 1;
+	background-color: #4680d1;
+}
+
+.nav-final p {
+	margin: 0 5rem;
+	padding: 0.625rem 0;
+	font: 1.25rem "STHeiti", "Arial", "sans-serif";
+	color: #ffffff;
+	text-align: center;
+}
+
+.step {
+	padding: 2px 0;
+	background-color: #ffffff;
+}
+
+.step table {
+	width: 100%;
+	font-size: 14px;
+	color: #4680d1;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.step table .num {
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	line-height: 16px;
+	border: 1px solid #4680d1;
+	color: #4680d1;
+	text-align: center;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.step table .arrow {
+	position: relative;
+	width: 10px;
+	height: 12px;
+	display: block;
+}
+
+.h2-title {
+	margin: 13px 15px;
+	height: 20px;
+	line-height: 20px;
+	color: #141823;
+	font-size: 1rem;
+}
+
+.h2-title .line {
+	width: 2px;
+	height: 18px;
+	float: left;
+	margin: 1px 0 0;
+	background-color: #4680d1;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.list-infor01 {
+	margin-top: 0.625rem;
+	background-color: #ffffff;
+}
+
+.list-infor01 li {
+	border-bottom: solid #e8e8e8 1px;
+	overflow: hidden;
+	color: #c0c7d1;
+}
+
+.list-infor01 a {
+	display: block;
+	padding: 11px 0 11px 13px;
+	margin: 0 15px;
+	font-size: 1rem;
+	line-height: 22px;
+	position: relative;
+}
+
+.list-infor01 .red-star {
+	color: #f84949;
+	position: absolute;
+	left: 0;
+	top: 15px;
+}
+
+.list-infor01 a .caption {
+	font-size: 0.875rem;
+}
+
+.fn-left {
+    float: left;
+}
+
+.fn-right {
+    float: right;
+}
+
+.list-infor01 a .font12 {
+	color: #717886;
+	font-size: 1rem;
+	float: right;
+	margin-right: 20px;
+}
+
+.list-infor01 .arrow-right {
+	width: 10px;
+	height: 20px;
+	background-position: -55px -13px;
+	position: absolute;
+	top: 50%;
+	margin-top: -11px;
+	right: 0;
+	overflow: hidden;
+	-webkit-transfp-txorm: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	display: inline-block;
+}
+
+.list-infor01 li .color-select {
+	height: 25px;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 18px;
+	width: 100%;
+}
+
+.icon-backward, .icon-list, .step li .arrow, .arrow-right, .icon-mark, .n-m-icon, .icon-close, .error-icon, .cus-ser-close {
+    background: url(http://www.autoimg.cn/2scimg/m/website/20150914/icon.png) no-repeat;
+    background-size: 65px auto;
+}
+
+.list-infor01 li .select-wrap .arrow-right {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-animation: spin 2s infinite linear;
+	animation: spin 2s infinite linear;
+}
+.list-infor01 li .select-year select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 87px;
+}
+input, select, textarea {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	tap-highlight-color: transparent;
+	outline: 0;
+	box-shadow: none;
+}
+option {
+    font-weight: normal;
+}
+user agent stylesheetoption {
+    font-weight: normal;
+    display: block;
+    padding: 0px 2px 1px;
+    white-space: pre;
+    min-height: 1.2em;
+}
+
+dd {
+    display: block;
+    -webkit-margin-start: 40px;
+}
+
+.input {
+	border: 0;
+	padding: 0 5px;
+	margin-left: 10px;
+	margin-right: 20px;
+	float: right;
+	text-align: right;
+	width: 200px;
+	color: #717886;
+	font-size: 0.9rem;
+}
+
+.storeState {
+	height: 45px;
+	width: 90%;
+	margin: auto;
+}
+
+.storeState a {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	line-height: 45px;
+	color: #fff;
+}
+
+.storeState .out {
+	border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
+	background: #4680d1;
+}
+
+.storeState .in {
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	background: #717886;
+}
+
+.btm-c-box {
+	padding: 1.1875rem 0.3125rem;
+	overflow: hidden;
+	border-top: 1px solid #dddee3;
+}
+
+.btm-c-box li:only-child {
+	display: block;
+	width: 100%;
+}
+
+.btm-c-box li {
+	float: left;
+	width: 50%;
+}
+
+.btm-c-box .btn {
+	display: block;
+	text-align: center;
+	margin: 0 10px;
+}
+
+.btn {
+	display: inline-block;
+	height: 2rem;
+	font-size: 1rem;
+	color: #ffffff;
+	line-height: 2rem;
+	padding: 0.4375rem 0.9375rem;
+	background-color: #4680d1;
+	border: 1px solid #4680d1;
+	border-radius: 5px;
+}
+
+.btn:hover {
+	color: #fff;
+}
+
+/* ========品牌选择样式======== */
+.widget * {
+	margin: 0;
+	padding: 0;
+}
+
+.w-nav {
+	z-index: 999;
+	background: #3b5998;
+	position: relative;
+}
+
+.widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 {
+	font-weight: 500;
+}
+
+.w-nav-title {
+	height: 20px;
+	padding: 10px 0;
+	font-size: 18px;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+}
+
+.w-nav-back:hover {
+	color: #fffffe;
+	text-decoration: none;
+}
+
+.widget a {
+	text-decoration: none;
+}
+
+.w-nav-back {
+	display: inline-block;
+	height: 26px;
+	padding: 7px 0 7px 6px;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.w-nav-back .w-arrow-left {
+	float: left;
+	width: 12px;
+	height: 26px;
+	background-position: 0 0;
+}
+
+.w-icon, .w-icon-arrow {
+	background: url(http://x.autoimg.cn/m/news/images/bg-widget-v1111.png)
+		no-repeat;
+	background-size: 120px auto;
+}
+
+.w-nav-back span {
+	float: left;
+	padding: 5px 5px 5px 2px;
+	background: #5f7dbe;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.w-main {
+	min-height: 320px;
+}
+
+.w-title01 {
+	background: #e1e5ed;
+	overflow: hidden;
+}
+
+.w-title01 h3 {
+	float: left;
+	padding: 11px 0 11px 10px;
+	font-size: 16px;
+	color: #4e5563;
+	line-height: 18px;
+	vertical-align: top;
+}
+
+.widget ol, .widget ul {
+	list-style: none;
+}
+
+.w-sift-brand {
+	padding: 5px 0;
+	overflow: hidden;
+}
+
+.w-sift-brand li {
+	float: left;
+	width: 33.3%;
+	position: relative;
+}
+
+.w-sift-brand .item a {
+	display: block;
+	padding: 13px 0 13px 10px;
+	color: #4e5563;
+	line-height: 18px;
+	font-size: 16px;
+}
+
+.w-sift-brand .item a:hover {
+	color: #4e5563;
+}
+
+.text {
+	color: #717886;
+	font-size: 0.9rem;
+	float: right;
+	margin-right: 20px;
+}
+
+.list-infor01 li .error {
+    margin: 10px 15px;
+    font-size: 12px;
+    color: #f84949;
+    position: relative;
+}
+
+.list-infor01 li .select-year {
+	position: relative;
+	float: left;
+	width: 67px;
+	height: 20px;
+	padding-right: 20px;
+	color: #444;
+	text-align: right;
+}
+
+.list-infor01 li .select-month {
+	position: relative;
+	float: left;
+	width: 67px;
+	height: 20px;
+	padding-right: 20px;
+	border-left: 1px solid #e9e9e9;
+	margin-left: 10px;
+	color: #444;
+	text-align: right;
+}
+
+.list-infor01 li .select-month select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 87px;
+}
+.list-infor01 li.click .piclist {
+    display: block;
+}
+
+.piclist dd {
+    width: 33.3%;
+    text-align: center;
+    float: left;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.piclist dd .img {
+    width: 87px;
+    height: 87px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.piclist dd .img input {
+    position: absolute;
+    font-size: 50px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 87px;
+    height: 87px;
+    z-index: 10;
+}
+
+.piclist dd div {
+    line-height: 30px;
+    color: #c0c7d1;
+    font-size: 0.75rem;
+}
+
+.piclist dd .img img {
+    width: 87px;
+    height: 87px;
+}
+img {
+    vertical-align: top;
+}
+span .closeNode{
+    position: absolute;
+    top:10px;
+    margin-left:130px;
+    font-size: 1.5em;
+    color: red;
+}
+.btn-upload {
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    background: #666;
+    text-align: center;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+}

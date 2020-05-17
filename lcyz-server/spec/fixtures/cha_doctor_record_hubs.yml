@@ -1,0 +1,126 @@
+# == Schema Information
+#
+# Table name: cha_doctor_record_hubs # 查博士报告
+#
+#  id                  :integer          not null, primary key # 查博士报告
+#  vin                 :string                                 # vin码
+#  brand_name          :string                                 # 品牌
+#  engine_no           :string                                 # 发动机号
+#  license_plate       :string                                 # 车牌号
+#  sent_at             :datetime                               # 请求发送时间
+#  order_id            :string                                 # 订单ID
+#  make_report_at      :datetime                               # 报告生成时间
+#  report_no           :string                                 # 报告编号
+#  report_details      :jsonb                                  # 详细报告
+#  pc_url              :string                                 # 生成报告的电脑端URL
+#  mobile_url          :string                                 # 生成报告的手机端URL
+#  fetch_info_at       :datetime                               # 拉取报告的时间
+#  notify_at           :datetime                               # 通知回调时间
+#  order_status        :string                                 # 查询结果状态码
+#  order_message       :string                                 # 查询结果对应消息
+#  notify_status       :string                                 # 异步回调结果状态
+#  notify_message      :string                                 # 异步回调结果消息
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  order_state         :string                                 # 购买报表同步返回结果的状态
+#  notify_state        :string                                 # 购买报表异步通知结果的状态
+#  series_name         :string                                 # 车系名
+#  style_name          :string                                 # 车型
+#  summany_status_data :jsonb                                  # 概况的状态
+#
+
+cha_doctor_record_hub:
+  vin: LFPH3ACC7A1A61382
+  brand_name: "长安"
+  engine_no: ""
+  license_plate: nil
+  sent_at: <%= Time.zone.parse("2016-12-26").utc.to_s(:db) %>
+  order_id: "1e5dc4f3aa73425f9f56c0c76f5013ff"
+  report_no: "2016122303343376"
+  report_details: {
+    vin: "LFPH3ACC7A1A61382",
+    brand: "长安",
+    carType: nil,
+    message: "已出报告",
+    makeDate: "--",
+    reportNo: "2016122303343376",
+    modelName: "长安SC7169GA4轿车",
+    seriesName: "逸动XT",
+    carFireFlag: 0,
+    carWaterFlag: 0,
+    displacement: "1.598",
+    manufacturer: "长安汽车",
+    mainTainTimes: "2.9",
+    lastRepairTime: "2016-01-01",
+    makeReportDate: "2016-12-23 15:31",
+    productionArea: "国产",
+    mileageEstimate: 15437,
+    effluentStandard: nil,
+    lastMainTainTime: "2016-01-01",
+    mileageEveryYear: "8118",
+    transmissionType: "手自一体",
+    mileageIsNormalFlag: 1,
+    normalRepairRecords: [
+      {
+        date: "2015-04-06",
+        type: "维修",
+        remark: "JFSA0043部分车辆召回更换防冻液&shy;;部分车辆召回更换防冻液 ;",
+        content: "清洗管道更换防冻液&shy; ;",
+        materal: "无零件 ;",
+        mileage: 2292,
+        payType: nil,
+        mainTainDate: 1428278400000,
+        repairRecordsDate: nil },
+      {
+        date: "2015-04-23",
+        type: "保养",
+        remark: nil,
+        content: nil,
+        materal: nil,
+        mileage: 2500,
+        payType: nil,
+        mainTainDate: 1429747200000,
+        repairRecordsDate: nil },
+      {
+        date: "2015-05-10",
+        type: "保养",
+        remark: nil,
+        content: nil,
+        materal: nil,
+        mileage: 3471,
+        payType: nil,
+        mainTainDate: 1431216000000,
+        repairRecordsDate: nil },
+      {
+        date: "2016-01-01",
+        type: "保养",
+        remark: nil,
+        content: nil,
+        materal: nil,
+        mileage: 8297,
+        payType: nil,
+        mainTainDate: 1451606400000,
+        repairRecordsDate: nil}],
+      carOutsideRecordsFlag: 0,
+      carComponentRecordsFlag: 0,
+      carConstructRecordsFlag: 0,
+      outsideAnalyzeRepairRecords: nil,
+      componentAnalyzeRepairRecords: nil,
+      constructAnalyzeRepairRecords: nil }
+
+  pc_url:
+    "http://api.chaboshi.cn/new_report/show_report?nonce=13410ef1-0fe7-47a7-86b2-7394d23184b4&orderid=1e5dc4f3aa73425f9f56c0c76f5013ff&signature=tdO6Yb1WhEao3zlPX22q%2BiTfX%2B0%3D&timestamp=1482478314565&userid=3376"
+  mobile_url:
+    "http://api.chaboshi.cn/new_report/show_reportMobile?nonce=b9bfaf9d-3a27-4e68-bd33-dd0f059f6cf5&orderid=1e5dc4f3aa73425f9f56c0c76f5013ff&signature=F8tsolmmnBJEPvXcRjlLFl4xn%2BI%3D&timestamp=1482478314566&userid=3376"
+  fetch_info_at: <%= Time.zone.parse("2016-12-26") %>
+  notify_at: <%= Time.zone.parse("2016-12-26") %>
+  order_status: "0"
+  order_message: "成功"
+  notify_status: "1"
+  notify_message: "报告已出"
+  created_at: <%= Time.zone.parse("2016-12-26") %>
+  updated_at: <%= Time.zone.parse("2016-12-26") %>
+  order_state: "success"
+  notify_state: "succes"
+  series_name: ""
+  style_name: ""

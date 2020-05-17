@@ -1,0 +1,30 @@
+<%
+  company = Company.find_by(id: order.company_id)
+  user = User.find_by(id: order.user_id)
+  property = Dashboard::CompanyProperty.find_by(company_id: order.company_id)
+  balance = 0
+  if (order.action == "token")
+    balance = order.amount_yuan.to_d
+  elsif (order.action == "token_package")
+    begin
+      balance = order.orderable.total_balance.to_d
+    rescue
+      balance = 0
+    end
+  end
+%>
+<tr>
+  <td> <%= order.id %> </td>
+  <td> <%= company.try(:province) %>，<%= company.try(:city) %> </td>
+  <td>
+    <%= company.try(:name).try(:truncate, 12) %>
+    <% active_tag = (!company.nil?) && (!company.active_tag.nil?) && company.active_tag? %>
+    <% if active_tag %><br/><font color="red">（活跃）</font> <% end %>
+  </td>
+  <td><%= order.try(:created_at).try(:strftime, "%Y-%m-%d %H:%M:%S") %> </td>
+  <td> <%= get_state_name (order.status) %> </td>
+  <td> <%= user.try(:name) %><br/><%= user.try(:username) %> - <%= user.try(:phone) %></td>
+  <td> <%= order.amount %>（元）</td>
+  <td> <%= balance %> </td>
+  <td> <%= property.try(:staff).try(:name)%> </td>
+</tr>

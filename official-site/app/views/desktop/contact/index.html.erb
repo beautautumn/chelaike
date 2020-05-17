@@ -1,0 +1,46 @@
+<% content_for :attach_assets do %>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=<%= ENV.fetch("BAIDU_MAP_AK") %>"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<% end %>
+
+<!-- banner -->
+<div class="banner">
+  <div class="container">
+    <div class="contact-img">
+      <%= image_tag @company.facade %>
+    </div>
+    <div class="contact-detail">
+      <h2><%= @company[:name] %></h2>
+      <div class="tel">
+        <p>官方客服电话</p>
+        <p class="number">
+          <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+          <%= @company[:contact_mobile] %>
+        </p>
+        <p>周一至周日 09:00-20:00</p>
+      </div>
+      <div class="adr">
+        <p>地址</p>
+        <p><%= "#{@company[:province]}#{@company[:city]}#{@company[:street]}" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Introduction -->
+<div class="container">
+  <p class="contact-intr">
+    <%= @company[:slogan] %>
+  </p>
+</div>
+
+<!-- map -->
+<div class="container">
+  <div id="shop_address_map">
+  </div>
+</div>
+<input type="hidden" id="city" value="<%= @company[:city] %>" >
+<input type="hidden" id="street" value="<%= @company[:street] %>" >
+<input type="hidden" id="companyName" value="<%= @company[:name] %>" >
+

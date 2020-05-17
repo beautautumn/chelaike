@@ -1,0 +1,43 @@
+<% content_for :content_header  do %>
+  <h1>广告管理</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">广告</li>
+  </ol>
+<% end %>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%= link_to new_admin_advertisement_path(platform: params[:platform]), class: 'btn btn-success' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              添加广告
+            <% end %>
+          </div>
+        </div>
+        <div class="box-body table-responsive">
+          <% @advertisements.ad_type_groups.each do |group, types| %>
+            <h3><%= I18n.t "enumerize.advertisement.ad_type.groups.#{group}" %></h3>
+            <% types.each do |type| %>
+              <table class="table table-hover <%= group %>">
+                <% @advertisements.where(ad_type: type).each do |ad| %>
+                  <tr>
+                    <td><%= I18n.t "enumerize.advertisement.ad_type.#{type}" %></td>
+                    <td><%= image_tag ad.image_url, class: "tc-dashboard-list-ad-img" %></td>
+                    <td><%= link_to ad.link %></td>
+                    <td><%= link_to "编辑", edit_admin_advertisement_path(ad) %></td>
+                    <td><%= link_to "删除", admin_advertisement_path(ad), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+              </table>
+              <br>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

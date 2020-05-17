@@ -1,0 +1,11 @@
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>网站设置</h1>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+      <li class="active"><%= link_to "网站设置", admin_tenant_path %></li>
+    </ol>
+  </section>
+<% end %>
+
+<%= render 'form' %>

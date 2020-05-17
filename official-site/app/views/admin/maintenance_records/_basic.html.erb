@@ -1,0 +1,42 @@
+<div class="col-md-8">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">基本信息</h3>
+    </div>
+    <div class="box-body">
+      <div class="form-group">
+        <%= f.label :car_name, "品牌车型", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :car_name, class: "form-control"%>
+        </div>
+        <%= f.label :vin, "车架号", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :vin, class: "form-control"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_date, "最后入店", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :last_date, class: "form-control"%>
+        </div>
+        <%= f.label :mileage, "里程数", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <%= f.text_field :mileage, class: "form-control"%>
+            <span class="input-group-addon">公里</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :new_car_warranty, "新车质保", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :new_car_warranty, class: "form-control"%>
+        </div>
+        <%= f.label :emission_standard, "排放标准", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :emission_standard, class: "form-control"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

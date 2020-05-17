@@ -1,0 +1,28 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= search_form_for @q, url: maintenances_path do |f| %>
+        <%= f.label "查询日期" %>
+        <%= f.date_select :last_fetch_at_gt, prompt: {day: "日", month: "月", year: "年"} %>-
+        <%= f.date_select :last_fetch_at_lt, prompt: {day: "日", month: "月", year: "年"} %>
+        <br />
+        <br />
+        <%= f.label "省份" %>
+        <%= f.search_field :company_province_cont, placeholder: "输入所属省份", size: 12 %>
+        <%= f.label "城市" %>
+        <%= f.search_field :company_city_cont, placeholder: "输入所属城市", size: 12 %>
+        <%= f.label "服务顾问" %>
+        <%= select_tag :staff_id,
+                      options_for_select(
+                        Dashboard::Staff.consultants.collect { |s| [s.name, s.id] },
+                        selected = params[:staff_id]
+                      ),
+                      { include_blank: true, class: "ui search dropdown"}
+        %>
+        <%= f.label "车商" %>
+        <%= f.search_field :company_name_cont, placeholder: "输入所属车商公司名称", size: 12 %>
+        <%= f.submit "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

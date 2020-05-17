@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://chelaike.ibanquan.com/api/queryAll
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 18 Jun 2016 06:27:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"436-tsTeYZ+LVtf5VDNX3xkAAg"
+      Set-Cookie:
+      - connect.sid=s%3AIMuuwuP1owZMPFpL8KDdX83c_m9L2bC3.NFKSLR9Yr8916XQpUdn5jo%2F9SoZG9gl8SAS%2ByW3kzl8;
+        Path=/; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS3Y6DIBCF34Vrlwr+tb7KZi9wtIVWwAqutk3ffbVJk+6g
+        FxgSvxnOmTkPArZuSMnjOCLOCz84UrKIKHO0pPx+EFA1KQkvchKRoW/nu/S+
+        K3e7qxKmVUdBwWryjN4ky4sMo2MNsqGm8R9cHlC+cX45jN7sIIX9VR3qzQ+c
+        4SqgQ6cMiB7rYGyP2bvT0DrctCgCJZI7oLPmpBIW4WmcBPbGkUrjpDCn14eC
+        +SzgqwWTMrU1p+PM81B9WuQprjowkMMySGR0nwUGlgeG+TdQ25/+sTzY4zjB
+        bfHaCnXBvbNgSVDLbpMuslWrFVRXwFNP4wNm552/cmK+6tsd8YFscHW3GZQ8
+        0CGd25KdFEko++zFFp/uw+wuNjVctGhbbDQPpV/bSsOmnISvth+ns9TBGJNQ
+        uxyMMCuZSliA9pMGifO0miYN3L1f/3n+AaUdsMY2BAAA
+    http_version: 
+  recorded_at: Sat, 18 Jun 2016 06:27:53 GMT
+- request:
+    method: get
+    uri: http://chelaike.ibanquan.com/api/queryAll
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 18 Jun 2016 06:27:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"436-tsTeYZ+LVtf5VDNX3xkAAg"
+      Set-Cookie:
+      - connect.sid=s%3AAbkCrLDD19xyOTxUAMwGyR31DBP8QYQH.%2B5qR0ncI8pOquClkGXwX1Lkxl6MA7JTPZQf7sJE0s88;
+        Path=/; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS3Y6DIBCF34Vrlwr+tb7KZi9wtIVWwAqutk3ffbVJk+6g
+        FxgSvxnOmTkPArZuSMnjOCLOCz84UrKIKHO0pPx+EFA1KQkvchKRoW/nu/S+
+        K3e7qxKmVUdBwWryjN4ky4sMo2MNsqGm8R9cHlC+cX45jN7sIIX9VR3qzQ+c
+        4SqgQ6cMiB7rYGyP2bvT0DrctCgCJZI7oLPmpBIW4WmcBPbGkUrjpDCn14eC
+        +SzgqwWTMrU1p+PM81B9WuQprjowkMMySGR0nwUGlgeG+TdQ25/+sTzY4zjB
+        bfHaCnXBvbNgSVDLbpMuslWrFVRXwFNP4wNm552/cmK+6tsd8YFscHW3GZQ8
+        0CGd25KdFEko++zFFp/uw+wuNjVctGhbbDQPpV/bSsOmnISvth+ns9TBGJNQ
+        uxyMMCuZSliA9pMGifO0miYN3L1f/3n+AaUdsMY2BAAA
+    http_version: 
+  recorded_at: Sat, 18 Jun 2016 06:27:53 GMT
+recorded_with: VCR 3.0.1

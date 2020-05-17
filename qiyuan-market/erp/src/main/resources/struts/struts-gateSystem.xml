@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="qiyuan.gateInfoAction" namespace="/gateInfo" extends="erp-default">
+		<action name="gateInfo" class="qiyuan.gateInfoAction">
+			<result name="initAdd">
+				/WEB-INF/jsp/gateSystem/add.jsp
+			</result>
+			<result name="initEdit">
+				/WEB-INF/jsp/gateSystem/edit.jsp
+			</result>
+			<result name="initPrintCode">
+				/WEB-INF/jsp/gateSystem/printCode.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

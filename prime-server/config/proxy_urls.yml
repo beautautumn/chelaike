@@ -1,0 +1,11 @@
+proxy_urls:
+  - http://prime:autobots@123.249.45.23:6666
+  - http://prime:autobots@123.249.45.24:6666
+  - http://prime:autobots@123.249.45.25:6666
+  - http://prime:autobots@123.249.45.26:6666
+  - http://prime:autobots@123.249.45.27:6666
+  - http://prime:autobots@123.249.45.28:6666
+  - http://prime:autobots@123.249.45.29:6666
+  - http://prime:autobots@123.249.45.30:6666
+  - http://prime:autobots@123.249.45.31:6666
+  - http://prime:autobots@123.249.45.32:6666

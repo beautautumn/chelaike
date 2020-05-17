@@ -1,0 +1,5 @@
+zh-CN:
+  views:
+    pagination:
+      first: "首页"
+      last: "尾页"

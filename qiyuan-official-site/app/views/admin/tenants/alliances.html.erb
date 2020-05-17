@@ -1,0 +1,63 @@
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>查找联盟</h1>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+      <li class="active"><%= link_to "网站设置", admin_tenant_path %></li>
+      <li class="active">查找联盟</li>
+    </ol>
+  </section>
+<% end %>
+
+<%= form_tag alliances_admin_tenant_path, :method => :get do %>
+  <%= hidden_field_tag 'page', 1 %>
+  <div class="row site-company-query">
+    <div class="col-xs-3">
+      <%= text_field_tag 'name', params[:name], placeholder: "联盟名称", class: 'form-control' %>
+    </div>
+    <div class="col-xs-3">
+      <%= text_field_tag 'company_name', params[:company_name], placeholder: "联盟公司名称", class: 'form-control' %>
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-default" type="submit">查询</div>
+  </div>
+<% end %>
+
+<%= form_tag alliance_admin_tenant_path, :method => :put do %>
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>所在地</th>
+      <th>联盟名称</th>
+      <th>联盟公司名称</th>
+      <th>联盟公司老板</th>
+      <th>建立日期</th>
+      <th>在库车辆数</th>
+    </tr>
+
+    <% @alliances.each do |alliance| %>
+      <tr>
+        <td><%= radio_button_tag(:id, alliance[:owner][:id]) %></td>
+        <td><%= "#{alliance[:owner][:province]}#{alliance[:owner][:city]}" %></td>
+        <td><%= alliance[:name] %></td>
+        <td><%= alliance[:owner][:name] %></td>
+        <td><%= alliance[:owner][:owner].try(:[], :name) %></td>
+        <td><%= alliance[:created_at] %></td>
+        <td><%= alliance[:cars_count] %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <nav aria-label="...">
+    <ul class="pager">
+      <% prefix = request.url.include?("?") ? "&page=" : "?page=" %>
+      <% if params[:page] != 1 %>
+        <li><a href="<%= "#{request.url}#{prefix}#{params[:page] - 1}" %>">前一页</a></li>
+      <% end %>
+      <li><a href="<%= "#{request.url}#{prefix}#{params[:page] + 1}" %>">后一页</a></li>
+    </ul>
+  </nav>
+
+  <%= link_to "返回", admin_tenant_path(tenant_type: "alliance"), class: "pull-right btn btn-default btn-sub-page-back" %>
+  <button type="submit" class="pull-right btn btn-primary">确定</button>
+<% end %>

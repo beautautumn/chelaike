@@ -1,0 +1,10 @@
+zh-CN:
+  enumerize:
+    cherongyi:
+      loan_bill_state:
+        borrowing: 借款中
+        borrow_confirmed: 已放款
+        borrow_refused: 已拒绝
+        returning: 还款中
+        closed: 已关闭
+        canceled: 已取消

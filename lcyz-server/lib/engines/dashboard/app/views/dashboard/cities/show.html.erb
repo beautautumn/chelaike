@@ -1,0 +1,24 @@
+<h1>编辑地域参数</h1>
+<div class="ui segment">
+  <%= form_for :city,
+    url: city_path(@city), method: :patch,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="field">
+      <label>最小值</label>
+      <%= f.text_field :min, value: @city.try(:score).try(:[], "min") %>
+    </div>
+    <div class="field">
+      <label>最大值</label>
+      <%= f.text_field :max, value: @city.try(:score).try(:[], "max") %>
+    </div>
+    <div class="field">
+      <label>最可能值</label>
+      <%= f.text_field :utmost, value: @city.try(:score).try(:[], "utmost") %>
+    </div>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

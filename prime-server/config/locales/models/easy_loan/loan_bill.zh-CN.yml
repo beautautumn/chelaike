@@ -1,0 +1,13 @@
+zh-CN:
+  enumerize:
+    loan_bill_state:
+      borrow_applied: 借款申请
+      borrow_submitted: 借款提交
+      reviewed: 借款审核
+      borrow_confirmed: 已放款
+      borrow_refused: 已拒绝
+      return_applied: 还款申请
+      return_submitted: 还款提交
+      return_confirmed: 还款确认
+      closed: 已关闭
+      canceled: 已取消

@@ -1,0 +1,12 @@
+<div class="ui action input">
+  <%= form_tag daily_actives_path, method: :get do %>
+    <%= text_field_tag "city",
+        nil, placeholder: "搜索 城市名"
+    %>
+    <%= text_field_tag "start_date",
+        nil, placeholder: "搜索 日期"
+    %>
+
+    <%= submit_tag "搜索", class: "ui green basic button" %>
+  <% end %>
+</div>

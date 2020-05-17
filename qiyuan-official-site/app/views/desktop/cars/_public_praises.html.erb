@@ -1,0 +1,74 @@
+<% if @public_praise_sumup&.data&.id %>
+  <%
+    praise_count = @public_praise_sumup.meta.count
+    sumup = @public_praise_sumup.data.sumup
+  %>
+<div class="container">
+  <div class="tc-sub-title tc-praises-title">该款车型口碑</div>
+  <div class="praises-container clearfix">
+    <div class="item">
+      <div class="title">用户评分：</div>
+      <div data-toggle="praisesAverageScore" data-average-score="<%= sumup.average_score %>"></div>
+      <div class="score"><%= sumup.average_score %>分</div>
+    </div>
+    <div class="item">
+      <div class="title">新车指导价：</div>
+      <div class="value"><%= @car.new_car_guide_price_wan %>万</div>
+    </div>
+    <div class="item">
+      <div class="title">平均油耗：</div>
+      <div class="value"><%= sumup.average_fuel_consumption %>L/100km</div>
+    </div>
+    <div class="tables">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>单项</th>
+            <th>评分</th>
+            <th>与同级别比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% sumup.score_items.take(4).each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.score %>分</td>
+              <td>
+                <span class="<%= item.predicate %>"><%= item.predicate == 'gt' ? "高于" : "低于" %></span><%= item.ratio %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>单项</th>
+            <th>评分</th>
+            <th>与同级别比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% sumup.score_items.drop(4).take(4).each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.score %>分</td>
+              <td>
+                <span class="<%= item.predicate %>"><%= item.predicate == 'gt' ? "高于" : "低于" %></span><%= item.ratio %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">*内容来源于汽车之家，版权归汽车之家及其用户所有</div>
+    <div class="tc-center-wrapper">
+      <div class="tc-center-inner-wrapper">
+        <a class="more-button" href="<%= public_praises_car_path(@car.id) %>">
+          查看<%= praise_count %>条口碑 &gt;&gt;
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

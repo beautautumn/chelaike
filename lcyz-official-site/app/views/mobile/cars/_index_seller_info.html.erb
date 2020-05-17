@@ -1,0 +1,35 @@
+<div class="index-seller-container">
+  <div class="index-seller-info">
+    <div class="index-seller-avatar">
+      <% seller_avatar = @seller.avatar.presence || "user2-160x160.jpg" %>
+      <%= image_tag seller_avatar %>
+    </div>
+    <div class="index-seller-name">
+      <%= @seller.name %>
+    </div>
+    <div class="index-seller-contact-ways">
+      <div class="index-seller-phone seller-contact-way">
+        <% seller_phone = @seller.phone %>
+        <%= link_to image_tag("mobile/phone_brown.png") + "#{seller_phone}", "tel:#{seller_phone}" %>
+      </div>
+      <div class="index-contact-wechat seller-contact-way" id="seller-wechat-qrcode">
+        <% if @seller.qrcode_url.present? %>
+          <%= image_tag("mobile/wechat_brown.png", class: "seller-wechat") + "加我微信"%>
+        <% end %>
+      </div>
+    </div>
+    <div class="index-seller-slogan"><%= @seller.self_description || "欢迎电话咨询，很高兴为您服务"%></div>
+  </div>
+</div>
+
+<!-- 二维码图 -->
+<% if @seller.qrcode_url.present? %>
+  <div id="seller-qrcode-modal" style="display:none">
+    <div class="weui-mask weui-mask--visible"></div>
+    <div class="weui-dialog weui-dialog--visible">
+      <div class="weui-dialog__bd seller-modal">
+        <%= image_tag @seller.qrcode_url %>
+      </div>
+    </div>
+  </div>
+<% end %>

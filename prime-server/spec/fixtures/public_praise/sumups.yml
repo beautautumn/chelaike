@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: public_praise_sumups # 二手车之家口碑总结
+#
+#  id                 :integer          not null, primary key    # 二手车之家口碑总结
+#  brand_name         :string                                    # 品牌
+#  series_name        :string                                    # 车系
+#  style_name         :string                                    # 车型
+#  brand_id           :integer                                   # 品牌ID
+#  series_id          :integer                                   # 车系ID
+#  style_id           :integer                                   # 车型ID
+#  sumup              :jsonb                                     # 总结评价
+#  quality_problems   :string           is an Array              # 百车故障
+#  latest_exist_links :string           default([]), is an Array # 上一次口碑链接
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+<% require "autohome_public_praise/spec/fixtures" %>
+
+aodi_public_praise_sumup:
+  brand_name: 奥迪
+  series_name: 奥迪A3
+  style_name: "2016款 Sportback 35 TFSI 进取型"
+  brand_id: 33
+  series_id: 3170
+  style_id: 25898
+  sumup: '<%= AutohomePublicPraise::Spec::Fixtures.sumup.to_json %>'
+
+  latest_exist_links: <%= AutohomePublicPraise::Spec::Fixtures.sumup["public_praises"]["items"] %>

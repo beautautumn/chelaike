@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: wechat_app_user_relations # 微信用户与公众号关联表
+#
+#  id             :integer          not null, primary key
+#  wechat_app_id  :integer                                # 公众号 ID
+#  wechat_user_id :integer                                # 用户 ID
+#  group_id       :integer                                # 分组 ID
+#  open_id        :string                                 # 用户在每个公众号下的 Open ID
+#  refresh_token  :string                                 # refresh_token
+#  subscribed     :boolean                                # 用户是否关注该应用
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+human_paladin:
+  wechat_app: human_mp
+  wechat_user: paladin
+  open_id: humanpaladin
+  refresh_token: hphp
+
+undead_orge:
+  wechat_app: undead_mp
+  wechat_user: orge
+  open_id: udeadorge
+  refresh_token: uouo
+
+orc_orge:
+  wechat_app: orc_mp
+  wechat_user: orge
+  open_id: orcorge
+  refresh_token: oooo

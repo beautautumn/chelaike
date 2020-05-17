@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ip.taobao.com/service/getIpInfo.php?ip=0.0.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Tengine
+      Date:
+      - Fri, 08 Apr 2016 09:22:53 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.4.31
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA02MQQqDMBBF7zJrKZPQqM3OpRvpAQISTFqy0ZImiyDevaNt
+        ExkY3rzP/BWmxViQWIHRQYNcScQ5+AQSVKwbrlUUHGsVb+xqyHBG3CIK8qyl
+        3TwE6+9Q/R9HZ+i374aOnPaWSuFH34gOb59umc+co8mFVKjovTydOUfu/cpQ
+        5O7wcgxs2wf1kZLW6AAAAA==
+    http_version:
+  recorded_at: Fri, 08 Apr 2016 09:22:53 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/message/private/publish.json
+    body:
+      encoding: UTF-8
+      string: fromUserId=1&toUserId[]=667849921&toUserId[]=602622570&objectName=CLK%3APushMsg&content=%7B%7D&pushContent=%E6%82%A8%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7super%20man%E5%BE%85%E5%88%86%E9%85%8D
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 9f7bd344a3ba44b9a07b9df65b9b8e3f
+      Timestamp:
+      - '1471599620'
+      Signature:
+      - b07dcbdf17bf63a33410dd0ba61eb13d5d6bf7a3
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 19 Aug 2016 09:40:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '90'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version:
+  recorded_at: Fri, 19 Aug 2016 09:40:21 GMT
+recorded_with: VCR 3.0.1

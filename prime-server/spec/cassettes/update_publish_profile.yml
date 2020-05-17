@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dealer.che168.com/Handler/CreateImgCode.ashx?0.6787042305804789
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 31 Dec 2015 09:07:57 GMT
+      Server:
+      - AHS/1.48
+      Content-Type:
+      - image/Gif
+      Content-Length:
+      - '1264'
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - DealerCheckCode=DD48BFAAE59D9CDB; domain=.che168.com; path=/
+      S:
+      - '106'
+      X-Via:
+      - 1.1 zib234:8106 (Cdn Cache Server V2.0), 1.1 lf161:8104 (Cdn Cache Server
+        V2.0), 1.1 zhwt155:2 (Cdn Cache Server V2.0)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        R0lGODlhMgAUAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQAr
+        zAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACq
+        MwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/
+        zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNV
+        MzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOq
+        zDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYA
+        M2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZV
+        zGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbV
+        M2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkA
+        zJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmA
+        M5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnV
+        zJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwr
+        M8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyA
+        zMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/
+        M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8r
+        zP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+q
+        M/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//
+        zP///wAAAAAAAAAAAAAAACH5BAEAAPwALAAAAAAyABQAAAj/AAEIHEiwoMGD
+        CBMa3MewocOHDgVCfKhr4r5dEAXq27exI8ePHjcCaBgSJMOSG0l+lHhSZcuV
+        Iz2+/EiTZsmTGm3ui6Jz38iaOlOm7OkwJcuWxAi4IACEoQAXLaJKBdWSnpUr
+        oVKyq2KlyiaTQn3+1HdsH64XSpVaAOCOQAuoUqMN5WWlBTSG86x0rVJFk0uj
+        MU9mIRBqnzuop2r2atH0YzsWLLDq0/eKhd9dVtQQ1cdyYz0CBe4KUEr1pLu3
+        ck8Gu2KFxTKzegvP+2MlWs2NSiSGFUlPqe2OV1oUdswizdVT+uj9uWI7H9dl
+        YRseBbxPkAsLNOm1oJF6n1UdVl3vzXt85a4+2r9bigzMMCYW3yf1HWoBJ36j
+        FsvyXc06rwrzffnQBt1MnAFAXXVKFSYUaim1g05TVrlhWztX3TWbFa8NdeBY
+        jvimoS8tsEBSLyy0ZiIL8eSFIYD+3fXSejb9stRwNC0WR2C3RBVZibzAoQ8j
+        VdRnTjOayXSgZ0slmeBG98Xh00z6XZHYeHvx9RVDtqiUE0NtFaCkcBwF4gJV
+        7G1kVQvKMMQLhV0Nt1t7Y/3lUktx3jZndHSWSRIHdg5Vp50mBQWnQoQWauhA
+        AQEAOw==
+    http_version: 
+  recorded_at: Thu, 31 Dec 2015 09:07:57 GMT
+recorded_with: VCR 3.0.0

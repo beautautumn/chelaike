@@ -1,0 +1,40 @@
+# == Schema Information
+#
+# Table name: parallel_brands # 平行进口车和厂家特价车的品牌
+#
+#  id           :integer          not null, primary key # 平行进口车和厂家特价车的品牌
+#  name         :string                                 # 品牌名称
+#  logo_url     :string                                 # LOGO 图片 URL
+#  order        :integer                                # 排序
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  brand_type   :string                                 # 品牌类型(平行进口车/厂家特价车)
+#  styles_count :integer          default(0)            # 车型数量
+#
+
+aodi:
+  name: 奥迪
+  logo_url: http://prime.oss-cn-hangzhou.aliyuncs.com/images/8fa1c09b-d6e7-469a-8102-a9821f071eb6.png
+  order: 1
+  brand_type: parallel_import
+  created_at: 2016-1-1
+  updated_at: 2016-1-1
+  styles_count: 1
+
+benz:
+  name: 奔驰
+  logo_url: http://prime.oss-cn-hangzhou.aliyuncs.com/images/0a9cee1f-d6a0-42d8-9a6d-f1fd8b22ae15.png
+  order: 2
+  brand_type: parallel_import
+  created_at: 2016-1-1
+  updated_at: 2016-1-1
+  styles_count: 0
+
+hyundai:
+  name: 现代
+  logo_url: http://prime.oss-cn-hangzhou.aliyuncs.com/images/9bddd614-3f7b-4d1a-bf0d-e4bf5416a239.png
+  order: 1
+  brand_type: special_offer
+  created_at: 2016-1-1
+  updated_at: 2016-1-1
+  styles_count: 1

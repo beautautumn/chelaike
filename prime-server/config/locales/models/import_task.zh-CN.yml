@@ -1,0 +1,23 @@
+zh-CN:
+  enumerize:
+    import_task:
+      import_task_type:
+        intention: 意向导入
+      state:
+        pending: 待处理
+        processing: 处理中
+        finished: 已完成
+
+  activerecord:
+    models:
+      import_task: 导入任务记录
+    attributes:
+      import_task:
+        id: 编号
+        user_id: 操作人
+        company_id: 公司ID
+        state: 状态
+        import_task_type: 记录类型
+        info: 相关信息
+        created_at: 创建时间
+        updated_at: 最后更新时间

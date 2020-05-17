@@ -1,0 +1,36 @@
+.colorInput {
+  position: relative;
+  cursor: pointer;
+}
+
+.colors {
+  display: none;
+  position: absolute;
+  background: #fff;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-top: none;
+
+  li {
+    padding: 7px 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  :global(.ui.label.icon) {
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    margin-right: 10px;
+    vertical-align: sub;
+  }
+}
+
+.show {
+  display: block;
+}

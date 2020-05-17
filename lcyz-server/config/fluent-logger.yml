@@ -1,0 +1,12 @@
+development:
+  fluent_host:   '127.0.0.1'
+  fluent_port:   24224
+  tag:           'tiancar_server_dev'
+  messages_type: 'string'
+
+
+staging:
+  fluent_host:   '127.0.0.1'
+  fluent_port:   24224
+  tag:           'tiancar_server_staging'
+  messages_type: 'string'

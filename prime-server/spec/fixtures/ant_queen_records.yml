@@ -1,0 +1,54 @@
+# == Schema Information
+#
+# Table name: ant_queen_records # 蚂蚁女王记录
+#
+#  id                           :integer          not null, primary key # 蚂蚁女王记录
+#  company_id                   :integer                                # 公司ID
+#  car_id                       :integer                                # 车辆ID
+#  shop_id                      :integer                                # 店铺ID
+#  vin                          :string
+#  state                        :string
+#  last_fetch_by                :integer                                # 最后查询的用户ID
+#  user_name                    :string                                 # 最后查询的用户名
+#  last_fetch_at                :datetime                               # 最后查询的时间
+#  ant_queen_record_hub_id      :integer
+#  last_ant_queen_record_hub_id :integer
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  engine_num                   :string
+#  car_brand_id                 :integer
+#  token_price                  :decimal(8, 2)
+#  pre_token_price              :decimal(8, 2)
+#  vin_image                    :string
+#  token_type                   :string                                 # 支付token的类型
+#  token_id                     :integer                                # 支付token
+#
+
+default: &default
+  company: tianche
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi) %>
+  last_fetch_by: <%= ActiveRecord::FixtureSet.identify(:zhangsan) %>
+  user_name: zhangsan
+  last_fetch_at: <%= Time.now - 4.days %>
+  state: checked
+  ant_queen_record_hub_id: 960205160
+  car_brand_id: 19
+  token_price: 29
+
+ant_queen_record_uncheck:
+  <<: *default
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_1) %>
+  state: unchecked
+  vin: LHGRB186072026733
+  last_fetch_at: <%= Time.now - 2.days %>
+  car_brand_id: 19
+  token_price: 29
+
+ant_queen_record_updating:
+  <<: *default
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_2) %>
+  state: updating
+  vin: updating
+  last_fetch_at: <%= Time.now - 3.days %>
+  car_brand_id: 19
+  token_price: 29

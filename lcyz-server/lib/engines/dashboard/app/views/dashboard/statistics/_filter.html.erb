@@ -1,0 +1,40 @@
+<div class="ui segment">
+  <%= form_tag statistic_path(company), method: :get, class: "ui form" do %>
+    <div class="fields">
+      <div class="inline field">
+        <label>统计年份：</label>
+        <%= select_tag :year,
+          options_for_select([
+            ["2012", 2012],
+            ["2013", 2013],
+            ["2014", 2014],
+            ["2015", 2015],
+            ["2016", 2016]
+          ], year || Time.zone.now.year),
+          class: "ui search dropdown"
+        %>
+      </div>
+      <div class="inline field">
+        <label>统计月份：</label>
+        <%= select_tag :month,
+          options_for_select([
+            ["一月", 1],
+            ["二月", 2],
+            ["三月", 3],
+            ["四月", 4],
+            ["五月", 5],
+            ["六月", 6],
+            ["七月", 7],
+            ["八月", 8],
+            ["九月", 9],
+            ["十月", 10],
+            ["十一月", 11],
+            ["十二月", 12]
+          ], month || Time.zone.now.month),
+          class: "ui search dropdown"
+        %>
+      </div>
+      <%= submit_tag "筛选", class: "ui right floated green basic button" %>
+    </div>
+  <% end %>
+</div>

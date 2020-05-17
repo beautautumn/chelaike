@@ -1,0 +1,67 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= form_tag parallel_brand_parallel_styles_path(parallel_brand), method: :get do %>
+        <%= text_field_tag "q[name_cont]",
+            nil, placeholder: "搜索 车型"
+        %>
+        <%= submit_tag "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+    <button id="parallel-style-new-button" class="ui right floated teal button">
+      增加新车型
+    </button>
+    <button id="back-to-brand-button" class="ui right floated button">
+      <%= link_to "返回品牌列表", parallel_brands_path %>
+    </button>
+      <div id="parallel-style-new-modal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          增加新车型
+        </div>
+        <div class="content">
+          <%= form_for [@parallel_brand, @parallel_brand.styles.build], html: { class: "ui form" } do |f| %>
+            <div class="field">
+              <label>名称</label>
+              <%= f.text_field :name %>
+            </div>
+            <div class="field">
+              <label>颜色</label>
+              <%= f.text_field :color %>
+            </div>
+            <div class="field">
+              <label>产地</label>
+              <%= f.text_field :origin %>
+            </div>
+            <div class="field">
+              <label>配置</label>
+              <%= f.text_area :configuration %>
+            </div>
+            <div class="field">
+              <label>状态</label>
+              <%= f.text_field :status %>
+            </div>
+            <div class="field">
+              <label>同款新车价(万元)</label>
+              <%= f.text_field :suggested_price_wan %>
+            </div>
+            <div class="field">
+              <label>港口自提价(万元)</label>
+              <%= f.text_field :sell_price_wan %>
+            </div>
+            <div class="field">
+              <label>上传图片(可选择多张)</label>
+              <%= f.file_field :images, multiple: true %>
+            </div>
+            <button type="submit" class="ui positive right labeled icon button">
+              保存
+              <i class="checkmark icon"></i>
+            </button>
+            <div id="cancel-button" class="ui black deny button">
+              取消
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

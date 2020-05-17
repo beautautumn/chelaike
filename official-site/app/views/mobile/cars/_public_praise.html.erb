@@ -1,0 +1,54 @@
+<% if @public_praise_sumup&.data&.id %>
+  <%
+    praise_count = @public_praise_sumup.meta.count
+    sumup = @public_praise_sumup.data.sumup
+  %>
+<div class="tc-car-detail-part">
+  <div class="title">该款车型口碑
+    <span class="praise-detail link">
+      <%= praise_count %>条口碑
+      <i class="fa fa-angle-right" aria-hidden="true"></i
+    </span>
+  </div>
+  <div class="content">
+    <div class="praise-label">
+      用户评分：
+      <div class="public-praise-score">
+        <b style="width:<%= sumup.average_score.to_f*100/5 %>%"></b>
+      </div>
+      <%= sumup.average_score %>分
+    </div>
+    <div class="praise-label">新车指导价：<span><%= @car.new_car_final_price_wan %>万</span></td></div>
+    <div class="praise-label">平均油耗：<span><%= sumup.average_fuel_consumption %>L</span>／100km</div>
+    <table>
+      <tr>
+        <th width="33.33%">单项</th>
+        <th width="33.33%">评分</th>
+        <th>与同级别比</th>
+      </tr>
+      <% sumup.score_items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= item.score %>分</td>
+          <td><span class="<%= item.predicate %>"></span><%= item.ratio %></td>
+        </tr>
+      <% end %>
+    </table>
+    <div class="tc-auto-car-right"></div>
+  </div>
+</div>
+
+<% content_for :append_doms do %>
+  <div id="publicPraisesModal" class="weui-popup__container">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal tc-public-praises-modal">
+      <div class="tc-public-praise-container">
+      </div>
+      <div class="weui-loadmore">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>

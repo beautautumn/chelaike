@@ -1,0 +1,34 @@
+# == Schema Information
+#
+# Table name: token_bills # 车币账单
+#
+#  id                 :integer          not null, primary key # 车币账单
+#  state              :string                                 # 车币支付状态
+#  action_type        :string                                 # 事件类型
+#  payment_type       :string                                 # 收支类型
+#  amount             :integer                                # 金额
+#  operator_id        :integer                                # 事件的操作人
+#  action_abstraction :jsonb                                  # 事件的概要描述
+#  owner_id           :integer                                # Token的拥有者，可能为公司或个人
+#  token_type         :string                                 # token类型
+#  company_id         :integer                                # 操作人所属公司
+#  shop_id            :integer                                # 操作人所属店铺
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+user_token_bill:
+  state: "finished"
+  action_type: "maintenance_query"
+  payment_type: "payout"
+  amount: 29
+  action_abstraction: { title: "维保查询-车鉴定", detail: { vin: "LHGRB186072026733", platform: "车鉴定", detail_text: "LHGRB186072026733" } }
+  token_type: "user"
+
+company_token_bill:
+  state: "finished"
+  action_type: "maintenance_query"
+  payment_type: "payout"
+  amount: 29
+  action_abstraction: { title: "维保查询-车鉴定", detail: { vin: "LHGRB186072026733", platform: "车鉴定", detail_text: "LHGRB186072026733" } }
+  token_type: "company"

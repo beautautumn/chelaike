@@ -1,0 +1,32 @@
+<div class="ui modal rating_company">
+  <i class="close icon"></i>
+  <div class="header">
+    设置
+    <%= company.name %>
+    行业风评和负债率
+  </div>
+  <div class="content">
+    <%= form_for(company,url: {action: "update"}, method: :put, html: { class: "ui form"}) do |f| %>
+      <div class="field">
+        <label for="industry_rating">行业风评</label>
+        <%= f.text_field :industry_rating %>
+      </div>
+      <div class="field">
+        <label for="assets_debts_rating">资产负债率</label>
+        <%= f.text_field :assets_debts_rating, class:"field" %>
+      </div>
+      <div class="field">
+        <%= f.submit "更新", class: "ui green submit button field" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.rating_company').modal("show");
+  $('.rating_company').modal({
+    onHidden: function(){
+      $('.rating_company').remove();
+    }
+  });
+</script>

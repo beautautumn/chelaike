@@ -1,0 +1,42 @@
+# == Schema Information
+#
+# Table name: wechat_apps # 微信应用
+#
+#  id                :integer          not null, primary key # 微信应用
+#  app_id            :string                                 # 微信公众号app id
+#  user_name         :string                                 # 微信公众号username
+#  refresh_token     :string                                 # 重置令牌的token
+#  authorities       :text             is an Array           # 可操作的app权限
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  state             :string           default("enabled")    # 应用状态
+#  nick_name         :string                                 # 授权方昵称
+#  alias             :string                                 # 授权方公众号所设置的微信号
+#  menus_state       :string                                 # 菜单存储状态
+#  head_img          :string(500)
+#  service_type_info :integer                                # 公众号类型
+#  verify_type_info  :integer                                # 认证类型
+#  business_info     :jsonb                                  # 功能的开通状况（0代表未开通，1代表已开通）
+#  qrcode_url        :string(500)                            #  二维码图片的URL
+#  menus             :jsonb            is an Array
+#  company_id        :integer
+#  company_type      :string
+#
+
+chelaike_mp:
+  app_id: wxbe6ec1b410f661f2
+  company: tianche
+  user_name: gh_ef19d7012987
+  authorities: ["1", "2", "3", "4", "6", "7", "11"]
+  menus:
+    -
+      name: "链接"
+      cate: "view"
+      url: http://cn.bing.com/?mkt=zh-CN
+    -
+      name: "奥迪"
+      cate: "click"
+      message: "heh"
+
+  service_type_info: 2
+  verify_type_info: 0

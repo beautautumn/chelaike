@@ -1,0 +1,12 @@
+<tr>
+  <td> <%= company.id %> </td>
+  <td> <%= render partial: "basic_info", locals: { company: company } %> </td>
+  <td> <%= render partial: "service_info", locals: { company: company } %> </td>
+  <td>
+    <% if policy(:dashboard_statistics).edit? %>
+      <%= link_to "分配顾问", edit_statistic_path(company) %>
+      <br/>
+    <% end %>
+    <%= link_to "查看统计", statistic_path(company) %>
+  </td>
+</tr>

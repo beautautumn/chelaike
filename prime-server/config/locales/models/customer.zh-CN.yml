@@ -1,0 +1,21 @@
+zh-CN:
+  enumerize:
+    customer:
+      gender:
+        female: 女
+        male: 男
+  activerecord:
+    models:
+      customer: 客户
+    attributes:
+      customer:
+        id: 客户
+        phones: 联系电话
+        name: 姓名
+        note: 备注
+        phone: 主要联系电话
+        gender: 性别
+        id_number: 证件号
+        avatar: 头像
+        user_id: 所属员工
+        first_letter: 姓名首字母

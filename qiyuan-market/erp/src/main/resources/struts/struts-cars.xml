@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="qiyuan.carsAction" namespace="/cars" extends="erp-default">
+		<action name="cars" class="qiyuan.carsAction">
+			<result name="toTakedown">
+				/WEB-INF/jsp/cars/takedown.jsp
+			</result>
+			<result name="toPutaway">
+				/WEB-INF/jsp/cars/putaway.jsp
+			</result>
+            <result name="toDelete">
+                /WEB-INF/jsp/cars/delete.jsp
+            </result>
+            <result name="toAuthIn">
+                /WEB-INF/jsp/cars/authIn.jsp
+            </result>
+			<result name="toPutawayAuth">
+				/WEB-INF/jsp/cars/putawayAuth.jsp
+			</result>
+			<result name="toFirstCheckAuth">
+				/WEB-INF/jsp/cars/firstCheckAuth.jsp
+			</result>
+			<result name="toSpecAuth">
+				/WEB-INF/jsp/cars/speciallyAuthorize.jsp
+			</result>
+
+		</action>
+	</package>
+
+</struts>

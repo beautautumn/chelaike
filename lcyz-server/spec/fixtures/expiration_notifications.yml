@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: expiration_notifications # 服务到期提醒
+#
+#  id              :integer          not null, primary key # 服务到期提醒
+#  notify_type     :string                                 # 通知类型
+#  associated_id   :integer                                # 关联记录ID
+#  associated_type :string                                 # 关联记录类型
+#  notify_date     :date                                   # 提醒日期
+#  setting_date    :date                                   # 原记录里设置的时间
+#  user_id         :integer                                # 要通知到的用户
+#  company_id      :integer                                # 所属公司ID
+#  actived         :boolean          default(TRUE)         # 是否可用
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  notify_name     :string                                 # 通知的名字
+#
+
+cruise_birth_date:
+  associated_id: <%= ActiveRecord::FixtureSet.identify(:cruise) %>
+  associated_type: Customer
+  notify_type: memory_date
+  notify_name: 生日
+  notify_date: <%= Time.zone.parse("2017-03-06").utc.to_s(:db) %>
+  setting_date: <%= Time.zone.parse("2017-03-10").utc.to_s(:db) %>
+  user_id: <%= ActiveRecord::FixtureSet.identify(:zhangsan) %>
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  actived: true
+
+doraemon_seeking_aodi_insurance:
+  associated_id: <%= ActiveRecord::FixtureSet.identify(:doraemon_seeking_aodi) %>
+  associated_type: Intention
+  notify_type: insurance
+  notify_name: insurance
+  notify_date: <%= Time.zone.parse("2017-03-10").to_s(:db) %>
+  setting_date: <%= Time.zone.parse("2017-04-10").to_s(:db) %>
+  user_id: <%= ActiveRecord::FixtureSet.identify(:zhangsan) %>
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  actived: true

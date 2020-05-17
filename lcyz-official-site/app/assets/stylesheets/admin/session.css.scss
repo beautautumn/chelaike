@@ -1,0 +1,38 @@
+.session, .new {
+  background-color: #F7F7F7;
+}
+.admin-login-holder {
+    float: left;
+    height: 50%;
+    margin-bottom: -120px;
+}
+
+.admin-login-content {
+  clear: both;
+  height: 240px;
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+
+  h2 {
+    color: #00B5AD;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 15px;
+  }
+
+  .cell-phone {
+    width: 250px !important;
+  }
+
+  .panel {
+    padding: 15px 15px 0;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}

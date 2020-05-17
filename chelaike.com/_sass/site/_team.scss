@@ -1,0 +1,36 @@
+#team {
+  .hero {
+    text-align: center;
+  }
+
+  .pictures-wrapper {
+    background: #FEFEF4;
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .pictures {
+      padding-top: 30px;
+
+      .picture {
+        width: 950px;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+          margin-bottom: 5px;
+        }
+
+        .description {
+          width: 760px;
+          text-align: center;
+          font-size: 18px;
+          line-height: 30px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

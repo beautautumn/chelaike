@@ -1,0 +1,42 @@
+# == Schema Information
+#
+# Table name: dashenglaile_record_hubs # 大圣来了报告
+#
+#  id                  :integer          not null, primary key # 大圣来了报告
+#  vin                 :string                                 # vin码
+#  engine_num          :string                                 # 发动机号
+#  car_brand_id        :integer                                # 大圣来了品牌 ID
+#  license_plate       :string                                 # 车牌号
+#  sent_at             :datetime                               # 请求发送时间
+#  last_time_to_shop   :datetime                               # 最后进店时间
+#  total_mileage       :integer                                # 行驶的总公里数
+#  number_of_accidents :integer                                # 事故次数
+#  car_brand           :string                                 # 品牌
+#  result_description  :text                                   # 报告描述
+#  result_images       :json                                   # 报告图片
+#  result_status       :string                                 # 报告状态
+#  gmt_create          :datetime                               # 此次订单创建的时间
+#  gmt_finish          :datetime                               # 此次订单完成的时间
+#  order_id            :string                                 # 订单ID
+#  result_content      :json                                   # 报告内容
+#  result_report       :json                                   # 报告总结
+#  fetch_info_at       :datetime                               # 拉取报告的时间
+#  make_report_at      :datetime                               # 报告生成时间
+#  notify_time         :datetime                               # 通知回调时间
+#  notify_type         :string                                 # 通知类型
+#  notify_id           :integer                                # 推送校验 ID
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+dashenglaile_record_hub_a:
+  id: 960305160
+  vin: LBVCU3109DSG28165
+  car_brand_id: 17
+  result_report: ["发动机正常", "安全气囊异常", "里程表正常", "结构件正常", "无水浸事故", "无火烧事故"] # 测试环境数据
+
+dashenglaile_record_hub_b:
+  id: 960305161
+  vin: LHGRB186072026733
+  car_brand_id: 15
+  result_report: ["动力总成记录正常","电气及安全设备记录正常","里程表记录异常","车身结构件记录正常","外观件及钣金件记录正常"] #production 环境数据

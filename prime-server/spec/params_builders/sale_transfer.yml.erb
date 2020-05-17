@@ -1,0 +1,47 @@
+sale_transfer:
+  id: <%= aodi.sale_transfer.id %>
+  car_id: <%= aodi.id %>
+  state: archiving # 手续状态
+  state_text: "提档中"
+  transferred_at: "2015-01-01"
+  vin: abc123
+  items: <%= %w(registration_license purchase_tax driving_license compulsory_insurance commercial_insurance original_vehicle_archive instructions maintenance_manual original_owner_idcard original_vehicle_invoice original_license new_owner_idcard provisional_license used_vehicle_trade_invoice nameplate) %>
+  contact_person: 李四
+  contact_mobile: "112"
+
+  original_location_province: 江苏省
+  original_location_city: 南京
+  original_plate_number: "浙A NBNBNB"
+  original_owner: 钢铁侠
+  original_owner_idcard: "1234567890"
+  original_owner_contact_mobile: "112"
+  key_count: 2
+  usage_type: personal_use
+  registration_number: abc
+  engine_number: abc123
+  transfer_count: 5
+  allowed_passengers_count: 5
+
+  current_location_province: 浙江
+  current_location_city: 杭州
+  new_plate_number: "浙A 123456"
+  new_owner: 百变小樱
+  new_owner_idcard: "1234567890"
+  new_owner_contact_mobile: "123456"
+  estimated_archived_at: "2015-01-01"
+  archive_fee_yuan: 500
+  estimated_transferred_at: "2015-01-01"
+  transfer_fee_yuan: 500
+
+  user_id: <%= nolan.id %> # 销售成交员
+  inspection_state: valid
+  compulsory_insurance_end_at: "2015-01-01"
+  annual_inspection_end_at: "2015-01-01"
+  commercial_insurance_end_at: "2015-01-01"
+  user_name: <%= nil %>
+  commercial_insurance_amount_yuan: 5000
+
+  note: "其他不说了, 来买!"
+  data_completeness:
+    finished: 3
+    total: 5

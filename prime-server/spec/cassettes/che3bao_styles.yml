@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://megatron.lina.che3bao.com/api/v1/styles?series%5Bname%5D=%E5%A5%A5%E8%BF%AAA3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Timeout:
+      - '5'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 15 Sep 2015 06:50:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"ba28a2f8b4b00ef94015d1468a346075"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a93a56f3-3ef7-4e58-8b38-20840e7922e2
+      X-Runtime:
+      - '0.009809'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJ5ZWFyIjoiMjAxNeasviIsIm1vZGVscyI6W3siaWQiOjE4
+        NjU4LCJuYW1lIjoiMjAxNeasviBTcG9ydGJhY2sgMzUgVEZTSSDmiYvliqjo
+        v5vlj5blnosifSx7ImlkIjoyMTU2NywibmFtZSI6IjIwMTXmrL4gU3BvcnRi
+        YWNrIDQwIFRGU0kg6Ieq5Yqo6IiS6YCC5Z6LIn0seyJpZCI6MjE1NjgsIm5h
+        bWUiOiIyMDE15qy+IFNwb3J0YmFjayA0MCBURlNJIOiHquWKqOixquWNjuWe
+        iyJ9LHsiaWQiOjIxNTY5LCJuYW1lIjoiMjAxNeasviBMaW1vdXNpbmUgNDAg
+        VEZTSSDoh6rliqjoiJLpgILlnosifSx7ImlkIjoyMTU3MCwibmFtZSI6IjIw
+        MTXmrL4gTGltb3VzaW5lIDQwIFRGU0kg6Ieq5Yqo6LGq5Y2O5Z6LIn0seyJp
+        ZCI6MjE1OTgsIm5hbWUiOiIyMDE15qy+IExpbW91c2luZSAzNSBURlNJIOaJ
+        i+WKqOi/m+WPluWeiyJ9LHsiaWQiOjIyODgzLCJuYW1lIjoiMjAxNeasviBT
+        cG9ydGJhY2sgMzUgVEZTSSDnmb7kuIfnuqrlv7XmmbrpooblnosifSx7Imlk
+        IjoyMjg4NCwibmFtZSI6IjIwMTXmrL4gTGltb3VzaW5lIDM1IFRGU0kg55m+
+        5LiH57qq5b+15pm66aKG5Z6LIn0seyJpZCI6MjI4ODUsIm5hbWUiOiIyMDE1
+        5qy+IFNwb3J0YmFjayAzNSBURlNJIOeZvuS4h+e6quW/teiIkuS6q+WeiyJ9
+        LHsiaWQiOjIyODg2LCJuYW1lIjoiMjAxNeasviBMaW1vdXNpbmUgMzUgVEZT
+        SSDnmb7kuIfnuqrlv7XoiJLkuqvlnosifSx7ImlkIjoyMjg4NywibmFtZSI6
+        IjIwMTXmrL4gU3BvcnRiYWNrIDM1IFRGU0kg55m+5LiH57qq5b+15LmQ5Lqr
+        5Z6LIn0seyJpZCI6MjI4ODgsIm5hbWUiOiIyMDE15qy+IExpbW91c2luZSAz
+        NSBURlNJIOeZvuS4h+e6quW/teS5kOS6q+WeiyJ9XX0seyJ5ZWFyIjoiMjAx
+        NOasviIsIm1vZGVscyI6W3siaWQiOjE2NTcxLCJuYW1lIjoiMjAxNOasviBT
+        cG9ydGJhY2sgMzUgVEZTSSDoh6rliqjosarljY7lnosifSx7ImlkIjoxODYz
+        NywibmFtZSI6IjIwMTTmrL4gU3BvcnRiYWNrIDM1IFRGU0kg6Ieq5Yqo6L+b
+        5Y+W5Z6LIn0seyJpZCI6MTg2MzgsIm5hbWUiOiIyMDE05qy+IFNwb3J0YmFj
+        ayAzNSBURlNJIOiHquWKqOaXtuWwmuWeiyJ9LHsiaWQiOjE4NjM5LCJuYW1l
+        IjoiMjAxNOasviBTcG9ydGJhY2sgMzUgVEZTSSDoh6rliqjoiJLpgILlnosi
+        fSx7ImlkIjoyMDI0NSwibmFtZSI6IjIwMTTmrL4gTGltb3VzaW5lIDM1IFRG
+        U0kg6Ieq5Yqo6L+b5Y+W5Z6LIn0seyJpZCI6MjAyNDYsIm5hbWUiOiIyMDE0
+        5qy+IExpbW91c2luZSAzNSBURlNJIOiHquWKqOaXtuWwmuWeiyJ9LHsiaWQi
+        OjIwMjQ3LCJuYW1lIjoiMjAxNOasviBMaW1vdXNpbmUgMzUgVEZTSSDoh6rl
+        iqjoiJLpgILlnosifSx7ImlkIjoyMDI0OCwibmFtZSI6IjIwMTTmrL4gTGlt
+        b3VzaW5lIDM1IFRGU0kg6Ieq5Yqo6LGq5Y2O5Z6LIn1dfV19
+    http_version: 
+  recorded_at: Tue, 15 Sep 2015 06:50:00 GMT
+recorded_with: VCR 2.9.3

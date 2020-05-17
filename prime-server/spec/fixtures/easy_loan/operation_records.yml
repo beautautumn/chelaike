@@ -1,0 +1,16 @@
+zhangsan_update_tianche_bill_a:
+  targetable_id: <%= ActiveRecord::FixtureSet.identify(:tianche_bill_a) %>
+  targetable_type: "EasyLoan::LoanBill"
+  operation_record_type: "loan_bill_state_updated"
+  user: easy_loan_user_a
+  messages:
+    title: "状态更新"
+    car_name: "奥迪A6L 2014款 35 FSI 舒适型"
+    amount_wan: 10
+    company_id: 4
+    company_name: "杭州天车"
+    loan_bill_id: <%= ActiveRecord::FixtureSet.identify(:tianche_bill_a) %>
+    car_cover_url: "http://oss-playground.che3bao.com/images/B9CB8568-BD05-4EF3-99BF-E068F888837F.jpg"
+    apply_code: "1234321"
+  sp_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche_sp) %>
+  user_type: "EasyLoan::User"

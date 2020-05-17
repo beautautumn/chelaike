@@ -1,0 +1,36 @@
+<div class="tc-mobile-bargain-cars-group weui-grids">
+  <!-- 显示单个车 -->
+  <% group_cars.each do |onsale_car| %>
+    <div class="weui-grid js_grid tc-grid-car">
+      <% if onsale_car.present? %>
+        <% if @seller.present? %>
+          <% path = car_path(onsale_car.id, seller_id: @seller.id) %>
+        <% else %>
+          <% path = car_path(onsale_car.id) %>
+        <% end %>
+        <%= link_to path do %>
+          <div class="tc-mobile-car-detail">
+            <div class="tc-mobile-bargain-car-cover">
+              <%= image_tag car_cover(onsale_car.cover_url, "550x412") %>
+            </div>
+            <div class="bargain-car-body">
+              <div class="bargain-car-title">
+                <% if onsale_car.reserved %>
+                  <%= image_tag "common/reserved.png", class: "tc-reserved-label"  %>
+                <% end %>
+                <%= onsale_car.system_name %>
+              </div>
+              <div class="bargain-car-info">
+                <%= "#{licensed_info(onsale_car)[1].gsub("上牌", "")}/#{onsale_car.mileage.presence || "-"}万公里" %>
+              </div>
+              <div class="bargain-car-price">
+                <span>特惠价：</span><%= onsale_car.onsale_price_wan %>万
+                <%= render partial: "shared/like_car", locals: { car: onsale_car } %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

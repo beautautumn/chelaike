@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  background-color: #fff;
+  padding: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.trigger:hover {
+  color: #108ee9;
+}
+
+.breadcrumb {
+  margin-left: 15px;
+}
+
+.user {
+  margin: 12px 45px 12px 0;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+
+  .avatar {
+    background-color: #7265e6;
+    font-size: 18px;
+  }
+
+  .info {
+    line-height: initial;
+    margin-left: 10px;
+    div {
+      font-size: 16px;
+    }
+  }
+
+  .message {
+    font-size: 25px;
+    margin: 14px 0 10px 10px;
+  }
+}
+
+
+

@@ -1,0 +1,19 @@
+require_relative '../../../../config/environment'
+
+def incremental?
+  ENV["ETL_INCREMENTAL"]
+end
+
+pre_process do
+  puts "start ETL for car."
+end
+
+source Etl::Sources::Car, incremental: incremental?
+
+transform Etl::Transforms::Car
+
+destination Etl::Destinations::Car
+
+post_process do
+  puts "car ETL progress finished."
+end

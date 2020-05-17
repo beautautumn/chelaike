@@ -1,0 +1,19 @@
+<% if @onsale_cars.total > 0 %>
+  <div class="container home-bargain-cars">
+    <div class="top">
+      <div class="default-img">
+        <%= image_tag asset_path("desktop/home/bargain_cars.png") %>
+        <div class="default-img-overlay"></div>
+        <div class="default-img-overlay-desc">
+          <%= link_to "查看全部特价优惠#{@onsale_cars.total}辆>>", home_bargain_cars_path %>
+        </div>
+      </div>
+      <div class="car-list">
+        <%= render partial: "bargain_car", collection: @onsale_cars.data.take(2), as: :car %>
+      </div>
+    </div>
+    <div class="car-list">
+      <%= render partial: "bargain_car", collection: @onsale_cars.data.drop(2).take(4), as: :car %>
+    </div>
+  </div>
+<% end %>

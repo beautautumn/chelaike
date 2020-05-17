@@ -1,0 +1,37 @@
+<div class="ui modal rating_statement">
+  <i class="close icon"></i>
+  <div class="header">
+    <% case statement.rate_type
+    when "comprehensive_rating" %>
+    综合评级说明
+    <% when "operating_health" %>
+    经营健康评级说明
+    <% when "industry_rating" %>
+    行业风评说明
+    <% end %>
+  </div>
+  <div class="content">
+    <%= form_for(statement,url: {action: "update"}, method: :put, html: { class: "ui form"}) do |f| %>
+      <div class="field">
+        <label for="score">分数</label>
+        <%= f.text_field :score, class:"disabled" %>
+      </div>
+      <div class="field">
+        <label for="content">内容</label>
+        <%= f.text_area :content, class:"field", autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.submit "更新", class: "ui green submit button field" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.rating_statement').modal("show");
+  $('.rating_statement').modal({
+    onHidden: function(){
+      $('.rating_statement').remove();
+    }
+  });
+</script>

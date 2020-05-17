@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="erp.list" namespace="/list" extends="struts-default">
+		
+		<action name="page" class="list.pageAction">
+			<result name="index">/WEB-INF/jsp/list/center.jsp</result>
+		</action>
+		<action name="view" class="list.dynamicTableAction">
+			<result name="toViewList">/WEB-INF/jsp/list/view_list.jsp</result>
+			<result name="viewEdit">/WEB-INF/jsp/list/view_edit.jsp</result>
+		</action>
+		
+		<action name="pager" class="list.pagerAction">
+			<result name="nav">/nav.jsp</result>
+		</action>
+	</package>
+</struts>

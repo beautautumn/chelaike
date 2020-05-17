@@ -1,0 +1,98 @@
+# == Schema Information
+#
+# Table name: acquisition_car_infos # 收车信息
+#
+#  id                         :integer          not null, primary key # 收车信息
+#  brand_name                 :string                                 # 品牌名称
+#  series_name                :string                                 # 车系名称
+#  style_name                 :string                                 # 车型名称
+#  acquirer_id                :integer                                # 发布收车信息的人ID
+#  licensed_at                :date                                   # licensed_at
+#  new_car_guide_price_cents  :integer                                # 新车指导价
+#  new_car_final_price_cents  :integer                                # 新车完税价
+#  manufactured_at            :date                                   # 出厂日期
+#  mileage                    :float                                  # 表显里程(万公里)
+#  exterior_color             :string                                 # 外饰颜色
+#  interior_color             :string                                 # 内饰颜色
+#  displacement               :float                                  # 排气量
+#  prepare_estimated_cents    :integer                                # 整备预算
+#  manufacturer_configuration :hstore                                 # 车辆配置
+#  valuation_cents            :integer                                # 收车人估价
+#  state                      :string                                 # 收车信息状态
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  note_text                  :text                                   # 文字备注
+#  key_count                  :integer                                # 车辆钥匙数
+#  images                     :jsonb            is an Array           # 多张图片信息
+#  owner_info                 :jsonb                                  # 原车主信息
+#  is_turbo_charger           :boolean          default(FALSE)        # 是否自然排气
+#  note_audios                :jsonb            is an Array           # 多条语音备注
+#  configuration_note         :string                                 # 配置说明
+#  procedure_items            :jsonb                                  # 手续信息
+#  license_info               :string                                 # 牌证信息
+#  company_id                 :integer                                # 发布者所属公司
+#  intention_level_name       :string                                 # 客户等级
+#  car_id                     :integer                                # 确认收购后关联的在库车辆
+#  closing_cost_cents         :integer                                # 确认收购价
+#
+
+aodi:
+  acquirer: zhangsan # 收购员
+  company_id: tianche.id
+
+  brand_name: "奥迪"
+  series_name: "奥迪A3"
+  style_name: "2014款 Sportback 35 TFSI 自动豪华型"
+  key_count: 2
+  displacement: "1.7"
+  is_turbo_charger: false
+  exterior_color: "白色" # 外饰颜色
+  interior_color: "白色" # 内饰颜色
+  mileage: 30.9 # 表显里程
+  licensed_at: 2015-01-01 # 首次上牌日期
+  license_info: "licensed"
+  manufactured_at: 2015-1-1 # 出厂日期
+  prepare_estimated_cents: 10_000
+  valuation_cents: 25_000_000
+
+  # 车辆定价信息
+  new_car_guide_price_cents: 20_000_000 # 新车指导价
+  new_car_final_price_cents: 27_000_000 # 新车完税价
+
+  note_text: "这是一辆非常好的车"
+  note_audios: [{ url: "audio-url1", duration: 30 }, { url: "audio-url2", duration: 20 }]
+  procedure_items:
+    registration_license: "有"
+    driving_license: "有"
+    purchase_tax: "已征收"
+    original_vehicle_invoice: "有"
+    has_maintain_history: "有"
+    maintenance_manual: "有"
+    instructions: "有"
+    commercial_insurance: "有"
+    commercial_insurance_amount_yuan: 2000
+    transfer_count: 3
+    new_car_warranty: "保内"
+
+  owner_info:
+    name: "原车主姓名"
+    phone: "12344321"
+    expected_price_wan: 30
+    intention_level:
+      id: 1
+      name: "A级"
+      note: "意向"
+    channel:
+      id: 2
+      name: "某个渠道"
+      note: "渠道"
+
+  intention_level_name: "A级"
+  images: [
+    { url: "image-1", type: "car", is_cover: true },
+    { url: "image-car", type: "car", is_cover: false },
+    { url: "image-2", type: "drive_licence", is_cover: false }
+    ]
+  configuration_note: "快捷配置的内容"
+
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

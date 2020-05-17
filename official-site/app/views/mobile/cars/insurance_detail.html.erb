@@ -1,0 +1,116 @@
+<% content_for :title, "保险理赔记录" %>
+<% @without_menu = true %>
+<div class="tc-insurance-car white-background">
+  <!-- 车辆简况 -->
+  <div class="insurance-car-abstract">
+    <div class="weui-panel weui-panel_access insurance-border">
+      <div class="weui-panel__hd insurance-car-title">
+        <%= @insurance_record.make %>
+      </div>
+      <div class="weui-panel__bd">
+        <div class="insurance-car-vin center-text">
+          VIN:<%= @insurance_record.vin %>
+        </div>
+        <div class="weui-flex">
+          <div class="weui-flex__item right-divider">
+            <div>总记录数</div>
+            <div><%= @insurance_record.total_records_count %></div>
+          </div>
+          <div class="weui-flex__item right-divider">
+            <div>最大里程(km)</div>
+            <div><%= @insurance_record.mileage %></div>
+          </div>
+          <div class="weui-flex__item">
+            <div>事故次数</div>
+            <div><%= @insurance_record.claims_count %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 记录摘要 -->
+  <div class="record-abstract">
+    <div class="weui-panel weui-panel_access insurance-border">
+      <div class="weui-panel__bd">
+        <div class="insurance-abstract-title">
+          记录摘要
+        </div>
+        <div class="insurance-abstract-item">
+          最新记录时间：<%= @insurance_record.record_abstract.latest_record_time %>
+        </div>
+        <div class="insurance-abstract-item">
+          生产年份：<%= @insurance_record.record_abstract.made_year %>
+        </div>
+        <div class="insurance-abstract-item">
+          排放标准：<%= @insurance_record.record_abstract.emission_standard %>
+        </div>
+        <div class="insurance-abstract-item">
+          里程表记录：<%= @insurance_record.record_abstract.mileage_record %>
+        </div>
+        <div class="insurance-abstract-item">
+          车辆性质：<%= @insurance_record.record_abstract.used_type %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 出险事故摘要 -->
+  <div class="insurance-abstract">
+    <div class="weui-panel weui-panel_access insurance-border">
+      <div class="weui-panel__bd">
+        <div class="insurance-abstract-title">
+          出险事故摘要
+        </div>
+        <% @insurance_record.claims_abstract["periods"].each do |period| %>
+          <div class="insurance-abstract-item">
+            <div class="weui-flex">
+              <div class="weui-flex__item"><%= period["dates"] %></div>
+              <% count = period["claims_count"].to_i %>
+              <% count_text = count == 0 ? "无出险事故" : "#{count}次出险事故"%>
+              <div class="weui-flex__item"><%= count_text %></div>
+            </div>
+          </div>
+        <% end %>
+        <div class="insurance-abstract-item">
+          <div class="weui-flex">
+            <div class="weui-flex__item">事故损失总金额</div>
+            <div class="weui-flex__item"><%= @insurance_record.claims_total_fee_yuan %>元</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 详细记录 -->
+  <div class="insurance-detail-info">
+    <div class="weui-panel weui-panel_access insurance-border">
+      <div class="weui-panel__bd">
+        <div class="insurance-abstract-title">
+          详细记录
+        </div>
+
+        <% @insurance_record.claims_details.each do |claim_detail| %>
+          <div class="detail-item">
+            <div class="detail-item-title">
+              <div class="weui-flex">
+                <div class="weui-flex__item"><%= claim_detail["claim_date"]%>  保险</div>
+                <div class="weui-flex__item">事故损失：<%= claim_detail["lobor_fee"]%>元</div>
+              </div>
+            </div>
+            <div class="detail-item-body">
+              <div class="detail-item-item">
+                <label>事故类型：</label>
+                <span><%= claim_detail["accident_type"].presence || "-"%></span>
+              </div>
+              <div class="detail-item-item">
+                <label>维修内容：</label>
+                <span><%= claim_detail["repair_detail"]%></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

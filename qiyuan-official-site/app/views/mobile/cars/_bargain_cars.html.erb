@@ -1,0 +1,14 @@
+<% if @onsale_cars.total > 0 %>
+  <div class="weui-panel weui-panel_access tc-home-selling-container">
+    <div class="tc-home-selling-titile">
+      特价优惠
+      <%= link_to cars_path(index_type: "onsale_index") do %>
+        <span>查看全部<%= @onsale_cars.total %>辆</span>
+        <div class="arrow"></div>
+      <% end %>
+    </div>
+    <div class="weui-panel_bd tc-cars-list list-view bargain-cars">
+      <%= render partial: "/cars/bargain_cars_group", collection: @onsale_cars.data.in_groups_of(2), as: :group_cars %>
+    </div>
+  </div>
+<% end %>

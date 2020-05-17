@@ -1,0 +1,13 @@
+<% if @car.prepare_items.present? %>
+  <div class="container">
+    <div class="tc-sub-title">整备内容</div>
+    <div class="maintenance-info-container">
+      <% @car.prepare_items.each do |prepare_item| %>
+        <div class="item">
+          <div class="title"><%= prepare_item.name %></div>
+          <div class="value"><%= prepare_item.note %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

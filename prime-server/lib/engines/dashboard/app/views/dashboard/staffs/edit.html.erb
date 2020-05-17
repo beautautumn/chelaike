@@ -1,0 +1,41 @@
+<h1>编辑员工</h1>
+<div class="ui segment">
+  <%= form_for :staff,
+    url: staff_path(@staff), method: :patch,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="required field">
+      <label>电话</label>
+      <%= f.text_field :phone %>
+    </div>
+    <div class="field">
+      <label>姓名</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <label>状态</label>
+      <%= f.select :state,
+        [ ["启用", "enabled"], ["禁用", "disabled"] ],
+        {}, { class: "ui search dropdown" }
+      %>
+    </div>
+    <div class="field">
+      <label>角色</label>
+      <%= f.select :role,
+        [ ["客服", "客服"], ["服务顾问", "服务顾问"],["开发人员", "开发人员"], ["财务人员", "财务人员"], ["管理员", "管理员"] ],
+        {}, { class: "ui search dropdown" }
+      %>
+    </div>
+    <div class="field">
+      <label>所属主管</label>
+      <%= f.select :manager_id,
+        Dashboard::Staff.all.collect { |s| [s.name, s.id] },
+        { include_blank: true , id: "staff-new-manager-select", class: "ui search dropdown" }
+      %>
+    </div>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

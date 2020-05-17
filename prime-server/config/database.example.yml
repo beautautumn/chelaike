@@ -1,0 +1,93 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # username:
+  # host:
+  pool: 5
+
+  che3bao:
+    adapter: mysql2
+    pool: 5
+    timeout: 5000
+    database: erp_khb_bak
+    username: root
+    host: 115.29.231.78
+    password: 6t6w8y8z5x201412
+
+development: &development
+  <<: *default
+  database: prime_server_development
+
+test:
+  <<: *default
+  database: prime_server_test
+
+production: &production
+  <<: *default
+  database: prime_server_production
+  # username: prime
+  # host: rds7a3h2hm8j81r211g5.pg.rds.aliyuncs.com 阿里云rds
+  # host: postgres-2xwbstrc.sql.tencentcdb.com # 腾讯测试环境
+  host: 10.0.0.4
+  port: 5432
+  username: prime
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 100
+
+  # port: 3433
+  # password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  # pool: 100
+
+  che3bao:
+    adapter: mysql2
+    pool: 40
+    timeout: 5000
+    database: erp_khb
+    username: root
+    host: 115.29.231.78
+    password: 6t6w8y8z5x201412
+
+# staging:
+#   <<: *default
+#   host: rds100sp585h2bsguk2p.pg.rds.aliyuncs.com
+#   port: 3433
+#   database: prime_server_staging
+#   username: deploy
+#   password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+#   pool: 40
+
+staging:
+  <<: *default
+  host: postgres-2xwbstrc.sql.tencentcdb.com
+  port: 16233
+  database: prime_server_staging
+  username: deploy
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 40
+
+dokku:
+  <<: *default
+  database: prime_server_dokku
+  username: deploy
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 40
+
+dashboard:
+  <<: *production
+
+docker:
+  <<: *default
+  database: prime_server_docker
+  username: deploy
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 40
+  host: db
+
+download:
+  <<: *production
+
+prerelease:
+  <<: *production
+  host: sub1502936963227-rds7a3h2hm8j81r211g5.pg.rds.aliyuncs.com
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  port: 3432

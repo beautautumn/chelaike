@@ -1,0 +1,20 @@
+.toolBar {
+  display: flex;
+}
+
+.total {
+  margin-left: 10px;
+  padding-top: 7px;
+}
+
+.actions {
+  margin-left: auto;
+
+  & > button {
+    margin-right: 10px;
+  }
+
+  :global(.ant-btn-group) {
+    margin-right: 10px;
+  }
+}

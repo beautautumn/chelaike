@@ -1,0 +1,21 @@
+<div class="weui-tabbar tc-car-detail-footer">
+  <div class="weui-tabbar__item footer-container">
+    <div id="detail-collect" class="favorite parent" data-id="<%= @car.id %>">
+      <% if favorite_car?(@car) %>
+        <div id="detail-collect-image" class="collect-image-checked child"></div>
+        <div id="detail-collect-text" class="collect-text-checked child">已收藏</div>
+      <% else %>
+        <div id="detail-collect-image" class="collect-image"></div>
+        <div id="detail-collect-text" class="collect-text">收藏</div>
+      <% end %>
+    </div>
+    <div class="weui-flex">
+      <div id="ask-low-price" class="weui-flex__item ask-low-price footer-text">
+        询问底价
+      </div>
+      <div class="weui-flex__item call-phone footer-text">
+        <%= link_to "电话联系", "tel:#{detail_contact_phone}" %>
+      </div>
+    </div>
+  </div>
+</div>

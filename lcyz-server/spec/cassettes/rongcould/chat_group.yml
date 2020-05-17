@@ -1,0 +1,336 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/group/create.json
+    body:
+      encoding: UTF-8
+      string: userId=365425971&userId=593036189&userId=667849921&userId=602622570&groupId=1&groupName=/天车二手车收购群/
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 276405cc05f14ff588293a83d009b762
+      Timestamp:
+      - '1468989307'
+      Signature:
+      - d8eafbb59201efe82f5f7b699339948db2113886
+      Content-Length:
+      - '112'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Wed, 20 Jul 2016 04:35:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Wed, 20 Jul 2016 04:35:08 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/group/refresh.json
+    body:
+      encoding: UTF-8
+      string: groupId=499948817&groupName=%E5%98%BB%E5%98%BB%E5%98%BB
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - eeeb13a65e4b4afb9fa77536ca8de150
+      Timestamp:
+      - '1469159136'
+      Signature:
+      - 00020438d56b1260e9920f47618485b4f4c95128
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jul 2016 03:45:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 03:45:36 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/group/join.json
+    body:
+      encoding: UTF-8
+      string: userId=340065689&groupId=499948817&groupName=天车二手车销售群
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 72096541f7224572a955b77fc731fbfe
+      Timestamp:
+      - '1469166726'
+      Signature:
+      - 6d3695633dbf6520f21f3686af208f3e7d38833a
+      Content-Length:
+      - '69'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jul 2016 05:52:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 05:52:07 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/group/quit.json
+    body:
+      encoding: UTF-8
+      string: userId=667849921&groupId=499948817
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 31f9adc59f3f4dd1bf60d50eb17517c9
+      Timestamp:
+      - '1469167036'
+      Signature:
+      - 339560e3b69ca06c2b5bc12588742d866b907086
+      Content-Length:
+      - '34'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jul 2016 05:57:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 05:57:17 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/message/group/publish.json
+    body:
+      encoding: UTF-8
+      string: fromUserId=294543741&toGroupId=499948818&objectName=RC%3ATxtMsg&content=%7B%22content%22%3A%22%E5%90%8C%E6%80%A7%E4%BA%A4%E5%8F%8B%E7%BD%91%E7%AB%99%E9%94%80%E5%94%AE%E7%BE%A4%E5%B7%B2%E5%88%9B%E5%BB%BA%22%7D
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - bdcfbdfe0209482ea770e8698bfc4a29
+      Timestamp:
+      - '1470279874'
+      Signature:
+      - e28b9f6000f64d9d4d0e2b0486cfd8e3d1c779bb
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 04 Aug 2016 03:04:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 03:04:34 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/group/create.json
+    body:
+      encoding: UTF-8
+      string: userId=602622570&groupId=585757000&groupName=天车二手车收购群
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 1415921178c84c00b59038644c2991f7
+      Timestamp:
+      - '1474967853'
+      Signature:
+      - a8b6bade7be443626094f7f37216c83f587add24
+      Content-Length:
+      - '69'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Sep 2016 09:17:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Tue, 27 Sep 2016 09:17:34 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/message/group/publish.json
+    body:
+      encoding: UTF-8
+      string: fromUserId=602622570&toGroupId=585757000&objectName=RC%3ATxtMsg&content=%7B%22content%22%3A%22%E5%A4%A9%E8%BD%A6%E4%BA%8C%E6%89%8B%E8%BD%A6%E6%94%B6%E8%B4%AD%E7%BE%A4%E5%B7%B2%E5%88%9B%E5%BB%BA%22%7D
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 668e757ea55540b893ed496a81142860
+      Timestamp:
+      - '1474967854'
+      Signature:
+      - 9316a0dcd2223488e0b3f904eba3395d0fd00022
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Sep 2016 09:17:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Tue, 27 Sep 2016 09:17:34 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,49 @@
+<h1>车款管理</h1>
+
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="ui wide column">
+      <%= link_to '返回', brand_path(id: params[:brand_id]), class: "ui button" %>
+    </div>
+  </div>
+
+  <table class="ui definition table">
+    <tbody>
+      <tr>
+        <td class="two wide column">车系</td>
+        <td><%= @series['name'] %></td>
+      </tr>
+      <tr>
+        <td>厂商</td>
+        <td><%= @series['manufacturer'] %></td>
+      </tr>
+      <tr>
+        <td>编码</td>
+        <td><%= @series['code'] %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%#= render partial: "series_toolbar" %>
+  <table class="ui celled striped table">
+    <thead>
+      <tr>
+        <th> 款 </th>
+        <th> ID </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @styles.each do |style| %>
+        <tr>
+          <td colspan="2"><%= style['year'] %></td>
+        </tr>
+        <% style['models'].each do |mod| %>
+          <tr>
+            <td><%= mod['name'] %></td>
+            <td><%= mod['id'] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

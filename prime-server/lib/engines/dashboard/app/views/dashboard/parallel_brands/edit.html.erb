@@ -1,0 +1,22 @@
+<h1>编辑品牌</h1>
+<div class="ui segment">
+  <%= form_for :parallel_brand,
+    url: parallel_brand_path(@parallel_brand), method: :patch,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="field">
+      <label>名称</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <label>LOGO</label>
+      <%= image_tag @parallel_brand.logo_url %>
+      <label>替换 LOGO</label>
+      <%= f.file_field :logo_url %>
+    </div>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<p>
+  <%= company.name %>
+</p>
+<p>
+  注册时间: <%= company.created_at.strftime("%Y-%m-%d %H:%M") %>
+  联系人：<%= company.contact %>
+  地区：<%= company.province %> <%= company.city %>
+</p>

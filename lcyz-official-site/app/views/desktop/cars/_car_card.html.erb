@@ -1,0 +1,51 @@
+<% ignore_recommended_car_tag = ignore_recommended_car_tag || false %>
+
+<div class="car-card">
+  <div class="img-panel">
+    <% unless in_stock_car?(car) %>
+      <div class="img-overlay"></div>
+      <div class="img-overlay-desc">已出售</div>
+    <% end %>
+    <div class="tag-img">
+      <% if bargin_car?(car) %>
+        <div><%= image_tag asset_path("common/bargin_corner.png"), class: "bargin-img" %></div>
+      <% elsif !ignore_recommended_car_tag && recommended_car?(car) %>
+        <div><%= image_tag asset_path("common/recommended_corner.png"), class: "recommend-img" %></div>
+      <% end %>
+    </div>
+    <a href="<%= car_path(car.id) %>">
+      <%= image_tag car_cover(car.cover_url, "550x412"), class: "car-img" %>
+    </a>
+    <%= image_tag favorite_image(car), class: "favorite-img" %>
+  </div>
+  <div class="title"><%= link_to car.system_name, car_path(car.id) %></div>
+  <div class="mileage-reserved">
+    <div class="mileage"><%= "#{year_month_ch(car.licensed_at)}/#{car.mileage}万公里" %></div>
+    <% if in_stock_car?(car) && car.reserved %>
+      <div class="reserved">已预订</div>
+    <% end %>
+  </div>
+  <div class="price">
+    <% if bargin_car?(car) %>
+      <span>特惠价：</span><%= car.onsale_price_wan %>万
+    <% elsif car.show_price_wan %>
+      <span>￥</span><%= car.show_price_wan %>万
+    <% else %>
+      即将开售
+    <% end %>
+    <span>新车含税价：<span class="guide-price"><%= car.new_car_final_price_wan %>万</span></span>
+  </div>
+
+  <% if bargin_car?(car) %>
+    <div class="bargin-panel">
+      <div><%= image_tag asset_path("common/bargin_list.png") %></div>
+      <div class="bargin-desc" data-toggle="tooltip" data-placement="bottom" title="<%= car.onsale_description %>">
+        <%= truncate_string(car.onsale_description, 15) %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if local_assigns[:show_company] %>
+    <div class="company-name"><%= car.company.try(:name) %></div>
+  <% end %>
+</div>

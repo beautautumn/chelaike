@@ -1,0 +1,40 @@
+<div class="tc-car-detail-part tc-insurance">
+  <div class="title">保险理赔记录</div>
+
+  <div class="tc-insurance-body">
+    <div class="insurance-count">
+      理赔次数：<%= insurance_record.records_count %>
+    </div>
+    <table class="insurance-table">
+      <thead>
+        <tr>
+          <th>最近一次理赔</th>
+          <th>最大金额理赔</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>
+            <% latest_record = insurance_record.latest_record %>
+            <div><%= latest_record[:date] %></div>
+          </th>
+          <th>
+            <% max_record = insurance_record.max_amount_record %>
+            <div>
+              <%= max_record[:date] %>
+            </div>
+            <div>
+              损失<%= max_record[:amount_yuan] %>元
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="button_sp_area">
+    <%= insurance_record.pay_link(@car) %>
+  </div>
+  <div class="text-description">
+    如购买此车，查询费用将退回
+  </div>
+</div>

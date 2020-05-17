@@ -1,0 +1,25 @@
+<div class="tow-colums-car-card">
+  <div class="img-panel">
+    <% unless in_stock_car?(car) %>
+      <div class="img-overlay"></div>
+      <div class="img-overlay-desc">已出售</div>
+    <% end %>
+    <a href="<%= car_path(car.id) %>">
+      <%= image_tag car_cover(car.cover_url, "550x412"), class: "car-img" %>
+    </a>
+    <a href="javascript:;"><em class="<%= favorite_car?(car) ? 'tc-favorite-yes-badges' : 'tc-favorite-badges' %>"></em></a>
+  </div>
+  <div class="title"><%= link_to car.system_name, car_path(car.id) %></div>
+  <div class="mileage"><%= "#{year_month_ch(car.licensed_at)}/#{car.mileage}万公里" %></div>
+  <div class="price-reserved">
+    <div class="price"><span>特惠价：</span><%= car.onsale_price_wan %>万<span></span></div>
+    <% if in_stock_car?(car) && car.reserved %>
+      <div class="reserved">已预订</div>
+    <% end %>
+  </div>
+  <div class="price-origin">新车含税价：<span><%= car.new_car_guide_price_wan %>万</span></div>
+  <div class="bargin-description" data-toggle="tooltip" data-placement="bottom" title="<%= car.onsale_description %>">
+    <%= image_tag "common/bargin_list.png", class: "car-img" %>
+    <p><%= truncate_string(car.onsale_description, 42) %></p>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<% content_for :attach_assets do %>
+  <link href="//cdn.bootcss.com/slick-carousel/1.6.0/slick.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/slick-carousel/1.6.0/slick.min.js"></script>
+<% end %>
+
+<% is_in_stock_car = in_stock_car?(@car) %>
+
+<div class="container">
+  <div class="tc-car-detail-header clearfix">
+    <div class="tc-imges">
+      <div class="tc-pic">
+        <div class="tag-img">
+          <% if bargin_car?(@car) %>
+            <div><%= image_tag asset_path("common/bargin_corner.png"), class: "bargin-img" %></div>
+          <% elsif recommended_car?(@car) %>
+            <div><%= image_tag asset_path("common/recommended_corner.png"), class: "recommend-img" %></div>
+          <% end %>
+        </div>
+        <div class="slider-for">
+          <% if @car.images.size > 0 %>
+            <% @car.images.each_with_index do |image, index| %>
+              <div>
+                <a data-toggle="modal" data-target="#carImgViewModal" data-index="<%= index %>">
+                  <% unless is_in_stock_car %>
+                    <span class="img-overlay"></span>
+                    <span class="img-overlay-desc">已出售</span>
+                  <% end %>
+                  <span class="img-index"><%= index + 1 %>/<%= @car.images.size %></span>
+                  <img data-lazy="<%= img_scale(image.url, "720x540") %>">
+                </a>
+              </div>
+            <% end %>
+          <% else %>
+            <img src="<%= car_cover(@car.cover_url) %>">
+          <% end %>
+        </div>
+        <div class="slider-nav">
+          <% @car.images.each do |image| %>
+            <div><img data-lazy="<%= img_scale(image.url, "550x412") %>"></div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tc-carousel"></div>
+    </div>
+    <div class="tc-info">
+      <div class="tc-title">
+        <%= @car.system_name %>
+        <% if in_stock_car?(@car) && @car.reserved %>
+          <span>已预订</span>
+        <% end %>
+      </div>
+      <% if bargin_car? @car %>
+        <div class="tc-price">
+          特惠价：<span><%= @car.onsale_price_wan %>万</span>
+          <span>新车含税价：<span><%= @car.new_car_final_price_wan %>万元</span></span>
+        </div>
+      <% else %>
+        <div class="tc-price">
+          <% if @car.show_price_wan %>
+            <%= @car.is_fixed_price ? "一口价：" : "￥" %><span><%= @car.show_price_wan %></span>万
+          <% else %>
+            <span>即将开售</span>
+          <% end %>
+          <span>新车含税价：<span><%= @car.new_car_final_price_wan %>万元</span></span>
+        </div>
+      <% end %>
+      <div class="tc-loan">
+        <div><%= image_tag "common/loan.png" %></div>
+        <% if bargin_car? @car %>
+          <div>首付<%= down_payment(@car.onsale_price_wan) %>万</div>
+        <% else %>
+          <div>首付<%= down_payment(@car.show_price_wan) %>万</div>
+        <% end %>
+        <% if (@tenant.car_configuration.try(:loan_periods).try(:size) || 0) > 0 &&
+              (@tenant.car_configuration.try(:down_payments).try(:size) || 0) > 0
+        %>
+          <div data-toggle="modal" data-target="#instalmentComputeModal">分期试算</div>
+        <% else %>
+          <div></div>
+        <% end %>
+      </div>
+      <div class="tc-basic">
+        <div class="tc-cell">
+          <div><%= @car.mileage %>万公里</div>
+          <div>行驶里程</div>
+        </div>
+        <div class="tc-cell">
+          <% info = licensed_info(@car) %>
+          <div><%= info[0] %></div>
+          <div><%= info[1] %></div>
+        </div>
+        <div class="tc-cell">
+          <div><%= @car.shop.city %></div>
+          <div>车牌所在地</div>
+        </div>
+        <div class="tc-cell">
+          <div><%= @car.emission_standard_text %></div>
+          <div>排放标准</div>
+        </div>
+        <div class="tc-cell">
+          <div><%= @transmission_name || "-" %></div>
+          <div>变速箱</div>
+        </div>
+        <div class="tc-cell">
+          <div><%= @car.displacement_text %></div>
+          <div>排量</div>
+        </div>
+      </div>
+      <div class="tc-contact">
+        <%= image_tag "#{ENV.fetch("CHELAIKE_DOMAIN")}/api/v1/cars/#{@car.id}/qrcode" %>
+        <div>电话咨询 <%= contact_phone %></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'car_img_modal' %>

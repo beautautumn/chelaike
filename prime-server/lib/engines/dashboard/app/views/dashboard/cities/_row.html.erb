@@ -1,0 +1,11 @@
+<tr>
+  <td> <%= city.name %> </td>
+  <td> <%= city.pinyin %> </td>
+  <td> <%= city.zip_code %> </td>
+  <td> <%= city.try(:score).try(:[], "min") %> </td>
+  <td> <%= city.try(:score).try(:[], "max") %> </td>
+  <td> <%= city.try(:score).try(:[], "utmost") %> </td>
+  <td>
+    <%= link_to "编辑", city_path(city) %>
+  </td>
+</tr>

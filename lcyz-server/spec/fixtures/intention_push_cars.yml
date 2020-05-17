@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: intention_push_cars # 看过的车辆
+#
+#  id                        :integer          not null, primary key # 看过的车辆
+#  intention_id              :integer                                # 意向ID
+#  intention_push_history_id :integer                                # 意向跟进历史ID
+#  car_id                    :integer                                # 车辆ID
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#
+
+doraemon_seeking_aodi_push_record:
+  intention: doraemon_seeking_aodi
+  car: aodi

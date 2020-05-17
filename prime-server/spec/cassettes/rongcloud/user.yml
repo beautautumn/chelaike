@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/user/getToken.json
+    body:
+      encoding: UTF-8
+      string: userId=602622570&name=Zhangsan&portraitUri=
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - eb9a42812a1546fc92481902a3f696c4
+      Timestamp:
+      - '1468984306'
+      Signature:
+      - 7e8c11ff9269d4f4f90df38bddf387f00d37f702
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 20 Jul 2016 03:11:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '140'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"userId":"602622570","token":"H8QMWl/aFhqtw+hufj7HncOLqSfbiz4U9agG/V38kTWWuehp07Mf78giLPU1z84znZfH5ccSnbIAPq+CLRsnBDKFlasrOg2b"}'
+    http_version: 
+  recorded_at: Wed, 20 Jul 2016 03:11:47 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,57 @@
+<% content_for :content_header  do %>
+  <h1>好车推荐</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">好车推荐</li>
+  </ol>
+<% end %>
+
+<div class="box-tools pull-right tc-recommended-cars-toolbar">
+  <%= link_to new_admin_recommended_car_path, class: 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    添加推荐车辆
+  <% end %>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th width="70%">车辆</th>
+    <th width="10%">排序值</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @records.each do |record| %>
+    <%= form_for(
+      [:admin, record],
+      url: admin_recommended_car_path(record),
+      method: :patch,
+      html: { role: "form" }
+    ) do |f| %>
+      <tr>
+        <td class="tc-recommended-car-info">
+          <% if record.car %>
+            <div class="tc-recommended-car-img"><img src="<%= car_cover(record.car.cover_url) %>"></div>
+            <div><%= record.car.name %></div>
+            <div>库存号：<%= record.car.stock_number %></div>
+            <div>车牌号：<%= record.car.acquisition_transfer.try(:current_plate_number) %></div>
+            <div>分店：<%= record.car.shop.try(:name) %></div>
+            <div>上牌时间：<%= record.car.licensed_at %></div>
+          <% else %>
+            <%= "车辆已失效(id=#{record.car_id})" %>
+          <% end %>
+        </td>
+        <td>
+          <%= f.hidden_field :id %>
+          <%= f.text_field :order, class: "form-control" %>
+        </td>
+        <td>
+          <%= f.submit "保存", class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "删除", admin_recommended_car_path(record), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

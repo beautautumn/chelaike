@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      prepare_record: 整备管理记录
+    attributes:
+      prepare_record:
+        car_id: 车辆ID
+        state: 整备状态
+        total_amount_cents: 费用合计
+        total_amount_yuan: 费用合计
+        start_at: 开始时间
+        end_at: 结束时间
+        repair_state: 维修现状
+        note: 补充说明
+        created_at: 创建时间
+        updated_at: 最后更新时间

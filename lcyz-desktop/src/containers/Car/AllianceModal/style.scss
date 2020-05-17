@@ -1,0 +1,22 @@
+.selectAll {
+  padding-left: 57px;
+  margin-top: -10px;
+  font-size: 13px;
+  label {
+    margin-left: 10px;
+  }
+}
+
+.alliances {
+  padding: 15px 57px 30px 57px;
+}
+
+.alliancesSelect {
+  :global(.ant-checkbox-wrapper) {
+    width: 180px;
+    margin-bottom: 10px;
+    span {
+      font-size: 13px;
+    }
+  }
+}

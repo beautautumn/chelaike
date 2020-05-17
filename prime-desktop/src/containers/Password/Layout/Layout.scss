@@ -1,0 +1,17 @@
+.password {
+  height: 100%;
+
+  :global {
+    .column {
+      max-width: 450px;
+    }
+
+    .code {
+      width: 245px;
+    }
+
+    .code.button {
+      width: 146.344px;
+    }
+  }
+}

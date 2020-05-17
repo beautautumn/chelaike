@@ -1,0 +1,48 @@
+# == Schema Information
+#
+# Table name: chat_sessions
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  nick_name   :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  target_id   :integer
+#  target_type :string
+#
+
+zhangsan_chat:
+  user: zhangsan
+  nick_name: jeheh
+  target: tianche_sale
+  target_type: "ChatGroup"
+
+lisi_chat:
+  user: lisi
+  nick_name: lisi_tianche_sale_nickname
+  target: tianche_sale
+  target_type: "ChatGroup"
+
+zhangsan_alliance_chat:
+  user: zhangsan
+  nick_name: haha
+  target: avengers_sale
+  target_type: "ChatGroup"
+
+zhangsan_avengers_acquisition_chat:
+  user: zhangsan
+  nick_name: zhangsan_avengers_acquisition
+  target: avengers_acquisition
+  target_type: "ChatGroup"
+
+nolan_alliance_chat:
+  user: nolan
+  nick_name: nolan_avengers_sale
+  target: avengers_sale
+  target_type: "ChatGroup"
+
+nolan_avengers_acquisition_chat:
+  user: nolan
+  nick_name: nolan_avengers_acquisition
+  target: avengers_acquisition
+  target_type: "ChatGroup"

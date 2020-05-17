@@ -1,0 +1,9 @@
+.total {
+  margin-left: 10px;
+}
+
+.buttons {
+  :global(.ant-btn) {
+    margin-left: 6px;
+  }
+}

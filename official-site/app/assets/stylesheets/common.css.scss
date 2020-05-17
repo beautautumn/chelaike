@@ -1,0 +1,51 @@
+.public-praises-average-score {
+    height: 16px;
+    width: 98px;
+    background: image-url("common/star.png") no-repeat;
+    background-position: 0 0px;
+    span {
+      display: inline-block;
+      height: 16px;
+      background: image-url("common/star.png") no-repeat;
+      background-position: 0 -20px;
+    }
+}
+
+.tc-paginate-wraper {
+  float: left;
+  position: relative;
+  left: 50%;
+  nav.pagination {
+    position: relative;
+    left: -50%;
+    margin-bottom: 50px;
+    span.prev, span.page, span.next {
+      display: inline-block;
+      a {
+        display: block;
+        margin-right: 8px;
+        line-height: 32px;
+        padding: 0 11px;
+        border: solid 1px #d9d9d9;
+        color: #000000;
+        border-radius: 0;
+      }
+      a:hover {
+        color: #ff7403;
+        border-color: #ff7403;
+        background-color: #ffffff;
+        text-decoration: none;
+      }
+    }
+    span.current {
+      display: inline-block;
+      color: #ffffff;
+      border-color: #ff7403;
+      background-color: #ff7403;
+      width: 32px;
+      margin-right: 8px;
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+}

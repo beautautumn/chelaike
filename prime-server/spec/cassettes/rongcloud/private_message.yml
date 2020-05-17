@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/message/private/publish.json
+    body:
+      encoding: UTF-8
+      string: fromUserId=602622570&toUserId=667849921&objectName=RC%3ATxtMsg&content=%7B%22content%22%3A%22hello%22%2C%22extra%22%3A%22customized%22%7D
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - 8cd16e4acb754f5a97393dffe60e2327
+      Timestamp:
+      - '1469080228'
+      Signature:
+      - 773b609b8e45834385ec0ce2ad19f109de65a960
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 21 Jul 2016 05:50:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200}'
+    http_version: 
+  recorded_at: Thu, 21 Jul 2016 05:50:28 GMT
+recorded_with: VCR 3.0.1

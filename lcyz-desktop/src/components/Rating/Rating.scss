@@ -1,0 +1,34 @@
+$react-rater-link: #ccc !default;
+$react-rater-hover: #F5A623 !default;
+$react-rater-active: #F5A623 !default;
+
+
+:global {
+  .react-rater {
+    display: inline-block;
+    line-height: normal;
+    margin: 4px 0;
+
+    a {
+      cursor: pointer;
+      color: $react-rater-link;
+      font-size: 17px;
+
+      &.will-be-active {
+        color: $react-rater-hover;
+      }
+      &.is-active {
+        color: $react-rater-active;
+      }
+      &.is-disabled {
+        color: $react-rater-link;
+        cursor: not-allowed;
+      }
+    }
+    &.is-disabled {
+      a {
+        cursor: default;
+      }
+    }
+  }
+}

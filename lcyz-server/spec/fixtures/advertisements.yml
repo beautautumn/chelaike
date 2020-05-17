@@ -1,0 +1,43 @@
+# == Schema Information
+#
+# Table name: advertisements # 广告
+#
+#  id           :integer          not null, primary key # 广告
+#  title        :string                                 # 标题
+#  image_url    :string                                 # 图片地址
+#  redirect_url :string                                 # 跳转链接
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  state        :string           default("enabled")    # 是否启用
+#  show_seconds :integer                                # 广告展示时长
+#
+
+one:
+  id: 1
+  title: 广告1
+  image_url: http://image.chelaike.com/images/e2fa50f0-7950-47c6-9a53-e91d794167d5.png
+  redirect_url: http://pc.chelaike.com
+  state: disabled
+  show_seconds: 5
+  created_at: 2016-01-01
+  updated_at: 2016-01-01
+
+two:
+  id: 2
+  title: 广告2
+  image_url: http://image.chelaike.com/images/612cae8f-68f2-4b0d-83f2-6ff55fd87b97.png
+  redirect_url: http://pc.chelaike.com
+  state: disabled
+  show_seconds: 10
+  created_at: 2016-01-01
+  updated_at: 2016-01-01
+
+three:
+  id: 3
+  title: 广告3
+  image_url: http://image.chelaike.com/images/4218da27-5549-452e-96bd-46aba2f6255f.png
+  redirect_url: http://pc.chelaike.com
+  state: enabled
+  show_seconds: 5
+  created_at: 2016-01-01
+  updated_at: 2016-01-01

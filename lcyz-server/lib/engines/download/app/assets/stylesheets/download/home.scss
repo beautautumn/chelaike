@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",sans-serif;
+  background: image-url('download/background.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  margin: -120px auto auto auto;
+  text-align: center;
+}
+
+.logo {
+  width: auto;
+}
+
+.slogan {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 20px;
+  width: auto;
+  color: #fff;
+}
+
+.rename {
+  margin-top: 40px;
+}
+
+.download {
+  margin-top: 55px;
+}
+
+.downloads {
+  margin: 0 auto;
+  overflow: hidden;
+	width: 100%;
+}
+
+.icon {
+  background-color: #fff;
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+}
+
+.boxText {
+  text-align: center;
+}
+
+.app {
+  width: 45%;
+  float: left;
+}
+
+.appIcon {
+  background-color: #fff;
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.appBox {
+  float: right;
+}
+
+.appImage {
+  width: 125px;
+}
+
+.desktop {
+  width: 45%;
+  float: right;
+}
+
+.desktopBox {
+  float: left;
+}
+
+
+.link {
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #00CF57;
+  width: 120px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 20px;
+}
+
+.tip {
+  font-size: 12px;
+  color: #fff;
+  line-height: 8px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  background: #d9534f;
+}

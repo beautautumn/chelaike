@@ -1,0 +1,20 @@
+<%
+  cars = @result.data
+  total = @result.total
+  paginatable_array = Kaminari
+    .paginate_array([], total_count: total)
+    .page(params[:page])
+    .per(24)
+%>
+
+<div class="container">
+  <%= render "order_bar" %>
+
+  <div class="car-list">
+    <%= render partial: "car_card", collection: cars, as: :car %>
+  </div>
+
+  <div class="tc-paginate-wraper">
+    <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+  </div>
+</div>

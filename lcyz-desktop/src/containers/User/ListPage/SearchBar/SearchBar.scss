@@ -1,0 +1,5 @@
+.form {
+  :global(.ant-btn + .ant-btn) {
+    margin-left: 8px;
+  }
+}

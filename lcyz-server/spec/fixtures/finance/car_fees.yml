@@ -1,0 +1,44 @@
+# == Schema Information
+#
+# Table name: finance_car_fees # 车辆费用
+#
+#  id           :integer          not null, primary key # 车辆费用
+#  car_id       :integer                                # 关联车辆
+#  creator_id   :integer                                # 项目创建者
+#  category     :string                                 # 所属项目分类
+#  item_name    :string                                 # 具体项目名
+#  amount_cents :integer                                # 费用数额
+#  fee_date     :date                                   # 费用日期
+#  note         :text                                   # 说明
+#  user_id      :integer                                # 关联用户
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+aodi_first_payment:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_sold) %>
+  category: payment
+  amount_cents: 5_000_000
+  fee_date: <%= Time.zone.parse("2016-08-01").utc.to_s(:db) %>
+  note: "首付五万"
+
+aodi_second_payment:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_sold) %>
+  category: payment
+  amount_cents: 15_000_000
+  fee_date: <%= Time.zone.parse("2016-08-02").utc.to_s(:db) %>
+  note: "补齐余款"
+
+aodi_first_receipt:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_sold) %>
+  category: receipt
+  amount_cents: 15_000_000
+  fee_date: <%= Time.zone.parse("2016-09-01").utc.to_s(:db) %>
+  note: "首笔收款"
+
+aodi_first_receipt:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_sold) %>
+  category: receipt
+  amount_cents: 15_000_000
+  fee_date: <%= Time.zone.parse("2016-09-02").utc.to_s(:db) %>
+  note: "全款收讫"

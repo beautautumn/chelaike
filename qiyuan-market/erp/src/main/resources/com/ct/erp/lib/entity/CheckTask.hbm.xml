@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ct.erp.lib.entity.CheckTask" table="check_tasks">
+        <id name="taskId" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="taskType" type="java.lang.String">
+            <column name="task_type" />
+        </property>
+        <property name="taskReportH5Url" type="java.lang.String">
+            <column name="task_report_h5_url" />
+        </property>
+        <property name="taskState" type="java.lang.String">
+            <column name="task_state" />
+        </property>
+        <property name="taskCreateTime" type="java.util.Date">
+            <column name="created_at" />
+        </property>
+        <property name="taskModifyTime" type="java.util.Date">
+            <column name="updated_at" />
+        </property>
+       <property name="checkerId" type="java.lang.Long">
+            <column name="check_staff_id" />
+       </property>
+        <property name="carId" type="java.lang.Long">
+            <column name="car_id" />
+        </property>
+
+        <property name="report_type" type="java.lang.String">
+            <column name="report_type" />
+        </property>
+        <property name="report_url" type="java.lang.String">
+            <column name="report_url" />
+        </property>
+        <property name="valuation" type="java.lang.String">
+            <column name="valuation" />
+        </property>
+        <!--<many-to-one name="trade" class="com.ct.erp.lib.entity.Trade" fetch="select">
+            <column name="trade_id"/>
+        </many-to-one>-->
+
+        <!--<many-to-one name="cars" class="com.ct.erp.lib.entity.Cars" fetch="select">
+            <column name="car_id" />
+        </many-to-one>-->
+        <many-to-one name="createStaff" class="com.ct.erp.lib.entity.Staff" fetch="select">
+            <column name="create_staff_id" />
+        </many-to-one>
+        <!--<many-to-one name="checkStaff" class="com.ct.erp.lib.entity.Staff" fetch="select">
+            <column name="check_staff_id" />
+        </many-to-one>-->
+    </class>
+</hibernate-mapping>

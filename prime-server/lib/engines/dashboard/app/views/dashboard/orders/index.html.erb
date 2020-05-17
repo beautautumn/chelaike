@@ -1,0 +1,32 @@
+<h1>车商充值列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th width="10%">订单ID</th>
+        <th width="10%"> 地区 </th>
+        <th width="14%"> 车商名称 </th>
+        <th width="12%"> 充值时间 </th>
+        <th width="10%"> 充值状态 </th>
+        <th width="14%"> 充值员工</th>
+        <th width="10%"> 充值额度 </th>
+        <th width="10%"> 获得车币 </th>
+        <th width="10%"> 服务顾问 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |r| %>
+        <%= render partial: "row", locals: { order: r} %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@counter%> 条记录
+          <%= paginate @orders %>
+        </th>
+    </tfoot>
+  </table>
+</div>

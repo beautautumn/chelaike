@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v3
+    body:
+      encoding: UTF-8
+      string: order_id=5&created=2017-01-12%2015%3A58%3A48&partner=7066715120801321&interface=get_query_response&sign=33f1090e01034a3651ec91815df2bd5f&sign_type=MD5
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '150'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 12 Jan 2017 07:58:48 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2248f68309a0de370b1b34582c91e00541%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22117.151.98.6%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1484207928%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dc4174db68e8e09f2f9279a69cc150f1f;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 07:58:48 GMT
+recorded_with: VCR 3.0.1

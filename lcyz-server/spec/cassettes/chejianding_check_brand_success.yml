@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test-pif.chejianding.com/rest/publicif/checkBrand
+    body:
+      encoding: UTF-8
+      string: uid=f39d0a454e63829b014e709691d606b8&vin=LHGRB186072026733&time=2016-05-19%2019%3A29%3A45&sign=UbBdhZQNGZeqym7szuPPM9naXMYi2tX4Rj%2FJBAn2EPAT8ar6EyMEDukhsyI5Jw8ytD0oqQw1W6AE2UBJvMmjitImS%2FFnSJRzI1TcJkhYE0ID9CIIVSwKF%2FPKl7A1glvCWwrxeIkqKu%2FubtpayjW0mv%2BBK1Mtv4pEOh%2Ftjj45DiQ%3D
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '281'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 May 2016 11:29:45 GMT
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Length:
+      - '69'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7ImJyYW5kU3RhdHVzIjoiMiIsInN0YXR1cyI6IjEiLCJtZXNz
+        YWdlIjoi5ZOB54mM5Y+v5p+l6K+iIn19
+    http_version: 
+  recorded_at: Thu, 19 May 2016 11:29:45 GMT
+recorded_with: VCR 3.0.1

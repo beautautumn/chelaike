@@ -1,0 +1,60 @@
+<div class="car-swiper" >
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% @recommended_cars.each do |car| %>
+      <div class="hot-car-swiper-slide swiper-slide">
+        <div class="tc-swiper-img-wrapper">
+          <% if @seller.present? %>
+            <% path = car_path(car.id, seller_id: @seller.id) %>
+          <% else %>
+            <% path = car_path(car.id) %>
+          <% end %>
+          <%= link_to path do %>
+            <%= image_tag car_cover(car.cover_url, "315x236"), class: "hot-car-slide-image" %>
+            <% if !in_stock_car?(car) %>
+              <div class="tc-saled-mask"></div>
+              <div class="tc-saled-label">已出售</div>
+            <% elsif bargin_car?(car) %>
+              <em class="tc-bargin-badges"></em>
+            <% end %>
+          <% end %>
+          <% if @device_detect_helper.wechat? %>
+            <a href="javascript:;" data-behavior="toggle-like" data-id="<%= car.id %>">
+              <div class="tc-icon-backgroup">
+                <% if favorite_car?(car) %>
+                  <i class="fav_button fa liked"></i>
+                <% else %>
+                  <i class="fav_button fa"></i>
+                <% end %>
+              </div>
+            </a>
+          <% end %>
+        </div>
+        <div class="hot-car-word-div">
+          <%= link_to car_path(car.id) do %>
+            <div class="hot-car-span">
+              <% if car.reserved %>
+                <%= image_tag "common/reserved.png", class: "tc-reserved-label"  %>
+              <% end %>
+              <%= car.name %>
+            </div>
+          <% end %>
+          <div>
+            <span class="slide-word"><%= "#{car.licensed_at.try(:split, '-').try(:first)}年/#{car.mileage}万公里" %></span>
+            <span class="slide-price">
+              <% if bargin_car?(car) %>
+                <%= "¥#{car.onsale_price_wan}万" %>
+              <% elsif car.show_price_wan.present? %>
+                <%= "¥#{car.show_price_wan}万" %>
+              <% else %>
+                即将开售
+              <% end %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="swiper-pagination hot-car-swiper-pagination"></div>
+  </div>
+</div>

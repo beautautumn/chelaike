@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="erp.wx" namespace="/wx" extends="struts-default"> 
+		<action name="view" class="list.merchantAuthAction">
+			<result name="existAuthByOpenid">
+			/WEB-INF/jsp/phone/carin/vehicle_input_phone.jsp
+			</result>
+			<result name="agencyAuth">/WEB-INF/jsp/auth/agency_auth.jsp</result>
+			<result name="saveAgencyAuth">/WEB-INF/jsp/auth/index.jsp</result> 
+  		</action> 
+	</package>
+</struts>

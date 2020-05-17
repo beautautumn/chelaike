@@ -1,0 +1,96 @@
+#chelaike {
+  margin-bottom: 2px;
+
+  .hero-wrapper {
+    background: #EFEFEF;
+    height: 446px;
+
+    .hero {
+      width: 1280px;
+      height: 468px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url("/assets/images/chelaike/hero.png");
+      padding-top: 260px;
+      padding-left: 102px;
+    }
+
+    .download {
+      display: flex;
+      text-align: center;
+
+      .title {
+        color: #787878;
+        margin-bottom: 3px;
+      }
+
+      .app {
+        margin-right: 40px;
+      }
+    }
+
+    .tips {
+      margin-top: 30px;
+      overflow: hidden;
+      height: 20px;
+      line-height: 20px;
+
+      ul {
+        float: left;
+        height: 100%;
+        margin: 0 0;
+        padding-left: 0;
+        overflow: hidden;
+        list-style: none;
+        width: 220px;
+
+        li {
+          a {
+            color: black;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: #02c05c;
+      }
+    }
+  }
+
+  .feature {
+    display: flex;
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    align-items: center;
+
+    .box {
+      width: 50%;
+    }
+
+    .text {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      h2 {
+        font-size: 36px;
+      }
+
+      ul {
+        font-size: 24px;
+        padding-left: 22px;
+      }
+
+      li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .feature-wrapper.black {
+    background: #F4F4F4;
+  }
+}
+

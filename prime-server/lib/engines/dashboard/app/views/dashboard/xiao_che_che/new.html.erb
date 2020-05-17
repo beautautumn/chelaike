@@ -1,0 +1,24 @@
+<h1>小车车发消息</h1>
+
+<div class="ui segment">
+  <% if flash[:notice] %>
+    <div class="ui green message">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="ui red message">
+      <p><%= flash[:alert] %></p>
+    </div>
+  <% end %>
+  <%= form_tag "publish", method: "post", class: "ui form" do %>
+    <div class="required field">
+      <label>消息内容</label>
+      <%= text_area_tag :message_text %>
+    </div>
+    <div class="required field">
+      <label>用户id（允许多个，“,”分割）</label>
+      <%= text_area_tag :ids_text %>
+    </div>
+    <%= submit_tag "发送" %>
+  <% end %>
+</div>

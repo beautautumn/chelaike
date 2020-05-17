@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.che300.com/service/getCarSeriesList?brandId=1&token=3cab9f677fa8dc71126f48c7e91b0c58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jul 2017 00:44:19 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=0vgglqd72qli8q9cbd2q3r6sc1; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '537'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA8WWz0rDQBDGXyXkpNDo/sluk7317sWkNysltEGLra3JliIi
+        ePDgTe8epRdvHgQv4suo9DFcW0R0MlZoNoVcktkNP2a+b2bO3Fwnepy7yqVu
+        zc3TrJfm7X4v167aO/t673VNXHzHj5NBar68Taezl/sGN4FBcpRmbX06mn+/
+        uZo9Xn4fP8iG49HXpdeni/eH58VVc2Q86iY6bevePMgIFR5lHgsdKpQvFZfu
+        ee0nh8Q4/Go5KMqxUyqI9Aj1GHWorzhXfh2AMBagtZHV5oSjHPZyYh4KQHwE
+        ZLdisTKMQ1QsVrQy9DfI7OX27foOAVkE/ywM80joMKpYoPwAgqD25RuLn2+W
+        DURNchwSKiGUIBAoQH1cBRCULsU00wCaKbFUgkOQOurmNZUKc3WjbjEzNIQg
+        BAMJQJ8r004M9hfUTv1+Nky6zsk40Tob2qEin1S8aCKh7XdNngrRPrweKaM8
+        NpVMCtoxtsVEgTUQqXxoKcZRU8VgZpelXlFXFIqFYdtUDDbMlUCWLw9YcWJL
+        k8BkRCpRUBys8cZgv7ScEWyNicv1zXIQVKyWfLMoDRzSjOEocMks0TikYMnE
+        jNNsWmsmBgR2V4btdNEKzonif8zCggktJOaeaAX7oDSBR6RD5Vy3BU7GBk+0
+        goOKWaCH9s2prG+ih1qPVGu7tT2ZTLY6hyknZKszHLjnH82QB3aPEAAA
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 00:44:19 GMT
+- request:
+    method: get
+    uri: http://api.che300.com/service/getCarSeriesList?brandId=1&token=3cab9f677fa8dc71126f48c7e91b0c58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jul 2017 00:44:20 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=a1rkcqfsovg89scjhlq50lfai2; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '537'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA8WWz0rDQBDGXyXkpNDo/sluk7317sWkNysltEGLra3JliIi
+        ePDgTe8epRdvHgQv4suo9DFcW0R0MlZoNoVcktkNP2a+b2bO3Fwnepy7yqVu
+        zc3TrJfm7X4v167aO/t673VNXHzHj5NBar68Taezl/sGN4FBcpRmbX06mn+/
+        uZo9Xn4fP8iG49HXpdeni/eH58VVc2Q86iY6bevePMgIFR5lHgsdKpQvFZfu
+        ee0nh8Q4/Go5KMqxUyqI9Aj1GHWorzhXfh2AMBagtZHV5oSjHPZyYh4KQHwE
+        ZLdisTKMQ1QsVrQy9DfI7OX27foOAVkE/ywM80joMKpYoPwAgqD25RuLn2+W
+        DURNchwSKiGUIBAoQH1cBRCULsU00wCaKbFUgkOQOurmNZUKc3WjbjEzNIQg
+        BAMJQJ8r004M9hfUTv1+Nky6zsk40Tob2qEin1S8aCKh7XdNngrRPrweKaM8
+        NpVMCtoxtsVEgTUQqXxoKcZRU8VgZpelXlFXFIqFYdtUDDbMlUCWLw9YcWJL
+        k8BkRCpRUBys8cZgv7ScEWyNicv1zXIQVKyWfLMoDRzSjOEocMks0TikYMnE
+        jNNsWmsmBgR2V4btdNEKzonif8zCggktJOaeaAX7oDSBR6RD5Vy3BU7GBk+0
+        goOKWaCH9s2prG+ih1qPVGu7tT2ZTLY6hyknZKszHLjnH82QB3aPEAAA
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 00:44:20 GMT
+recorded_with: VCR 3.0.1

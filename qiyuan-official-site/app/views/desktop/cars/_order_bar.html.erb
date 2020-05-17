@@ -1,0 +1,28 @@
+<div class="tc-order-bar clearfix">
+  <ul>
+    <li>
+      <a href="javascript:;" data-order-field="id" data-order-by="desc">
+        最新发布
+      </a>
+    </li>
+    <li>
+      <a href="javascript:;" data-order-field="show_price_cents" data-order-by="desc">
+        价格
+        <span class="glyphicon"></span>
+      </a>
+    </li>
+    <li>
+      <a href="javascript:;" data-order-field="age" data-order-by="desc">
+        车龄
+        <span class="glyphicon"></span>
+      </a>
+    </li>
+    <li>
+      <a href="javascript:;" data-order-field="mileage" data-order-by="desc">
+        里程
+        <span class="glyphicon"></span>
+      </a>
+    </li>
+  </ul>
+  <span class="all-cars pull-right">共<%= @result.cars_count %>辆车</span>
+</div>

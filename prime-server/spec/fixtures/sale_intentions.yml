@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: sale_intentions # 卖车意向
+#
+#  id                   :integer          not null, primary key # 卖车意向
+#  brand_name           :string                                 # 品牌
+#  series_name          :string                                 # 车系
+#  style_name           :string                                 # 车款
+#  mileage              :integer                                # 里程
+#  licensed_at          :date                                   # 上牌日期
+#  phone                :string                                 # 联系电话
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  province             :string                                 # 省
+#  city                 :string                                 # 城市
+#  expected_price_cents :integer                                # 期望价格
+#
+
+sale_aodi_intention:
+  brand_name: 奥迪
+  series_name: 奥迪A3
+  style_name: 2014款 Sportback 35 TFSI 自动豪华型
+  mileage: 23
+  licensed_at: <%= Time.zone.now %>
+  phone: 18668237883
+  created_at: 2015-01-11
+  updated_at: 2015-01-11
+  province: 浙江
+  city: 杭州
+  expected_price_cents: 10_000_000

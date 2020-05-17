@@ -1,0 +1,33 @@
+.tc-recommended-cars-toolbar {
+  margin-bottom: 10px;
+}
+
+.tc-recommended-car-info {
+  .tc-recommended-car-img {
+    float: left;
+    margin-right: 5px;
+    max-height: 140px;
+    overflow: hidden;
+    img { width: 200px }
+  }
+}
+
+.tc-recommended-cars-conditon {
+  margin-bottom: 10px;
+}
+
+.tc-dashboard-car-list-toolbar {
+  margin: 30px 0 10px 0;
+
+  .btn-group {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .total-label {
+    display: inline-block;
+  }
+}
+
+.tc-paginate-wraper-after {
+  clear: both;
+}

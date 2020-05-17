@@ -1,0 +1,12 @@
+zh-CN:
+  enumerize:
+    cha_doctor_record:
+      state:
+        generating: 生成中
+        unchecked: 未查看
+        checked: 已查看
+        updating: 更新中
+        generating_fail: 查询无结果
+        updating_fail: 更新无结果
+        submitted: 已提交
+        vin_image_fail: VIN 码图片无法识别

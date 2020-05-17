@@ -1,0 +1,50 @@
+.table {
+  margin-top: 10px;
+
+  tr > td {
+    padding-bottom: 0;
+  }
+  .title {
+    border-bottom: 1px solid #d9d9d9;
+    span {
+      margin-right: 100px;
+    }
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .column {
+    display: flex;
+    flex: 1;
+    border-right: 1px solid #d9d9d9;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  .contact {
+    padding: 10px;
+    width: 180px;
+  }
+
+  .carList {
+    border-right: 1px solid #d9d9d9;
+    padding-right: 10px;
+  }
+  .carInfo {
+    flex: none;
+    margin-right: 20px;
+  }
+  .lastStatus {
+    margin: 0 10px;
+    margin-bottom: 5px;
+  }
+  .transferHistory {
+    color: #50a8e0;
+    cursor: pointer;
+  }
+}

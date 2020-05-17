@@ -1,0 +1,27 @@
+<% content_for :content_header do %>
+  <h1>维保查询记录</h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to "在库车辆", admin_cars_path %>
+    </li>
+    <li class="active">维保查询记录</li>
+  </ol>
+<% end %>
+
+<div class="row">
+  <%= form_for(@maintenance_record, url: admin_car_maintenance_record_path, method: :post, html: { class: "form-horizontal" }) do |f| %>
+    <%= render "head" %>
+    <div class="col-md-6 import-reports">
+      <button type="button" class="btn btn-primary import-chejainding" data-id="<%= @car.id %>">导入车鉴定报告</button>
+    </div>
+    <%= render "basic", f: f %>
+    <%= render "summary", f: f %>
+    <%= render "detail", f: f %>
+
+    <div class="col-md-6 mt-1">
+      <%= f.submit "保存", class:"btn btn-primary" %>
+      <%= link_to "返回", admin_cars_path %>
+    </div>
+  <% end %>
+
+</div>

@@ -1,0 +1,9 @@
+$('#wechatPayModal').modal();
+$("#qrcode_pay").html('');
+
+var token = "<%= @pay_token %>"
+$("#wechatPayModal input").val(token);
+
+var qrcode = new QRCode(document.getElementById("qrcode_pay"));
+qrcode.clear();
+qrcode.makeCode("<%= @qr_code %>");

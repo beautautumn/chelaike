@@ -1,0 +1,67 @@
+<% content_for :content_header  do %>
+  <h1>过户历史</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li><a href="/admin/cars"><i class="fa fa-dashboard"></i>在库车辆</a></li>
+    <li class="active">过户历史</li>
+  </ol>
+<% end %>
+
+<div class="box-tools pull-right tc-recommended-cars-toolbar">
+  <%= link_to new_admin_car_transfer_history_path, class: 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    添加过户记录
+  <% end %>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th width="20%">过户日期</th>
+    <th width="20%">归属地区</th>
+    <th width="20%">户主性质</th>
+    <th width="20%">过户描述</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @histories.each do |history| %>
+    <%= form_for(
+      history,
+      url: admin_car_transfer_history_path(car_id: params[:car_id], id: history.id),
+      method: :patch,
+      html: { role: "form" }
+    ) do |f| %>
+      <tr>
+        <td>
+          <%= f.hidden_field :id %>
+          <div class='input-group date'>
+              <%= f.text_field :transfer_at, class: "form-control" %>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </td>
+        <td>
+          <%= f.text_field :home_location, class: "form-control" %>
+        </td>
+        <td>
+          <%= f.select(:transfer_type, [["个人","person"], ["商家","business"]]) %>
+        </td>
+        <td>
+          <%= f.text_field :description, class: "form-control" %>
+        </td>
+        <td>
+          <%= f.submit "保存", class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "删除",
+                      admin_car_transfer_history_path(car_id: params[:car_id], id: history.id),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: "btn btn-primary"
+          %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

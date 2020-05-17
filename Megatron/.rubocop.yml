@@ -1,0 +1,40 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  RunRailsCops: true
+  Exclude:
+    - "bin/**/*"
+    - "config/**/*"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "lib/templates/**/*"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails/FindBy:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 90
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/ClassLength:
+  Max: 200

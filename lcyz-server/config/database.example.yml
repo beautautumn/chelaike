@@ -1,0 +1,47 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # username:
+  # host:
+  pool: 5
+
+development: &development
+  <<: *default
+  database: lcyz_server_development
+
+test:
+  <<: *default
+  database: lcyz_server_test
+
+production: &production
+  <<: *default
+  database: lcyz_server_production
+  username: prime
+  host: rm-bp10d397lcd8rhqry.pg.rds.aliyuncs.com
+  port: 3433
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 100
+
+bm_production: # 天车帮卖版本
+  <<: *default
+  database: bm_server_production
+  username: prime
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  host: rds7a3h2hm8j81r211g5.pg.rds.aliyuncs.com # 车来客DB
+  port: 3433
+  pool: 100
+
+staging:
+  <<: *default
+  host: rds100sp585h2bsguk2p.pg.rds.aliyuncs.com
+  port: 3433
+  database: lcyz_server_staging
+  username: deploy
+  password: <%= ENV["PRIME_DATABASE_PASSWORD"] %>
+  pool: 40
+
+dashboard:
+  <<: *production
+
+download:
+  <<: *production

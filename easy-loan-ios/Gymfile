@@ -1,0 +1,9 @@
+output_directory "./"
+
+export_options(
+  method: "enterprise",
+  provisioningProfiles: {
+    "rock.autobots.loan.test" => "7bd317bb-b717-4fba-af16-0b054fc5fcb8",
+    "rock.autobots.loan" => "8af5ba27-4cb0-475d-bc1d-a52b47cbadd1"
+  }
+)

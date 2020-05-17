@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    models:
+      aliance_company_relationship: 联盟公司关系
+    attributes:
+      aliance_company_relationship:
+        company_id: 公司ID
+        aliance_id: 联盟ID
+        deleted_at: 删除时间
+        created_at: 创建时间
+        updated_at: 最后更新时间

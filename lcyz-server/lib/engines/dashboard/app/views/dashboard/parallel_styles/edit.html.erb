@@ -1,0 +1,48 @@
+<h1>编辑车型</h1>
+<div class="ui segment">
+  <%= form_for :parallel_style,
+    url: parallel_style_path(@parallel_style), method: :patch,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="field">
+      <label>名称</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <label>颜色</label>
+      <%= f.text_field :color %>
+    </div>
+    <div class="field">
+      <label>产地</label>
+      <%= f.text_field :origin %>
+    </div>
+    <div class="field">
+      <label>配置</label>
+      <%= f.text_area :configuration %>
+    </div>
+    <div class="field">
+      <label>状态</label>
+      <%= f.text_field :status %>
+    </div>
+    <div class="field">
+      <label>同款新车价(万元)</label>
+      <%= f.text_field :suggested_price_wan %>
+    </div>
+    <div class="field">
+      <label>港口自提价(万元)</label>
+      <%= f.text_field :sell_price_wan %>
+    </div>
+    <div class="field">
+      <label>上传图片(可选择多张)</label>
+      <% @parallel_style.images.each do |image| %>
+        <%= image_tag image.url, size: "400x300" %>
+        <%= link_to '删除', delete_image_parallel_style_path(style: @parallel_style, image: image), method: :put, data: { confirm: '确定要删除吗?' }  %>
+      <% end %>
+    </div>
+    <%= f.file_field :images, multiple: true %>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

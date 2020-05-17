@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pingxx.com/v1/charges
+    body:
+      encoding: UTF-8
+      string: '{"order_no":1,"app":{"id":"app_Lynf5K9i9qT8zDyr"},"channel":"wx","amount":2800,"client_ip":"0.0.0.0","currency":"cny","subject":"MaintenancePackage
+        A套餐","body":"MaintenancePackage A套餐"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Pingpp/v1 RubyBindings/2.0.12
+      Authorization:
+      - Bearer sk_test_PaD8G84qr1O8vH0CCOHGKa10
+      Content-Type:
+      - application/json
+      Pingplusplus-Version:
+      - '2015-10-10'
+      X-Pingpp-Client-User-Agent:
+      - '{"bindings_version":"2.0.12","lang":"ruby","lang_version":"2.2.4 p230 (2015-12-16)","platform":"x86_64-darwin15","publisher":"pingpp","uname":"Darwin
+        u2deMacBook-Pro 15.5.0 Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT
+        2016; root:xnu-3248.50.21~8/RELEASE_X86_64 x86_64"}'
+      Pingplusplus-Signature:
+      - L8Zk1nW1bLQ94w9leKTUt37biQiZ4FGIWIBbCMSvMCIpFWbR2zOQ92cciIZv39ffaHv+qJ5ya0tpoTRYBu9qFd03m3DBvZLxZHMV5bShTvCAh0wx0Bh1xK7ESfWoGTUzg4lXJogzXxyyzNbvzSQUZFcIbZS40tZBHfEGn+PREc0=
+      Content-Length:
+      - '193'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 12 Jun 2016 02:42:17 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1258'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.6.2
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Cache-Control:
+      - no-cache, no-store
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICAgImlkIjogImNoX2VuelRpNThLdVBXOXVqSDBHQ2ZuMVNhSCIsCiAg
+        ICAib2JqZWN0IjogImNoYXJnZSIsCiAgICAiY3JlYXRlZCI6IDE0NjU2OTky
+        NjUsCiAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICJwYWlkIjogZmFsc2Us
+        CiAgICAicmVmdW5kZWQiOiBmYWxzZSwKICAgICJhcHAiOiAiYXBwX0x5bmY1
+        SzlpOXFUOHpEeXIiLAogICAgImNoYW5uZWwiOiAid3giLAogICAgIm9yZGVy
+        X25vIjogIjEiLAogICAgImNsaWVudF9pcCI6ICIwLjAuMC4wIiwKICAgICJh
+        bW91bnQiOiAyODAwLAogICAgImFtb3VudF9zZXR0bGUiOiAyODAwLAogICAg
+        ImN1cnJlbmN5IjogImNueSIsCiAgICAic3ViamVjdCI6ICJNYWludGVuYW5j
+        ZVBhY2thZ2UgQeWll+mkkCIsCiAgICAiYm9keSI6ICJNYWludGVuYW5jZVBh
+        Y2thZ2UgQeWll+mkkCIsCiAgICAiZXh0cmEiOiB7fSwKICAgICJ0aW1lX3Bh
+        aWQiOiBudWxsLAogICAgInRpbWVfZXhwaXJlIjogMTQ2NTcwNjQ2NSwKICAg
+        ICJ0aW1lX3NldHRsZSI6IG51bGwsCiAgICAidHJhbnNhY3Rpb25fbm8iOiBu
+        dWxsLAogICAgInJlZnVuZHMiOiB7CiAgICAgICAgIm9iamVjdCI6ICJsaXN0
+        IiwKICAgICAgICAidXJsIjogIi92MS9jaGFyZ2VzL2NoX2VuelRpNThLdVBX
+        OXVqSDBHQ2ZuMVNhSC9yZWZ1bmRzIiwKICAgICAgICAiaGFzX21vcmUiOiBm
+        YWxzZSwKICAgICAgICAiZGF0YSI6IFtdCiAgICB9LAogICAgImFtb3VudF9y
+        ZWZ1bmRlZCI6IDAsCiAgICAiZmFpbHVyZV9jb2RlIjogbnVsbCwKICAgICJm
+        YWlsdXJlX21zZyI6IG51bGwsCiAgICAibWV0YWRhdGEiOiB7fSwKICAgICJj
+        cmVkZW50aWFsIjogewogICAgICAgICJvYmplY3QiOiAiY3JlZGVudGlhbCIs
+        CiAgICAgICAgInd4IjogewogICAgICAgICAgICAiYXBwSWQiOiAid3h2cnBz
+        Yzg1bzR3NW9jcXRvIiwKICAgICAgICAgICAgInBhcnRuZXJJZCI6ICIxMjM0
+        NjExNzAxIiwKICAgICAgICAgICAgInByZXBheUlkIjogIjExMDEwMDAwMDAx
+        NjA2MTJoMGNrd2xwOGd3OW9wZ2F4IiwKICAgICAgICAgICAgIm5vbmNlU3Ry
+        IjogImE3ZWVhYWU0Yjg1MWZmMDVkZGNkOGNmMTIxN2Y3NzMzIiwKICAgICAg
+        ICAgICAgInRpbWVTdGFtcCI6IDE0NjU2OTkyNjUsCiAgICAgICAgICAgICJw
+        YWNrYWdlVmFsdWUiOiAiU2lnbj1XWFBheSIsCiAgICAgICAgICAgICJzaWdu
+        IjogImJiZmQwOWZlNWVhOTQwMTBhMWRjZDA0ZjNlMmExYTFmNTgzYmI5Mzci
+        CiAgICAgICAgfQogICAgfSwKICAgICJkZXNjcmlwdGlvbiI6IG51bGwKfQ==
+    http_version: 
+  recorded_at: Sun, 12 Jun 2016 02:42:17 GMT
+recorded_with: VCR 3.0.1

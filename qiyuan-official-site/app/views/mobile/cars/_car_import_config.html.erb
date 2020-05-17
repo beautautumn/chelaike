@@ -1,0 +1,15 @@
+<div class="tc-car-detail-part">
+  <div class="title">亮点配置</div>
+  <div class="content">
+    <div class="tc-label-container">
+      <% @car.configuration_note.present? &&
+         @car.configuration_note.split(/[,，]/).each do |name|
+      %>
+        <span class="label"><%= name %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="nav-more">
+    <%= link_to "更多参数配置", detail_config_car_path(@car.id)  %>
+  </div>
+</div>

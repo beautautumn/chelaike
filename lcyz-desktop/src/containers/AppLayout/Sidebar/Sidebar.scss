@@ -1,0 +1,26 @@
+.toc {
+  position: relative;
+  z-index: 1;
+  width: 130px;
+  flex: 0 0 auto;
+  background: #373D47;
+
+  :global(.ui.inverted.menu) {
+    width: 130px;
+    background: #373D47;
+  }
+
+  :global(.ui.inverted.vertical.menu .item .menu .active.item) {
+    background: #24272d;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.userInfo {
+  span {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,34 @@
+development:
+  sessions:
+    default:
+      database: megatron_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
+staging:
+  sessions:
+    default:
+      database: megatron_staging
+      hosts:
+        - 0.0.0.0:27017
+      options:
+  options:
+production:
+  sessions:
+    default:
+      database: megatron_v2_production
+      hosts:
+        - localhost:27017
+      options:
+  options:
+test:
+  sessions:
+    default:
+      database: megatron_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0

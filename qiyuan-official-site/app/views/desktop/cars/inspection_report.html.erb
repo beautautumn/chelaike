@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>检测报告</title>
+    <meta charset=utf-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <link rel="icon" href="/favicon.ico">
+  </head>
+
+  <style>
+    .container {
+      width: 1000px;
+      margin: 20px auto;
+    }
+
+    .container > img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div class="container">
+      <% @images.each do |img| %>
+        <%= image_tag img.url %>
+      <% end %>
+    </div>
+  </body>
+</html>

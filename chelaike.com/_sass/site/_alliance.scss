@@ -1,0 +1,99 @@
+#alliance {
+  .hero {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .features-wrapper {
+    background: #FEFEF4;
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .features {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    padding-bottom: 150px;
+    padding-left: 123px;
+    padding-right: 123px;
+
+
+    &:first-child {
+      padding-top: 130px;
+    }
+  }
+
+  .box {
+    width: 50%;
+    flex: 1;
+
+    &.right {
+      margin-left: 20px;
+    }
+  }
+
+  .text {
+    h2 {
+      font-size: 28px;
+    }
+
+    .highlight {
+      color: #02c05c;
+    }
+
+    ul {
+      font-size: 20px;
+      padding-left: 20px;
+      line-height: 150%;
+    }
+
+    li {
+      margin-bottom: 24px;
+    }
+  }
+
+  .contact {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+      text-align: center;
+      font-size: 44px;
+    }
+
+    .wrapper {
+      background: url("/assets/images/alliance/contact_bg.png");
+      height: 388px;
+
+      .text {
+        padding-top: 32px;
+        padding-left: 980px;
+      }
+
+      .tel {
+        font-size: 30px;
+      }
+
+      img {
+        vertical-align: text-top;
+
+        &.offset {
+          margin-left: 13px;
+        }
+
+        &.limit {
+          width: 76px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<h1>分配服务顾问</h1>
+<div class="ui segment">
+  <%= form_for @company_property,
+    url: update_advisor_company_path(id: @company_property.company_id), method: :post,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="field">
+      <label>服务顾问</label>
+      <%= f.select :staff_id,
+        Dashboard::Staff.consultants.collect { |s| [s.name, s.id] },
+        { include_blank: true , id: "edit-advisor-select", class: "ui search dropdown" }
+      %>
+    </div>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

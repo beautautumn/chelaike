@@ -1,0 +1,27 @@
+<% content_for :navigation_bar do %>
+  <%= link_to  "买车", cars_path %> > <%= @alliance_name %>相似车
+<% end %>
+
+<%
+  cars = @result.data
+  total = @result.total
+  paginatable_array = Kaminari
+    .paginate_array([], total_count: total)
+    .page(params[:page])
+    .per(24)
+%>
+
+<div class="container">
+  <div class="car-list-title">
+    <span>相似车辆</span>
+    <div class="pull-right right-info">共<%= total %>辆</div>
+  </div>
+
+  <div class="car-list">
+    <%= render partial: "car_card", collection: cars, as: :car, locals: {show_company: true} %>
+  </div>
+
+  <div class="tc-paginate-wraper">
+    <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+  </div>
+</div>

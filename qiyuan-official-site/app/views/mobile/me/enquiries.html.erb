@@ -1,0 +1,9 @@
+<div class="weui-panel weui-panel_access">
+  <div class="weui-panel__bd tc-cars-list list-view">
+    <% if @cars && @cars.size > 0 %>
+      <%= render partial: "/cars/car", collection: @cars, as: :car %>
+    <% else %>
+      <p class="tc-enquiries-blank-alert">没有询价操作记录</p>
+    <% end %>
+  </div>
+</div>

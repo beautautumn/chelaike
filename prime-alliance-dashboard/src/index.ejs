@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="fixed-layout">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>联盟管理</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="sk-rotating-plane"></div>
+    </div>
+    <% if (htmlWebpackPlugin.options.sentry) { %>
+      <script src="http://asset.chelaike.com/misc/raven.min.js"></script>
+      <script type="text/javascript">
+        Raven.config('<%= htmlWebpackPlugin.options.sentry.dsn %>', {
+          release: '{release}'
+        }).install()
+      </script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require 'pathname'
+
+APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
+
+Dir.chdir APP_ROOT do
+  puts "== Installing dependencies =="
+  system "gem install bundler --conservative"
+  system "bundle check || bundle install"
+
+  puts "\n== Copying sample files =="
+  %w(application database secrets).each do |file_name|
+    system "cp config/#{file_name}.example.yml config/#{file_name}.yml"
+  end
+
+  puts "\n== Migration database =="
+  system "rake db:migrate"
+
+  puts "\n== Start server =="
+  system "bundle exec puma -C config/puma.rb"
+end

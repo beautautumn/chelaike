@@ -1,0 +1,10 @@
+zh-CN:
+  activerecord:
+    models:
+      feedback: 反馈
+    attributes:
+      feedback:
+        note: 内容
+        user_id: 用户ID
+        created_at: 创建时间
+        updated_at: 最后更新时间

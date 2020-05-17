@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v2
+    body:
+      encoding: UTF-8
+      string: _input_charset=UTF-8&notify_url=http%3A%2F%2Fserver.chelaike.com%2Fapi%2Fv1%2Fdashenglaile%2Fnotify&vin=suxkroc53eoh22626&order_id=4&partner=7066715120801321&interface=create_query_policy_by_partner&sign=3f8e656e148faa72c5e294a767f96a94&sign_type=MD5
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '250'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 12 Jan 2017 07:58:48 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22f7e0925e028fa3c05954612b0a8fc15f%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22117.151.98.6%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1484207928%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dc74c1f5eca39166a0865a767751698fc;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6tWSi0qyi+KT85PSVWyMjEwMDTWgQrlFqcrWSllpqTmlWSm
+        VSokFSXmpShkpiikJWbmlBalKiRVKpRl5inVAgA6tPjOQwAAAA==
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 07:58:48 GMT
+recorded_with: VCR 3.0.1

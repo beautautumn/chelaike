@@ -1,0 +1,12 @@
+<tr>
+  <td> <%= ad.id %> </td>
+  <td> <%= ad.title %> </td>
+  <td> <%= image_tag(ad.image_url, size: "320x124") %> </td>
+  <td> <%= truncate(ad.redirect_url) %> </td>
+  <td> <%= ad.state == "enabled" ? "启用" : "禁用" %> </td>
+  <td> <%= ad.show_seconds %> 秒</td>
+  <td>
+    <%= link_to "编辑", edit_ad_path(ad) %> |
+    <%= link_to '删除', ad_path(ad), method: :delete, data: { confirm: '确定要删除吗?' } %>
+  </td>
+</tr>

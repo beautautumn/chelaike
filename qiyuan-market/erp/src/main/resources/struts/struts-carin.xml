@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="erp.carin" namespace="/carin" extends="erp-default">
+		<action name="vehicleInput" class="carin.vehicleAction">
+			<!--商户车辆登记 -->
+			<result name="toVehicleRegister">
+				/WEB-INF/jsp/carin/vehicle_register.jsp
+			</result>
+			<!-- 车架号二维码图片 -->
+			<result name="toPrintChelfCode">
+				/WEB-INF/jsp/carin/vehicle_chelfCodeImg.jsp
+			</result>
+
+			<!--车辆信息录入 -->
+			<result name="toVehicleInput">
+				/WEB-INF/jsp/carin/vehicle_input.jsp
+			</result>
+
+			<!--车辆信息修改 -->
+			<result name="toVehicleInfo">
+				/WEB-INF/jsp/carin/vehicle_info.jsp
+			</result>
+
+			<!--显示车位使用历史 -->
+			<result name="toCarPortHis">
+				/WEB-INF/jsp/carin/car_port_list.jsp
+			</result>
+
+			<!--显示调整车位界面 -->
+			<result name="toChgCarPort">
+				/WEB-INF/jsp/carin/chg_car_port.jsp
+			</result>
+			<!--显示车辆转移界面 -->
+			<result name="toChgOwnerAgency">
+				/WEB-INF/jsp/carin/chg_owner_agency.jsp
+			</result>
+			<!--显示车辆图片上传界面 -->
+			<result name="toUploadVehiclePic">
+				/WEB-INF/jsp/carin/upload_pics.jsp
+			</result>
+			<!--车辆入场登记 -->
+			<result name="toVehicleEntrance">
+				/WEB-INF/jsp/carin/vehicle_entrance.jsp
+			</result>
+			<!-- 车辆离场 -->
+			<result name="vehicleOut">
+				/WEB-INF/jsp/carin/vehicle_out_stock.jsp
+			</result>
+
+			<!--第一次过户 -->
+			<result name="toFirstTransfer">
+				/WEB-INF/jsp/carin/first_transfer.jsp
+			</result>
+
+			<!--第二次过户 -->
+			<result name="toSecondTransfer">
+				/WEB-INF/jsp/carin/second_transfer.jsp
+			</result>
+			<!-- to行驶证上传 -->
+			<result name="vehicleDrive">
+				/WEB-INF/jsp/carin/vehicle_drive_license.jsp
+			</result>
+
+			<!-- to审核离场 -->
+			<result name="toAuditVehicle">
+				/WEB-INF/jsp/carin/audit_vehicle.jsp
+			</result>
+
+			<!-- to审核离场 -->
+			<result name="vehicleTest">
+				/WEB-INF/jsp/carin/vehicle_test.jsp
+			</result>
+
+			<!-- to审核离场 -->
+			<result name="priceLabel">
+				/WEB-INF/jsp/carin/price_label.jsp
+			</result>
+
+			<!-- to审核离场 -->
+			<result name="vehicleDetail">
+				/WEB-INF/jsp/carin/vehicle_detail.jsp
+			</result>
+			
+			<!-- to手机端新增车辆 -->
+			<result name="vehicleInputPhone">
+				/WEB-INF/jsp/phone/carin/vehicle_input_phone.jsp
+			</result>
+			
+			<!-- to手机端新增车辆  没有授权
+			<result name="agencyAuth">/WEB-INF/jsp/auth/agency_auth.jsp</result>
+				-->
+		</action>
+	</package>
+
+</struts>

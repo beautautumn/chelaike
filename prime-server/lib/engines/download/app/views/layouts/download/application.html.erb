@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <title>下载<%= current_app.name %></title>
+  <%= stylesheet_link_tag    "download/application", media: "all" %>
+  <%= javascript_include_tag "download/application" %>
+  <%= csrf_meta_tags %>
+  <% if Rails.env.download? %>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?760d7c1c91fe3d79e3f6c078f0d57773";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  <% end %>
+</head>
+<body>
+  <% if wechat? %>
+    <div class="tip">
+      <% if ios? %>
+        <p>请在右上角选择“在Safari中打开”下载 APP</p>
+      <% else %>
+        <p>请在右上角选择“在浏览器中打开”下载 APP</p>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

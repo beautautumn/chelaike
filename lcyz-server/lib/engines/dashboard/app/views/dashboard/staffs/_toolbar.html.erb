@@ -1,0 +1,57 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= form_tag staffs_path, method: :get do %>
+        <%= text_field_tag "q[phone_or_name_cont]",
+            nil, placeholder: "搜索 手机号/姓名/主管"
+        %>
+        <%= submit_tag "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+    <button id="staff-new-button" class="ui right floated teal button">
+      添加
+    </button>
+      <div id="staff-new-modal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          添加员工
+        </div>
+        <div class="content">
+          <%= form_for :staff, html: { class: "ui form" } do |f| %>
+            <div class="required field">
+              <label>电话</label>
+              <%= f.text_field :phone %>
+            </div>
+            <div class="field">
+              <label>姓名</label>
+              <%= f.text_field :name %>
+            </div>
+            <div class="field">
+              <label>角色</label>
+              <%= f.select :role,
+                [
+                  ["客服", "客服"], ["服务顾问", "服务顾问"],
+                  ["开发人员", "开发人员"], ["财务人员", "财务人员"],["管理员", "管理员"]
+                ],
+                {}, { class: "ui search dropdown" }
+              %>
+            </div>
+            <div class="field">
+              <label>所属主管</label>
+              <%= f.select :manager_id,
+                Dashboard::Staff.all.collect { |s| [s.name, s.id] },
+                {include_blank: true}, { id: "staff-new-manager-select", class: "ui search dropdown" }
+              %>
+            </div>
+            <button type="submit" class="ui positive right labeled icon button">
+              保存
+              <i class="checkmark icon"></i>
+            </button>
+            <div class="ui black deny button">
+              取消
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#02C05C" d="M0 0l30 30V0z"/>
+        <text fill="#FFF" font-family="PingFangSC-Regular, PingFang SC" font-size="12">
+            <tspan x="15" y="14">原</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,129 @@
+<% content_for :content_header  do %>
+  <h1>在库车辆</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">在库车辆</li>
+  </ol>
+<% end %>
+
+<%
+  cars = @result.data
+  total = @result.total
+  paginatable_array = Kaminari
+    .paginate_array([], total_count: total)
+    .page(params[:page])
+    .per(10)
+%>
+
+<% if flash[:notice] %>
+  <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_tag admin_cars_path, :method => :get do %>
+  <%= hidden_field_tag 'page', 1 %>
+  <%= hidden_field_tag 'per_page', 20 %>
+  <div class="row tc-recommended-cars-conditon">
+    <div class="col-xs-6">
+      <%= text_field_tag 'query[name_or_stock_number_or_vin_or_current_plate_number_cont]',
+        params.try(:[], :query).try(:[], :name_or_stock_number_or_vin_or_current_plate_number_cont),
+        placeholdeo: "车辆名称／车架号／牌照／库存号",
+        class: 'form-control' %>
+    </div>
+    <div class="col-xs-3 col-xs-offset-3">
+      <button class="btn btn-default" type="submit">查询</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <select name="query[company_id_eq]" class="form-control">
+        <option value="" selected>归属商家</option>
+        <% @companies.each do |c| %>
+          <option value="<%= c.id %>"><%= c.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="col-xs-3">
+      <select name="query[brand_name_eq]" class="form-control">
+        <option value="" selected>品牌</option>
+        <% @brands.each do |b| %>
+          <option value="<%= b.name %>"><%= b.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="col-xs-3">
+      <select name="query[series_name_eq]" class="form-control">
+        <option value="" selected>车系</option>
+      </select>
+    </div>
+  </div>
+<% end %>
+
+<div class="tc-dashboard-car-list-toolbar">
+  <div class="btn-group" role="group" aria-label="...">
+    <button name="brand_name" type="button" class="btn btn-default">品牌</button>
+    <button name="created_at" type="button" class="btn btn-default">入库日期</button>
+    <button name="show_price_cents" type="button" class="btn btn-default">价格</button>
+  </div>
+  <div class="total-label">找到匹配车辆共<%= total %>台</div>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th width="50%">基本信息</th>
+    <th width="20%">售价（万元）</th>
+    <th>网络展示</th>
+    <th>操作</th>
+  </tr>
+
+  <% cars.each do |car| %>
+    <tr>
+      <td class="tc-recommended-car-info">
+        <div class="tc-recommended-car-img"><img src="<%= car_cover(car.cover_url) %>"></div>
+        <div><%= car.name %></div>
+        <div>库存号：<%= car.stock_number %></div>
+        <div>车牌号：<%= car.acquisition_transfer.try(:current_plate_number) %></div>
+        <div>分店：<%= car.shop.try(:name) %></div>
+        <div>上牌时间：<%= car.licensed_at %></div>
+        <div>入库时间：<%= date_simple(car.created_at) %></div>
+      </td>
+      <td>
+        <div>新车价：<%= car.new_car_guide_price_wan %></div>
+        <div>展台标价：<%= car.show_price_wan %></div>
+        <div>网络标价：<%= car.online_price_wan %></div>
+      </td>
+      <td>
+        <div class="btn-group" role="group" aria-label="...">
+          <button
+            data-car-id="<%= car.id %>"
+            data-sellable="false"
+            type="button"
+            class="btn <%= car.sellable.to_s != "true" ? "btn-danger" : "btn-default" %>">
+            不展示
+          </button>
+          <button
+            data-car-id="<%= car.id %>"
+            data-sellable="true"
+            type="button"
+            class="btn <%= car.sellable.to_s == "true" ? "btn-danger" : "btn-default" %>">
+            展示
+          </button>
+        </div>
+      </td>
+      <td>
+        <div><%= link_to "保险记录", new_admin_car_insurance_record_path(car.id) %></div>
+        <div><%= link_to "维保记录", new_admin_car_maintenance_record_path(car.id) %></div>
+        <div><%= link_to "过户历史", admin_car_transfer_histories_path(car_id: car.id) %></div>
+        <div><%= link_to "PC预览", car_path(id: car.id), target: "_blank" %></div>
+        <div><a class="mobile-car-detail-preview" href="javascript:;" role="button" id= "<%= car.id %>" data-qrcode = "<%= car_url(car.id) %>">Mobile预览</a></div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="tc-paginate-wraper">
+  <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+</div>
+
+<div class="tc-paginate-wraper-after"></div>

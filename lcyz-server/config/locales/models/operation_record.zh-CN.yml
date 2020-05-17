@@ -1,0 +1,187 @@
+zh-CN:
+  enumerize:
+    operation_record:
+      car_operation_type:
+        car_created: "创建"
+        car_priced: "定价"
+        car_price_updated: "价格更新"
+        car_updated: "信息更新"
+        state_changed: "状态变更"
+        car_deleted: "删除"
+        car_reserved: "预定"
+        car_reservation_canceled: "预定取消"
+        prepare_record_updated: "整备更新"
+        prepare_finish: "整备完成"
+        stock_out: "出库"
+        stock_back: "回库"
+      operation_record_type_icon:
+        car_created: "新车入库.png"
+        alliance_stock_in: "联盟入库.png"
+        alliance_cars_created_statistic: ""
+        car_updated: "车辆资料更新.png"
+        car_deleted: "车辆删除.png"
+        state_changed: "状态更新.png"
+        car_priced: "车辆定价.png"
+        car_reserved: "车辆预定.png"
+        car_reservation_canceled: "取消预定.png"
+        stock_out:
+          sold: "销售出库.png"
+          acquisition_refunded: "收购退车.png"
+          driven_back: "车主开回.png"
+          alliance_stocked_out: "联盟出库.png"
+          alliance_refunded: "联盟退车.png"
+        alliance_invitation_created: "联盟消息.png"
+        alliance_invitation_agreed: "联盟消息.png"
+        alliance_invitation_disagreed: "联盟消息.png"
+        alliance_relationship_deleted: "联盟消息.png"
+        alliance_relationship_quit: "联盟消息.png"
+        daily_report: "每日统计.png"
+        stock_back: "车辆回库.png"
+        alliance_stock_back: "联盟回库.png"
+        intention_reassigned: "新分配客户.png"
+        assigned_acquisition_car_info: "新评估待跟进.png"
+        remind_intention_untreated: "新客户待分配.png"
+        remind_intention_due: "到期提醒.png"
+        token_recharge: "车币充值.png"
+        maintenance_fetch_success: "维保查询.png"
+        maintenance_fetch_fail: "维保查询.png"
+        prepare_finish: "整备提醒.png"
+        stock_warning: "库存预警.png"
+        remind_restock: "回厅提醒.png"
+        vin_image_fail: "维保查询.png"
+        vin_image_request: "维保查询.png"
+        expiration_notification: "到期提醒.png"
+        loan_bill_state_updated: "借款状态更新.png"
+        accredited_updated: "授信额度调整.png"
+        debit_updated: "库融评级发布.png"
+        insurance_fetch_success: "保险理赔查询.png"
+        insurance_update_success: "保险理赔查询.png"
+        insurance_fetch_fail: "保险理赔查询.png"
+      operation_record_type_color:
+        car_created: "#7fbb5b"
+        alliance_stock_in: "#7fbb5b"
+        alliance_cars_created_statistic: "#7fbb5b"
+        car_updated: "#baff00"
+        car_deleted: "#000000"
+        state_changed: "#7c68a7"
+        car_priced: "#e3573c"
+        car_reserved: "#77c2e9"
+        car_reservation_canceled: "#cc5688"
+        stock_out:
+          sold: "#fbeb5b"
+          acquisition_refunded: "#5d0d0d"
+          driven_back: "#149623"
+          alliance_stocked_out: "#66ccff"
+          alliance_refunded: "#993300"
+        alliance_invitation_created: "#fcba2a"
+        alliance_invitation_agreed: "#fcba2a"
+        alliance_invitation_disagreed: "#fcba2a"
+        alliance_relationship_deleted: "#fcba2a"
+        alliance_relationship_quit: "#fcba2a"
+        daily_report: "#1e42dc"
+        stock_back: "#4badae"
+        alliance_stock_back: "#4badae"
+        intention_reassigned: "#f40376"
+        assigned_acquisition_car_info: "#bb8e00"
+        remind_intention_untreated: "#00b8c4"
+        remind_intention_due: "#1e42dc"
+        token_recharge: "#aedc20"
+        maintenance_fetch_success: "#9d28b1"
+        maintenance_fetch_fail: "#9d28b1"
+        prepare_finish: "#a6937c"
+        stock_warning: "#ff5938"
+        remind_restock: "#baff00"
+        vin_image_fail: "#ff0000"
+        vin_image_request: "#81d8ce"
+        expiration_notification: "#bd0000"
+        loan_bill_state_updated: "#56bd67"
+        accredited_updated: "#fcb92a"
+        debit_updated: "#fc712c"
+        insurance_fetch_success: "#fc712c"
+        insurance_update_success: "#fc712c"
+        insurance_fetch_fail: "#fc712c"
+  operation_record:
+    messages:
+      state_changed:
+        "状态更新: %{user_name} 修改%{car_name}状态为%{state_text}"
+      stock_out:
+        sold: "销售出库: %{seller_name} 完成%{car_name}销售"
+        acquisition_refunded: "收购退车: %{user_name} 完成%{car_name}退车"
+        driven_back: "车主开回: %{user_name} 完成%{car_name}车主开回"
+        alliance_stocked_out:
+          "联盟出库: %{seller_name} 将 %{car_name} 出库给 %{alliance_name} 的 %{new_company_name}"
+        alliance_refunded:
+          "联盟退车: %{user_name} 将 %{car_name} 退回到 %{new_company_name}"
+      car_created:
+        notification_alert:
+          intentions: "有客户想要的新车入库了哦! %{car_name} 匹配到 %{matched_intentions_count} 个意向"
+          normal: "车辆入库: %{user_name} 完成%{car_name}入库"
+        intentions: "%{car_name} 匹配到 %{matched_intentions_count} 个意向"
+        normal: "车辆入库: %{user_name} 完成%{car_name}入库"
+      alliance_stock_in:
+        "联盟入库: 来自联盟的 %{car_name} 入库"
+      car_updated:
+        "车辆更新: %{user_name} 完成%{car_name}修改"
+      car_priced:
+        "销售定价: %{user_name} 完成%{car_name}定价"
+      car_reserved:
+        "车辆预定: %{user_name} 完成%{car_name}预定"
+      car_reservation_canceled:
+        "取消预定: %{user_name} 取消%{car_name}预定"
+      car_deleted:
+        "车辆删除：%{user_name} 删除%{car_name}"
+      alliance_invitation_created:
+        "联盟邀请: %{company_name} 邀请您加入 %{alliance_name}"
+      alliance_invitation_agreed:
+        "同意邀请：%{company_name} 同意加入 %{alliance_name}"
+      alliance_invitation_disagreed:
+        "拒绝邀请：%{company_name} 拒绝邀请 %{alliance_name}"
+      alliance_relationship_deleted:
+        "移出联盟：您已被 %{alliance_name} 移出联盟"
+      alliance_relationship_quit:
+        "退出联盟：%{company_name} 已退出 %{alliance_name}"
+      stock_back:
+        "车辆回库: %{user_name} 完成%{car_name}回库"
+      alliance_stock_back:
+        "联盟退车入库: %{car_name} 已回库"
+      intention_reassigned:
+        assigned: "%{user_name}分配客户%{customer_name}给你, 请及时跟进"
+        reassigned: "%{user_name}将客户%{customer_name}由%{assignee_was}重新分配给%{assignee}, 请及时跟进"
+      remind_intention_untreated:
+        "您有一个客户%{customer_name}待分配"
+      remind_intention_due:
+        "客户%{customer_name}的意向需要跟进"
+      assigned_acquisition_car_info:
+        "%{user_name}分配了一条新的收车评估给你，请及时跟进"
+      alliance_cars_created_statistic:
+        notification_alert:
+          normal: "在联盟中搜到目标车辆, 请火速前往"
+        normal: "%{alliance_name} 联盟新增%{cars_count}台车，匹配了你的%{intentions_count}个客户意向"
+      token_recharge:
+        "您充值的%{token}车币已到账"
+      maintenance_fetch_success:
+        "%{car_name} %{vin} 【%{platform_name}】%{result}。"
+      maintenance_fetch_fail:
+        "%{car_name} %{vin} 【%{platform_name}】%{result}。"
+      insurance_fetch_success:
+        "%{car_name} %{vin} %{result}。"
+      insurance_update_success:
+        "%{car_name} %{vin} %{result}。"
+      insurance_fetch_fail:
+        "%{car_name} %{vin} %{result}。"
+      prepare_finish:
+        "%{car_name} 即将整备完成，请关注！"
+      stock_warning:
+        "%{car_name} 库龄已经超过%{stock_status}, 请关注！"
+      remind_restock:
+        "%{car_name}【%{color}, %{stock_number}】%{state}, 预计今日到店，请关注！"
+      vin_image_fail:
+        "【%{platform_name}】%{car_name}VIN 码图片无法识别！%{token_price} 车币已退回。原因: %{msg}"
+      vin_image_request:
+        "来自 %{company_name} 的 %{car_name} 需要识别 VIN 码"
+      loan_bill_state_updated:
+        "库融状态更新，%{car_name}，%{funder_company_name}，%{state_text}，%{state_message_text}，%{note}"
+      accredited_updated:
+        "授信额度调整，%{funder_company_name}，授信额度从%{latest_limit_amout_wan}万调整到%{current_limit_amount_wan}万"
+      debit_updated:
+        "库融评级发布，综合指数：%{comprehensive_rating}分,库存资金：%{inventory_amount}万，健康评级：%{operating_health}分，行业风评：%{industry_rating}"

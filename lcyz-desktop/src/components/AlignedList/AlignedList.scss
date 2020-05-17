@@ -1,0 +1,22 @@
+.alignedList {
+  li {
+    margin-bottom: 5px;
+    overflow: hidden;
+
+    &.dashed {
+      border-bottom: 1px dashed #d9d9d9;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      float: left;
+    }
+
+    .text {
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<h1>编辑车系</h1>
+<div class="ui segment">
+  <%= form_for :series,
+    url: series_path(@series["_id"]), method: :patch,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="field">
+      <label>车系</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <label>厂商</label>
+      <%= f.text_field :manufacturer %>
+    </div>
+    <div class="field">
+      <label>编码</label>
+      <%= f.text_field :code %>
+    </div>
+    <%= f.hidden_field :brand_code, value: @brand['code'] %>
+    <%= f.hidden_field :brand_id, value: @brand['_id'] %>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

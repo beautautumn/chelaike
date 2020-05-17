@@ -1,0 +1,28 @@
+transmission:
+  手动: manual
+  自动: auto
+  手自一体: manual_automatic
+  其他: other
+emission_standard:
+  国I: guo_1
+  国II: guo_2
+  国III: guo_3
+  国IV: guo_4
+  国V: guo_5
+car_type:
+  微型车: micro_car
+  小型车: compact_car
+  紧凑型: compact_car
+  中型车: mid_size_car
+  中大型: mid_size_car
+  大型车: full_size_car
+  MPV: mpv
+  SUV: suv
+  全部SUV: suv
+  小型SUV: suv
+  紧凑型SUV: suv
+  中型SUV: suv
+  中大型SUV: suv
+  大型SUV: suv
+  跑车: sports_car
+  皮卡: pickup_trucks

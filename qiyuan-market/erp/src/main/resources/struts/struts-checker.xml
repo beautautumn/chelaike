@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="qiyuan.checkerAction" namespace="/checker" extends="erp-default">
+		<action name="checker" class="qiyuan.checkerAction">
+			<result name="toEditChecker7y">
+				/WEB-INF/jsp/checker/edit.jsp
+			</result>
+			<result name="toCancelChecker7y">
+				/WEB-INF/jsp/checker/cancel.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,59 @@
+.contact-img {
+  float: left;
+  margin-right: 20px;
+
+  img {
+    width: 720px;
+    height: 336px;
+  }
+}
+
+.contact-detail {
+  float: left;
+  width: 400px;
+  height: 336px;
+  padding: 79px 0 79px 40px;
+  background-color: #f2f2f2;
+
+  h2 {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  .tel {
+    margin-bottom: 30px;
+
+    .number {
+      font-size: 20px;
+      color: #f94006;
+    }
+  }
+}
+
+.contact-intr {
+  text-indent: 2em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 49px 40px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  line-height: 2.57em;
+}
+
+#shop_address_map {
+  height: 300px;
+}
+
+// 解决百度地图与bootstrap的冲突
+.BMapLib_SearchInfoWindow {
+  box-sizing: content-box;
+  * {
+    box-sizing: content-box;
+  }
+}

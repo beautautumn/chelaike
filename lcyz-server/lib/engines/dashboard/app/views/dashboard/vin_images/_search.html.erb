@@ -1,0 +1,26 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= search_form_for @q, url: vin_images_path do |f| %>
+        <%= f.label "服务商" %>
+        <%= select_tag :sp_type,
+            options_for_select(
+              [["查博士","drCha"],["大圣来了","monkeyKing"]],
+              selected = params[:sp_type]
+            ),
+            { include_blank: true, class: "ui search dropdown" }
+        %>
+        <%= f.label "查询状态" %>
+        <%= select_tag :state,
+            options_for_select(
+              get_states_arrary,
+              selected = params[:state]
+            ),
+            { include_blank: true, class: "ui search dropdown" }
+        %>
+        <%= f.submit "搜索", class: "ui green basic button" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

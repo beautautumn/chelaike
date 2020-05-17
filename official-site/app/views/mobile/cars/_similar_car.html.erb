@@ -1,0 +1,18 @@
+<%= link_to car_path(car.id) do %>
+<div class="similar-car-item-detail">
+  <div class="similar-car-cover">
+    <%= image_tag car_cover(car.cover_url, "550x412") %>
+  </div>
+  <div class="similar-car-body">
+    <div class="similar-car-title">
+      <%= car.system_name %>
+    </div>
+    <div class="similar-car-info">
+      <%= "#{licensed_info(car)[1].gsub("上牌", "")}/#{car.mileage.presence || "-"}万公里" %>
+    </div>
+    <div class="similar-car-price">
+      <%= car.show_price_wan %>万
+    </div>
+  </div>
+</div>
+<% end %>

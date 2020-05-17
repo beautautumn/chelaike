@@ -1,0 +1,13 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= form_tag rating_companies_path, method: :get do %>
+        <%= text_field_tag "q[name_cont]",
+            @q.try(:[], "name_cont"),
+            placeholder: "搜索 公司名称"
+        %>
+        <%= submit_tag "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

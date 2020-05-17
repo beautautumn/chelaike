@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    models:
+      channel: 渠道
+    attributes:
+      channel:
+        company_id: 公司ID
+        name: 名称
+        note: 备注
+        deleted_at: 删除时间
+        created_at: 创建时间
+        updated_at: 最后更新时间

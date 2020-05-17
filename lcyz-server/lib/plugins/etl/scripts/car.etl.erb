@@ -1,0 +1,15 @@
+require_relative '../../../../config/environment'
+
+pre_process do
+  puts "start ETL for car."
+end
+
+source Etl::Sources::Car, car_id: <%= car_id %>
+
+transform Etl::Transforms::Car
+
+destination Etl::Destinations::Car
+
+post_process do
+  puts "car ETL progress finished."
+end

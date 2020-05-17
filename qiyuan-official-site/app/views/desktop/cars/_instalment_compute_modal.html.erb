@@ -1,0 +1,57 @@
+<div class="modal fade" id="instalmentComputeModal" tabindex="-1" role="dialog" aria-labelledby="分期试算">
+  <div class="modal-dialog instalment-compute-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="content">
+          <div class="title"><%= @car.system_name %></div>
+          <div class="price">
+            <div>车辆售价（元）</div>
+            <div>
+              <% if bargin_car?(@car) %>
+                <input type="text" class="price-value" value="<%= @car.onsale_price_wan * 10000 %>"/>
+              <% elsif @car.show_price_wan %>
+                <input type="text" class="price-value" value="<%= @car.show_price_wan * 10000 %>"/>
+              <% else %>
+                <input type="text" class="price-value" value="0"/>
+              <% end %>
+            </div>
+          </div>
+          <div class="select">
+            <div>首付比例</div>
+            <div>
+              <select class="down-payments-select">
+                <% @down_payments&.each do |down_payment| %>
+                  <option value="<%= down_payment %>"><%= down_payment %>%</option>
+                <% end %>
+              </select>
+            </div>
+          </div>
+          <div class="select">
+            <div>贷款年限</div>
+            <div>
+              <select class="loan-periods-select">
+                <% @loan_periods&.each do |loan_period| %>
+                  <option value='{"rate": <%= loan_period['rate'] %>, "period": <%= loan_period['period'] %>}'><%= loan_period["period"] %>个月</option>
+                <% end %>
+              </select>
+            </div>
+          </div>
+          <div class="result">
+            <div>
+              <div>首付（元）</div>
+              <div class="first-pay-value"></div>
+            </div>
+            <div>
+              <div>月供（元）</div>
+              <div class="monthly-pay-value"></div>
+            </div>
+          </div>
+          <div class="tip">*此结果仅供参考</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

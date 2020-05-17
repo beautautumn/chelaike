@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+ 	<package name="erp.login"  extends="erp-default">
+	    <action name="login" class="com.ct.erp.sys.web.LoginAction" >
+	          <result name="index">/WEB-INF/jsp/login-index.jsp</result>
+	          <result name="main">/WEB-INF/jsp/login-main.jsp</result>
+			  <result name="mainMarket">/WEB-INF/jsp/login-main-market.jsp</result>
+			  <result name="northMarket">/WEB-INF/jsp/north-market.jsp</result>
+	          <result name="north">/WEB-INF/jsp/north.jsp</result>
+			  <result name="success">/jump.jsp</result>
+			  <result name="success7y">/jump7y.jsp</result>
+			  <result name="successMarket">/jumpMarket.jsp</result>
+	    </action>
+	</package>
+</struts>

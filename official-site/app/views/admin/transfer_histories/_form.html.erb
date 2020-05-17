@@ -1,0 +1,44 @@
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for(@history, url: admin_car_transfer_histories_path(car_id: params[:car_id]), :html => { :role => "form" }) do |f| %>
+        <% if @history.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <h4><%= @history.errors.count %>个错误</h4>
+            <ul>
+            <% @history.errors.full_messages.each do |msg| %>
+              <li><% msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.hidden_field :car_id, value: params[:car_id] %>
+        <div class="form-group">
+          <%= f.label "日期" %>
+          <div class='input-group date'>
+              <%= f.text_field :transfer_at, class: "form-control" %>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "归属地区" %>
+          <%= f.text_field :home_location, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label "户主性质" %> <br>
+          <%= f.select(:transfer_type, [["个人","person"], ["商家","business"]]) %>
+        </div>
+        <div class="form-group">
+          <%= f.label "过户描述" %>
+          <%= f.text_field :description, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "保存", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

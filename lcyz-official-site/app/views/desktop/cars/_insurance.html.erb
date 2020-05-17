@@ -1,0 +1,40 @@
+<% if @insurance_record %>
+  <% latest_record = @insurance_record.latest_record %>
+  <% max_record = @insurance_record.max_amount_record %>
+  <div class="container">
+    <div class="tc-sub-title tc-insurance-title">保险理赔记录</div>
+    <div class="insurance-container">
+      <div class="left-panel">
+        <div class="subject">理赔次数</div>
+        <div class="items"><%= @insurance_record.records_count %></div>
+      </div>
+      <div class="middle-panel">
+        <div class="subject">最近一次理赔</div>
+        <div class="items">
+          <div class="item">
+            <div class="title">日期</div>
+            <div class="value"><%= latest_record[:date] %></div>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="subject">最大理赔</div>
+        <% if max_record %>
+          <div class="items">
+            <div class="item">
+              <div class="title">日期</div>
+              <div class="value"><%= max_record[:date] %></div>
+            </div>
+            <div class="item">
+              <div class="title">金额(元)</div>
+              <div class="value"><%= max_record[:amount_yuan] %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="see-report-button">
+      <%= car_detail_pay_report_link(@car, @tenant, @current_user, @insurance_record) %>
+    </div>
+  </div>
+<% end %>

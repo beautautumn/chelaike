@@ -1,0 +1,20 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= search_form_for @q, url: intentions_path do |f| %>
+        <%= f.label "归属省份" %>
+        <%= f.search_field :province_cont , placeholder: "输入客户省份", size: 14%>
+        <%= f.label "归属城市" %>
+        <%= f.search_field :city_cont , placeholder: "输入客户城市", size: 14 %>
+        <%= f.label "车商" %>
+        <%= f.search_field :company_name_cont, placeholder: "输入车商公司名称", size: 22 %>
+        <br/><br/>
+        <%= f.label "意向车型" %>
+        <%= f.search_field :keyword, placeholder: "输入客户意向品牌、车型或款式", size: 37 %>&nbsp;
+        <%= f.label "意向价格" %>
+        <%= text_field_tag :from_price ,params[:from_price], placeholder: "万元", size: 4 %>-<%= text_field_tag :to_price , params[:to_price], placeholder: "万元",  size: 4 %>
+        <%= f.submit "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

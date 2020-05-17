@@ -1,0 +1,31 @@
+<h1>编辑版本</h1>
+<div class="ui segment">
+  <%= form_for :app_version,
+    url: app_app_version_path(@app, @app_version), method: :patch,
+    html: { class: "ui form" } do |f|
+  %>
+    <div class="field">
+      <label>发布说明</label>
+      <%= f.text_area :note %>
+    </div>
+    <div class="field">
+      <label>车商</label>
+      <%= f.select :company_ids,
+        Company.all.collect { |s| [s.name, s.id] },
+        {}, {
+          id: "app-version-edit-companies-select",
+          class: "ui search dropdown",
+          multiple: "true"
+        }
+      %>
+    </div>
+    <div class="field">
+      <label>是否强制更新</label>
+      <%= f.select :force_update, [["否", false], ["是", true]], {}, class: "ui search dropdown" %>
+    </div>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

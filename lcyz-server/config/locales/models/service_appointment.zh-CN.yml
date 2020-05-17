@@ -1,0 +1,9 @@
+zh-CN:
+  enumerize:
+    service_appointment:
+      service_appointment_type:
+        vehicle_mortgage: 车辆按揭
+        insurance_agent: 保险代办
+        vehicle_beauty: 车辆美容
+        annual_inspection_agent: 代办年检
+        vehicle_maintenance: 车辆保养

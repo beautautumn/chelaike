@@ -1,0 +1,16 @@
+<div class="weui-panel weui-panel_access tc-cars-list-container">
+  <div class="weui-panel__bd">
+    <% if @show_toolbar %>
+      <%= render 'toolbar' %>
+    <% end %>
+
+    <div class="cars-count">
+      本店共有 <%= @result.total %> 辆
+    </div>
+    <div class="tc-cars-list list-view">
+      <%= render partial: "car", collection: @result.data, as: :car %>
+    </div>
+
+    <div class="tc-cars-loading hide" data-patch-load="<%= @patch_load %>">数据加载中......</div>
+  </div>
+</div>

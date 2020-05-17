@@ -1,0 +1,33 @@
+# source "https://rubygems.org"
+source "https://ruby.taobao.org"
+
+gem "rails", "4.2.3"
+gem "rails-api"
+
+gem "mongoid"
+
+gem "ruby-pinyin"
+gem "nokogiri"
+gem "rest-client"
+
+gem "colorize"
+gem "therubyracer"
+
+gem "puma"
+
+group :development do
+  gem "rubocop", require: false
+
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-rvm"
+  gem "capistrano3-puma"
+  gem "capistrano-slackify"
+end
+
+group :development, :test do
+  gem "byebug"
+  gem "pry-byebug"
+
+  gem "spring"
+end

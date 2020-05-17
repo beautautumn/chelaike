@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianche.dao.SystemMenuDao">
+
+    <resultMap id="fullMap" type="com.tianche.domain.SystemMenu" >
+        <result column="right_code" property="rightCode" />
+        <result column="parent_id" property="parentId" />
+        <result column="menu_text" property="menuText" />
+        <result column="order_no" property="orderNo" />
+        <result column="icon_cls" property="iconCls"/>
+        <result column="mark_url" property="markUrl"/>
+    </resultMap>
+    
+    <select id="findByStaffId" resultMap="fullMap">
+        select distinct t.* from td_s_sysmenu t left join td_s_sysright ss on ss.right_code = t.right_code left join tf_m_staff_right sr on sr.right_code = t.right_code where sr.staff_id = #{0} and t.status='1' order by order_no
+    </select>
+
+</mapper>

@@ -1,0 +1,38 @@
+.uploadButton {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 150px;
+  width: 100%;
+  display: inline-block;
+
+  :global(.webuploader-pick) {
+    width: 253px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    margin-top: 20px;
+    font-size: 50px;
+    color: #ccc;
+  }
+
+  &:hover {
+    .icon {
+      color: #000;
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+  }
+}

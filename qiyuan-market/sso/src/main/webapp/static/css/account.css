@@ -1,0 +1,153 @@
+.account-box{
+    padding: 30px 40px;
+}
+.account-title{
+    border-bottom:1px solid #a6a6a6;
+}
+.account-title span{
+    background-color:#a6a6a6;
+    width: 114px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.step-bar{
+    text-align: center;
+    padding-top: 20px;
+    width: 800px;
+}
+.step1{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    background-image: url(../img/icon_step1.png);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    padding-right: 10px;
+    text-align: left;
+    color:#a6a6a6;
+}
+.step1.on{
+    background-image: url(../img/icon_step1_on.png);
+    color: #3186dc;
+}
+.step2{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    background-image: url(../img/icon_step2.png);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-left: 95px;
+    padding-right: 10px;
+    text-align: left
+    color:#a6a6a6;
+}
+.step2.on{
+    background-image: url(../img/icon_step2_on.png);
+    color: #3186dc;
+}
+.step3{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    background-image: url(../img/icon_step3.png);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-left: 95px;
+    padding-right: 10px;
+    text-align: left;
+    color:#a6a6a6;
+}
+.step3.on{
+    background-image: url(../img/icon_step3_on.png);
+    color: #3186dc;
+}
+
+.account-content{
+    width: 800px;
+    padding-top: 20px;
+}
+.account-content p{
+    height: 30px;
+    margin-bottom: 10px;
+}
+.account-content p label{
+    font-size: 12px;
+    color: #323232;
+    display: inline-block;
+    min-width: 300px;
+    line-height: 30px;
+    text-align: right;
+    margin-right: 10px;
+}
+.text-left p label{
+    text-align: left;
+}
+.label-text{
+    font-size: 12px;
+    color: #323232;
+    line-height: 30px;
+}
+.account-content input{
+    background-color: #fff;
+    border-radius: 4px;
+    border:1px solid #c9c9c9;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    color: #323232;
+    padding-left: 10px;
+    width: 150px;
+    margin-right: 10px;
+}
+.account-btn{
+    min-width: 60px;
+    height: 30px;
+    border:1px solid #3186dc;
+    color: #3186dc;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.account-btn:hover{
+    background-color: #cce6ff;
+}
+.account-btn.disable {
+    border:1px solid #a6a6a6;
+    color: #a6a6a6;
+}
+.account-btn.disable:hover{
+    background-color: #ffffff;
+}
+.account-p{
+    text-align: center;
+    font-size: 12px;
+    color: #323232;
+    line-height: 50px;
+}
+/*.step.active{
+  color: #3186dc;
+}
+.step span{
+  float: left;
+  margin-right:10px;
+}
+.step img{
+  float: left;
+  margin-right:10px;
+}*/
+.input-info {
+    margin-left: 310px;
+    color: #ff0000;
+}

@@ -1,0 +1,87 @@
+body {
+  overflow: auto;
+}
+
+#content {
+  height: 100%;
+}
+
+.ui.checkbox {
+  margin-top: 10px;
+}
+
+.ui.radio.checkbox label {
+  cursor: pointer;
+  padding-left: 1.5em;
+}
+
+.ui.checkbox label {
+  cursor: pointer;
+}
+
+.ui.table tr td.header {
+  cursor: auto;
+  background: #f9fafb;
+  color: rgba(0, 0, 0, 0.87);
+  font-style: none;
+  font-weight: bold;
+  text-transform: none;
+  padding: 0.71428571em 0.71428571em;
+}
+
+.ui.table tr {
+  &:first-child td.header:first-child {
+    border-radius: 4px 0 0 0;
+  }
+  &:last-child td.header:first-child {
+    border-radius: 0 0 0 4px;
+  }
+}
+
+.sk-rotating-plane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 60px;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #EA5305;
+  -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+  animation: sk-rotatePlane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotatePlane {
+  0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+@keyframes sk-rotatePlane {
+  0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+label {
+  font-size: 13px;
+}

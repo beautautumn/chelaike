@@ -1,0 +1,144 @@
+#corporation {
+  .hero {
+    text-align: center;
+  }
+
+  .features {
+    display: flex;
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin: 100px auto 64px auto;
+
+    .types, .values {
+      width: 611px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+
+
+      li {
+        font-size: 20px;
+        text-indent: -20px;
+        margin-bottom: 37px;
+        line-height: 200%;
+
+        &:before {
+          font-size: 30px;
+          content: "• ";
+          color: #00BA43;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 0px;
+      font-size: 44px;
+    }
+
+    .types {
+      padding-left: 322px;
+
+      h3 {
+        font-size: 28px;
+        color: #737373;
+        margin-bottom: 52px;
+      }
+    }
+
+    .divider {
+      width: 58px;
+
+      .line {
+        width: 2px;
+        height: 1970px;
+        background: #00BA43;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 75px;
+      }
+
+      .circle {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #00BA43;
+        margin-left: -28px;
+      }
+
+      .first {
+        margin-bottom: 650px;
+      }
+      .second {
+        margin-bottom: 646px;
+      }
+      .third {
+        margin-bottom: 620px;
+      }
+    }
+
+    .values {
+      padding-left: 62px;
+
+      ul {
+        margin-top: 120px;
+
+        &.feature1 {
+          line-height: 81px;
+        }
+
+        &.feature2 {
+          margin-top: 237px;
+        }
+
+        &.feature3 {
+          margin-top: 222px;
+        }
+      }
+
+      img {
+        margin-top: 64px;
+      }
+    }
+  }
+
+  .contact {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+      text-align: center;
+      font-size: 44px;
+    }
+
+    .wrapper {
+      background: url("/assets/images/corporation/contact_bg.png");
+      height: 388px;
+
+      .text {
+        padding-top: 32px;
+        padding-left: 980px;
+      }
+
+      .tel {
+        font-size: 30px;
+      }
+
+      img {
+        vertical-align: text-top;
+        width: 120px;
+        height: 120px;
+
+        &.offset {
+          margin-left: 13px;
+        }
+      }
+    }
+  }
+
+}

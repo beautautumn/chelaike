@@ -1,0 +1,81 @@
+# 微信开放平台
+# OFFICIAL_SITE_ID: wxa2c9447bc95e0558
+# OFFICIAL_SITE_SECRET: 37f397f58baff76991b0d9d0e02c14db
+# OFFICIAL_SITE_TOKEN: hww8773084123token
+# OFFICIAL_SITE_AES_KEY: CgAKz6nxnZBkxUQfYHTWnxYcyCetrbGEfay3QyBWQPo
+
+OFFICIAL_SITE_ID: wxbda5211e9c3047c4
+OFFICIAL_SITE_SECRET: 920f805c29eaf719b1febb1ac31144da
+OFFICIAL_SITE_TOKEN: xuning715
+OFFICIAL_SITE_AES_KEY: hnbuvDcUcjdtP89sOHnbx7Qy5LHwjoH98MPZEPf1Xwx
+
+WECHAT_IN_TEST: "ON"
+SERVER_HOST: "shop.anpxd.com"
+
+# 车来客通信 API
+CHELAIKE_URL: http://prime.lina.che3bao.com:8686/api/open/v2
+OPEN_APP_SECRET: JFPHp3CxcfTybCaXzFKx3qQgzGNCyP
+CHELAIKE_DOMAIN: http://prime.lina.che3bao.com
+
+# 百度地图
+BAIDU_MAP_AK: 0W5XnLxvueOWCFSgszkxIheji3HVKoDK
+
+# 阿里云存储
+OSS_ACCESS_KEY_ID: oppOculaV6cUtaeB
+OSS_ACCESS_KEY_SECRET: 6cgzciZxRaXBTOSOAACgf1MHP0qDwl
+
+OSS_AREA: cn-hangzhou
+OSS_BUCKET_NAME: tianche-playground
+OSS_ENDPOINT: http://oss-cn-hangzhou.aliyuncs.com
+OSS_BUCKET_HOST: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com
+OSS_BUCKET_HOST_INTERNAL: http://tianche-playground.oss-cn-hangzhou-internal.aliyuncs.com
+OSS_IMAGE_FOLDER: official_site/images
+OSS_ASSET_FOLDER: assets
+
+IMAGE_HOST: http://oss-playground.che3bao.com
+ASSET_HOST: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com
+
+staging:
+  OFFICIAL_SITE_ID: wxa2c9447bc95e0558
+  OFFICIAL_SITE_SECRET: 37f397f58baff76991b0d9d0e02c14db
+  OFFICIAL_SITE_TOKEN: hww8773084123token
+  OFFICIAL_SITE_AES_KEY: CgAKz6nxnZBkxUQfYHTWnxYcyCetrbGEfay3QyBWQPo
+  WECHAT_IN_TEST: "ON"
+  SERVER_HOST: "lina-site.chelaike.com"
+
+  SECRET_KEY_BASE: 8b32fb2751a6c087b108cff772de95c39ad4f04deff5036ce1473c92f442dfa8272e92119fb04a87b0654193940bd032bcaefd0dc5597a200841970a7531510b
+  WECHAT_IN_TEST: "OFF"
+  CACHE_HOST: 0cb4e80b5b894b3f.m.cnhzaliqshpub001.ocs.aliyuncs.com
+  DATABASE_PASSWORD: AcokakAUEkea3D9sGydU
+  DATABASE_HOST: rds100sp585h2bsguk2po.pg.rds.aliyuncs.com
+
+  OSS_ACCESS_INTERNAL: true
+
+production: &production
+  SECRET_KEY_BASE: 4014a371a193b280e39881d240431d01653d3bdb30a706eae8f479dab07c9e552e0bd494b34864d3773a5056ef154a55fe088a075dffe2e1ec5d46e5f30f5706
+  WECHAT_OPEN_APP_ID: xxxxxxxxxxxxxx
+  WECHAT_OPEN_APP_SECRET: xxxxxxxxxxxxxxxxxx
+  WECHAT_IN_TEST: "OFF"
+
+  CHELAIKE_URL: http://mobile.anpxd.com/api/open/v2
+  CHELAIKE_DOMAIN: http://mobile.anpxd.com
+
+  DATABASE_HOST: postgresql-master.anpxd.com
+  DATABASE_PASSWORD: 7ujm*IK<9ol.)P:?
+
+  ACCESS_KEY_ID: LTAIig8nwAUkO4Fl
+  ACCESS_KEY_SECRET: JkfZCrIuZUwD6IorSRMFDTUO3wwaqZ
+  OSS_BUCKET_NAME: env-pro
+  OSS_ENDPOINT: http://oss-cn-beijing.aliyuncs.com
+  OSS_BUCKET_HOST: http://env-pro.oss-cn-beijing.aliyuncs.com
+
+  OSS_IMAGE_FOLDER: images
+  OSS_VOICE_FOLDER: voices
+  OSS_IPA_FOLDER: versions/ios
+  OSS_PRICE_TAG_TEMPLATES: price_tag_templates
+
+  IMAGE_HOST: http://image.chelaike.com
+  ASSET_HOST: http://asset.chelaike.com
+
+  PRIME_DATABASE_PASSWORD: UJwx8qjymkbF2TaLnFmr
+  CACHE_HOST: memcached.anpxd.com:11211

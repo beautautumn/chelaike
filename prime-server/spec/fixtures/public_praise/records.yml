@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: public_praise_records # 二手车之家口碑记录
+#
+#  id              :integer          not null, primary key # 二手车之家口碑记录
+#  sumup_id        :integer
+#  link            :string                                 # 抓取链接
+#  level           :string                                 # 级别
+#  most_satisfied  :string                                 # 最满意的
+#  least_satisfied :string                                 # 最不满意的
+#  logo            :string                                 # 用户Logo
+#  username        :string                                 # 用户名
+#  content         :jsonb                                  # 内容
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  support_count   :integer                                # 支持数
+#  viewed_count    :integer                                # 浏览数
+#
+
+<% require "autohome_public_praise/spec/fixtures" %>
+
+aodi_public_praise_record:
+  sumup: aodi_public_praise_sumup
+  link: "http://k.autohome.com.cn/spec/23924/view_880580_1.html?st=5&piap=1|23924|0|0|1|0|0|0|1|0|1"
+  level: ""
+  logo: "http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/autohome_public_praise/85827ddb-3d1a-4318-94d1-ffc8fc7e06dd_50X50.jpg"
+  username: 指尖旋律MonsterLee
+  content: '<%= AutohomePublicPraise::Spec::Fixtures.public_praise.to_json %>'
+  created_at: "<%= Time.zone.parse('2015-11-27').to_s(:db) %>"
+  updated_at: "<%= Time.zone.parse('2016-03-08').to_s(:db) %>"

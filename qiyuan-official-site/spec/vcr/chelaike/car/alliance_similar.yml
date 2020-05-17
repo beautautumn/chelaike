@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://prime.lina.che3bao.com/api/open/v2/cars/similar
+    body:
+      encoding: UTF-8
+      string: car_id=4222&per_page=999&search_range=company_except
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.0p0
+      Autobotsopentoken:
+      - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwaXJlZF9hdCI6IjIwMTctMDMtMTUgMTI6MDQ6NDIgKzA4MDAifQ.Azm9G183TR5gw1E9pyfzev_5zTSuwCUcENXjTnCKRGk
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - prime.lina.che3bao.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Wed, 15 Mar 2017 03:04:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Autobots
+      Etag:
+      - W/"e0234245cb00aa260ccfa99a9a0b235e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f6bf1fe0-ec41-4a1b-954d-9f0fac8cb47e
+      X-Runtime:
+      - '0.021321'
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+    http_version: 
+  recorded_at: Wed, 15 Mar 2017 03:04:43 GMT
+recorded_with: VCR 3.0.3

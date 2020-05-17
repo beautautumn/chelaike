@@ -1,0 +1,30 @@
+<h1>广告列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th> 标题 </th>
+        <th> 图片 </th>
+        <th> 跳转地址 </th>
+        <th> 状态 </th>
+        <th> 显示时长 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ads.each do |ad| %>
+        <%= render partial: "row", locals: { ad: ad } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@counter%> 条记录
+          <%= paginate @ads %>
+        </th>
+    </tfoot>
+  </table>
+</div>

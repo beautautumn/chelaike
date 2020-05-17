@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= @tenant&.name %>官网管理后台</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class="<%= controller_name %> <%= action_name %> hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render "layouts/admin/header" %>
+    <%= render "layouts/admin/sidebar" %>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <%= yield(:content_header) %>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <%= yield %>
+      </section>
+    </div>
+    <%= render "layouts/admin/footer" %>
+    <%= render "layouts/admin/control" %>
+</div>
+</body>
+</html>

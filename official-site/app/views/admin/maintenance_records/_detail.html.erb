@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">详细报告</h3>
+    </div>
+    <div class="box-body detail-items">
+      <%= f.fields_for :record_detail, @maintenance_record.record_detail do |detail_form| %>
+        <% @maintenance_record.record_detail.each do |item| %>
+          <%= render "item", form: detail_form, item: item %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <button class="btn btn-primary add-item">添加记录</button>
+</div>

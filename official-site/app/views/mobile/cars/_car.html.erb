@@ -1,0 +1,50 @@
+<% if @seller.present? %>
+  <% path = car_path(car.id, seller_id: @seller.id) %>
+<% else %>
+  <% path = car_path(car.id) %>
+<% end %>
+
+<%= link_to path do %>
+<div class="weui-media-box weui-media-box_appmsg">
+  <div class="weui-media-box__hd">
+    <img src="<%= car_cover(car.cover_url, '360x240') %>", class="weui-media-box__thumb">
+    <% if !in_stock_car?(car) %>
+      <div class="tc-saled-mask"></div>
+      <div class="tc-saled-label">已出售</div>
+    <% elsif bargin_car?(car) %>
+      <em class="tc-bargin-badges"></em>
+    <% elsif recommended_car?(car) %>
+      <em class="tc-recommended-badges"></em>
+    <% end %>
+  </div>
+  <div class="weui-media-box__bd">
+    <div class="name-and-age">
+      <h4 class="weui-media-box__title car-name">
+        <% if car.reserved %>
+          <%= image_tag "common/reserved.png", class: "tc-reserved-label"  %>
+        <% end %>
+        <%= car.name %>
+      </h4>
+      <div class="car-age">
+          <%= date_format(car.licensed_at) %>
+          /
+          <%= mileage_format(car.mileage) %>万公里
+      </div>
+    </div>
+    <div class="weui-media-box__desc">
+      <div class="price">
+        <span class="car-price">
+          <% if bargin_car?(car) %>
+            特惠价：<span class="price-number"><%= car.onsale_price_wan %></span> 万
+          <% elsif car.show_price_wan.present? %>
+            <span class="price-number"><%= price_format(car.show_price_wan) %></span> 万
+          <% else %>
+            即将开售
+          <% end %>
+        </span>
+        <%= render partial: "shared/like_car", locals: { car: car }%>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

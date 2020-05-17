@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation=" 
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- 自动扫描,自动转清算， 每天晚上11点运行 -->
+
+	<bean id="autoConfContractToDo" class="com.ct.erp.task.AutoConfContractToDo" />
+	<bean id="autoConfContractToDoJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoConfContractToDo" />
+		<property name="targetMethod" value="autoConfContract" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoConfContractToDoTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoConfContractToDoJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+
+	<!-- 自动获取交易信息 -->
+	<bean id="autoGetTransferInfo" class="com.ct.erp.task.AutoGetTransferInfoJob" />
+	<bean id="autoGetTransferInfoJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoGetTransferInfo" />
+		<property name="targetMethod" value="autoGetTransferInfo" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoGetTransferInfoTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoGetTransferInfoJob" />
+		<property name="cronExpression" value="0 0/2 * * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+
+	<!-- 同步商户到车三宝信息 -->
+	<bean id="autoSyncAgency" class="com.ct.erp.task.AutoSyncAgencyJob" />
+	<bean id="autoSyncAgencyJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoSyncAgency" />
+		<property name="targetMethod" value="autoSyncAgencyInfo" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoSyncAgencyTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoSyncAgencyJob" />
+		<property name="cronExpression" value="0 0/2 * * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+	<!-- 同步车辆信息到车三宝信息 -->
+	<bean id="autoSyncVehicle" class="com.ct.erp.task.AutoSyncVehicleJob" />
+	<bean id="autoSyncVehicleJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoSyncVehicle" />
+		<property name="targetMethod" value="autoSyncVehicleInfo" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoSyncVehicleTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoSyncVehicleJob" />
+		<property name="cronExpression" value="0 0/2 * * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+	<!-- 同步车辆信息到车三宝信息 -->
+	<bean id="autoSyncVehicleBack" class="com.ct.erp.task.AutoSyncVehicleJob" />
+	<bean id="autoSyncVehicleBackJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoSyncVehicleBack" />
+		<property name="targetMethod" value="autoSyncVehicleBack" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoSyncVehicleBackTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoSyncVehicleBackJob" />
+		<property name="cronExpression" value="0 0/2 * * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+	<!-- 同步车辆信息到大公信息 -->
+	<bean id="autoSyncAllVehicleBack" class="com.ct.erp.task.AutoSyncVehicleJob" />
+	<bean id="autoSyncAllVehicleBackJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoSyncAllVehicleBack" />
+		<property name="targetMethod" value="autoSyncAllVehicleBack" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoSyncAllVehicleBackTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoSyncAllVehicleBackJob" />
+		<property name="cronExpression" value="0 0/2 * * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+
+	<!-- 自动扫描审批取消超时未出场车辆审批 -->
+	<bean id="autoCheckOut" class="com.ct.erp.task.AutoCheckOutJob" />
+	<bean id="autoCheckOutJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoCheckOut" />
+		<property name="targetMethod" value="autoCheckOut" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoCheckOutTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoCheckOutJob" />
+		<property name="cronExpression" value="0 0 1 * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+	<!-- 自动调用车300估价系统 -->
+	<bean id="autoSyncVehicleEvaluationJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoSyncVehicleEvaluation" />
+		<property name="targetMethod" value="autoSyncVehicleEvaluation" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="autoSyncVehicleEvaluationTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="autoSyncVehicleEvaluationJob" />
+		<property name="cronExpression" value="0 0 1 * * ?" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+	<!-- 启动JOB -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 自动判断合同是否到期 -->
+				<!-- <ref bean="autoConfContractToDoTrigger"/> -->
+
+				<!-- 查询并更新融资车辆过户情况 -->
+				<!-- <ref bean="autoGetTransferInfoTrigger"/> -->
+				<!-- 自动同步商户信息到车三宝 -->
+				<!-- <ref bean="autoSyncAgencyTrigger" /> -->
+
+
+				<!-- 自动同步车辆信息到车三宝 -->
+				<!-- <ref bean="autoSyncVehicleTrigger" /> -->
+				<!-- 自动同步从车三宝同步车辆信息回来 -->
+				<!-- <ref bean="autoSyncVehicleBackTrigger" /> -->
+
+				<!-- 自动同步从车三宝同步车辆信息回来 -->
+				<!-- <ref bean="autoSyncAllVehicleBackTrigger" /> -->
+
+				<!-- 自动扫描审批取消超时未出场车辆审批 -->
+				<ref bean="autoCheckOutTrigger" />
+				
+				<!-- 自动调用che300估值系统 -->
+				<ref bean="autoSyncVehicleEvaluationTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans> 

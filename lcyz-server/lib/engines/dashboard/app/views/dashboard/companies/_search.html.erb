@@ -1,0 +1,59 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= search_form_for @q, url: companies_path do |f| %>
+        <%= f.label "省份" %>
+        <% cond_value = ""
+           cond_value = params[:q][:province_cont] unless params[:q].nil?
+        %>
+        <%= f.search_field :province_cont, size: 10, value: cond_value, placeholder: "车商省份"%>
+        <%= f.label "城市" %>
+        <% cond_value = ""
+           cond_value = params[:q][:city_cont] unless params[:q].nil?
+        %>
+        <%= f.search_field :city_cont , size: 10, value: cond_value, placeholder: "车商城市" %>
+        <%= f.label "业务活跃" %>
+        <%= select_tag :active_tag,
+            options_for_select(
+                        [["是", 1],["否",0]],
+                        selected = params[:active_tag]
+                      ),
+                      { include_blank: true, class: "ui search dropdown"}
+        %>
+        <%= f.label "考核活跃" %>
+        <%= select_tag :manage_active_tag,
+            options_for_select(
+                        [["是", 1],["否",0]],
+                        selected = params[:manage_active_tag]
+                      ),
+                      { include_blank: true, class: "ui search dropdown"}
+        %>
+        <%= f.label "考核服务顾问" %>
+        <%= select_tag :staff_id,
+                      options_for_select(
+                        Dashboard::Staff.consultants.collect { |s| [s.name, s.id] },
+                        selected = params[:staff_id]
+                      ),
+                      { include_blank: true, class: "ui search dropdown"}
+        %>
+        <br/><br/>
+        <%= f.label "车商ＩＤ" %>
+        <% cond_value = ""
+           cond_value = params[:company_id] unless params[:company_id].nil?
+        %>
+        <%= text_field_tag :company_id, cond_value, placeholder: "搜索车商ID", size: 10 %>
+        <%= f.label "车商名称" %>
+        <% cond_value = ""
+           cond_value = params[:q][:name_or_owner_name_or_owner_phone_cont] unless params[:q].nil?
+        %>
+        <%= text_field_tag "q[name_or_owner_name_or_owner_phone_cont]",
+            nil, placeholder: "搜索 名称/老板", value: cond_value , size: 12
+        %>
+        <%= f.label "车商标签" %>
+        <%= text_field_tag :label, params[:label], placeholder: "搜索车商标签（可模糊）", size: 20 %>
+        <%= f.submit "搜索", class: "ui green basic button" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

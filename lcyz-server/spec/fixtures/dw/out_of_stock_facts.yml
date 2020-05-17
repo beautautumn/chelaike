@@ -1,0 +1,47 @@
+# == Schema Information
+#
+# Table name: dw_out_of_stock_facts # 出库事实
+#
+#  id                        :integer          not null, primary key # 出库事实
+#  car_id                    :integer                                # 车辆ID
+#  car_dimension_id          :integer                                # 车辆维度ID
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  stock_out_inventory_id    :integer                                # 出库表ID
+#  stock_out_inventory_type  :string                                 # 出库类型
+#  stock_out_at_dimension_id :integer                                # 出库时间纬度ID
+#  mode                      :string                                 # 出库方式
+#  seller_id                 :integer                                # 销售员
+#  closing_cost_cents        :integer          default(0)            # 成交价
+#  commission_cents          :integer          default(0)            # 佣金
+#  refund_price_cents        :integer          default(0)            # 退回车价
+#  current                   :boolean          default(FALSE)        # 当前清单
+#  other_fee_cents           :integer          default(0)            # 其他费用
+#  carried_interest_cents    :integer          default(0)            # 提成金额
+#
+
+aodi_out_of_stock_fact:
+  car: aodi
+  car_dimension: aodi_car_dimension
+  stock_out_inventory: aodi_cash
+  stock_out_inventory_type: sold
+  stock_out_at_dimension: stock_out_at_dimension_1
+  mode: retail_cash
+  seller: zhangsan
+  closing_cost_cents: 30_000_000
+  commission_cents: 5_000_000
+  refund_price_cents: 0
+  current: true
+
+tumbler_out_of_stock_fact:
+  car: tumbler
+  car_dimension: tumbler_car_dimension
+  stock_out_inventory: tumbler_cash
+  stock_out_inventory_type: sold
+  stock_out_at_dimension: stock_out_at_dimension_2
+  mode: retail_cash
+  seller: zhangsan
+  closing_cost_cents: 30_000_000
+  commission_cents: 5_000_000
+  refund_price_cents: 0
+  current: true

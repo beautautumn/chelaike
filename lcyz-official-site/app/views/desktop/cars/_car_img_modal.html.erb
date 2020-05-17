@@ -1,0 +1,14 @@
+<div class="modal fade" id="carImgViewModal" tabindex="-1" role="dialog" aria-labelledby="车辆图片查看">
+  <div class="modal-dialog tc-car-img-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="tc-viewer">
+          <% @car.images.each do |image| %>
+            <div><img data-lazy="<%= img_scale(image.url, "867x650") %>"></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

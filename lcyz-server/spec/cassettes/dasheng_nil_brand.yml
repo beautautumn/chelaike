@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v3
+    body:
+      encoding: UTF-8
+      string: partner=7066482972802319&interface=get_available_car_brands_list
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 03 Mar 2017 02:38:10 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%228d0ea80b68dd56941774abeecdc6f9f8%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A15%3A%22117.151.101.254%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1488508690%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Df85b1aa68a24a5cae051bf716b526f80;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version:
+  recorded_at: Fri, 03 Mar 2017 02:39:27 GMT
+recorded_with: VCR 3.0.1

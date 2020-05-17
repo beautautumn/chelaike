@@ -1,0 +1,109 @@
+<%
+  company = @record.company
+  @record.error_info = "无法辨识车架号"
+%>
+
+<% flash.each do |message_type, message|
+   css = message_type == 'danger' ? 'error' : 'success'
+%>
+  <div class="ui <%= css %> message">
+    <div class="header">
+      <%= message %>
+    </div>
+  </div>
+<% end %>
+
+<div class="ui one cards">
+  <div class="ui card">
+    <div class="image">
+      <img src="<%= @record.vin_image %>">
+    </div>
+    <div class="content">
+      <div class="header">车架号：</div>
+      <div class="description">
+        <%= form_for @record,
+          url: start_query_vin_image_path(id: @record.id), method: :post do |f| %>
+          <div class="ui input" style="width: 100%; margin-bottom: 10px">
+            <%= f.text_field :vin %>
+          </div>
+          <% if @record.vin_image && @record.state == 'submitted' %>
+            <%= f.hidden_field :sp_type %>
+            <%= f.hidden_field :original_id %>
+            <%= hidden_field_tag 'is_from_mobile', 'true' %>
+            <%= f.submit "查询", { class: 'ui button' } %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <% if @record.state == 'submitted' %>
+      <div class="content">
+        <div class="header">反馈错误信息：</div>
+        <div class="description">
+          <%= form_for @record,
+            url: response_error_vin_image_path(id: @record.id), method: :post do |f| %>
+            <div class="ui input" style="width: 100%; margin-bottom: 10px">
+              <%= f.text_field :error_info %>
+            </div>
+            <%= f.hidden_field :sp_type %>
+            <%= f.hidden_field :original_id %>
+            <%= hidden_field_tag 'is_from_mobile', 'true' %>
+            <%= f.submit "报错", { class: 'ui button' } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="extra content">
+      <div class="header">地区：</div>
+      <div class="description">
+        <%= company.try(:province) %>，<%= company.try(:city) %>
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="header">车商：</div>
+      <div class="description">
+        <%= company.try(:name) %>
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="header">员工：</div>
+      <div class="description">
+        <%= @record.user_name %>
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="header">提交时间：</div>
+      <div class="description">
+        <%= @record.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+      </div>
+    </div>
+    <% if @record.request_at && @record.state != 'submitted' %>
+      <div class="extra content">
+        <div class="header">发起时间：</div>
+        <div class="description">
+          <%= @record.request_at.strftime("%Y-%m-%d %H:%M:%S") %>
+        </div>
+      </div>
+    <% end %>
+    <% if @record.response_at && !['submitted', 'generating'].include?(@record.state) %>
+      <div class="extra content">
+        <div class="header">返回时间：</div>
+        <div class="description">
+          <%= @record.response_at.strftime("%Y-%m-%d %H:%M:%S") %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="extra content">
+      <div class="header">服务商：</div>
+      <div class="description">
+        <%= get_sp_name(@record.sp_type) %>
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="header">查询状态：</div>
+      <div class="description">
+        <%= get_state_name(@record.state) %>
+      </div>
+    </div>
+  </div>
+<div>

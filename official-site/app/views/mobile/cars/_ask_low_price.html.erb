@@ -1,0 +1,10 @@
+<div id="low-price-modal" style="display:none">
+  <div class="weui-mask weui-mask--visible"></div>
+  <div class="weui-dialog weui-dialog--visible">
+    <div class="weui-dialog__bd">
+      <%= form_tag "/enquiries" do %>
+        <%= render "enquiry_form" %>
+      <% end %>
+    </div>
+  </div>
+</div>

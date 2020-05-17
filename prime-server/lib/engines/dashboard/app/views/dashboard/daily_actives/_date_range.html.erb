@@ -1,0 +1,12 @@
+<div class="ui action input">
+  <%= form_tag company_dac_daily_actives_path, method: :get do %>
+    <%= text_field_tag "start_date",
+        nil, placeholder: "开始日期"
+    %>
+    <%= text_field_tag "end_date",
+        nil, placeholder: "结束日期"
+    %>
+    <%= hidden_field_tag "company_id", @company.id %>
+    <%= submit_tag "确定", class: "ui green basic button" %>
+  <% end %>
+</div>

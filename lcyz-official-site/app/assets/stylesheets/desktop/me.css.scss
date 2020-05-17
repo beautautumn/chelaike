@@ -1,0 +1,81 @@
+.me {
+  .content-panel {
+    display: flex;
+    margin-top: 30px;
+
+    .slide-bar {
+      flex: 0 0 180px;
+      height: 400px;
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .placeholder {
+        height: 40px;
+        background: #fac72c;
+        margin-bottom: 10px;
+      }
+      .actions {
+          height: 350px;
+          background: #f2f2f2;
+          padding-top: 7px;
+          .action-enquiries,
+          .action-favorites {
+              font-size: 14px;
+              height: 44px;
+              line-height: 44px;
+              color: black;
+              padding-left: 33px;
+              border-left: 4px solid #f2f2f2;
+          }
+      }
+    }
+
+    .cars-panel {
+      flex: auto;
+      margin-left: 20px;
+      .empty-panel {
+        height: 400px;
+        padding: 164px 0px;
+        margin-bottom: 70px;
+        background: #f2f2f2;
+        font-size: 24px;
+        text-align: center;
+        color: #a6a6a6;
+      }
+
+      .car-list {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+.enquiries {
+  .content-panel {
+    .slide-bar {
+      .actions {
+        .action-enquiries {
+          font-weight: bold;
+          border-left: 4px solid #fac72c;
+          background: white;
+        }
+      }
+    }
+  }
+}
+
+.favorites {
+  .content-panel {
+    .slide-bar {
+      .actions {
+        .action-favorites {
+          font-weight: bold;
+          border-left: 4px solid #fac72c;
+          background: white;
+        }
+      }
+    }
+  }
+}

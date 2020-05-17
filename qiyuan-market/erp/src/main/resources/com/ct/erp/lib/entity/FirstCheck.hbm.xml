@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ct.erp.lib.entity.FirstCheck" table="first_check_appointments">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="gateLogId" type="java.lang.Long">
+            <column name="gate_log_id"/>
+        </property>
+         <property name="operatorId"  type="java.lang.Long">
+             <column name="operator_id"/>
+         </property>
+         <property name="operateTime" type="timestamp">
+             <column name="operate_time"/>
+         </property>
+        <property name="checkerId" type="java.lang.Long">
+            <column name="checker_id"/>
+        </property>
+        <property name="checkTime" type="timestamp">
+            <column name="check_time"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"/>
+        </property>
+        <property name="carId" type="java.lang.Long">
+            <column name="car_id"/>
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at"/>
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at"/>
+        </property>
+    </class>
+</hibernate-mapping>
+

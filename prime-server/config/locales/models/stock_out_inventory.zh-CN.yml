@@ -1,0 +1,73 @@
+zh-CN:
+  enumerize:
+    stock_out_inventory:
+      sales_type:
+        retail: 零售
+        wholesale: 批发
+      payment_type:
+        cash: 现款
+        mortgage: 按揭
+      stock_out_inventory_type:
+        sold: 销售出库
+        acquisition_refunded: 收购退车
+        driven_back: 车主开回
+
+  activerecord:
+    models:
+      stock_out_inventory: 出库
+    attributes:
+      stock_out_inventory:
+        car_id: 车辆ID
+        stock_out_inventory_type: 出库类型
+        completed_at: 成交日期
+        seller_id: 成交员工
+        customer_channel_id: 客户来源
+        closing_cost_cents: 成交价格
+        closing_cost_wan: 成交价格
+        closing_cost_cents: 成交价格
+        sales_type: 销售类型
+        payment_type: 付款类型
+        deposit_wan: 定金
+        deposit_cents: 定金
+        remaining_money: 余款
+        remaining_money_wan: 余款
+        remaining_money_cents: 余款
+        transfer_fee_yuan: 过户费用
+        transfer_fee_cents: 过户费用
+        commission_yuan: 佣金
+        commission_cents: 佣金
+        other_fee_yuan: 其他费用
+        other_fee_cents: 其他费用
+        customer_location_province: 客户归属地省
+        customer_location_city: 客户归属地市
+        customer_location_address: 客户归属地地址
+        customer_name: 客户姓名
+        customer_phone: 联系电话
+        customer_idcard: 证件号
+        proxy_insurance: 代办保险
+        insurance_company_id: 保险公司
+        commercial_insurance_fee_yuan: 商业险
+        commercial_insurance_fee_cents: 商业险
+        compulsory_insurance_fee_yuan: 交强险
+        compulsory_insurance_fee_cents: 交强险
+        invoice_fee_yuan: 发票费用
+        invoice_fee_cents: 发票费用
+        mortgage_company_id: 按揭公司
+        down_payment_wan: 首付款
+        down_payment_cents: 首付款
+        loan_amount_wan: 贷款额度
+        loan_amount_cents: 贷款额度
+        mortgage_period_months: 按揭周期(月)
+        mortgage_fee_yuan: 按揭费用
+        mortgage_fee_cents: 按揭费用
+        foregift_wan: 押金
+        foregift_cents: 押金
+        note: 备注
+        refunded_at: 退车日期
+        refund_price_wan: 退回车价
+        refund_price_cents: 退回车价
+        driven_back_at: 车主开回时间
+        returned_at: 车主归还时间
+        current: 是否是当前库存状态的清单
+        created_at: 创建时间
+        updated_at: 最后更新时间

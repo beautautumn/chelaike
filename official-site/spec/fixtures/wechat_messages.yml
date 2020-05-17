@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: wechat_messages # 微信消息
+#
+#  id           :integer          not null, primary key
+#  key          :string                                 # 事件key
+#  app_id       :string                                 # 微信公众号 app_id
+#  message_type :string                                 # 消息类型
+#  content      :jsonb                                  # 消息内容
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+human_buy:
+  key: 我要买车
+  app_id: aaaa
+  message_type: text
+  content: {"content": "您好，想买什么车？"}

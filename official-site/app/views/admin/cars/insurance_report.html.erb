@@ -1,0 +1,213 @@
+<% content_for :content_header do %>
+  <h1>保险理赔记录</h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to "在库车辆", admin_cars_path %>
+    </li>
+    <li class="active">保险理赔记录</li>
+  </ol>
+<% end %>
+
+<section class="content">
+  <span class="hidden-car-id" style="visibility: hidden" id="insurance-car-id">4307</span>
+
+  <div class="page-header">
+    <h2>大众迈腾2017款 280TSI DSG 舒适型</h2>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>外观颜色</td>
+        <td>出厂年份</td>
+        <td>公里数</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>黑色</td>
+        <td>2016年</td>
+        <td>2万公里</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%#= form_for([:admin, @insurance_record]) do |f| %>
+  <form class="form-horizontal">
+    <div class="panel panel-default">
+      <div class="panel-heading row">
+        <label class="col-md-2 control-label">基本信息</label>
+        <%= link_to "导入保险理赔报告", import_report_admin_car_insurance_records_path(car_id: 4307, import_report: true, a: "a"), html: { class: "btn btn-info col-sm-2" } %>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">品牌车型：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+
+          <label class="col-sm-2 control-label">车架号：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">总记录数：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+
+          <label class="col-sm-2 control-label">里程数：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">事故次数：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 记录概要 -->
+    <div class="panel panel-default">
+      <div class="panel-heading">记录概要</div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">最新记录时间：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+
+          <label class="col-sm-2 control-label">车辆性质：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">生成年份：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+
+          <div class="radio">
+            <label class="col-sm-2 control-label">里程表记录：</label>
+            <div class="col-sm-4">
+              <label class="radio-inline">
+                <input type="radio" name="mileage_record" value="true">正常
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="mileage_record" value="false">异常
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">排放标准：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 出险事故摘要 -->
+    <div class="panel panel-default">
+      <div class="panel-heading">出险事故摘要</div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">记录时间：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+
+          <label class="col-sm-2 control-label">事故次数(次)：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">事故总损失(元)：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+        <button type="button" class="btn btn-info col-sm-2">添加摘要</button>
+      </div>
+    </div>
+
+    <!-- 详细记录 -->
+    <div class="panel panel-default">
+      <div class="panel-heading">详细记录</div>
+      <div class="panel-body">
+        <div class="form-group">
+          <div class="col-sm-3">
+            <label class="col-sm-5 control-label">记录日期：</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control"/>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <label class="col-sm-6 control-label">记录公里数：</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" placeholder="公里"/>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <label class="col-sm-5 control-label">事故损失：</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" placeholder="元"/>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <span class="col-sm-12 control-label">记录类型：保险</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">事故类型：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+
+          <label class="col-sm-2 control-label">事故经过：</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">维修内容：</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">更换配件：</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control"/>
+          </div>
+        </div>
+        <button type="button" class="btn btn-info col-sm-2">添加记录</button>
+      </div>
+    </div>
+
+    <!-- 保存表单 -->
+    <button class="btn btn-primary" type="submit">保存</button>
+  </form>
+
+  <%# end %>
+</section>

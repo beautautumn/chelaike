@@ -1,0 +1,10 @@
+acquirer:
+  id: <%= zhangsan.id %>
+  username: <%= zhangsan.username %>
+  phone: "<%= zhangsan.phone.to_s %>"
+  authority_type: "role"
+  authorities: <%= ["在库车辆查询", "车辆状态修改", "在库车辆查询", "已出库车辆查询", "牌证信息查看", "销售底价查看", "经理底价查看", "联盟底价查看", "整备费用查看"] %>
+  created_at: <%= ActiveSupport::JSON.encode(Time.zone.parse("2015-01-10")) %>
+  name: <%= zhangsan.name %>
+  email: zhangsan@che3bao.com
+  first_letter: <%= nil %>

@@ -1,0 +1,8 @@
+<div class="weui-panel weui-panel_access">
+  <div class="tc-favorites-title">
+    共 <%= @cars&.size || 0 %> 辆车
+  </div>
+  <div class="weui-panel__bd tc-cars-list list-view">
+    <%= render partial: "/cars/car", collection: @cars, as: :car %>
+  </div>
+</div>

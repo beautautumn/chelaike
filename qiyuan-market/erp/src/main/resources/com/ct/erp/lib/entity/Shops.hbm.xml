@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.ct.erp.lib.entity.Shops" table="shops">
+        <id name="id" type="java.lang.Long">
+            <column name="id" not-null="true" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="company_id" type="java.lang.Long">
+            <column name="company_id" length="32" />
+        </property>
+        <property name="created_at" type="java.sql.Timestamp">
+            <column name="created_at" not-null="true" />
+        </property>
+        <property name="updated_at" type="java.sql.Timestamp">
+            <column name="updated_at" not-null="true" />
+        </property>
+        <property name="deleted_at" type="java.sql.Timestamp" >
+            <column name="deleted_at"/>
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="erp_agency_id" type="java.lang.Long">
+            <column name="erp_agency_id" length="32" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"/>
+        </property>
+    </class>
+</hibernate-mapping>

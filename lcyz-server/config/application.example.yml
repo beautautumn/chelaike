@@ -1,0 +1,260 @@
+ACCESS_KEY_ID: LTAI6Nr0ABefaM4J
+ACCESS_KEY_SECRET: lSGf7dJvihnEXSE4sR4fydSxUq6oZG
+
+OSS_AREA: cn-hangzhou
+OSS_BUCKET_NAME: tianche-playground
+OSS_ENDPOINT: http://oss-cn-hangzhou.aliyuncs.com
+OSS_BUCKET_HOST: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com
+OSS_BUCKET_HOST_INTERNAL: http://tianche-playground.oss-cn-hangzhou-internal.aliyuncs.com
+OSS_IMAGE_FOLDER: prime/images
+OSS_CODE_FOLDER: prime/codes
+OSS_ASSET_FOLDER: assets
+OSS_VOICE_FOLDER: prime/voices
+OSS_IPA_FOLDER: prime/versions/ios
+OSS_PRICE_TAG_TEMPLATES: prime/price_tag_templates
+OSS_IMPORT_INTENTIONS_DIR: prime/import_intentions
+
+IMAGE_HOST: http://oss-playground.che3bao.com
+ASSET_HOST: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com
+
+SERVER_HOST: http://prime.lina.che3bao.com
+
+OPEN_APP_SECRET: JFPHp3CxcfTybCaXzFKx3qQgzGNCyP
+
+IMPORT_URL: http://www.che168.com
+IMPORT_VIP_URL: http://dealers.che168.com
+
+MEGATRON_URL: http://megatron.lina.che3bao.com
+PRICE_TAG_URL: http://price_tag.lina.che3bao.com
+
+REDIS_URL: "redis://127.0.0.1:6379"
+
+ROLLBAR_ACCESS_TOKEN: f835078dd4034cc6bddc077e4f9a8102
+JPUSH_APP_KEY: e82dd5d74bad3c453fe733df
+JPUSH_MASTER_SECRET: 0d56bfd0b9be1e558f3b8f84
+WECHAT_QRCODE_URL: "http://wechat.chelaike.com/#/car"
+WECHAT_OPEN_APP_ID: wx3dbf82a5ff572c2c
+WECHAT_OPEN_APP_SECRET: b4577d95d627c71751bff27ab5589cb2
+WECHAT_OPEN_APP_TOKEN: vnjRiwZ7TcVGqXK7tKqR
+WECHAT_OPEN_APP_ENCODING_AES_KEY: CgAKz6nxnZBkxUQfYHTWnxYcyCetrbGEfay3QyBWQPo
+WECHAT_IN_TEST: "ON"
+
+DEFAULT_TEMPLATE_URL: "http://prime.oss-cn-hangzhou.aliyuncs.com/price_tag_templates/default.zip"
+
+LETTER_AVATAR_FONT: "~/Library/Fonts/HiraginoSansGBW6.otf"
+LOGSTASH_HOST: 10.162.87.108
+
+CHEJIANDING_UID: f39d0a454e63829b014e709691d606b8
+CHEJIANDING_PWD: e10adc3949ba59abbe56e057f20f883e
+CHEJIANDING_URL: "https://test-pif.chejianding.com"
+
+ANT_QUEEN_ID: "787953403"
+ANT_QUEEN_KEY: "08aa70eae3fc3ffb33cb7909232e3c79"
+ANT_QUEEN_URL: "http://huaxia.mayinvwang.com/index.php?s="
+
+# 大圣来了 维保查询
+DASHENG_V3_URL: "http://test.dashenglaile.com/gateway/v3"
+DASHENG_V2_URL: "http://test.dashenglaile.com/gateway/v2"
+DASHENG_ID: "7066715120801321"
+DASHENG_KEY: "73ca368e10e96616e11951c1d2e12ef5"
+
+# 车3百信息
+# CHE_300_TOKEN: "3cab9f677fa8dc71126f48c7e91b0c58"
+CHE_300_TOKEN: "ddbc545d274b9df64b824bb12dae0836"
+
+# 车3百 车源信息 token
+CHE_300_GET_CARS_TOKEN: "4V7kPgYEMeyWGE3EfRQHGxvg3X2XbhyE"
+CHE_300_BASE_URL: "http://api.che300.com/service"
+
+PINGPP_KEY: "sk_test_PaD8G84qr1O8vH0CCOHGKa10"
+PINGPP_APP_ID: "app_Lynf5K9i9qT8zDyr"
+PINGPP_STORE_APP_ID: "app_P4KqzLCeDuz1bTCG"
+
+RONGCLOUD_APP_KEY: "lmxuhwagl0wxd" # 良车驿站
+RONGCLOUD_SECRET: "qfAUs1qi43" # 良车驿站
+RC_PREFIX: "lcyz" # 融云用户前缀
+
+EASY_LOAN_RONG_CLOUD_APP_KEY: "z3v5yqkbz6ng0"
+EASY_LOAN_RONG_CLOUD_SECRET: "4yNG3NCeh4TM"
+
+CHA_DOCTOR_USER_ID: "49"
+CHA_DOCTOR_SECRET_KEY: "70d6499403bb13acd294b8822cf41b4f"
+
+MAINTENANCE_RECORD_DESC: "车来客跨多平台查维保报告，一次充值多处使用！入库后还可全公司共享报告！"
+MAINTENANCE_RECORD_IMAGE_URL: "http://image.chelaike.com/prime_mobile/images/94d2f2aabfda3169d54a9531cdb99890.png"
+
+AES_PASSWORD: "e54f99fa686b21ddc5f1"
+AES_IV: "a2xhcgAAAAAAAAAA"
+
+OLD_DRIVER_USER_TOKEN: "a973e619-0e9a-4890-bc97-87ac4f471646"
+OLD_DRIVER_APP_KEY: "1EC0EC10-877B-4FA6-96CB-F9F20D1C25D3"
+
+# 官网微店域名
+WESHOP_DOMAIN: site.lcyzauto.com
+
+docker:
+  SECRET_KEY_BASE: 1cd570d7264def6c9d661353ee05a7a650ef41d6f4cc3ad5ae47606c9f1af1c6573af6038591ae0c55e949178a449b4f380048c6cfe5941479524a110b7f266e
+  PRIME_DATABASE_PASSWORD: CBbEseWD7CXc7PAuk
+  LETTER_AVATAR_FONT: "~/Fonts/HiraginoSansGBW6.otf"
+  # 车3百信息
+  CHE_300_TOKEN: "ddbc545d274b9df64b824bb12dae0836"
+  CACHE_HOST: 0cb4e80b5b894b3f.m.cnhzaliqshpub001.ocs.aliyuncs.com
+  WECHAT_IN_TEST: "OFF"
+  SERVER_HOST: http://prime.lina.che3bao.com
+
+dokku:
+  SECRET_KEY_BASE: 6f7fbcde64691edb4e5feef0469f9ad1c96ae2700a6fba47d435c635ad53fa69d3f1251e3593a11f9fad9a26d9acbb22f5e04d9dbaf27a08b51ca6b0baf50c7a
+  PRIME_DATABASE_PASSWORD: CBbEseWD7CXc7PAukFoT
+  LETTER_AVATAR_FONT: "~/Fonts/HiraginoSansGBW6.otf"
+
+staging:
+  SECRET_KEY_BASE: 6f7fbcde64691edb4e5feef0469f9ad1c96ae2700a6fba47d435c635ad53fa69d3f1251e3593a11f9fad9a26d9acbb22f5e04d9dbaf27a08b51ca6b0baf50c7a
+  PRIME_DATABASE_PASSWORD: AcokakAUEkea3D9sGydU
+  CACHE_HOST: 0cb4e80b5b894b3f.m.cnhzaliqshpub001.ocs.aliyuncs.com
+  LETTER_AVATAR_FONT: "~/Fonts/HiraginoSansGBW6.otf"
+  LOGSTASH_FILE_PATH: "/home/deploy/logstash_logs/prime-server.log"
+
+  WECHAT_IN_TEST: "OFF"
+
+  CHA_DOCTOR_USER_ID: "3376"
+  CHA_DOCTOR_SECRET_KEY: "d8209f591caa4b0e7c66001bdcdec76a"
+  CHE_300_BASE_URL: "http://testapi.che300.com/service/"
+
+production: &production
+  OSS_ENDPOINT: http://oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_HOST: http://lcyz-prime.oss-cn-hangzhou.aliyuncs.com
+  OSS_BUCKET_HOST_INTERNAL: http://lcyz-prime.oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_NAME: lcyz-prime
+  OSS_IMAGE_FOLDER: images
+  OSS_VOICE_FOLDER: voices
+  OSS_IPA_FOLDER: versions/ios
+  OSS_PRICE_TAG_TEMPLATES: price_tag_templates
+
+  IMAGE_HOST: http://lcyz-prime.oss-cn-hangzhou.aliyuncs.com
+  ASSET_HOST: http://lcyz-prime.oss-cn-hangzhou.aliyuncs.com
+  # ASSET_HOST: https://prime.oss-cn-hangzhou.aliyuncs.com
+
+  SERVER_HOST: http://server.lcyzauto.com
+
+  OPEN_SEARCH_CAR_APP: prime_car_production
+  OPEN_SEARCH_USER_APP: prime_user_production
+
+  MEGATRON_URL: http://auto.chelaike.com
+  # PRICE_TAG_URL: http://price_tag.chelaike.com
+  PRICE_TAG_URL: http://price_tag.lcyzauto.com
+  REDIS_URL: "redis://user:r-bp11c1bc40474134:6EaS1fzCEgUAAw@r-bp11c1bc40474134.redis.rds.aliyuncs.com:6379"
+
+  SECRET_KEY_BASE: c507244832271bba3febea14e4d5037076e7b995f9e4fdfc4a9ed66ccb46138aa0f89e63c51ae1ded811baeb977d56f1bd6d41a317d26ae698df73cd3c9c5a02
+  PRIME_DATABASE_PASSWORD: hxwOoBU3aCe6XQ==
+
+  JPUSH_APP_KEY: a94fcdbdeb323de51ef76c5f
+  JPUSH_MASTER_SECRET: f4452f72578a12d0412197f9
+  CACHE_HOST: m-bp112c27e7fb99d4.memcache.rds.aliyuncs.com
+  LETTER_AVATAR_FONT: "~/Fonts/HiraginoSansGBW6.otf"
+  LOGSTASH_FILE_PATH: "/mnt/logstash/prime-server.log"
+  LOGSTASH_HOST: 10.117.14.129
+  WECHAT_OPEN_APP_ID: wxefe9e45b217bc492
+  WECHAT_OPEN_APP_SECRET: a461135ba1fa834e94b0a545c4f4c30d
+  WECHAT_IN_TEST: "OFF"
+
+  PINGPP_KEY: "sk_live_XDqjTOnbHqz5LaX50On18yn1" # 良车驿站
+  PINGPP_APP_ID: "app_HGuXbL0uf1yL5yXD" # 良车驿站
+
+  CHEJIANDING_UID: ea7bb1621cf746aea1b466798869dff3
+  CHEJIANDING_PWD: 51423f12628ec2abcd3c51810f4f79ef
+  CHEJIANDING_URL: "https://pif.chejianding.com"
+  ANT_QUEEN_URL: "http://121.43.155.193:908"
+
+  RC_PREFIX: "lcyz" # 融云用户前缀
+  RONGCLOUD_APP_KEY: "z3v5yqkbz4qv0" # 良车驿站
+  RONGCLOUD_SECRET: "8IEcLVtYaE9R6" # 良车驿站
+
+  EASY_LOAN_RONG_CLOUD_APP_KEY: "pkfcgjstp0h38"
+  EASY_LOAN_RONG_CLOUD_SECRET: "QRYdz1fwdk60"
+
+  # 车3百 车源信息 token
+  CHE_300_GET_CARS_TOKEN: "xATTUe1hk5zYrW7DhSF9sn237cMAY1k7"
+  CHA_DOCTOR_USER_ID: "3376"
+  CHA_DOCTOR_SECRET_KEY: "d8209f591caa4b0e7c66001bdcdec76a"
+
+  # 大圣来了 维保查询
+  DASHENG_V3_URL: "http://api.dashenglaile.com/gateway/v3"
+  DASHENG_V2_URL: "http://api.dashenglaile.com/gateway/v2"
+  DASHENG_ID: "7066482972802319"
+  DASHENG_KEY: "a4c4b9809a30b6ded1593f6974ea4de5"
+
+dashboard:
+  <<: *production
+
+download:
+  <<: *production
+
+prerelease:
+  <<: *production
+
+bm_production:
+  ACCESS_KEY_ID: oppOculaV6cUtaeB
+  ACCESS_KEY_SECRET: 6cgzciZxRaXBTOSOAACgf1MHP0qDwl
+
+  OSS_ENDPOINT: http://oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_HOST: http://prime.oss-cn-hangzhou.aliyuncs.com
+  OSS_BUCKET_HOST_INTERNAL: http://prime.oss-cn-hangzhou-internal.aliyuncs.com
+  OSS_BUCKET_NAME: prime
+  OSS_IMAGE_FOLDER: images
+  OSS_VOICE_FOLDER: voices
+  OSS_IPA_FOLDER: versions/ios
+  OSS_PRICE_TAG_TEMPLATES: price_tag_templates
+
+  IMAGE_HOST: http://image.chelaike.com
+  ASSET_HOST: http://asset.chelaike.com
+
+  SERVER_HOST: http://bm_server.chelaike.cn
+
+  OPEN_SEARCH_CAR_APP: prime_car_production
+  OPEN_SEARCH_USER_APP: prime_user_production
+
+  MEGATRON_URL: http://auto.chelaike.com
+  # PRICE_TAG_URL: http://price_tag.chelaike.com
+  PRICE_TAG_URL: http://price_tag.chelaike.com
+  REDIS_URL: "redis://user:d4348f74af824438:Nnz6thzGWQ6CeobB@d4348f74af824438.m.cnhza.kvstore.aliyuncs.com:6379/4"
+
+  SECRET_KEY_BASE: c507244832271bba3febea14e4d5037076e7b995f9e4fdfc4a9ed66ccb46138aa0f89e63c51ae1ded811baeb977d56f1bd6d41a317d26ae698df73cd3c9c5a02
+  PRIME_DATABASE_PASSWORD: UJwx8qjymkbF2TaLnFmr
+
+  JPUSH_APP_KEY: a94fcdbdeb323de51ef76c5f
+  JPUSH_MASTER_SECRET: f4452f72578a12d0412197f9
+  CACHE_HOST: 38a2de3b031b4ff0.m.cnhzaliqshpub001.ocs.aliyuncs.com
+  CACHE_NAMESPACE: bm_prime_server_production
+  LETTER_AVATAR_FONT: "~/Fonts/HiraginoSansGBW6.otf"
+  LOGSTASH_FILE_PATH: "/mnt/logstash/prime-server.log"
+  WECHAT_OPEN_APP_ID: wxefe9e45b217bc492
+  WECHAT_OPEN_APP_SECRET: a461135ba1fa834e94b0a545c4f4c30d
+  WECHAT_IN_TEST: "OFF"
+
+  PINGPP_KEY: "" # TBD
+  PINGPP_APP_ID: "" # TBD
+
+  CHEJIANDING_UID: ea7bb1621cf746aea1b466798869dff3
+  CHEJIANDING_PWD: 51423f12628ec2abcd3c51810f4f79ef
+  CHEJIANDING_URL: "https://pif.chejianding.com"
+  ANT_QUEEN_URL: "http://121.43.155.193:908"
+
+  RC_PREFIX: "bm" # 融云用户前缀，帮卖版
+  RONGCLOUD_APP_KEY: "z3v5yqkbz4qv0" # 跟良车驿站同一个
+  RONGCLOUD_SECRET: "8IEcLVtYaE9R6" # 跟良车驿站同一个
+
+  EASY_LOAN_RONG_CLOUD_APP_KEY: "pkfcgjstp0h38"
+  EASY_LOAN_RONG_CLOUD_SECRET: "QRYdz1fwdk60"
+
+  # 车3百 车源信息 token
+  CHE_300_GET_CARS_TOKEN: "xATTUe1hk5zYrW7DhSF9sn237cMAY1k7"
+  CHA_DOCTOR_USER_ID: "3376"
+  CHA_DOCTOR_SECRET_KEY: "d8209f591caa4b0e7c66001bdcdec76a"
+
+  # 大圣来了 维保查询
+  DASHENG_V3_URL: "http://api.dashenglaile.com/gateway/v3"
+  DASHENG_V2_URL: "http://api.dashenglaile.com/gateway/v2"
+  DASHENG_ID: "7066482972802319"
+  DASHENG_KEY: "a4c4b9809a30b6ded1593f6974ea4de5"
+
+  WESHOP_DOMAIN: bm_site.chelaike.cn

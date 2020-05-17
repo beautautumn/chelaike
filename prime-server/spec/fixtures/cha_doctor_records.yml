@@ -1,0 +1,43 @@
+# == Schema Information
+#
+# Table name: cha_doctor_records
+#
+#  id                            :integer          not null, primary key
+#  company_id                    :integer                                # 公司ID
+#  car_id                        :integer                                # 车辆ID
+#  shop_id                       :integer                                # 店铺ID
+#  vin                           :string
+#  state                         :string
+#  user_name                     :string                                 # 查询的用户名
+#  user_id                       :integer                                # 查询的用户ID
+#  fetch_at                      :datetime                               # 拉取报告的时间
+#  cha_doctor_record_hub_id      :integer                                # 所属报告
+#  last_cha_doctor_record_hub_id :integer                                # 最新更新的报告
+#  engine_num                    :string                                 # 发动机号
+#  token_price                   :decimal(8, 2)
+#  vin_image                     :string                                 # vin码图片
+#  created_at                    :datetime         not null
+#  updated_at                    :datetime         not null
+#  action_type                   :string           default("new")        # 记录的查询类型
+#  payment_state                 :string           default("unpaid")     # 支付状态
+#  request_at                    :datetime                               # 请求时间
+#  response_at                   :datetime                               # 返回时间
+#  token_type                    :string
+#  token_id                      :integer
+#
+
+default: &default
+  vin: LFPH3ACC7A1A61382
+  company: tianche
+  user_name: zhangsan
+  state: checked
+  cha_doctor_record_hub_id: <%= ActiveRecord::FixtureSet.identify(:cha_doctor_record_hub) %>
+  token_price: 14
+
+cha_doctor_record_uncheck:
+  <<: *default
+  state: unchecked
+
+cha_doctor_record_updating:
+  <<: *default
+  state: updating

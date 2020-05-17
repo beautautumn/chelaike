@@ -1,0 +1,27 @@
+<h1>服务公司列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "search" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 商家编号 </th>
+        <th> 基本信息 </th>
+        <th> 服务信息 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @companies.each do |company| %>
+        <%= render partial: "row", locals: { company: company } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">
+          共 <%=@counter%> 条记录
+          <%= paginate @companies %>
+        </th>
+    </tfoot>
+  </table>
+</div>

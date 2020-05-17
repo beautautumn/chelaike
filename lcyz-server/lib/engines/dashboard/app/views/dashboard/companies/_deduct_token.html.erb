@@ -1,0 +1,21 @@
+<div class="ui small modal">
+  <div class="header">扣除车币</div>
+  <i class="close icon"></i>
+  <%= form_tag({controller: :companies, action: "update_token", oper_type: :sub}) do %>
+    <div class="content">
+      <div class="field">
+        <label>为 <strong><%= @company.name %></strong> 扣除车币</label>
+        <%= number_field_tag :amount, nil, size: 5 %> 个
+      </div>
+    </div>
+    <div class="actions">
+      <button type="submit" class="ui positive right labeled icon button">
+        保存
+        <i class="checkmark icon"></i>
+      </button>
+      <div id="cancel-button" class="ui black deny button">
+        取消
+      </div>
+    </div>
+  <% end %>
+</div>

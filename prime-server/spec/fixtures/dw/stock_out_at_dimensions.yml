@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: dw_stock_out_at_dimensions # 出库时间纬度
+#
+#  id                 :integer          not null, primary key # 出库时间纬度
+#  stock_out_at       :date                                   # 收购时间
+#  stock_out_at_year  :integer                                # 收购日期(年)
+#  stock_out_at_month :integer                                # 收购日期(月)
+#
+
+stock_out_at_dimension_1:
+  stock_out_at: <%= Time.zone.parse("2015-01-15").to_date %>
+  stock_out_at_year: 2015
+  stock_out_at_month: 1
+
+stock_out_at_dimension_2:
+  stock_out_at: <%= Time.zone.parse("2015-01-20").to_date %>
+  stock_out_at_year: 2015
+  stock_out_at_month: 1

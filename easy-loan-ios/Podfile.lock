@@ -1,0 +1,145 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.7.2)
+  - AMap2DMap (5.6.0):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.5.2)
+  - AMapLocation (2.6.0):
+    - AMapFoundation (~> 1.4)
+  - ESPullToRefresh (2.7)
+  - IQKeyboardManagerSwift (6.0.3)
+  - JCore (1.1.9)
+  - JPush (3.0.9):
+    - JCore (~> 1.1.7)
+  - Kingfisher (4.7.0)
+  - Pageboy (2.5.1)
+  - PGDatePicker (2.4.3):
+    - PGPickerView
+  - PGPickerView (1.2.6)
+  - PgyUpdate (1.5)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
+  - RxAlamofire (4.2.0):
+    - RxAlamofire/Core (= 4.2.0)
+  - RxAlamofire/Core (4.2.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4)
+  - RxSwift (4.1.2)
+  - SnapKit (4.0.0)
+  - STRegex (1.1.0)
+  - SwiftDate (4.5.1)
+  - SwiftIcons (2.0.1)
+  - Toast-Swift (3.0.1)
+  - "UITextView+Placeholder (1.2.1)"
+  - ZMKnife (0.2.1):
+    - SnapKit
+    - "UITextView+Placeholder"
+  - ZMTimeLineView (0.5.0):
+    - SnapKit
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - AMap2DMap
+  - AMapLocation
+  - ESPullToRefresh (~> 2.7)
+  - IQKeyboardManagerSwift (~> 6.0.3)
+  - JPush (~> 3.0.7)
+  - Kingfisher (~> 4.7.0)
+  - Pageboy (~> 2.0)
+  - PGDatePicker (from `https://github.com/superbug/PGDatePicker.git`)
+  - PgyUpdate
+  - RealmSwift (~> 3.5.0)
+  - RxAlamofire (~> 4.2.0)
+  - SnapKit (~> 4.0.0)
+  - STRegex (~> 1.1)
+  - SwiftDate (~> 4.5.1)
+  - SwiftIcons (~> 2.0.1)
+  - Toast-Swift (~> 3.0.1)
+  - ZMKnife (~> 0.2.1)
+  - ZMTimeLineView (~> 0.5.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Alamofire
+    - AMap2DMap
+    - AMapFoundation
+    - AMapLocation
+    - ESPullToRefresh
+    - IQKeyboardManagerSwift
+    - JCore
+    - JPush
+    - Kingfisher
+    - Pageboy
+    - PGPickerView
+    - PgyUpdate
+    - Realm
+    - RealmSwift
+    - RxAlamofire
+    - RxSwift
+    - SnapKit
+    - STRegex
+    - SwiftDate
+    - SwiftIcons
+    - Toast-Swift
+    - "UITextView+Placeholder"
+    - ZMKnife
+    - ZMTimeLineView
+
+EXTERNAL SOURCES:
+  PGDatePicker:
+    :git: https://github.com/superbug/PGDatePicker.git
+
+CHECKOUT OPTIONS:
+  PGDatePicker:
+    :commit: 0ad12d0b5364f169ba77d18f18167ed3f1e2bc21
+    :git: https://github.com/superbug/PGDatePicker.git
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AMap2DMap: cf0bfd6ae97951b55cc061903b814f924ba6c221
+  AMapFoundation: 46b194013a3b06e0e82e8963108ceb972d4200b8
+  AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
+  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
+  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  JCore: 27598485098d0db99d2812cba048003457d08cfb
+  JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
+  PGDatePicker: 16931faf779ddbe237234ac95f2faa9aeb22d9a3
+  PGPickerView: 8fbbf63d0404065a43a495a0115d339455e0f819
+  PgyUpdate: bad71685b91bba4aa520b7fe29356a476700fdf2
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
+  RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  STRegex: eb1f4c2fe9e2f0265b8df8634774cd8cd8914018
+  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
+  SwiftIcons: e475a56ae2c2da40672dbf16061ca5dd5cee7dbb
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  ZMKnife: f68331311b41dab0d97f5385c9ab7d9df1a6b4fc
+  ZMTimeLineView: 3e0f418c28257b31c435424ffc267ed15566336a
+
+PODFILE CHECKSUM: f84d5ebfcb0ec46f061cd4731b8723be7456cb2f
+
+COCOAPODS: 1.5.0

@@ -1,0 +1,33 @@
+<h1><%= @parallel_brand.name %> - 车型列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar", locals: { parallel_brand: @parallel_brand } %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th> 名称 </th>
+        <th> 产地 </th>
+        <th> 颜色 </th>
+        <th> 配置 </th>
+        <th> 状态 </th>
+        <th> 同款新车价 </th>
+        <th> 港口自提价 </th>
+        <th> 创建时间 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parallel_styles.each do |parallel_style| %>
+        <%= render partial: "row", locals: { parallel_style: parallel_style } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@counter%> 条记录
+          <%= paginate @parallel_styles %>
+        </th>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+.form {
+  margin-top: 20px;
+
+  :global(.ant-btn + .ant-btn) {
+    margin-left: 8px;
+  }
+}
+
+.firstColumn {
+  margin-top: 10px;
+}
+
+.bottomBar {
+  width: 515px;
+  z-index: 100;
+
+  button {
+    margin-right: 10px;
+    float: right;
+  }
+}

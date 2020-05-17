@@ -1,0 +1,25 @@
+<h1><%= @company.name %>活跃详情</h1>
+
+<div class="ui segment">
+  <%= render partial: "date_range" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 日期区间 </th>
+        <th> 访问总数 </th>
+        <th> 市内总数 </th>
+        <th> 市外总数 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @start_date %>~<%= @end_date %></td>
+        <td><%= @result[:total]%></td>
+        <td><%= @result[:local]%></td>
+        <td><%= @result[:nonlocal]%></td>
+      </tr>
+    </tbody>
+    <tfoot>
+    </tfoot>
+  </table>
+</div>

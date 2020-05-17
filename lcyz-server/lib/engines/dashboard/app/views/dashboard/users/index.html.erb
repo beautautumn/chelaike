@@ -1,0 +1,32 @@
+<h1>账号列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "search" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 账号ID </th>
+        <th> 手机号 </th>
+        <th> 用户名 </th>
+        <th> 姓名 </th>
+        <th> 老板 </th>
+        <th> 所属公司 </th>
+        <th> 注册时间 </th>
+        <% if current_staff.admin? %>
+          <th>Token</th>
+        <% end %>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @users %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@counter%> 条记录
+          <%= paginate @users %>
+        </th>
+    </tfoot>
+  </table>
+</div>

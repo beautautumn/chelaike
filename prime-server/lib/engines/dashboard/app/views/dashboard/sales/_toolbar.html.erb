@@ -1,0 +1,46 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= search_form_for @q, url: sales_path do |f| %>
+        <%= f.label "出库日期" %>
+        <%= f.date_select :completed_at_gt, prompt: {day: "日", month: "月", year: "年"} %>-
+        <%= f.date_select :completed_at_lt, prompt: {day: "日", month: "月", year: "年"} %>
+        <%= f.label "库存ＩＤ" %>
+        <% cond_value = ""
+           cond_value = params[:stock_id] unless params[:stock_id].nil?
+        %>
+        <%= text_field_tag :stock_id, cond_value, placeholder: "搜索库存ID", size: 10 %>
+        <br />
+        <br />
+        <%= f.label "品牌" %>
+        <%= f.search_field :car_brand_name_cont, placeholder: "输入车辆品牌", size: 12 %>
+        <%= f.label "车系" %>
+        <%= f.search_field :car_series_name_cont, placeholder: "输入车辆车系", size: 12 %>
+        <%= f.label "款式" %>
+        <%= f.search_field :car_style_name_cont, placeholder: "输入车辆款型", size: 12 %>
+        <%= f.label "库龄" %>
+        <%= f.search_field :car_stock_age_days_gt, placeholder: "最短（天）", size: 8 %> -
+        <%= f.search_field :car_stock_age_days_lt, placeholder: "最长（天）", size: 8 %>
+        <br />
+        <br />
+        <%= f.label "标价" %>
+        <%= f.search_field :car_show_price_wan_gt, placeholder: "最低（万元）",  size: 10 %> -
+        <%= f.search_field :car_show_price_wan_lt, placeholder: "最高（万元）", size: 10 %>
+        <%= f.label "颜色" %>
+        <%= f.search_field :car_exterior_color_cont , placeholder: "外观颜色", size: 8%>
+        <%= f.label "公里数" %>
+        <%= f.search_field :car_mileage_gt , placeholder: "最少（万公里）", size: 12%> -
+        <%= f.search_field :car_mileage_lt , placeholder: "最多（万公里）", size: 12%>
+        <br />
+        <br />
+        <%= f.label "省份" %>
+        <%= f.search_field :customer_location_province_cont , placeholder: "输入所属省份", size: 12%>
+        <%= f.label "城市" %>
+        <%= f.search_field :customer_location_city_cont , placeholder: "输入所属城市", size: 12%>
+        <%= f.label "车商" %>
+        <%= f.search_field :car_company_name_cont , placeholder: "输入所属车商公司名称", size: 34%>
+        <%= f.submit "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,469 @@
+.car-swiper {
+  margin: 8px 0;
+  .swiper-container {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .hot-car-swiper-slide {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 4.5px 7.8px 11.7px 1.3px rgba(0, 0, 0, 0.26);
+    padding: 4px 4px;
+    margin-bottom: 30px;
+    img {
+      width: 100%;
+    }
+    .tc-swiper-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      max-height: 235px;
+
+      .tc-bargin-badges {
+        width: 40px;
+        height: 35px;
+      }
+
+      .tc-icon-backgroup {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        position: absolute;
+        border-radius: 6px;
+        font-size: 24px;
+        text-align: center;
+        vertical-align: middle;
+        bottom: 0px;
+        right: 8px;
+
+        .fav_button {
+          background-image: asset-url("mobile/cars/fav_square.png");
+          width: 32px;
+          height: 32px;
+          float: right;
+          background-size: cover;
+        }
+
+        .liked {
+          background-image: asset-url("mobile/cars/liked_square.png");
+          width: 32px;
+          height: 32px;
+          float: right;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .swiper-slide-next {
+    top: 24px;
+    box-shadow: none;
+  }
+
+  .swiper-slide-prev {
+    margin-left: -10px;
+    top: 24px;
+    box-shadow: none;
+  }
+  .hot-car-swiper-pagination {
+    height: 10px;
+  }
+}
+
+.weui-search-bar__form {
+  opacity: 0.67;
+  background-color: transparent;
+}
+
+.filters {
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+.recommend {
+  width: 100%;
+  line-height: 15px;
+  font-size: 15px;
+  padding: 9px 8px;
+  margin-top: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.recommend-all {
+  float: left;
+  width: 65%;
+  text-align: right;
+}
+
+//顶部搜索
+.key-word-search {
+  height: 80px;
+  background-color: #fac72c;
+
+  .weui-search-bar {
+    background-color:transparent;
+  }
+
+  .weui-search-bar:after {
+    border-bottom: 0px;
+  }
+}
+
+//广告
+.ad-swiper {
+  margin-top: -43px;
+
+  .swiper-container {
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  .swiper-wrapper {
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 93%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+//快速筛选
+.quick-search-panel {
+  .weui-navbar__item {
+    font-size: 15px;
+    background-color: #ffffff;
+    border-bottom: 3px solid #eee;
+  }
+  .weui-navbar__item.active {
+    border-bottom: 3px solid #9e6108;
+    color: #9e6108;
+  }
+  .weui-navbar__item:after {
+    border-right: 0;
+  }
+
+  .more-conditions {
+    .weui-btn_default {
+      background-color: #ffffff;
+      color: #737373;
+      font-size: 12px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 0px;
+    }
+    .weui-btn:after {
+      border-radius: 0px;
+      border-left: 0px;
+      border-right: 0px;
+    }
+  }
+}
+
+.item-height {
+  height: 45px;
+  padding: 10px;
+}
+div.price-select-div {
+  width: 84px;
+  height: 36px;
+  background-color: #ffffff;
+}
+a.price-select {
+  width: 79px;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 45px;
+  letter-spacing: 1.4px;
+  text-align: left;
+  vertical-align: middle;
+  color: #737373;
+}
+a.price-select:focus {
+  color: #9e6108;
+}
+.more-select {
+  width: 314px;
+  height: 32px;
+  background-color: #ffffff;
+}
+.shown_item {
+  display: inline;
+}
+.hidden_item {
+  display: none;
+}
+
+img.car-icon {
+  width: 28px;
+  height: 26px;
+}
+
+.page-bd img.car-type-icon {
+  width: 58px;
+  height: 24px;
+}
+
+div.car-type-div {
+  /*width: 314px;*/
+  height: 32px;
+  background-color: #ffffff;
+}
+a.car-type-link {
+  color: #737373;
+  img:first-child { display: inline-block }
+  img { display: none }
+}
+a.car-type-link:focus {
+  color: #9e6108;
+  img {
+    display: inline-block;
+    margin-left: -3px;
+  }
+  img:first-child { display: none }
+}
+a.car-brand-word {
+  width: 21px;
+  height: 10px;
+  font-family: PingFang-SC;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.9;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #737373;
+}
+a.more-select {
+  width: 52px;
+  height: 12px;
+  font-family: PingFang-SC;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 1.2px;
+  text-align: left;
+  color: #737373;
+  line-height: 32px;
+}
+div.select-field {
+  background-color: #ffffff;
+}
+
+div.hot-car-word-div {
+  padding: 0 7px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 13px;
+  .hot-car-span {
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .slide-word {
+    color: #666666;
+    font-weight: normal;
+  }
+  .slide-price {
+    color: #ff6600;
+    float: right;
+  }
+}
+div.slide-div {
+  width: 281px;
+  height: 300px;
+  background-color: #ffffff;
+  box-shadow: 4.5px 7.8px 11.7px 1.3px rgba(0, 0, 0, 0.26);
+}
+
+.tc-brand-search {
+  a {
+    color: #737373;
+  }
+  a.focus {
+    color: #9e6108;
+  }
+  a.active {
+    color: #9e6108;
+  }
+  a:focus {
+    color: #9e6108;
+  }
+  a:active {
+    color: #9e6108;
+  }
+}
+
+.tc-home-selling-titile {
+  font-size: 15px;
+  line-height: 15px;
+  color: #000000;
+  padding: 15px 8px;
+
+  a {
+    float: right;
+    font-size: 13px;
+    color: #000;
+    vertical-align: middle;
+  }
+}
+
+.tc-home-mid-banner {
+  img {
+    width: 100%;
+    vertical-align: bottom
+  }
+}
+
+.tc-home-selling-container {
+  margin-top: 5px;
+}
+
+.switch_item {
+  color: #737373;
+}
+
+.weui-tabbar__icon {
+  width: 30px;
+  height: 26px;
+}
+
+.weui-tabbar__item {
+  .weui-tabbar__label {
+    color: #666666;
+  }
+}
+
+.weui-tabbar__item.weui-bar__item_on {
+  .weui-tabbar__label {
+    color: #9e6108;
+  }
+}
+
+.home.index .arrow {
+  float: right;
+  display: inline;
+  margin-top: 1px;
+  margin-left: 2px;
+  width: 7px;
+  height: 14px;
+  background-image: asset-url("mobile/arrow.png");
+  background-size: cover;
+}
+
+// 特惠车辆列表
+.bargain-cars {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  padding-bottom: 10px;
+
+  .tc-mobile-bargain-cars-group {
+    .tc-grid-car {
+      width: 50%;
+      padding: 10px 5px 0px;
+    }
+
+    .tc-grid-car:before {
+      border-right: 0;
+    }
+
+    .tc-grid-car:after {
+      border-bottom: 0;
+    }
+
+    .tc-mobile-car-detail {
+      .tc-mobile-bargain-car-cover {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          vertical-align: middle;
+        }
+      }
+
+      .bargain-car-body {
+        .bargain-car-title {
+          font-weight: bold;
+          font-size: 14px;
+          color: black;
+          letter-spacing: 0.1px;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          white-space: normal;
+          word-break: normal;
+        }
+
+        .bargain-car-info {
+          font-size: 9pt;
+          color: #666666;
+          letter-spacing: 0.6px;
+          text-align: left;
+        }
+
+        .bargain-car-price {
+          span {
+            font-size: 11px;
+            letter-spacing: 0.1px;
+          }
+
+          font-size: 13px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          text-align: left;
+          color: #ff6600;
+
+          a {
+            @extend .bargain-car-price
+          }
+        }
+      }
+    }
+  }
+
+  .tc-mobile-bargain-cars-group:before {
+    border-top: 0;
+  }
+
+  .tc-mobile-bargain-cars-group:after {
+    border-left: 0;
+  }
+}
+
+.bargain-cars:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: -11px;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.bargain-fav {
+  float: right;
+  display: inline;
+}

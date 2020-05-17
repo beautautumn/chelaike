@@ -1,0 +1,61 @@
+<%
+  require "base64"
+
+  company = record.company
+  record.error_info = "无法辨识车架号"
+  encode_id = Base64.encode64(record.id)
+%>
+<tr>
+  <td> <a href="vin_images/<%= encode_id %>" target="_blank" ><%= record.id %></a></td>
+  <td>
+    <div>地区：<%= company.try(:province) %>，<%= company.try(:city) %></div>
+    <div>车商：<%= company.try(:name) %></div>
+    <div>员工：<%= record.user_name %></div>
+    <div>提交时间：<%= record.created_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
+    <% if record.request_at && record.state != 'submitted' %>
+      <div>发起时间：<%= record.request_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
+    <% end %>
+    <% if record.response_at && !['submitted', 'generating'].include?(record.state) %>
+      <div>返回时间：<%= record.response_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
+    <% end %>
+  </td>
+  <td>
+    <div>服务商：<%= get_sp_name(record.sp_type) %></div>
+    <div>查询状态：<%= get_state_name(record.state) %></div>
+  </td>
+  <td>
+    <div style="height: 210px; ">
+      <% if record.vin_image %>
+        <img id="<%= record.id %>" src="<%= record.vin_image %>" height="200px" />
+      <% end %>
+    </div>
+  </td>
+  <td>
+    <%= form_for record,
+      url: start_query_vin_image_path(id: record.id), method: :post do |f| %>
+      <label for="vin" class="ui label">输入车架号</label>
+      <br />
+      <div class="ui input row-inner-input">
+        <%= f.text_field :vin, { 'data-id' => record.id, 'class' => 'vin-input' } %>
+      </div>
+      <% if record.vin_image && record.state == 'submitted' %>
+        <%= f.hidden_field :sp_type %>
+        <%= f.hidden_field :original_id %>
+        <%= f.submit "查询", { class: 'ui button' } %>
+      <% end %>
+    <% end %>
+    <% if record.state == 'submitted' %>
+      <%= form_for record,
+        url: response_error_vin_image_path(id: record.id), method: :post do |f| %>
+        <label for="error_info" class="ui label">反馈错误信息</label>
+        <br />
+        <div class="ui input row-inner-input">
+          <%= f.text_field :error_info %>
+        </div>
+        <%= f.hidden_field :sp_type %>
+        <%= f.hidden_field :original_id %>
+        <%= f.submit "报错", { class: 'ui button' } %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

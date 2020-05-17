@@ -1,0 +1,39 @@
+.logo {
+  height: 32px;
+  margin: 16px;
+}
+
+.logo > img {
+  width: 32px;
+  height: 32px;
+  vertical-align: text-bottom;
+}
+
+:global .easy-loan-layout-sider .brand-name {
+  font-size: 16px;
+  color: #fff;
+  line-height: 32px;
+  margin-left: 20px;
+  vertical-align: text-bottom;
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+:global .easy-loan-layout-sider.ant-layout-sider-collapsed .brand-name {
+  visibility: hidden;
+  opacity: 0;
+}
+
+:global .easy-loan-layout-sider.ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+:global .easy-loan-layout-sider.ant-layout-sider-collapsed .anticon {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+:global .easy-loan-layout-sider.ant-layout-sider-collapsed .ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
+  display: none;
+}

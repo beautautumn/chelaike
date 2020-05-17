@@ -1,0 +1,21 @@
+<h1>资金方列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th> 资金方名字 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @funder_companies.each do |company| %>
+        <%= render partial: "row", locals: { company: company } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+    </tfoot>
+  </table>
+</div>

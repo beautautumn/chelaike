@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+ 	<package name="erp.rent" namespace="/rent" extends="erp-default">
+		<action name="contractSignAction" class="rent.contractSignAction">
+			<!-- 合同签订 -->
+			<result name="toContractSignReg">
+				/WEB-INF/jsp/rent/contract_sign_reg.jsp
+			</result>
+			<result name="toSelectSiteArea">
+				/WEB-INF/jsp/rent/contract_sign_site.jsp
+			</result>
+		</action>
+		<action name="contractTableAction" class="rent.contractTableAction">
+			<!-- 合同收款列表单元格内容 -->
+		</action>
+		<action name="contractTableListAction" class="rent.contractTableListAction">
+			<!-- 合同管理列表单元格内容 -->
+		</action>
+		<action name="agencyListAction" class="rent.agencyListAction">
+			<result name="toFreezeAgencyPage">
+				/WEB-INF/jsp/rent/agency_freeze.jsp
+			</result>
+			<result name="toUnfreezeAgencyPage">
+				/WEB-INF/jsp/rent/agency_unfreeze.jsp
+			</result>
+			<result name="toCancelAgencyPage">
+				/WEB-INF/jsp/rent/agency_cancel.jsp
+			</result>
+			<result name="toEditPage">
+				/WEB-INF/jsp/rent/agency_edit.jsp
+			</result>
+			<result name="toCreatePage">
+				/WEB-INF/jsp/rent/agency_new.jsp
+			</result>
+		</action>
+		<action name="contractListAction" class="rent.contractListAction">
+			<!--合同列表  
+			<result name="toContractList">
+				/WEB-INF/jsp/rent/test_contract_list.jsp
+			</result>
+			-->
+			<!-- 新增合同 -->
+			<result name="toAddContract">
+				/WEB-INF/jsp/rent/contract_list_add.jsp
+			</result>
+			<result name="toAddSiteArea">
+				/WEB-INF/jsp/rent/contract_list_add_site.jsp
+			</result>
+			<!-- 续签合同 -->
+			<result name="toContinueContractPage">
+				/WEB-INF/jsp/rent/contract_list_continue.jsp
+			</result>
+			<result name="toContinueSelectSiteArea">
+				/WEB-INF/jsp/rent/contract_list_continue_site.jsp
+			</result>
+			<!-- 商户主动发起清算 -->
+			<result name="toCountContractPage">
+				/WEB-INF/jsp/rent/contract_list_count.jsp
+			</result>
+			<!-- 合同修改 ，暂时没有该功能-->
+			<result name="toChangeContractPage">
+				/WEB-INF/jsp/rent/contract_list_change.jsp
+			</result>
+			<result name="toChangeSelectSiteArea">
+				/WEB-INF/jsp/rent/contract_list_change_site.jsp
+			</result>
+			<!-- 合同重新签订，暂时没有该功能 -->
+			<result name="toResignContractPage">
+				/WEB-INF/jsp/rent/contract_list_resign.jsp
+			</result>
+			<result name="toResignSelectSiteArea">
+				/WEB-INF/jsp/rent/contract_list_resign_site.jsp
+			</result>
+			<!-- 合同详情 -->
+			<result name="toDetailContractPage">
+				/WEB-INF/jsp/rent/contract_list_detail.jsp
+			</result>	
+			<result name="passWorkingPage">
+			    /WEB-INF/jsp/rent/pass_working_page.jsp
+			</result>
+			<result name="toCancelContractPage">
+				/WEB-INF/jsp/rent/contract_cancel.jsp
+			</result>
+		</action>
+		<!-- 商户合同收款 -->		
+		<action name="contractPaymentAction" class="rent.contractPaymentAction">
+			<result name="toRectFeePage">
+				/WEB-INF/jsp/rent/rect_fee_page.jsp
+			</result>
+			<result name="toContractBackPage">
+				/WEB-INF/jsp/rent/contract_back_page.jsp
+			</result>	
+			<result name="toRectFeeOtherPage">
+				/WEB-INF/jsp/rent/rect_fee_other_page.jsp
+			</result>	
+		</action>
+		<!-- 场租区域管理 -->
+		<action name="siteArea_*" class="rent.SiteAreaAction" method="{1}">
+			<result name="site_area_add">
+				/WEB-INF/jsp/rent/site_area_add.jsp
+			</result>
+			<result name="site_area_update">
+				/WEB-INF/jsp/rent/site_area_update.jsp
+			</result>
+			<result name="upd_complaints">
+				/WEB-INF/jsp/rent/upd_complaints.jsp
+			</result>
+			
+		</action>
+		<!-- 物业费用科目管理 -->
+		<action name="feeItem_*" class="rent.FeeItemAction" method="{1}">
+			<result name="fee_item_add">
+				/WEB-INF/jsp/rent/fee_item_add.jsp
+			</result>
+			<result name="fee_item_update">
+				/WEB-INF/jsp/rent/fee_item_update.jsp
+			</result>
+			
+			<result name="add_complaints">
+				/WEB-INF/jsp/rent/add_complaints.jsp
+			</result>
+			
+		</action>
+		<!-- 商户资料管理 -->
+		<action name="agency_*" class="rent.AgencyManageAction" method="{1}">
+			<result name="agency_add">
+				/WEB-INF/jsp/rent/agency_add.jsp
+			</result>
+			<result name="agency_update">
+				/WEB-INF/jsp/rent/agency_update.jsp
+			</result>
+			<result name="changePwd">
+				/WEB-INF/jsp/rent/agency_chgPwd.jsp
+			</result>
+			<result name="outAgency">
+				/WEB-INF/jsp/rent/agency_out.jsp
+			</result>
+		</action>
+		
+		<action name="agent_*" class="rent.AgentAction" method="{1}">
+		<!-- 商户经纪人管理 -->
+			<result name="agent_manage">   
+				/WEB-INF/jsp/rent/agent_manage.jsp
+			</result>
+		 <!-- 商户其他费用管理 -->
+			<result name="toOtherFee">   
+				/WEB-INF/jsp/rent/agency_other_fee.jsp
+			</result>
+		</action>
+		 <!-- 商户押金清算 -->
+		<action name="deposit_*" class="rent.DepositAction" method="{1}">
+			<result name="deposit_toclear">
+				/WEB-INF/jsp/rent/deposit_toclear.jsp
+			</result>
+		</action>
+		 <!-- 商户账单计费、收费、打印 -->
+		<action name="feeBillsListAction" class="rent.feeBillsListAction" >
+			<result name="getFeeBillsSuccess">
+				/WEB-INF/jsp/rent/fee_detail.jsp
+			</result>
+			<!-- 弹出商户账单独立计费界面 -->
+			<result name="toIndependenOfFee">
+				/WEB-INF/jsp/rent/independen_fee.jsp
+			</result>
+			<!-- 商户账单独立计费单条记录录入 -->
+			<result name="toAddFee">
+				/WEB-INF/jsp/rent/add_independen_fee.jsp
+			</result>
+			<!-- 商户账单独立计费单条记录编辑 -->
+			<result name="toEdit">
+				/WEB-INF/jsp/rent/edit_independen_fee.jsp
+			</result>
+			<!-- 商户账单独立计费批量录入 -->
+			<result name="toPiLiangJiFei">
+				/WEB-INF/jsp/rent/piliangjifei.jsp
+			</result>
+			<!-- 商户账单独立计费批量录入时增加单个商户 -->
+			<result name="toAddShangHu">
+				/WEB-INF/jsp/rent/addShangHu.jsp
+			</result>
+			<!-- 商户账单独立计费批量录入时按区域批量增加商户 -->
+			<result name="toAddShangHuByArea">
+				/WEB-INF/jsp/rent/addShangHuByArea.jsp
+			</result>
+			<!-- 商户账单收费 -->
+			<result name="toCollectFees">
+				/WEB-INF/jsp/rent/collectFees.jsp
+			</result>
+			<!-- 商户账单打印 -->
+			<result name="toPrintList">
+				/WEB-INF/jsp/rent/printList.jsp
+			</result>
+		</action>
+		 <!-- 物业总费用管理 -->
+		<action name="managerFeeAction" class="rent.managerFeeAction">
+			<result name="toManagerFeePage">
+				/WEB-INF/jsp/rent/manager_fee_page.jsp
+			</result>
+		</action>
+		 <!-- 商户费用分摊 -->
+		<action name="agencyBillsAction" class="rent.agencyBillsAction">
+			<result name="toagencyBillsPage">
+				/WEB-INF/jsp/rent/add_agency_bills.jsp
+			</result>
+			<result name="toAgencyBillsAdd">
+				/WEB-INF/jsp/rent/add_agency_bills_add.jsp
+			</result>
+			<result name="toAgencyBillsBatchAdd">
+				/WEB-INF/jsp/rent/add_agency_bills_batchadd.jsp
+			</result>
+			<result name="propertyApportFeeDetail">
+				/WEB-INF/jsp/rent/property_apport_fee_detail.jsp
+			</result>
+		</action>
+		
+		 <!-- 商户账单查询 -->
+		<action name="agencyDetailBillsAction" class="rent.agencyDetailBillsAction">
+			<result name="toAgencyDetailBills">
+				/WEB-INF/jsp/rent/fee_detail.jsp
+			</result>
+		</action>
+		
+		 <!-- 商户清算与离场 -->
+		<action name="clearAgencyAction" class="rent.clearAgencyAction">
+			<result name="toClear">
+				/WEB-INF/jsp/rent/clear_agency.jsp
+			</result>
+			<result name="getClearAgencyFeeDetialSuccess">
+				/WEB-INF/jsp/rent/clear_fee_detail.jsp
+			</result>
+			<result name="toLeave">
+				/WEB-INF/jsp/rent/leave_agency.jsp
+			</result>
+		</action>
+		<action name="siteShop_*" class="rent.SiteShopAction" method="{1}">
+			<result name="site_shop_add">
+				/WEB-INF/jsp/rent/site_shop_add.jsp
+			</result>
+			<result name="toAddSiteShop">
+				/WEB-INF/jsp/rent/contract_shop_list_add_site.jsp
+			</result>
+		</action>
+		
+		<action name="contractShopAction" class="rent.contractShopAction">
+		    <!--
+			<result name="toAddContract">
+				/WEB-INF/jsp/rent/contract_shop_list_add.jsp
+			</result> -->
+		</action>
+		
+		<action name="shopContractAction" class="rent.shopContractAction">
+		    <!-- 新增合同 -->
+			<result name="toAddContract">
+				/WEB-INF/jsp/rent/contract_shop_list_add.jsp
+			</result>
+			<result name="toDetailContractPage">
+				/WEB-INF/jsp/rent/contract_shop_list_detail.jsp
+			</result>
+			<result name="toRectFeePage">
+				/WEB-INF/jsp/rent/rect_shop_fee_page.jsp
+			</result>
+			<result name="toContractBackPage">
+				/WEB-INF/jsp/rent/contract_shop_back_page.jsp
+			</result>
+			<!-- 商户主动发起清算 -->
+			<result name="toCountContractPage">
+				/WEB-INF/jsp/rent/contract_shop_list_count.jsp
+			</result>
+			<result name="deposit_toclear">
+				/WEB-INF/jsp/rent/deposit_shop_toclear.jsp
+			</result>
+		</action>
+		
+	</package>	
+	
+</struts>

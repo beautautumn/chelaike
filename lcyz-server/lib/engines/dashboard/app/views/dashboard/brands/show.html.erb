@@ -1,0 +1,53 @@
+<h1>车系管理</h1>
+
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="ui wide column">
+      <%= link_to '返回', brands_path, class: "ui button" %>
+    </div>
+  </div>
+
+  <table class="ui definition table">
+    <tbody>
+      <tr>
+        <td class="two wide column">品牌</td>
+        <td><%= @brand['name'] %></td>
+      </tr>
+      <tr>
+        <td>首字母</td>
+        <td><%= @brand['first_letter'] %></td>
+      </tr>
+      <tr>
+        <td>编码</td>
+        <td><%= @brand['code'] %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= render partial: "series_toolbar" %>
+  <table class="ui celled striped table">
+    <thead>
+      <tr>
+        <th> 厂商 </th>
+        <th> 车系 </th>
+        <th> 编码 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @data.each do |series| %>
+        <% series["series"].each do |item| %>
+          <tr>
+            <td><%= series["manufacturer_name"] %></td>
+            <td><%= item['name'] %></td>
+            <td><%= item['code'] %></td>
+            <td>
+              <%= link_to '详情', series_path(id: item['_id'], brand_id: @brand['_id']) %>
+              <%= link_to '编辑', edit_series_path(id: item["_id"], brand_id: @brand['_id']) %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

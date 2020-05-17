@@ -1,0 +1,43 @@
+# == Schema Information
+#
+# Table name: chat_groups
+#
+#  id            :integer          not null, primary key
+#  organize_id   :integer                                      # 所属组织
+#  organize_type :string                                       # 所属组织
+#  name          :string           not null                    # 群组名称
+#  state         :string           default("enable"), not null # 群组状态
+#  group_type    :string           default("sale"), not null   # 群组类型
+#  owner_id      :integer          not null                    # 群主
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  logo          :string                                       # 群组logo
+#
+
+tianche_sale:
+  name: "天车二手车销售群"
+  state: "enable"
+  organize: tianche
+  owner: zhangsan
+  organize_type: "Company"
+  group_type: "sale"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+avengers_sale:
+  name: "复仇者联盟销售群"
+  state: "enable"
+  organize: avengers
+  owner: zhangsan
+  organize_type: "Alliance"
+  group_type: "sale"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+avengers_acquisition:
+  name: "复仇者联盟收购群"
+  state: "enable"
+  organize: avengers
+  owner: zhangsan
+  organize_type: "Alliance"
+  group_type: "acquisition"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+

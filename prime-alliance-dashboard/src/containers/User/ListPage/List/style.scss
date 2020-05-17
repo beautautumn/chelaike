@@ -1,0 +1,8 @@
+.disabled {
+  color: #E01515;
+  background-color: #F9CCD6;
+
+  &:hover {
+    background-color: #FFA5B4 !important;
+  }
+}

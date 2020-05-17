@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/images/letter_avatars/%E5%85%8B.png
+    body:
+      encoding: UTF-8
+      string: !binary |-
+        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
+        yNs+Epqr0swu8K5vGUwKg5V05GN3vOOelZVAeT5WJr/z315024EbDgxCCimc
+        CWcCpRRKoUw2Tpw6cerQJ1hpwtVpZlf2/NG7Xnffgea+9911112jfTeV5y3t
+        48SRyagM0iANQjgTCExKKaWUsrERUkiDGyhXq7kCobzr28Lb7rrnyLFmX5iU
+        ORQGg3CmUMrGA+Uz4UwgpCacKWfK1WuuwGTfJ/7JqVMbqbmllDKnQvlMSBcr
+        Z0rZrebK3EM6QJnsQulfc2UGoZTFo6QrVBaPkxZdSYuupEVX0qIradGVtOhK
+        WnQlLbqSFl1Ji66kRVfSoitp0ZW06EpadCUtupIWXUmLrqRFV9KiK2nRlbTo
+        Slp0JS26khZdSYuupEVX0qIradGVtOhKWnQlLbqSFl1Ji66kRVfSoitp0ZW0
+        6EpadCUtupIWXUmLrvwfMO1SojUr0HkAAAAldEVYdGRhdGU6Y3JlYXRlADIw
+        MTUtMTEtMjVUMTI6NDI6NDMrMDg6MDAUeZXKAAAAJXRFWHRkYXRlOm1vZGlm
+        eQAyMDE1LTExLTI1VDEyOjQyOjQzKzA4OjAwZSQtdgAAAE10RVh0c29mdHdh
+        cmUASW1hZ2VNYWdpY2sgNi45LjItNCBRMTYgeDg2XzY0IDIwMTUtMTAtMTEg
+        aHR0cDovL3d3dy5pbWFnZW1hZ2ljay5vcmdFujXMAAAAGHRFWHRUaHVtYjo6
+        RG9jdW1lbnQ6OlBhZ2VzADGn/7svAAAAGHRFWHRUaHVtYjo6SW1hZ2U6Okhl
+        aWdodAAyNDAZu9BtAAAAF3RFWHRUaHVtYjo6SW1hZ2U6OldpZHRoADI0MIpK
+        gDAAAAAZdEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/slZOAAAAF3RF
+        WHRUaHVtYjo6TVRpbWUAMTQ0ODQyNjU2M5b+bQUAAAATdEVYdFRodW1iOjpT
+        aXplADMuMjNLQkKLi20WAAAAXXRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vVXNl
+        cnMvZGFybW9keS9Xb3Jrc3BhY2UvcHJpbWUvdG1wL2xldHRlcl9hdmF0YXJz
+        LzIv5YWLLzE2M18xNjNfMTYzLzI0MC5wbme1nJ3QAAAAAElFTkSuQmCC
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - OSS oppOculaV6cUtaeB:DakVKdyp626KK0MNFD+NmKoRM14=
+      Content-Type:
+      - image/jpg
+      Content-Length:
+      - '3282'
+      Date:
+      - Wed, 25 Nov 2015 04:46:18 GMT
+      Host:
+      - tianche-playground.oss-cn-hangzhou.aliyuncs.com
+      Expect:
+      - 100-Continue
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - AliyunOSS
+      Date:
+      - Wed, 25 Nov 2015 04:46:19 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Oss-Request-Id:
+      - 56553D1B05200A9976A6A984
+      Etag:
+      - '"8DCFFF77CCDB16657FF9BEA462EFCD6A"'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 25 Nov 2015 04:46:19 GMT
+recorded_with: VCR 3.0.0

@@ -1,0 +1,37 @@
+rake:
+  script:
+    - export RAILS_ENV=test
+    - cp config/database.example.yml config/database.yml
+    - cp config/secrets.example.yml config/secrets.yml
+    - cp config/application.example.yml config/application.yml
+    - cp config/chejianding/rsa_private_key.example.pem config/chejianding/rsa_private_key.pem
+    - cp config/chejianding/rsa_public_key.example.pem config/chejianding/rsa_public_key.pem
+    - cp config/pingpp/rsa_public_key.example.pem config/pingpp/rsa_public_key.pem
+    - cp config/pingpp/rsa_private_key.example.pem config/pingpp/rsa_private_key.pem
+    - cp config/pingpp/pingpp_rsa_public_key.example.pem config/pingpp/pingpp_rsa_public_key.pem
+    - 'sed -i "s/# username:.*/username: postgres/g" config/database.yml'
+    - sed -i "s/prime_server_test/prime_server_test_$((RANDOM/99999))/" config/database.yml
+    - '#sed -i "s/# host:.*/host: localhost/g" config/database.yml'
+    - source ~/.rvm/scripts/rvm
+    - rvm use 2.2.4
+    - ruby --version
+    - bundle --version
+    - gem --version
+    - bundle install --path /tmp/cache/prime-server/bundle/
+    - bundle exec rake db:create
+    - bundle exec rake db:migrate
+    - bundle exec rspec
+    - bundle exec rubocop
+    - bundle exec rake db:drop
+
+# staging:
+#   script:
+#     - eval `ssh-agent -s`
+#     - ssh-add
+#     - bundle install --path=/tmp/cache/prime-server/bundle
+#     - export CI=true
+#     - bundle exec cap staging deploy:config
+#     - echo "master" | bundle exec cap staging deploy
+#   type: deploy
+#   only:
+#     - master

@@ -1,0 +1,7 @@
+zh-CN:
+  enumerize:
+    acquisition_car_info_state:
+      init: 待跟进
+      finished: 已收购
+
+

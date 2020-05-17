@@ -1,0 +1,11 @@
+<div class="ui action input">
+  <%= form_tag alliances_path, method: :get do %>
+    <% cond_value = ""
+       cond_value = params[:q][:name_or_owner_name_cont] unless params[:q].nil?
+    %>
+    <%= text_field_tag "q[name_or_owner_name_cont]",
+        nil, placeholder: "搜索 名称/公司名", value: cond_value
+    %>
+    <%= submit_tag "搜索", class: "ui green basic button" %>
+  <% end %>
+</div>

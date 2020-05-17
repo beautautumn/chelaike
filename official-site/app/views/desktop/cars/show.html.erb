@@ -1,0 +1,45 @@
+<% content_for :navigation_bar do %>
+  <%= link_to  "买车", cars_path %> > <%= @car.system_name %>
+<% end %>
+
+<!-- car info -->
+<%= render 'car_info' %>
+
+<!-- bargin_info -->
+<%= render 'bargin_info' %>
+
+<!-- configuration info -->
+<%= render 'configuration_info' %>
+
+<!-- maintenance info -->
+<%= render 'maintenance_info' %>
+
+<!-- evaluate -->
+<%= render 'evaluate' %>
+
+<!-- insurance -->
+<%= render 'insurance' %>
+
+<!-- inspection report -->
+<%= render 'inspection_report' %>
+
+<!-- transfer history -->
+<%= render 'transfer_history' %>
+
+<!-- public praises -->
+<%= render 'public_praises' %>
+
+<!-- car images -->
+<%= render 'car_images' %>
+
+<!-- similar cars -->
+<%= render 'similar_cars' %>
+
+<!-- purchase process -->
+<%= render partial: 'purchase_process', locals: { include_title: true } %>
+
+<!-- wechat pay modal -->
+<%= render 'wechat_pay_modal'  %>
+
+<!-- instalment compute modal -->
+<%= render 'instalment_compute_modal' %>

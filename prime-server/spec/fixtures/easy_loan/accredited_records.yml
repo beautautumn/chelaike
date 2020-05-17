@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: easy_loan_accredited_records # 公司授信记录
+#
+#  id                  :integer          not null, primary key # 公司授信记录
+#  company_id          :integer                                # 被授信车商公司id
+#  limit_amount_cents  :integer          default(0)            # 额度
+#  in_use_amount_cents :integer          default(0)            # 已用额度
+#  funder_company_id   :integer                                # 资金方公司id
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  single_car_rate     :decimal(, )                            # 单车借款比例
+#  sp_company_id       :integer                                # 对应的sp公司
+#
+
+tianche_accredited_record_gmc:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  limit_amount_cents: 100_000_000
+  in_use_amount_cents: 0
+  funder_company_id: <%= ActiveRecord::FixtureSet.identify(:gmc) %>
+  single_car_rate: 0.5
+  sp_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche_sp) %>

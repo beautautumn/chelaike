@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: import_tasks # 意向导入记录
+#
+#  id               :integer          not null, primary key # 意向导入记录
+#  user_id          :integer                                # 操作人
+#  state            :string           default("pending")    # 状态
+#  import_task_type :string                                 # 记录类型
+#  info             :jsonb                                  # 相关信息
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  company_id       :integer                                # 公司ID
+#
+
+import_intentions_record:
+  user: zhangsan
+  state: pending
+  company: tianche
+  import_task_type: intention_xls
+  info:
+    import_file: "<%= Rails.root %>/spec/fixtures/files/import_intentions.xls"

@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test-pif.chejianding.com/rest/publicif/orderInfo
+    body:
+      encoding: UTF-8
+      string: uid=f39d0a454e63829b014e709691d606b8&orderId=111111111&time=2016-05-19%2019%3A15%3A44&sign=jAmq3KgEPCn4xz3asOGZ2HbqMU%2Be0TLoVu9yyE9HylAIMh%2FqpSDpETkE7BK1W5H1wStBpKVl4ddXaJetU3IVI9nc%2BkH8m88bVCYijDWyBdMp1ItGSkSmBqFgD2EReBqcIV%2BkZdp4fB4xPbMbdU1krDZ5Hb5q0TIwTtz4Wldh6nU%3D
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '273'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 May 2016 11:15:44 GMT
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Length:
+      - '54'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1cyI6IjMiLCJtZXNzYWdlIjoi5peg5pWI55qE6K6i
+        5Y2V5Y+3In19
+    http_version: 
+  recorded_at: Thu, 19 May 2016 11:15:44 GMT
+recorded_with: VCR 3.0.1

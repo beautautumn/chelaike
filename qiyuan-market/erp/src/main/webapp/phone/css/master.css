@@ -1,0 +1,12 @@
+span.mrpic{ width:157px; height:125px; position:relative; display:inline-block; float:left; padding-top:10px;overflow:hidden;}
+i.upload{ display:block; position:absolute; top:0; left:40px;}
+.btn-upload{ padding:0 20px; height:30px; line-height:30px; border-radius:15px; background:#666; text-align:center; color:#fff; border:0; font-size:16px;}
+.btn-upload:hover, .btn-upload:focus, .btn-upload:active{ background:#333; color:#fff;}
+.bz{  height:38px; border:0; line-height:38px;  width:200px; margin-left:10px;}
+.null{ margin-top:30px; text-align:center; line-height:150%; font-size:16px;}
+ #bottomNav { background-color:#cc0033; z-index:999; position:fixed; bottom:0; left:0; width:100%; _position:absolute;height:40px;
+ _top: expression_r(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); overflow:visible; }
+    #bottomNav li{color:#ffffff;width:33%;float:left;vertical-align:middle; line-height:40px;text-align:center}
+    #bottomNav li span{height:20px;width:100%;display:inline-block;vertical-align:middle;line-height:20px;}
+    .black_overlay{  display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.8;  opacity:.80;  filter: alpha(opacity=80);  }  
+  .white_content {  display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  padding: 0px;  border: 0px solid orange;  background-color: white;  z-index:1002;  overflow: auto;  } 

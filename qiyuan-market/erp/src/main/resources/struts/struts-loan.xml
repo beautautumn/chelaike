@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+ 	<package name="erp.loan" namespace="/loan" extends="erp-default">
+		<action  name="loanEval" class="loan.loanEvalAction">
+        
+         <!-- 融资车辆检测   -->
+         <result name="toLoanVehicleCheck">
+             /WEB-INF/jsp/loan/loan_vehicle_check.jsp
+         </result>
+         <!-- 融资车辆检测报告   -->
+         <result name="toLoanVehicleReport">
+             /WEB-INF/jsp/loan/loan_vehicle_report.jsp
+         </result>
+         
+         <!-- 车辆审核   -->
+         <result name="toAuditInfo">
+             /WEB-INF/jsp/loan/audit_info.jsp
+         </result>
+                 
+         <!-- 融资估值-->
+			   <result name="toLoanEval">
+				     /WEB-INF/jsp/loan/loan_evaluate.jsp
+			   </result>
+			  
+		     <!-- 融资商户预收     -->
+		     <result name="toGatheringAgency">
+		         /WEB-INF/jsp/loan/gathering_agency.jsp
+		     </result>
+		     <!-- 付车主款     -->
+		     <result name="toPayCarOwner">
+		         /WEB-INF/jsp/loan/pay_owner.jsp
+		     </result>
+		     <!-- 销售收款    -->
+		     <result name="toGatheringBuyer">
+		         /WEB-INF/jsp/loan/gathering_buyer.jsp
+		     </result>		      
+		     <!-- 付商户款     -->
+		     <result name="toPayAgency">
+		         /WEB-INF/jsp/loan/pay_agency.jsp
+		     </result>		      
+		     <!-- 融资车辆处置     -->
+		     <result name="toDisposalFinancingCar">
+		         /WEB-INF/jsp/loan/disposal_financing_car.jsp
+		     </result>		
+		     <!-- 融资车辆退款    -->
+		     <result name="toRefundAgency">
+		         /WEB-INF/jsp/loan/refund_agency.jsp
+		     </result>		
+		     <result name="toEval">
+		         /WEB-INF/jsp/loan/evaluate.jsp
+		     </result>	
+			</action>
+	</package>	
+	
+</struts>

@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: prepare_items # 整备项目
+#
+#  id                :integer          not null, primary key # 整备项目
+#  name              :string                                 # 项目名
+#  amount_cents      :integer                                # 费用
+#  prepare_record_id :integer                                # 整备记录ID
+#  note              :text                                   # 备注
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
+baomihua_item:
+  prepare_record: aodi_prepare
+  name: 爆米花
+  amount_cents: 300_00
+  note: 爆米花
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+ticket_item:
+  prepare_record: aodi_prepare
+  name: 电影票
+  amount_cents: 300_00
+  note: 电影票
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

@@ -1,0 +1,10 @@
+<% if @detection_report.try(:data) %>
+<div class="tc-car-detail-part">
+  <div class="title">检测报告
+    <a class="link" href="<%= inspection_report_car_path(@car.id) %>">
+      点击查看
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
+<% end %>

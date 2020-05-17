@@ -1,0 +1,7 @@
+zh-CN:
+  time:
+    am: 上午
+    formats:
+      default: "%Y年%b%d日 %H:%M:%S %A"
+      simple: "%Y年%b%d日 %H:%M"
+    pm: 下午

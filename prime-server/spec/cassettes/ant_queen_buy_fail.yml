@@ -1,0 +1,218 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://huaxia.mayinvwang.com/index.php?s=/OpenPublicApi/getToken
+    body:
+      encoding: UTF-8
+      string: partner_id=787953403&secret_key=08aa70eae3fc3ffb33cb7909232e3c79
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 28 Jun 2016 15:22:37 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - PHPSESSID=uni3lril43a09j4esn93nd4a01; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6tWSs5PSVWyUjIyMFDSUSrJz07NA/LMLc2MUlINEi1TUyws
+        TQzTLExNEoHIMs3U1NDCyNBYqRYAOzi+ejkAAAA=
+    http_version:
+  recorded_at: Tue, 28 Jun 2016 15:22:37 GMT
+- request:
+    method: post
+    uri: http://huaxia.mayinvwang.com/index.php?s=/OpenApi/query
+    body:
+      encoding: UTF-8
+      string: token=7962de0a9ed8941f854a54a9f5518213&brand_id=19&img_url=LHGRB186072026733&order_id=960205160&is_text=0&is_vin=2
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '113'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 28 Jun 2016 15:22:37 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - PHPSESSID=lhkqnntmj8jsomtopfdgfv6sn1; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"code":"400"}'
+    http_version:
+  recorded_at: Tue, 28 Jun 2016 15:22:37 GMT
+- request:
+    method: post
+    uri: http://huaxia.mayinvwang.com/index.php?s=/OpenApi/getBrandInfo
+    body:
+      encoding: UTF-8
+      string: token=7962de0a9ed8941f854a54a9f5518213&is_text=0
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 05 Jul 2016 08:41:16 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - PHPSESSID=5vnv9dtuu55te1aujlm2pk3bn5; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA92cXW/jthKG/8oi12mhD37uTS/OAYoW6Lnp5clBQEmUzUSW
+        N3GE3WzR/344Q9kWbcqiGztRu8AGtiVLfDjk8J3hyH/cNGbzcvP5v3/cmOrm
+        803Kb25vWrXS9vVdR3Ra3nVSlPquYzyzrznNE3vGF9MuXk17359ZrdtFrdtF
+        odsXo1p7wlOnn1/vvzybEo5n0n70YvDclGQyZYziZ1/wpvBq86Jeug0ct2+W
+        prVturGvzOZeFQ1+z7170d/sobZrGvt2pRb6vntuth981cW9+25/wubetsq0
+        8H1otn1f6Qbf/Hm7JSZiiEw1ry1syavTyItOtYsnE0dMpEiZJO4yH08Md98D
+        S0bvOlFrdQyp1pWZQANjcs72xoS7nofmGjpOBo2stG0kqam1B6M1s4OS1uST
+        /Jwkn374lPLPaKIY+AwO7OAly8HaVNUwzMHyUrESBn4CTTzsjo2punalKvvx
+        UbekCVzZ7xch6GS/2NsXjFhEUqZ2sGUEbl9XdvjRlBfb16TWdg6Kokjs5zWl
+        cJQJ+5fV9qhIqL0Cr6m9As01IHFNb4FDFMBHKPzVCYzsCl5z6E9R6MyexFhW
+        w/0z261ca45/q5+GBtsNrosPxgy6YmcPJhJ7e5HW5Lj3C6PW35fT45EmPJfu
+        +6f7XdRVgf2VD2+Mxvf69HbbzUQr7p/qOpto7GwqRQZdK2GQuj4dfM2duu9f
+        e05eJXgUGjsyNy7Z09mwp2khKzfaAz2t1ivwBpP9TChc83Q/vw9b7rHlKceO
+        BUOgJxc1YwFObR4MePFyqaNw2VxwYcQMPDiMVKm4W18OENsybs4Q7jzex8OB
+        z9zDZRlM0pQUATijH+MMJ96yPl2SDUbhYA4WGgld6w7Y2ubYbkeLDMBJ0Gxz
+        gPO1I65bbrFmOXdtPHQzm6WdgVEmpMlcTOjJRVZUuGJINaahCvOqIlSU5UsY
+        XDoecdfmOBl1BuKBQAT3IlIOdjqEs/JXB8RQiI5Pa6ETdBe0IGrFo4VQ1AE8
+        tX7opsS9oxNvst0l6eCOe7rKyRSqYC6qIGOx3kSNzzSZDaMvZXC5dwu9Dd/s
+        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
+    http_version:
+  recorded_at: Tue, 05 Jul 2016 08:41:16 GMT
+recorded_with: VCR 3.0.1

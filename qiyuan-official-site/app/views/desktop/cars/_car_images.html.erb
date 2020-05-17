@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="tc-sub-title">车辆图片</div>
+  <div class="tc-car-partial-images">
+    <div class="big-images">
+      <% @car.images.take(12).each_with_index do |image, index| %>
+        <a data-toggle="modal" data-target="#carImgViewModal" data-index="<%= index %>">
+          <%= image_tag img_scale(image.url, "720x540"), class: "car-img" %>
+        </a>
+      <% end %>
+    </div>
+    <% if @car.images.size > 12 %>
+      <div class="small-images clearfix">
+        <% @car.images[12..14].each_with_index do |image, index| %>
+          <a data-toggle="modal" data-target="#carImgViewModal" data-index="<%= 12 + index %>">
+            <%= image_tag img_scale(image.url, "550x412"), class: "car-img" %>
+          </a>
+        <% end %>
+        <a class="more-imges-link" data-toggle="modal" data-target="#carImgViewModal">
+          查看更多图片》
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: dw_acquisition_facts # 入库事实
+#
+#  id                       :integer          not null, primary key # 入库事实
+#  car_id                   :integer                                # 车辆ID
+#  car_dimension_id         :integer                                # 车辆维度ID
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  acquisition_price_cents  :integer          default(0)            # 收购价格
+#  acquirer_id              :integer                                # 收购员
+#  acquisition_type         :string                                 # 收购类型
+#  acquired_at_dimension_id :integer                                # 收购日期纬度
+#
+
+aodi_acquisition_fact:
+  car: aodi
+  car_dimension: aodi_car_dimension
+  acquisition_price_cents: 20_000_000
+  acquirer: zhangsan
+  acquisition_type: acquisition
+  acquired_at_dimension: acquired_at_dimension_1
+
+tumbler_acquisition_fact:
+  car: tumbler
+  car_dimension: tumbler_car_dimension
+  acquisition_price_cents: 15_000_000
+  acquirer: zhangsan
+  acquisition_type: cooperation
+  acquired_at_dimension: acquired_at_dimension_2

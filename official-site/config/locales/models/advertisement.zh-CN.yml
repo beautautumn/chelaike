@@ -1,0 +1,25 @@
+zh-CN:
+  activerecord:
+    models:
+      advertisement: 广告
+    attributes:
+      ad_type: 广告类型
+      image_url: 图片地址
+      link: 链接地址
+      tenant_id: 所属租户
+      platform: 平台类型
+  enumerize:
+    advertisement:
+      platform:
+        mobile: 移动端
+        desktop: PC端
+      ad_type:
+        groups:
+          home: 首页广告
+          guides: 攻略广告
+          service: 服务预约广告
+        level_1: 一级广告
+        level_2: 二级广告
+        level_3: 三级广告
+        guides: 攻略广告
+        service: 服务预约广告

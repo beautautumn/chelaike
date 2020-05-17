@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://megatron.lina.che3bao.com/api/v1/brands?series%5Bname%5D=%E8%92%99%E8%BF%AA%E6%AC%A7-%E8%87%B4%E8%83%9C
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 15 Mar 2016 03:54:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"0453305bf3bebbeb97fab566c55be21e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2096c62f-de43-49e5-af01-add8df5343a1
+      X-Runtime:
+      - '0.006823'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7Il9pZCI6eyIkb2lkIjoiNTVmMTMxOTQ2YzY5NmUyYzVhMDAw
+        MDI2In0sImNvZGUiOjgsImZpcnN0X2xldHRlciI6IkYiLCJuYW1lIjoi56aP
+        54m5In19
+    http_version: 
+  recorded_at: Tue, 15 Mar 2016 03:54:22 GMT
+- request:
+    method: get
+    uri: http://megatron.lina.che3bao.com/api/v1/brands?series%5Bname%5D=%E8%92%99%E8%BF%AA%E6%AC%A7-%E8%87%B4%E8%83%9C
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 15 Mar 2016 03:54:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"0453305bf3bebbeb97fab566c55be21e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eabdbcf0-42af-49ea-8afc-50285439430b
+      X-Runtime:
+      - '0.007378'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7Il9pZCI6eyIkb2lkIjoiNTVmMTMxOTQ2YzY5NmUyYzVhMDAw
+        MDI2In0sImNvZGUiOjgsImZpcnN0X2xldHRlciI6IkYiLCJuYW1lIjoi56aP
+        54m5In19
+    http_version: 
+  recorded_at: Tue, 15 Mar 2016 03:54:22 GMT
+recorded_with: VCR 3.0.1

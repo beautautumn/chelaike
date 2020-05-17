@@ -1,0 +1,10 @@
+zh-CN:
+  easy_loan:
+    operation_record:
+      messages:
+        loan_bill_state_updated:
+          "%{company_name}公司的借款状态更新，%{state_text}，%{car_name}，%{amount_wan}万"
+        borrow_applied:
+          "%{company_name}公司提交借款申请，%{car_name}，%{amount_wan}万"
+        return_applied:
+          "%{company_name}公司提交还款申请，%{car_name}，%{amount_wan}万"

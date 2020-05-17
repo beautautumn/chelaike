@@ -1,0 +1,30 @@
+<h1>地域列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 地区名称 </th>
+        <th> 拼音 </th>
+        <th> 邮政编码 </th>
+        <th> 最小值 </th>
+        <th> 最大值 </th>
+        <th> 最可能值 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cities.each do |city| %>
+        <%= render partial: "row", locals: { city: city } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="7">
+          共 <%=@counter%> 条记录
+          <%= paginate @cities %>
+        </th>
+    </tfoot>
+  </table>
+</div>

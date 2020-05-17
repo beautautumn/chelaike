@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: prepare_records # 整备管理记录
+#
+#  id                     :integer          not null, primary key # 整备管理记录
+#  car_id                 :integer                                # 车辆ID
+#  state                  :string                                 # 整备状态
+#  total_amount_cents     :integer                                # 费用合计
+#  start_at               :date                                   # 开始时间
+#  end_at                 :date                                   # 结束时间
+#  repair_state           :string                                 # 维修现状
+#  note                   :text                                   # 补充说明
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  preparer_id            :integer                                # 整备员ID
+#  shop_id                :integer                                # 分店ID
+#  estimated_completed_at :date                                   # 预计完成时间
+#
+
+aodi_prepare:
+  car: aodi
+  state: "preparing"
+  repair_state: "first_time"
+  total_amount_cents: 100_00
+  start_at: 2015-04-01
+  end_at: 2015-07-01
+  note: 维修费用很便宜呀
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  updated_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+  estimated_completed_at: <%= Time.zone.tomorrow %>

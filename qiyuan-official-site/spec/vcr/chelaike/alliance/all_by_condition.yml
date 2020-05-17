@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://prime.lina.che3bao.com/api/open/v2/alliances
+    body:
+      encoding: UTF-8
+      string: query[name_cont]=%E5%95%A6&query[owner_name_cont]&page=1&per_page=15
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.0p0
+      Autobotsopentoken:
+      - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6bnVsbCwiZXhwaXJlZF9hdCI6IjIwMTctMDItMjcgMjI6MTE6MjQgKzA4MDAifQ.xiGdKjaGNJu7_nMi3-usy6wu0YORD-8lUjQp2leq8UQ
+      Content-Length:
+      - '68'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - prime.lina.che3bao.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Mon, 27 Feb 2017 13:11:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Total:
+      - '2'
+      X-Per-Page:
+      - '15'
+      X-Powered-By:
+      - Autobots
+      Etag:
+      - W/"4fb2d235f83269b129fc632412505f24"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d6e5ad1d-07a9-4ed1-9b5e-c725bfe15787
+      X-Runtime:
+      - '0.107587'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6ODAsIm5hbWUiOiLllabllabllabllaYiLCJhdmF0
+        YXIiOm51bGwsImNvbXBhbmllc19jb3VudCI6MSwiY2Fyc19jb3VudCI6MTQs
+        ImNyZWF0ZWRfYXQiOiIyMDE2LTA3LTExVDE2OjM4OjI3LjA0MCswODowMCIs
+        ImhvbmVzdHlfdGFnIjpudWxsLCJvd25fYnJhbmRfdGFnIjpudWxsLCJhY3Rp
+        dmVfdGFnIjp0cnVlLCJjb252ZW50aW9uIjoiYWFhYWxrTExMIiwib3duZXIi
+        OnsiaWQiOjE2NywibmFtZSI6Iui9puadpeWuoua1i+ivlSIsImNvbnRhY3Qi
+        OiLlsI/lsI/lsI8iLCJjb250YWN0X21vYmlsZSI6IjEzMzEyMzQxMjM0Iiwi
+        YWNxdWlzaXRpb25fbW9iaWxlIjoiMTMzNDMyMTQzMjEiLCJzYWxlX21vYmls
+        ZSI6IjEzMzExMTEyMjIyIiwibG9nbyI6bnVsbCwibm90ZSI6bnVsbCwicHJv
+        dmluY2UiOiLmtZnmsZ/nnIEiLCJjaXR5Ijoi5p2t5bee5biCIiwiZGlzdHJp
+        Y3QiOm51bGwsInN0cmVldCI6IuaLseWiheWMuuWSjOedpui3rzU1NeWPtyIs
+        Im93bmVyX2lkIjozNTQsImNyZWF0ZWRfYXQiOiIyMDE2LTA3LTA2VDE1OjIy
+        OjU1LjI2MyswODowMCIsInNldHRpbmdzIjp7ImF1dG9tYXRlZF9zdG9ja19u
+        dW1iZXIiOmZhbHNlLCJkYWlseV9yZXBvcnRlZF9hdCI6IjE4OjMwIiwidW5p
+        ZmllZF9tYW5hZ2VtZW50Ijp0cnVlLCJzdG9ja19udW1iZXJfYnlfdmluIjpm
+        YWxzZX0sImluX2FsbGlhbmNlcyI6dHJ1ZSwiY2Fyc19jb3VudCI6MTQsInFy
+        Y29kZSI6bnVsbCwiYmFubmVycyI6W10sInNob3BzX2NvdW50IjoyLCJuaWNr
+        bmFtZSI6IiJ9fSx7ImlkIjoyNCwibmFtZSI6IuWVpuWVpuWVpiIsImF2YXRh
+        ciI6bnVsbCwiY29tcGFuaWVzX2NvdW50IjoyLCJjYXJzX2NvdW50Ijo0MTIs
+        ImNyZWF0ZWRfYXQiOiIyMDE2LTAxLTA3VDE2OjU3OjEyLjMyNiswODowMCIs
+        ImhvbmVzdHlfdGFnIjpudWxsLCJvd25fYnJhbmRfdGFnIjpudWxsLCJhY3Rp
+        dmVfdGFnIjp0cnVlLCJjb252ZW50aW9uIjoibGxsbGxsIiwib3duZXIiOnsi
+        aWQiOjYwLCJuYW1lIjoiMDIxIiwiY29udGFjdCI6Iue7meaCqCIsImNvbnRh
+        Y3RfbW9iaWxlIjoiMzQ2NDk5NCIsImFjcXVpc2l0aW9uX21vYmlsZSI6bnVs
+        bCwic2FsZV9tb2JpbGUiOm51bGwsImxvZ28iOiJodHRwOi8vb3NzLXBsYXln
+        cm91bmQuY2hlM2Jhby5jb20vaW1hZ2VzL2M0MzUwY2UyLWExNjAtNDg3NC05
+        Njg2LTY4ZjI4MDQ5ODdmMy5qcGciLCJub3RlIjoiIiwicHJvdmluY2UiOiLl
+        jJfkuqzluIIiLCJjaXR5Ijoi5YyX5Lqs5biCIiwiZGlzdHJpY3QiOm51bGws
+        InN0cmVldCI6bnVsbCwib3duZXJfaWQiOjIxOCwiY3JlYXRlZF9hdCI6IjIw
+        MTUtMTItMzBUMTE6MjQ6NDQuODc0KzA4OjAwIiwic2V0dGluZ3MiOnsiYXV0
+        b21hdGVkX3N0b2NrX251bWJlciI6ZmFsc2UsImRhaWx5X3JlcG9ydGVkX2F0
+        IjoiMTg6MzAiLCJ1bmlmaWVkX21hbmFnZW1lbnQiOnRydWUsInN0b2NrX251
+        bWJlcl9ieV92aW4iOmZhbHNlfSwiaW5fYWxsaWFuY2VzIjp0cnVlLCJjYXJz
+        X2NvdW50IjoxMywicXJjb2RlIjpudWxsLCJiYW5uZXJzIjpudWxsLCJzaG9w
+        c19jb3VudCI6MSwibmlja25hbWUiOiIifX1dfQ==
+    http_version: 
+  recorded_at: Mon, 27 Feb 2017 13:11:24 GMT
+recorded_with: VCR 3.0.3

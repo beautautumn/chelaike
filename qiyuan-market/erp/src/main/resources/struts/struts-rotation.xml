@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="qiyuan.rotationAction" namespace="/rotation" extends="erp-default">
+		<action name="rotation" class="qiyuan.rotationAction">
+			<result name="toCreate">
+				/WEB-INF/jsp/rotation/create.jsp
+			</result>
+			<result name="toEdit">
+				/WEB-INF/jsp/rotation/edit.jsp
+			</result>
+            <result name="toDelete">
+                /WEB-INF/jsp/rotation/delete.jsp
+            </result>
+			<result name="toCannotdelete">
+				/WEB-INF/jsp/rotation/cannotdelete.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

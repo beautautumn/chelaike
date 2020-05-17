@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    models:
+      aliance_invitation: 联盟邀请
+    attributes:
+      aliance_invitation:
+        alliance_id: 联盟ID
+        company_id: 公司ID
+        deleted_at: 删除时间
+        created_at: 创建时间
+        updated_at: 最后更新时间

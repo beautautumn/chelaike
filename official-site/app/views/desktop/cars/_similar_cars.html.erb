@@ -1,0 +1,13 @@
+<% if @similar_cars.count > 0 || @alliance_similar_count > 0 %>
+  <div class="container">
+    <div class="tc-sub-title t-similar-cars-title">相似车推荐</div>
+    <div class="car-list">
+      <%= render partial: "car_card", collection: @similar_cars, as: :car %>
+    </div>
+    <% if @alliance_similar_count > 0 %>
+      <div class="tc-more-aliance-cars">
+        <%= link_to "#{@alliance_name}更多相似车(#{@alliance_similar_count})辆>>", alliance_similar_car_path(@car.id) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

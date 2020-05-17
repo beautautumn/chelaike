@@ -1,0 +1,21 @@
+zh-CN:
+  activerecord:
+    models:
+      company: 公司
+    attributes:
+      company:
+        name: 名称
+        contact: 联系人
+        contact_mobile: 联系人电话
+        acquisition_mobile: 收购电话
+        sale_mobile: 销售电话
+        logo: LOGO
+        note: 备注
+        province: 省份
+        city: 城市
+        district: 区
+        street: 详细地址
+        owner_id: 公司拥有者ID
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        settings: 设置

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="fixed-layout">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>启辕CRM管理系统</title>
+    <script type="text/javascript">
+      if (!/WebKit/.test(navigator.userAgent)) {
+        window.location.href = "/upgrade.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="sk-rotating-plane"></div>
+    </div>
+    <% if (htmlWebpackPlugin.options.baiduAnalytics) { %>
+      <script>
+        setTimeout(function() {
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?<%= htmlWebpackPlugin.options.baiduAnalytics.trackingId %>";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+          })();
+        }, 5000);
+      </script>
+    <% } %>
+    <% if (htmlWebpackPlugin.options.sentry) { %>
+      <script src="http://asset.chelaike.com/misc/raven.min.js"></script>
+      <script type="text/javascript">
+        Raven.config('<%= htmlWebpackPlugin.options.sentry.dsn %>', {
+          release: '{release}'
+        }).install()
+      </script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<% content_for :title, "维保记录" %>
+<div class="weui-panel weui-panel_access maintenance-detail tc-car-detail-part">
+  <div class="weui-panel__bd">
+    <div class="basic-info">
+      <div class="maintenance-item"> <%= @maintenance_detail&.car_name %></div>
+      <div class="divider"></div>
+      <div class="maintenance-item"><%= @maintenance_detail&.vin %></div>
+      <div class="divider"></div>
+      <div class="maintenance-item">
+        <div class="weui-flex">
+          <div class="weui-flex__item">最后入店<br><%= @maintenance_detail&.abstract_items&.last_record_date %></div>
+          <div class="vertical-divider"></div>
+          <div class="weui-flex__item">里程数 km<br><%= @maintenance_detail&.abstract_items&.last_record_mileage %></div>
+          <div class="vertical-divider"></div>
+          <div class="weui-flex__item">排放标准<br><%= @car&.emission_standard_text %></div>
+          <!-- emission_standard -->
+        </div>
+      </div>
+    </div>
+    <div class="content maintenance-summary">
+      <div class="weui-flex maintenance-item">
+        <div>记录概要</div>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <%= @maintenance_detail&.record_abstract&.summary %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        最大里程: <%= @maintenance_detail&.mileage %> 公里
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        记录条数: 共有 <%= @maintenance_detail&.items&.size || 0 %> 条记录
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        最后记录日期: <%= @maintenance_detail&.last_date %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">安全气囊</span>
+        <%= status_with_color(@maintenance_detail&.abstract_items&.ab) %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">结构部件</span>
+        <%= status_with_color(@maintenance_detail&.abstract_items&.sd) %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">发动机</span>
+        <%= status_with_color(@maintenance_detail&.abstract_items&.en) %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">里程表</span>
+        <%= status_with_color(@maintenance_detail&.abstract_items&.mi) %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">变速箱</span>
+        <%= status_with_color(@maintenance_detail&.abstract_items&.tr) %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">火烧维修记录</span>
+        <%= status_with_color(@maintenance_detail&.record_abstract&.fire || "无") %>
+      </div>
+      <div class="maintenance-item-divider"></div>
+      <div class="weui-flex maintenance-item">
+        <span class="item-name">水泡维修记录</span>
+        <%= status_with_color(@maintenance_detail&.record_abstract&.water || "无") %>
+      </div>
+    </div>
+    <div class="content maintenance-detail">
+      详细记录
+      <% @maintenance_detail.items.each do |item| %>
+        <div class="weui-flex detail-item">
+          <div class="weui-flex__item"><%= item.date %></div>
+          <div class="weui-flex__item"><%= item.mileage.presence || "-" %> 公里</div>
+          <div class="weui-flex__item pull-right"><%= item.category %></div>
+        </div>
+        <div class="detail-item-desc">
+          项目: <%= item.item %>
+          <br><br>
+          材料: <%= item.material %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

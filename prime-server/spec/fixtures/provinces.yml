@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: provinces
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  pinyin      :string
+#  pinyin_abbr :string
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+beijing:
+  name: 北京市
+  pinyin: beijing
+  pinyin_abbr: bj
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

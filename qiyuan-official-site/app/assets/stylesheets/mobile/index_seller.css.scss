@@ -1,0 +1,104 @@
+.tc-cars-list-with-seller-container {
+}
+
+.index-seller-container {
+  .index-seller-info {
+    margin-top: 60px;
+    background-color: #fac72c;
+
+    .index-seller-avatar {
+      position: relative;
+      top: -46px;
+
+      img {
+        width: 80px;
+        height: 85.5px;
+        border-radius: 90px;
+        margin: 0 auto;
+        display: inherit;
+      }
+    }
+
+    .index-seller-name {
+      text-align: center;
+      margin-top: -46px;
+    }
+
+    .index-seller-contact-ways {
+      margin: 0 43px;
+      text-align: center;
+
+      .index-seller-phone {
+        /* float: left; */
+        margin-right: 10px;
+        display: inline-block;
+
+        img {
+          width: 14px;
+          height: 16px;
+          margin-right: 5px;
+        }
+      }
+
+      .index-contact-wechat {
+        display: inline-block;
+
+        img {
+          width: 18px;
+          height: 16px;
+        }
+      }
+
+      .seller-contact-way {
+        color: #9e6108;
+
+        a {
+          color: #9e6108;
+          font-size: 12pt;
+        }
+      }
+    }
+    .index-seller-slogan {
+      font-size: 10pt;
+      margin: 0 40px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.tc-cars-go-home {
+  background-color: #f2f2f2;
+  padding-top: 24px;
+  padding-bottom: 50px;
+
+  .tc-cars-go-home-text {
+    text-align: center;
+    color: #999999;
+    font-size: 10pt;
+    margin-bottom: 10px;
+  }
+
+  .index-go-home {
+    text-align: center;
+    border-radius: 6px;
+    background-color: #fac72c;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+
+    a {
+      font-size: 11pt;
+      color: #9e6108;
+    }
+  }
+
+  .index-go-home:active {
+    background-color: #9e6108;
+
+    a {
+      color: white;
+    }
+  }
+}

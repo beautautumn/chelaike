@@ -1,0 +1,32 @@
+<h1>联盟列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "search" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 联盟ID </th>
+        <th> 名称 </th>
+        <th> 所属公司 </th>
+        <th> 头像 </th>
+        <th> 诚信标识 </th>
+        <th> 活跃标识 </th>
+        <th> 品牌商家标识 </th>
+        <th> 公司数 </th>
+        <th> 创建时间 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @alliances.each do |alliance| %>
+        <%= render partial: "row", locals: { alliance: alliance } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@counter%> 条记录
+          <%= paginate @alliances %>
+        </th>
+    </tfoot>
+  </table>
+</div>

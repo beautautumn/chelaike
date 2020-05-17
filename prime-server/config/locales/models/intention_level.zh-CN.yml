@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    models:
+      intention_level: 意向级别
+    attributes:
+      intention_level:
+        id: 意向级别
+        company_id: 公司ID
+        name: 级别名称
+        note: 说明
+        deleted_at: 删除时间
+        time_limitation: 时间限制

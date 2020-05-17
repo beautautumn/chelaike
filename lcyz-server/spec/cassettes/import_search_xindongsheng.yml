@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.che168.com/handler/SeachDealer.ashx?kw=%25u65B0%25u4E1C%25u6607&num=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 24 Jul 2016 06:44:01 GMT
+      Server:
+      - nginx
+      Content-Type:
+      - text/plain; charset=gb2312
+      Content-Length:
+      - '79'
+      Cache-Control:
+      - public,max-age=1800
+      Web-S:
+      - '2'
+      Powered-By-Scs:
+      - HIT BY SCS13 FROM c5
+      Age:
+      - '1'
+      X-Via:
+      - 1.1 hbtg32:8107 (Cdn Cache Server V2.0), 1.1 hk50:80 (Cdn Cache Server V2.0),
+        1.1 bjdxtck18:2 (Cdn Cache Server V2.0)
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siQ29tcGFueU5hbWUiOiLEz76p0MK2q5VOw/uztbvjIiwiRGVhbGVySWQi
+        OjExOTc3MSwiVXJsIjpudWxsLCJDYXJDb3VudCI6Mjl9XQ==
+    http_version: 
+  recorded_at: Sun, 24 Jul 2016 06:56:01 GMT
+recorded_with: VCR 3.0.1

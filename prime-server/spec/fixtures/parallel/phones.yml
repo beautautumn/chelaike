@@ -1,0 +1,14 @@
+# == Schema Information
+#
+# Table name: parallel_phones # 平行进口车客服电话
+#
+#  id         :integer          not null, primary key # 平行进口车客服电话
+#  number     :string                                 # 电话号码
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+service:
+  number: 4001234567
+  created_at: 2016-1-1
+  updated_at: 2016-1-1

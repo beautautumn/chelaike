@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/user/getToken.json
+    body:
+      encoding: UTF-8
+      string: userId=-100&name=%E7%BB%9F%E8%AE%A1%E6%B6%88%E6%81%AF&portraitUri=
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - c9aeff9915694c7daf0f6edebd4b2a14
+      Timestamp:
+      - '1476864904'
+      Signature:
+      - cb9612a04b5255f6ce32d2a150966411ddae3bb4
+      Content-Length:
+      - '66'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 19 Oct 2016 08:15:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '127'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"userId":"-100","token":"JR9pKRMFY+j9+JH2rynKvhptaf9XsoXx1yBHGsTlOuIHTAd//MGjK6WXbAw5SiAgMLjm05xMEQHjHpWV+tN1fQ=="}'
+    http_version: 
+  recorded_at: Wed, 19 Oct 2016 08:15:05 GMT
+- request:
+    method: post
+    uri: https://api.cn.ronghub.com/message/system/publish.json
+    body:
+      encoding: UTF-8
+      string: fromUserId=-100&objectName=RC:TxtMsg&content={"content":"今日统计，点击查看详情","extra":{"operation_record_id":747962322,"message_type":"daily_report","notification_type":"statistics"}}&pushContent=&pushData=&
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      App-Key:
+      - 3argexb6r6r1e
+      Nonce:
+      - cc6d7d2973dd4394a8998df891a38fd2
+      Timestamp:
+      - '1476864905'
+      Signature:
+      - be092ac4f949927472a6793e7854a2656a62d477
+      Content-Length:
+      - '221'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 19 Oct 2016 08:15:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '89'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+    body:
+      encoding: UTF-8
+      string: '{"url":"/message/system/publish.json","code":1002,"errorMessage":"toUserId
+        is required."}'
+    http_version: 
+  recorded_at: Wed, 19 Oct 2016 08:15:05 GMT
+recorded_with: VCR 3.0.1

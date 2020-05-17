@@ -1,0 +1,27 @@
+<div class="me-weixin-avatar">
+  <%= image_tag @current_user&.avatar || "common/avatar.png" %>
+  <h4><%= @current_user&.nick_name %></h4>
+</div>
+
+<% if @device_detect_helper.wechat? %>
+  <div class="weui-cells me-navigators">
+    <a class="weui-cell weui-cell_access" href="<%= me_enquiries_path %>">
+      <div class="weui-cell__bd">
+        <p>我的询价</p>
+      </div>
+      <div class="weui-cell__ft">
+      </div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="<%= me_favorites_path %>">
+      <div class="weui-cell__bd">
+        <p>我的收藏</p>
+      </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+  </div>
+<% else %>
+  <div class="weui-cells me-navigators">
+    <p class="tc-alert">请在微信客户端内浏览</p>
+  </div>
+<% end %>

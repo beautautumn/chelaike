@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: dw_acquired_at_dimensions # 收购时间纬度
+#
+#  id                :integer          not null, primary key # 收购时间纬度
+#  acquired_at       :datetime                               # 收购时间
+#  acquired_at_date  :date                                   # 收购日期
+#  acquired_at_year  :integer                                # 收购日期(年)
+#  acquired_at_month :integer                                # 收购日期(月)
+#
+
+acquired_at_dimension_1:
+  acquired_at: <%= Time.zone.parse("2015-01-01").to_s(:db) %>
+  acquired_at_date: <%= Time.zone.parse("2015-01-01").to_date %>
+  acquired_at_year: 2015
+  acquired_at_month: 1
+
+acquired_at_dimension_2:
+  acquired_at: <%= Time.zone.parse("2015-01-02").to_s(:db) %>
+  acquired_at_date: <%= Time.zone.parse("2015-01-02").to_date %>
+  acquired_at_year: 2015
+  acquired_at_month: 1

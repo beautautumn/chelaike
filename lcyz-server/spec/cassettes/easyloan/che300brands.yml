@@ -1,0 +1,223 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.che300.com/service/getCarBrandList?token=3cab9f677fa8dc71126f48c7e91b0c58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 20 Jul 2017 22:08:18 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=vsouj17mjcutcdhvrrr0ve1u24; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2832'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Thu, 20 Jul 2017 22:08:19 GMT
+- request:
+    method: get
+    uri: http://api.che300.com/service/getCarBrandList?token=3cab9f677fa8dc71126f48c7e91b0c58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 20 Jul 2017 22:08:22 GMT
+      Server:
+      - Apache/2.4.9 (Unix) OpenSSL/1.0.1g PHP/5.5.11
+      Vary:
+      - Host,Accept-Encoding
+      X-Powered-By:
+      - PHP/5.5.11
+      Set-Cookie:
+      - PHPSESSID=b55lo2d079g8tbv84iadj270f3; path=/; domain=.che300.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2832'
+      Connection:
+      - close
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Thu, 20 Jul 2017 22:08:22 GMT
+recorded_with: VCR 3.0.1

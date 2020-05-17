@@ -1,0 +1,9 @@
+<tr>
+  <td><%= brand["name"] %></td>
+  <td> <%= brand["first_letter"] %></td>
+  <td> <%= brand["code"] %></td>
+  <td>
+    <%= link_to '编辑品牌', edit_brand_path(brand["_id"]) %>
+    <%= link_to '删除', brand_path(brand["_id"]), method: :delete, data: { confirm: '确定要删除吗?' } %>
+  </td>
+</tr>

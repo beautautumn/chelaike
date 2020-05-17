@@ -1,0 +1,14 @@
+# == Schema Information
+#
+# Table name: app_version_company_relationships # app版本公司关系表
+#
+#  id         :integer          not null, primary key # app版本公司关系表
+#  company_id :integer                                # 公司ID
+#  version_id :integer                                # 版本控制ID
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+v102_relationship:
+  company: tianche
+  app_version: v102

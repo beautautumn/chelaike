@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: cooperation_company_relationships # 合作商家关联表
+#
+#  id                      :integer          not null, primary key # 合作商家关联表
+#  car_id                  :integer                                # 车辆ID
+#  cooperation_company_id  :integer                                # 合作商家ID
+#  cooperation_price_cents :integer                                # 合作价格
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#
+
+aodi_with_tiantian:
+  car: aodi
+  cooperation_company: tiantian_clean
+  cooperation_price_cents: 40000
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

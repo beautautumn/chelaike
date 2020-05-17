@@ -1,0 +1,126 @@
+$mainColor: #02c05c;
+
+.login {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 764px;
+  height: 214px;
+  margin: -107px 0 0 -382px;
+  font-size: 15px;
+
+  label {
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  a {
+    color: #17abe5;
+  }
+}
+
+.logo img{
+  width: 364px;
+}
+
+.form {
+  margin-left: 38px;
+
+  input[type="text"], input[type="password"] {
+    width: 360px;
+    height: 43px;
+    border: 1px solid #a6a6a6;
+    border-radius: 4px;
+    padding: 10px;
+
+    &:focus {
+      border-color: $mainColor;
+      outline: none;
+      color: #000;
+
+      &::placeholder {
+        color: #d9d9d9;
+      }
+    }
+  }
+}
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: bottom;
+
+  input[type="checkbox"] {
+    visibility: hidden;
+
+    & + label {
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+      display: inline-block;
+      border-radius: 2px;
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        width: 9px;
+        height: 6px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        border: 3px solid #000;
+        border-top: none;
+        border-right: none;
+        background: transparent;
+        opacity: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+
+.formItem {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  &:last-child {
+    margin-bottom: 0;
+    margin-top: 6px;
+  }
+}
+
+.buttonContainer {
+  margin-top: 22px;
+
+  .submit {
+    width: 360px;
+    height: 43px;
+    background-color:#EA5305;
+    color: #fff;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #933c0d;
+    }
+  }
+}
+.hide{
+  display:none;
+}
+.error {
+  font-size: 12px;
+  color: #ff0000;
+  margin-bottom: 10px;
+  margin-top: -28px;
+}

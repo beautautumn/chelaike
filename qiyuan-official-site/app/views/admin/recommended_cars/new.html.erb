@@ -1,0 +1,63 @@
+<% content_for :content_header  do %>
+  <h1>好车推荐</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active"><%= link_to "好车推荐", admin_recommended_cars_path %></li>
+    <li class="active">查找车辆</li>
+  </ol>
+<% end %>
+
+
+<%
+  cars = @result.data
+  total = @result.total
+  paginatable_array = Kaminari
+    .paginate_array([], total_count: total)
+    .page(params[:page])
+    .per(10)
+%>
+
+<%= form_tag new_admin_recommended_car_path, :method => :get do %>
+  <%= hidden_field_tag 'page', 1 %>
+  <div class="row tc-recommended-cars-conditon">
+    <div class="col-xs-6">
+      <%= text_field_tag 'query[name_cont]',
+        params.try(:[], :query).try(:[], :name_eq),
+        placeholder: "车辆名称／车架号／牌照／库存号",
+        class: 'form-control' %>
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-default" type="submit">查询</div>
+  </div>
+<% end %>
+
+<%= form_tag admin_recommended_cars_path, :method => :post do %>
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>车辆</th>
+    </tr>
+
+    <% cars.each do |car| %>
+      <tr>
+        <td><%= radio_button_tag("recommended_car[car_id]", car[:id]) %></td>
+        <td class="tc-recommended-car-info">
+          <div class="tc-recommended-car-img"><img src="<%= car_cover(car.cover_url) %>"></div>
+          <div><%= car.name %></div>
+          <div>库存号：<%= car.stock_number %></div>
+          <div>车牌号：<%= car.acquisition_transfer.try(:current_plate_number) %></div>
+          <div>分店：<%= car.shop.try(:name) %></div>
+          <div>上牌时间：<%= car.licensed_at %></div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div class="tc-paginate-wraper">
+    <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+  </div>
+
+  <%= link_to "返回", admin_recommended_cars_path, class: "pull-right btn btn-default btn-sub-page-back" %>
+  <button type="submit" class="pull-right btn btn-primary">确定</button>
+  <div class="tc-paginate-wraper-after"></div>
+<% end %>

@@ -1,0 +1,1436 @@
+
+app/assets/config/manifest.js,0
+
+app/assets/javascripts/admin/qrcode.js,35280
+var QRCode;QRCode11,437
+	}QR8bitByte65,2052
+	QR8bitByte.prototype = {QR8bitByte.getLength67,2056
+		},QR8bitByte.write70,2149
+	function QRCodeModel(typeNumber, errorCorrectLevel) {QRCodeModel78,2297
+	QRCodeModel.prototype={addData:function(data){var newData=new QR8bitByte(data);this.dataList.push(newData);this.dataCache=null;},isDark:function(row,col){if(row<0||this.moduleCount<=row||col<0||this.moduleCount<=col){throw new Error(row+","+col);}QRCodeModel.addData87,2528
+	QRCodeModel.prototype={addData:function(data){var newData=new QR8bitByte(data);this.dataList.push(newData);this.dataCache=null;},isDark:function(row,col){if(row<0||this.moduleCount<=row||col<0||this.moduleCount<=col){throw new Error(row+","+col);}QRCodeModel.isDark87,2528
+	return this.modules[row][col];},getModuleCount:function(){return this.moduleCount;},make:function(){this.makeImpl(false,this.getBestMaskPattern());},makeImpl:function(test,maskPattern){this.moduleCount=this.typeNumber*4+17;this.modules=new Array(this.moduleCount);for(var row=0;row<this.moduleCount;row++){this.modules[row]=new Array(this.moduleCount);for(var col=0;col<this.moduleCount;col++){this.modules[row][col]=null;}}QRCodeModel.getModuleCount88,2777
+	return this.modules[row][col];},getModuleCount:function(){return this.moduleCount;},make:function(){this.makeImpl(false,this.getBestMaskPattern());},makeImpl:function(test,maskPattern){this.moduleCount=this.typeNumber*4+17;this.modules=new Array(this.moduleCount);for(var row=0;row<this.moduleCount;row++){this.modules[row]=new Array(this.moduleCount);for(var col=0;col<this.moduleCount;col++){this.modules[row][col]=null;}}QRCodeModel.make88,2777
+	return this.modules[row][col];},getModuleCount:function(){return this.moduleCount;},make:function(){this.makeImpl(false,this.getBestMaskPattern());},makeImpl:function(test,maskPattern){this.moduleCount=this.typeNumber*4+17;this.modules=new Array(this.moduleCount);for(var row=0;row<this.moduleCount;row++){this.modules[row]=new Array(this.moduleCount);for(var col=0;col<this.moduleCount;col++){this.modules[row][col]=null;}}QRCodeModel.makeImpl88,2777
+	this.mapData(this.dataCache,maskPattern);},setupPositionProbePattern:function(row,col){for(var r=-1;r<=7;r++){if(row+r<=-1||this.moduleCount<=row+r)continue;for(var c=-1;c<=7;c++){if(col+c<=-1||this.moduleCount<=col+c)continue;if((0<=r&&r<=6&&(c==0||c==6))||(0<=c&&c<=6&&(r==0||r==6))||(2<=r&&r<=4&&2<=c&&c<=4)){this.modules[row+r][col+c]=true;}else{this.modules[row+r][col+c]=false;}}}},getBestMaskPattern:function(){var minLostPoint=0;var pattern=0;for(var i=0;i<8;i++){this.makeImpl(true,i);var lostPoint=QRUtil.getLostPoint(this);if(i==0||minLostPoint>lostPoint){minLostPoint=lostPoint;pattern=i;}}QRCodeModel.setupPositionProbePattern91,3615
+	this.mapData(this.dataCache,maskPattern);},setupPositionProbePattern:function(row,col){for(var r=-1;r<=7;r++){if(row+r<=-1||this.moduleCount<=row+r)continue;for(var c=-1;c<=7;c++){if(col+c<=-1||this.moduleCount<=col+c)continue;if((0<=r&&r<=6&&(c==0||c==6))||(0<=c&&c<=6&&(r==0||r==6))||(2<=r&&r<=4&&2<=c&&c<=4)){this.modules[row+r][col+c]=true;}else{this.modules[row+r][col+c]=false;}}}},getBestMaskPattern:function(){var minLostPoint=0;var pattern=0;for(var i=0;i<8;i++){this.makeImpl(true,i);var lostPoint=QRUtil.getLostPoint(this);if(i==0||minLostPoint>lostPoint){minLostPoint=lostPoint;pattern=i;}}pattern91,3615
+	return pattern;},createMovieClip:function(target_mc,instance_name,depth){var qr_mc=target_mc.createEmptyMovieClip(instance_name,depth);var cs=1;this.make();for(var row=0;row<this.modules.length;row++){var y=row*cs;for(var col=0;col<this.modules[row].length;col++){var x=col*cs;var dark=this.modules[row][col];if(dark){qr_mc.beginFill(0,100);qr_mc.moveTo(x,y);qr_mc.lineTo(x+cs,y);qr_mc.lineTo(x+cs,y+cs);qr_mc.lineTo(x,y+cs);qr_mc.endFill();}}}cs92,4219
+	for(var i=0;i<18;i++){var mod=(!test&&((bits>>i)&1)==1);this.modules[i%3+this.moduleCount-8-3][Math.floor(i/3)]=mod;}},setupTypeInfo:function(test,maskPattern){var data=(this.errorCorrectLevel<<3)|maskPattern;var bits=QRUtil.getBCHTypeInfo(data);for(var i=0;i<15;i++){var mod=(!test&&((bits>>i)&1)==1);if(i<6){this.modules[i][8]=mod;}else if(i<8){this.modules[i+1][8]=mod;}else{this.modules[this.moduleCount-15+i][8]=mod;}}bits98,5521
+	this.modules[this.moduleCount-8][8]=(!test);},mapData:function(data,maskPattern){var inc=-1;var row=this.moduleCount-1;var bitIndex=7;var byteIndex=0;for(var col=this.moduleCount-1;col>0;col-=2){if(col==6)col--;while(true){for(var c=0;c<2;c++){if(this.modules[row][col-c]==null){var dark=false;if(byteIndex<data.length){dark=(((data[byteIndex]>>>bitIndex)&1)==1);}bitIndex100,6134
+	this.modules[this.moduleCount-8][8]=(!test);},mapData:function(data,maskPattern){var inc=-1;var row=this.moduleCount-1;var bitIndex=7;var byteIndex=0;for(var col=this.moduleCount-1;col>0;col-=2){if(col==6)col--;while(true){for(var c=0;c<2;c++){if(this.modules[row][col-c]==null){var dark=false;if(byteIndex<data.length){dark=(((data[byteIndex]>>>bitIndex)&1)==1);}byteIndex100,6134
+	row+=inc;if(row<0||this.moduleCount<=row){row-=inc;inc=-inc;break;}}}}};QRCodeModel.PAD0=0xEC;QRCodeModel.PAD1=0x11;QRCodeModel.createData=function(typeNumber,errorCorrectLevel,dataList){var rsBlocks=QRRSBlock.getRSBlocks(typeNumber,errorCorrectLevel);var buffer=new QRBitBuffer();for(var i=0;i<dataList.length;i++){var data=dataList[i];buffer.put(data.mode,4);buffer.put(data.getLength(),QRUtil.getLengthInBits(data.mode,typeNumber));data.write(buffer);}QRCodeModel.createData103,6656
+	return QRCodeModel.createBytes(buffer,rsBlocks);};QRCodeModel.createBytes=function(buffer,rsBlocks){var offset=0;var maxDcCount=0;var maxEcCount=0;var dcdata=new Array(rsBlocks.length);var ecdata=new Array(rsBlocks.length);for(var r=0;r<rsBlocks.length;r++){var dcCount=rsBlocks[r].dataCount;var ecCount=rsBlocks[r].totalCount-dcCount;maxDcCount=Math.max(maxDcCount,dcCount);maxEcCount=Math.max(maxEcCount,ecCount);dcdata[r]=new Array(dcCount);for(var i=0;i<dcdata[r].length;i++){dcdata[r][i]=0xff&buffer.buffer[i+offset];}QRCodeModel.createBytes115,7678
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMode.MODE_NUMBER120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.L120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.M120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.Q120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.H120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN000120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN001120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN010120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN011120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN100120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN101120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN110120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN111120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRUtil.PATTERN_POSITION_TABLE120,8935
+	return a;},getLengthInBits:function(mode,type){if(1<=type&&type<10){switch(mode){case QRMode.MODE_NUMBER:return 10;case QRMode.MODE_ALPHA_NUM:return 9;case QRMode.MODE_8BIT_BYTE:return 8;case QRMode.MODE_KANJI:return 8;default:throw new Error("mode:"+mode);}}else if(type<27){switch(mode){case QRMode.MODE_NUMBER:return 12;case QRMode.MODE_ALPHA_NUM:return 11;case QRMode.MODE_8BIT_BYTE:return 16;case QRMode.MODE_KANJI:return 10;default:throw new Error("mode:"+mode);}}else if(type<41){switch(mode){case QRMode.MODE_NUMBER:return 14;case QRMode.MODE_ALPHA_NUM:return 13;case QRMode.MODE_8BIT_BYTE:return 16;case QRMode.MODE_KANJI:return 12;default:throw new Error("mode:"+mode);}}else{throw new Error("type:"+type);}},getLostPoint:function(qrCode){var moduleCount=qrCode.getModuleCount();var lostPoint=0;for(var row=0;row<moduleCount;row++){for(var col=0;col<moduleCount;col++){var sameCount=0;var dark=qrCode.isDark(row,col);for(var r=-1;r<=1;r++){if(row+r<0||moduleCount<=row+r){continue;}lostPoint124,11347
+	var darkCount=0;for(var col=0;col<moduleCount;col++){for(var row=0;row<moduleCount;row++){if(qrCode.isDark(row,col)){darkCount++;}}}darkCount132,13372
+	var ratio=Math.abs(100*darkCount/moduleCount/moduleCount-50)/5;lostPoint+=ratio*10;return lostPoint;}};var QRMath={glog:function(n){if(n<1){throw new Error("glog("+n+")");}ratio133,13506
+	var ratio=Math.abs(100*darkCount/moduleCount/moduleCount-50)/5;lostPoint+=ratio*10;return lostPoint;}};var QRMath={glog:function(n){if(n<1){throw new Error("glog("+n+")");}QRMath.glog133,13506
+	return QRMath.LOG_TABLE[n];},gexp:function(n){while(n<0){n+=255;}QRMath.gexp134,13680
+	return QRMath.EXP_TABLE[n];},EXP_TABLE:new Array(256),LOG_TABLE:new Array(256)};for(var i=0;i<8;i++){QRMath.EXP_TABLE[i]=1<<i;}QRMath.EXP_TABLE136,13771
+	function QRPolynomial(num,shift){if(num.length==undefined){throw new Error(num.length+"/"+shift);}QRPolynomial139,14100
+	QRPolynomial.prototype={get:function(index){return this.num[index];},getLength:function(){return this.num.length;},multiply:function(e){var num=new Array(this.getLength()+e.getLength()-1);for(var i=0;i<this.getLength();i++){for(var j=0;j<e.getLength();j++){num[i+j]^=QRMath.gexp(QRMath.glog(this.get(i))+QRMath.glog(e.get(j)));}}QRPolynomial.get142,14377
+	QRPolynomial.prototype={get:function(index){return this.num[index];},getLength:function(){return this.num.length;},multiply:function(e){var num=new Array(this.getLength()+e.getLength()-1);for(var i=0;i<this.getLength();i++){for(var j=0;j<e.getLength();j++){num[i+j]^=QRMath.gexp(QRMath.glog(this.get(i))+QRMath.glog(e.get(j)));}}QRPolynomial.getLength142,14377
+	QRPolynomial.prototype={get:function(index){return this.num[index];},getLength:function(){return this.num.length;},multiply:function(e){var num=new Array(this.getLength()+e.getLength()-1);for(var i=0;i<this.getLength();i++){for(var j=0;j<e.getLength();j++){num[i+j]^=QRMath.gexp(QRMath.glog(this.get(i))+QRMath.glog(e.get(j)));}}QRPolynomial.multiply142,14377
+	return new QRPolynomial(num,0);},mod:function(e){if(this.getLength()-e.getLength()<0){return this;}QRPolynomial.mod143,14708
+	return new QRPolynomial(num,0).mod(e);}};function QRRSBlock(totalCount,dataCount){this.totalCount=totalCount;this.dataCount=dataCount;}QRRSBlock146,15045
+	QRRSBlock.RS_BLOCK_TABLE=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]];QRRSBlock.getRSBlocks=function(typeNumber,errorCorrectLevel){var rsBlock=QRRSBlock.getRsBlockTable(typeNumber,errorCorrectLevel);if(rsBlock==undefined){throw new Error("bad rs block @ typeNumber:"+typeNumber+"/errorCorrectLevel:"+errorCorrectLevel);}QRRSBlock.getRSBlocks147,15182
+	return list;};QRRSBlock.getRsBlockTable=function(typeNumber,errorCorrectLevel){switch(errorCorrectLevel){case QRErrorCorrectLevel.L:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+0];case QRErrorCorrectLevel.M:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+1];case QRErrorCorrectLevel.Q:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+2];case QRErrorCorrectLevel.H:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+3];default:return undefined;}};function QRBitBuffer(){this.buffer=[];this.length=0;}QRRSBlock.getRsBlockTable149,18538
+	return list;};QRRSBlock.getRsBlockTable=function(typeNumber,errorCorrectLevel){switch(errorCorrectLevel){case QRErrorCorrectLevel.L:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+0];case QRErrorCorrectLevel.M:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+1];case QRErrorCorrectLevel.Q:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+2];case QRErrorCorrectLevel.H:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+3];default:return undefined;}};function QRBitBuffer(){this.buffer=[];this.length=0;}QRBitBuffer149,18538
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.get150,19042
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.put150,19042
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.getLengthInBits150,19042
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.putBit150,19042
+	this.length++;}};var QRCodeLimitLength=[[17,14,11,7],[32,26,20,14],[53,42,32,24],[78,62,46,34],[106,84,60,44],[134,106,74,58],[154,122,86,64],[192,152,108,84],[230,180,130,98],[271,213,151,119],[321,251,177,137],[367,287,203,155],[425,331,241,177],[458,362,258,194],[520,412,292,220],[586,450,322,250],[644,504,364,280],[718,560,394,310],[792,624,442,338],[858,666,482,382],[929,711,509,403],[1003,779,565,439],[1091,857,611,461],[1171,911,661,511],[1273,997,715,535],[1367,1059,751,593],[1465,1125,805,625],[1528,1190,868,658],[1628,1264,908,698],[1732,1370,982,742],[1840,1452,1030,790],[1952,1538,1112,842],[2068,1628,1168,898],[2188,1722,1228,958],[2303,1809,1283,983],[2431,1911,1351,1051],[2563,1989,1423,1093],[2699,2099,1499,1139],[2809,2213,1579,1219],[2953,2331,1663,1273]];QRCodeLimitLength152,19489
+	function _isSupportCanvas() {_isSupportCanvas154,20277
+	function _getAndroid() {_getAndroid159,20416
+	var useSVG = document.documentElement.tagName.toLowerCase() === "svg";useSVG222,22347
+	var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function () {Drawing225,22458
+	function _getTypeNumber(sText, nCorrectLevel) {			_getTypeNumber469,29710
+	function _getUTF8Length(sText) {_getUTF8Length505,30464
+		this._htOption = {QRCode._htOption.width536,31534
+			width : 256, QRCode._htOption.height537,31555
+			height : 256,QRCode._htOption.typeNumber538,31572
+			typeNumber : 4,QRCode._htOption.colorDark539,31589
+			colorDark : "#000000",QRCode._htOption.colorLight540,31608
+			colorLight : "#ffffff",QRCode._htOption.correctLevel541,31634
+			vOption	= {vOption.text546,31746
+	}QRCode508,30653
+	QRCode.prototype.makeCode = function (sText) {QRCode.makeCode581,32330
+	QRCode.prototype.makeImage = function () {QRCode.makeImage597,32793
+	QRCode.prototype.clear = function () {QRCode.clear606,33006
+
+app/assets/javascripts/admin.js,0
+
+app/assets/javascripts/application.js,0
+
+app/assets/javascripts/cable.js,0
+
+app/assets/javascripts/desktop/jquery.deparam.js,93
+/*deparam0,0
+        coerce_types = { 'true': !0, 'false': !1, 'null': null };true10,289
+
+app/assets/javascripts/desktop/qrcode.js,35280
+var QRCode;QRCode11,437
+	}QR8bitByte65,2052
+	QR8bitByte.prototype = {QR8bitByte.getLength67,2056
+		},QR8bitByte.write70,2149
+	function QRCodeModel(typeNumber, errorCorrectLevel) {QRCodeModel78,2297
+	QRCodeModel.prototype={addData:function(data){var newData=new QR8bitByte(data);this.dataList.push(newData);this.dataCache=null;},isDark:function(row,col){if(row<0||this.moduleCount<=row||col<0||this.moduleCount<=col){throw new Error(row+","+col);}QRCodeModel.addData87,2528
+	QRCodeModel.prototype={addData:function(data){var newData=new QR8bitByte(data);this.dataList.push(newData);this.dataCache=null;},isDark:function(row,col){if(row<0||this.moduleCount<=row||col<0||this.moduleCount<=col){throw new Error(row+","+col);}QRCodeModel.isDark87,2528
+	return this.modules[row][col];},getModuleCount:function(){return this.moduleCount;},make:function(){this.makeImpl(false,this.getBestMaskPattern());},makeImpl:function(test,maskPattern){this.moduleCount=this.typeNumber*4+17;this.modules=new Array(this.moduleCount);for(var row=0;row<this.moduleCount;row++){this.modules[row]=new Array(this.moduleCount);for(var col=0;col<this.moduleCount;col++){this.modules[row][col]=null;}}QRCodeModel.getModuleCount88,2777
+	return this.modules[row][col];},getModuleCount:function(){return this.moduleCount;},make:function(){this.makeImpl(false,this.getBestMaskPattern());},makeImpl:function(test,maskPattern){this.moduleCount=this.typeNumber*4+17;this.modules=new Array(this.moduleCount);for(var row=0;row<this.moduleCount;row++){this.modules[row]=new Array(this.moduleCount);for(var col=0;col<this.moduleCount;col++){this.modules[row][col]=null;}}QRCodeModel.make88,2777
+	return this.modules[row][col];},getModuleCount:function(){return this.moduleCount;},make:function(){this.makeImpl(false,this.getBestMaskPattern());},makeImpl:function(test,maskPattern){this.moduleCount=this.typeNumber*4+17;this.modules=new Array(this.moduleCount);for(var row=0;row<this.moduleCount;row++){this.modules[row]=new Array(this.moduleCount);for(var col=0;col<this.moduleCount;col++){this.modules[row][col]=null;}}QRCodeModel.makeImpl88,2777
+	this.mapData(this.dataCache,maskPattern);},setupPositionProbePattern:function(row,col){for(var r=-1;r<=7;r++){if(row+r<=-1||this.moduleCount<=row+r)continue;for(var c=-1;c<=7;c++){if(col+c<=-1||this.moduleCount<=col+c)continue;if((0<=r&&r<=6&&(c==0||c==6))||(0<=c&&c<=6&&(r==0||r==6))||(2<=r&&r<=4&&2<=c&&c<=4)){this.modules[row+r][col+c]=true;}else{this.modules[row+r][col+c]=false;}}}},getBestMaskPattern:function(){var minLostPoint=0;var pattern=0;for(var i=0;i<8;i++){this.makeImpl(true,i);var lostPoint=QRUtil.getLostPoint(this);if(i==0||minLostPoint>lostPoint){minLostPoint=lostPoint;pattern=i;}}QRCodeModel.setupPositionProbePattern91,3615
+	this.mapData(this.dataCache,maskPattern);},setupPositionProbePattern:function(row,col){for(var r=-1;r<=7;r++){if(row+r<=-1||this.moduleCount<=row+r)continue;for(var c=-1;c<=7;c++){if(col+c<=-1||this.moduleCount<=col+c)continue;if((0<=r&&r<=6&&(c==0||c==6))||(0<=c&&c<=6&&(r==0||r==6))||(2<=r&&r<=4&&2<=c&&c<=4)){this.modules[row+r][col+c]=true;}else{this.modules[row+r][col+c]=false;}}}},getBestMaskPattern:function(){var minLostPoint=0;var pattern=0;for(var i=0;i<8;i++){this.makeImpl(true,i);var lostPoint=QRUtil.getLostPoint(this);if(i==0||minLostPoint>lostPoint){minLostPoint=lostPoint;pattern=i;}}pattern91,3615
+	return pattern;},createMovieClip:function(target_mc,instance_name,depth){var qr_mc=target_mc.createEmptyMovieClip(instance_name,depth);var cs=1;this.make();for(var row=0;row<this.modules.length;row++){var y=row*cs;for(var col=0;col<this.modules[row].length;col++){var x=col*cs;var dark=this.modules[row][col];if(dark){qr_mc.beginFill(0,100);qr_mc.moveTo(x,y);qr_mc.lineTo(x+cs,y);qr_mc.lineTo(x+cs,y+cs);qr_mc.lineTo(x,y+cs);qr_mc.endFill();}}}cs92,4219
+	for(var i=0;i<18;i++){var mod=(!test&&((bits>>i)&1)==1);this.modules[i%3+this.moduleCount-8-3][Math.floor(i/3)]=mod;}},setupTypeInfo:function(test,maskPattern){var data=(this.errorCorrectLevel<<3)|maskPattern;var bits=QRUtil.getBCHTypeInfo(data);for(var i=0;i<15;i++){var mod=(!test&&((bits>>i)&1)==1);if(i<6){this.modules[i][8]=mod;}else if(i<8){this.modules[i+1][8]=mod;}else{this.modules[this.moduleCount-15+i][8]=mod;}}bits98,5521
+	this.modules[this.moduleCount-8][8]=(!test);},mapData:function(data,maskPattern){var inc=-1;var row=this.moduleCount-1;var bitIndex=7;var byteIndex=0;for(var col=this.moduleCount-1;col>0;col-=2){if(col==6)col--;while(true){for(var c=0;c<2;c++){if(this.modules[row][col-c]==null){var dark=false;if(byteIndex<data.length){dark=(((data[byteIndex]>>>bitIndex)&1)==1);}bitIndex100,6134
+	this.modules[this.moduleCount-8][8]=(!test);},mapData:function(data,maskPattern){var inc=-1;var row=this.moduleCount-1;var bitIndex=7;var byteIndex=0;for(var col=this.moduleCount-1;col>0;col-=2){if(col==6)col--;while(true){for(var c=0;c<2;c++){if(this.modules[row][col-c]==null){var dark=false;if(byteIndex<data.length){dark=(((data[byteIndex]>>>bitIndex)&1)==1);}byteIndex100,6134
+	row+=inc;if(row<0||this.moduleCount<=row){row-=inc;inc=-inc;break;}}}}};QRCodeModel.PAD0=0xEC;QRCodeModel.PAD1=0x11;QRCodeModel.createData=function(typeNumber,errorCorrectLevel,dataList){var rsBlocks=QRRSBlock.getRSBlocks(typeNumber,errorCorrectLevel);var buffer=new QRBitBuffer();for(var i=0;i<dataList.length;i++){var data=dataList[i];buffer.put(data.mode,4);buffer.put(data.getLength(),QRUtil.getLengthInBits(data.mode,typeNumber));data.write(buffer);}QRCodeModel.createData103,6656
+	return QRCodeModel.createBytes(buffer,rsBlocks);};QRCodeModel.createBytes=function(buffer,rsBlocks){var offset=0;var maxDcCount=0;var maxEcCount=0;var dcdata=new Array(rsBlocks.length);var ecdata=new Array(rsBlocks.length);for(var r=0;r<rsBlocks.length;r++){var dcCount=rsBlocks[r].dataCount;var ecCount=rsBlocks[r].totalCount-dcCount;maxDcCount=Math.max(maxDcCount,dcCount);maxEcCount=Math.max(maxEcCount,ecCount);dcdata[r]=new Array(dcCount);for(var i=0;i<dcdata[r].length;i++){dcdata[r][i]=0xff&buffer.buffer[i+offset];}QRCodeModel.createBytes115,7678
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMode.MODE_NUMBER120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.L120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.M120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.Q120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRErrorCorrectLevel.H120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN000120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN001120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN010120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN011120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN100120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN101120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN110120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRMaskPattern.PATTERN111120,8935
+	return data;};var QRMode={MODE_NUMBER:1<<0,MODE_ALPHA_NUM:1<<1,MODE_8BIT_BYTE:1<<2,MODE_KANJI:1<<3};var QRErrorCorrectLevel={L:1,M:0,Q:3,H:2};var QRMaskPattern={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var QRUtil={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:(1<<10)|(1<<8)|(1<<5)|(1<<4)|(1<<2)|(1<<1)|(1<<0),G18:(1<<12)|(1<<11)|(1<<10)|(1<<9)|(1<<8)|(1<<5)|(1<<2)|(1<<0),G15_MASK:(1<<14)|(1<<12)|(1<<10)|(1<<4)|(1<<1),getBCHTypeInfo:function(data){var d=data<<10;while(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)>=0){d^=(QRUtil.G15<<(QRUtil.getBCHDigit(d)-QRUtil.getBCHDigit(QRUtil.G15)));}QRUtil.PATTERN_POSITION_TABLE120,8935
+	return a;},getLengthInBits:function(mode,type){if(1<=type&&type<10){switch(mode){case QRMode.MODE_NUMBER:return 10;case QRMode.MODE_ALPHA_NUM:return 9;case QRMode.MODE_8BIT_BYTE:return 8;case QRMode.MODE_KANJI:return 8;default:throw new Error("mode:"+mode);}}else if(type<27){switch(mode){case QRMode.MODE_NUMBER:return 12;case QRMode.MODE_ALPHA_NUM:return 11;case QRMode.MODE_8BIT_BYTE:return 16;case QRMode.MODE_KANJI:return 10;default:throw new Error("mode:"+mode);}}else if(type<41){switch(mode){case QRMode.MODE_NUMBER:return 14;case QRMode.MODE_ALPHA_NUM:return 13;case QRMode.MODE_8BIT_BYTE:return 16;case QRMode.MODE_KANJI:return 12;default:throw new Error("mode:"+mode);}}else{throw new Error("type:"+type);}},getLostPoint:function(qrCode){var moduleCount=qrCode.getModuleCount();var lostPoint=0;for(var row=0;row<moduleCount;row++){for(var col=0;col<moduleCount;col++){var sameCount=0;var dark=qrCode.isDark(row,col);for(var r=-1;r<=1;r++){if(row+r<0||moduleCount<=row+r){continue;}lostPoint124,11347
+	var darkCount=0;for(var col=0;col<moduleCount;col++){for(var row=0;row<moduleCount;row++){if(qrCode.isDark(row,col)){darkCount++;}}}darkCount132,13372
+	var ratio=Math.abs(100*darkCount/moduleCount/moduleCount-50)/5;lostPoint+=ratio*10;return lostPoint;}};var QRMath={glog:function(n){if(n<1){throw new Error("glog("+n+")");}ratio133,13506
+	var ratio=Math.abs(100*darkCount/moduleCount/moduleCount-50)/5;lostPoint+=ratio*10;return lostPoint;}};var QRMath={glog:function(n){if(n<1){throw new Error("glog("+n+")");}QRMath.glog133,13506
+	return QRMath.LOG_TABLE[n];},gexp:function(n){while(n<0){n+=255;}QRMath.gexp134,13680
+	return QRMath.EXP_TABLE[n];},EXP_TABLE:new Array(256),LOG_TABLE:new Array(256)};for(var i=0;i<8;i++){QRMath.EXP_TABLE[i]=1<<i;}QRMath.EXP_TABLE136,13771
+	function QRPolynomial(num,shift){if(num.length==undefined){throw new Error(num.length+"/"+shift);}QRPolynomial139,14100
+	QRPolynomial.prototype={get:function(index){return this.num[index];},getLength:function(){return this.num.length;},multiply:function(e){var num=new Array(this.getLength()+e.getLength()-1);for(var i=0;i<this.getLength();i++){for(var j=0;j<e.getLength();j++){num[i+j]^=QRMath.gexp(QRMath.glog(this.get(i))+QRMath.glog(e.get(j)));}}QRPolynomial.get142,14377
+	QRPolynomial.prototype={get:function(index){return this.num[index];},getLength:function(){return this.num.length;},multiply:function(e){var num=new Array(this.getLength()+e.getLength()-1);for(var i=0;i<this.getLength();i++){for(var j=0;j<e.getLength();j++){num[i+j]^=QRMath.gexp(QRMath.glog(this.get(i))+QRMath.glog(e.get(j)));}}QRPolynomial.getLength142,14377
+	QRPolynomial.prototype={get:function(index){return this.num[index];},getLength:function(){return this.num.length;},multiply:function(e){var num=new Array(this.getLength()+e.getLength()-1);for(var i=0;i<this.getLength();i++){for(var j=0;j<e.getLength();j++){num[i+j]^=QRMath.gexp(QRMath.glog(this.get(i))+QRMath.glog(e.get(j)));}}QRPolynomial.multiply142,14377
+	return new QRPolynomial(num,0);},mod:function(e){if(this.getLength()-e.getLength()<0){return this;}QRPolynomial.mod143,14708
+	return new QRPolynomial(num,0).mod(e);}};function QRRSBlock(totalCount,dataCount){this.totalCount=totalCount;this.dataCount=dataCount;}QRRSBlock146,15045
+	QRRSBlock.RS_BLOCK_TABLE=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]];QRRSBlock.getRSBlocks=function(typeNumber,errorCorrectLevel){var rsBlock=QRRSBlock.getRsBlockTable(typeNumber,errorCorrectLevel);if(rsBlock==undefined){throw new Error("bad rs block @ typeNumber:"+typeNumber+"/errorCorrectLevel:"+errorCorrectLevel);}QRRSBlock.getRSBlocks147,15182
+	return list;};QRRSBlock.getRsBlockTable=function(typeNumber,errorCorrectLevel){switch(errorCorrectLevel){case QRErrorCorrectLevel.L:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+0];case QRErrorCorrectLevel.M:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+1];case QRErrorCorrectLevel.Q:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+2];case QRErrorCorrectLevel.H:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+3];default:return undefined;}};function QRBitBuffer(){this.buffer=[];this.length=0;}QRRSBlock.getRsBlockTable149,18538
+	return list;};QRRSBlock.getRsBlockTable=function(typeNumber,errorCorrectLevel){switch(errorCorrectLevel){case QRErrorCorrectLevel.L:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+0];case QRErrorCorrectLevel.M:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+1];case QRErrorCorrectLevel.Q:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+2];case QRErrorCorrectLevel.H:return QRRSBlock.RS_BLOCK_TABLE[(typeNumber-1)*4+3];default:return undefined;}};function QRBitBuffer(){this.buffer=[];this.length=0;}QRBitBuffer149,18538
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.get150,19042
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.put150,19042
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.getLengthInBits150,19042
+	QRBitBuffer.prototype={get:function(index){var bufIndex=Math.floor(index/8);return((this.buffer[bufIndex]>>>(7-index%8))&1)==1;},put:function(num,length){for(var i=0;i<length;i++){this.putBit(((num>>>(length-i-1))&1)==1);}},getLengthInBits:function(){return this.length;},putBit:function(bit){var bufIndex=Math.floor(this.length/8);if(this.buffer.length<=bufIndex){this.buffer.push(0);}QRBitBuffer.putBit150,19042
+	this.length++;}};var QRCodeLimitLength=[[17,14,11,7],[32,26,20,14],[53,42,32,24],[78,62,46,34],[106,84,60,44],[134,106,74,58],[154,122,86,64],[192,152,108,84],[230,180,130,98],[271,213,151,119],[321,251,177,137],[367,287,203,155],[425,331,241,177],[458,362,258,194],[520,412,292,220],[586,450,322,250],[644,504,364,280],[718,560,394,310],[792,624,442,338],[858,666,482,382],[929,711,509,403],[1003,779,565,439],[1091,857,611,461],[1171,911,661,511],[1273,997,715,535],[1367,1059,751,593],[1465,1125,805,625],[1528,1190,868,658],[1628,1264,908,698],[1732,1370,982,742],[1840,1452,1030,790],[1952,1538,1112,842],[2068,1628,1168,898],[2188,1722,1228,958],[2303,1809,1283,983],[2431,1911,1351,1051],[2563,1989,1423,1093],[2699,2099,1499,1139],[2809,2213,1579,1219],[2953,2331,1663,1273]];QRCodeLimitLength152,19489
+	function _isSupportCanvas() {_isSupportCanvas154,20277
+	function _getAndroid() {_getAndroid159,20416
+	var useSVG = document.documentElement.tagName.toLowerCase() === "svg";useSVG222,22347
+	var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function () {Drawing225,22458
+	function _getTypeNumber(sText, nCorrectLevel) {			_getTypeNumber469,29710
+	function _getUTF8Length(sText) {_getUTF8Length505,30464
+		this._htOption = {QRCode._htOption.width536,31534
+			width : 256, QRCode._htOption.height537,31555
+			height : 256,QRCode._htOption.typeNumber538,31572
+			typeNumber : 4,QRCode._htOption.colorDark539,31589
+			colorDark : "#000000",QRCode._htOption.colorLight540,31608
+			colorLight : "#ffffff",QRCode._htOption.correctLevel541,31634
+			vOption	= {vOption.text546,31746
+	}QRCode508,30653
+	QRCode.prototype.makeCode = function (sText) {QRCode.makeCode581,32330
+	QRCode.prototype.makeImage = function () {QRCode.makeImage597,32793
+	QRCode.prototype.clear = function () {QRCode.clear606,33006
+
+app/assets/javascripts/desktop.js,0
+
+app/assets/javascripts/dev/vconsole-elements.min.js,0
+
+app/assets/javascripts/dev/vconsole-sources.min.js,0
+
+app/assets/javascripts/dev/vconsole.min.js,0
+
+app/assets/javascripts/dev.js,0
+
+app/assets/javascripts/mobile/jquery-weui.js,406
+    function fireCallBack(e) {$.fn.transitionEnd.fireCallBack16,356
+  "use strict";$.fn.transitionEnd10,158
+  $.touchEvents = {$.touchEvents.start39,925
+  };$.getTouchPosition43,1107
+  };$.fn.scrollHeight58,1474
+  };$.fn.transform62,1548
+  };$.fn.transition70,1848
+  };$.getTranslate80,2280
+  };$.requestAnimationFrame125,3803
+  };$.cancelAnimationFrame133,4211
+  };$.fn.join142,4576
+
+app/assets/javascripts/mobile/swiper.js,10823
+    var $;$17,335
+        var defaults = {defaults.direction24,551
+            direction: 'horizontal',defaults.touchEventsTarget25,576
+            touchEventsTarget: 'container',defaults.initialSlide26,613
+            initialSlide: 0,defaults.speed27,657
+            speed: 300,defaults.autoplay28,686
+            autoplay: false,defaults.autoplayDisableOnInteraction30,734
+            autoplayDisableOnInteraction: true,defaults.autoplayStopOnLast31,763
+            autoplayStopOnLast: false,defaults.iOSEdgeSwipeDetection32,811
+            iOSEdgeSwipeDetection: false,defaults.iOSEdgeSwipeThreshold34,949
+            iOSEdgeSwipeThreshold: 20,defaults.freeMode35,991
+            freeMode: false,defaults.freeModeMomentum37,1055
+            freeModeMomentum: true,defaults.freeModeMomentumRatio38,1084
+            freeModeMomentumRatio: 1,defaults.freeModeMomentumBounce39,1120
+            freeModeMomentumBounce: true,defaults.freeModeMomentumBounceRatio40,1158
+            freeModeMomentumBounceRatio: 1,defaults.freeModeSticky41,1200
+            freeModeSticky: false,defaults.freeModeMinimumVelocity42,1244
+    var Swiper = function (container, params) {Swiper21,425
+        var initialVirtualTranslate = params && params.virtualTranslate;initialVirtualTranslate218,7804
+        s.currentBreakpoint = undefined;s.getActiveBreakpoint276,9905
+        };s.setBreakpoint297,10735
+        }s.isHorizontal424,16092
+        s.velocity = 0;s.lockSwipeToNext463,17142
+        };s.lockSwipeToPrev470,17365
+        };s.lockSwipes473,17465
+        };s.unlockSwipeToNext476,17588
+        };s.unlockSwipeToPrev479,17689
+        };s.unlockSwipes482,17790
+        function round(a) {round490,18033
+            function onReady () {s.loadImage.onReady510,18750
+        s.imagesLoaded = 0;s.loadImage506,18603
+            function _onReady() {s.preloadImages._onReady534,19537
+        };s.preloadImages531,19432
+        function autoplay() {autoplay553,20423
+        }s.startAutoplay576,21236
+        };s.stopAutoplay584,21555
+        };s.pauseAutoplay591,21852
+        };s.minTranslate612,22554
+        };s.maxTranslate618,22745
+        };s.updateAutoHeight621,22852
+        };s.updateContainerSize632,23284
+        };s.updateSlidesSize659,24343
+            var newSlidesGrid;newSlidesGrid778,30122
+        };s.updateSlidesOffset827,32508
+        };s.updateSlidesProgress832,32749
+        };s.updateProgress865,34305
+        };s.updateActiveIndex887,35246
+        };s.updateClasses923,36845
+        };s.updatePagination1020,41844
+            function forceSetTranslate() {s.update.forceSetTranslate1083,44992
+        };s.update1070,44556
+        };s.onResize1115,46326
+            var slideChangedBySlideTo = false;slideChangedBySlideTo1140,47283
+        var desktopEvents = ['mousedown', 'mousemove', 'mouseup'];desktopEvents1173,48587
+        s.touchEvents = {start1176,48879
+        }s.initEvents1186,49467
+        };s.attachEvents1233,52082
+        };s.detachEvents1236,52160
+        s.allowClick = true;s.preventClicks1245,52388
+        };s.onClickNext1254,52750
+        };s.onClickPrev1260,52928
+        };s.onClickIndex1265,53094
+        function findElementInEvent(e, selector) {findElementInEvent1276,53458
+        }s.updateClickedSlide1295,54156
+        var isTouched,isTouched1352,56731
+        s.touches = {s.touches.startX1372,57327
+            startX: 0,s.touches.startY1373,57349
+            startY: 0,s.touches.currentX1374,57372
+            currentX: 0,s.touches.currentY1375,57395
+            currentY: 0,s.touches.diff1376,57420
+        var isTouchEvent, startMoving;isTouchEvent1381,57511
+        var isTouchEvent, startMoving;s.onTouchStart1381,57511
+            var startX = s.touches.currentX = e.type === 'touchstart' ? e.targetTouches[0].pageX : e.pageX;startX1394,58076
+            var startY = s.touches.currentY = e.type === 'touchstart' ? e.targetTouches[0].pageY : e.pageY;startY1395,58184
+        };s.onTouchMove1425,59523
+            var diff = s.touches.diff = s.isHorizontal() ? s.touches.currentX - s.touches.startX : s.touches.currentY - s.touches.startY;diff1515,63438
+            var disableParentSwiper = true;disableParentSwiper1523,63800
+        };s.onTouchEnd1585,66647
+            var touchEndTime = Date.now();touchEndTime1602,67297
+            var timeDiff = touchEndTime - touchStartTime;timeDiff1603,67340
+            var currentPos;currentPos1637,68806
+            var i, stopIndex = 0, groupSize = s.slidesSizesGrid[0];i1789,75895
+        };s._slideTo1838,77997
+        };s.slideTo1844,78219
+        };s.onTransitionStart1918,81111
+        };s.onTransitionEnd1939,81875
+        };s.slideNext1961,82699
+        };s._slideNext1970,83171
+        };s.slidePrev1973,83275
+        };s._slidePrev1982,83703
+        };s.slideReset1985,83807
+        };s.setWrapperTransition1988,83950
+        };s.setWrapperTranslate2008,84780
+        };s.getTranslate2057,86648
+        };s.getWrapperTranslate2112,89075
+        function initObserver(target, options) {initObserver2124,89446
+        }s.initObservers2142,90337
+        };s.disconnectObservers2156,90852
+        };s.createLoop2162,91057
+        };s.destroyLoop2194,92640
+        };s.reLoop2198,92854
+        };s.fixLoop2208,93183
+        };s.appendSlide2223,93956
+        };s.prependSlide2245,94685
+        };s.removeSlide2267,95467
+        };s.removeAllSlides2304,96923
+        s.effects = {s.effects.fade2317,97278
+                        var progress = slide[0].progress;progress2363,99450
+                        var offset = slide[0].swiperSlideOffset;offset2367,99678
+                        var rotate = -180 * progress,rotate2368,99743
+                    var center = s.isHorizontal() ? -transform + s.width / 2 : -transform + s.height / 2;center2533,109686
+                    var rotate = s.isHorizontal() ? s.params.coverflow.rotate: -s.params.coverflow.rotate;rotate2534,109792
+                    var translate = s.params.coverflow.depth;translate2535,109899
+        s.lazy = {s.lazy.initialImageLoaded2594,113668
+            initialImageLoaded: false,s.lazy.loadImageInSlide2595,113687
+            },s.lazy.load2650,116743
+            },s.lazy.onTransitionStart2691,118933
+            },s.lazy.onTransitionEnd2698,119255
+        s.scrollbar = {s.scrollbar.isTouched2710,119583
+            isTouched: false,s.scrollbar.setDragPosition2711,119607
+            },s.scrollbar.dragStart2731,120731
+            },s.scrollbar.dragMove2748,121322
+            },s.scrollbar.dragEnd2759,121766
+            },s.scrollbar.enableDraggable2776,122411
+            },s.scrollbar.disableDraggable2783,122766
+            },s.scrollbar.set2790,123125
+            },s.scrollbar.setTranslate2827,124768
+            },s.scrollbar.setTransition2882,127021
+        s.controller = {s.controller.LinearSpline2892,127312
+                this.interpolate = function (x2) {s.controller.LinearSpline.interpolate2903,127763
+            },s.controller.getInterpolateFunction2929,128981
+            },s.controller.setTranslate2935,129349
+               function setControlledTranslate(c) {s.controller.setTranslate.setControlledTranslate2939,129529
+            },s.controller.setTransition2975,131665
+                function setControlledTransition(c) {s.controller.setTransition.setControlledTransition2979,131817
+        s.hashnav = {s.hashnav.init3009,133043
+            },s.hashnav.setHash3024,133780
+                var windowScroll = {var.windowScroll.left3056,135333
+        function handleKeyboard(e) {handleKeyboard3034,134125
+        }s.disableKeyboardControl3098,137260
+        };s.enableKeyboardControl3102,137421
+        s.mousewheel = {s.mousewheel.event3112,137706
+            event: false,s.mousewheel.lastScrollTime3113,137731
+        function handleMousewheel(e) {handleMousewheel3135,138522
+        }s.disableMousewheelControl3231,142547
+        };s.enableMousewheelControl3236,142751
+        function setParallaxTransform(el, progress) {setParallaxTransform3248,143079
+        s.parallax = {s.parallax.setTranslate3286,144250
+            },s.parallax.setTransition3299,144938
+        }s.callPlugins3319,145825
+        function normalizeEventName (eventName) {normalizeEventName3332,146320
+        };s.emit3345,146786
+        };s.on3360,147534
+        };s.off3366,147825
+            var _handler = function () {s.once._handler3383,148619
+        };s.once3380,148504
+        s.a11y = {s.a11y.makeFocusable3392,148918
+            },s.a11y.addRole3396,149052
+            },s.a11y.addLabel3400,149179
+            },s.a11y.disable3405,149324
+            },s.a11y.enable3410,149463
+            },s.a11y.onEnterKey3415,149602
+        };s.init3478,152418
+        };s.cleanupStyles3533,154534
+        };s.destroy3574,156224
+    };Swiper3619,157610
+    Swiper.prototype = {Swiper.isSafari3625,157757
+        })(),test3629,157976
+            return Object.prototype.toString.apply(arr) === '[object Array]';test.toString3632,158119
+    var swiperDomPlugins = ['jQuery', 'Zepto', 'Dom7'];swiperDomPlugins3690,160857
+    var domLib;domLib3697,161103
+    function addLibraryPlugin(lib) {lib.fn.swiper3708,161372
+    function addLibraryPlugin(lib) {addLibraryPlugin3708,161372
+                function fireCallBack(e) {domLib.fn.transitionEnd.fireCallBack3724,161992
+        if (!('transitionEnd' in domLib.fn)) {domLib.fn.transitionEnd3720,161720
+        if (!('transform' in domLib.fn)) {domLib.fn.transform3740,162574
+        if (!('transition' in domLib.fn)) {domLib.fn.transition3749,163016
+  var defaults;defaults3788,164272
+  var defaults;$.fn.swiper3788,164272
+  var Photos = function(config) {Photos3811,164727
+  Photos.prototype = {Photos.initConfig3816,164815
+    },Photos.open3833,165309
+      this.imageLastTransform = { x: 0, y: 0 };imageLastTransform.x3900,167759
+      this.imageLastTransform = { x: 0, y: 0 };imageLastTransform.y3900,167759
+      this.imageTransform = { x: 0, y: 0 };imageTransform.x3901,167807
+      this.imageTransform = { x: 0, y: 0 };imageTransform.y3901,167807
+      this.imageDiff = { x: 0, y: 0 };imageDiff.x3902,167851
+      this.imageDiff = { x: 0, y: 0 };imageDiff.y3902,167851
+      this.imageLastDiff = { x: 0, y: 0 };imageLastDiff.x3903,167890
+      this.imageLastDiff = { x: 0, y: 0 };imageLastDiff.y3903,167890
+        this.imageDiff = {this.imageDiff.x3944,169351
+        this.imageTransform = {this.imageTransform.x3949,169464
+      var rect = img[0].getBoundingClientRect();rect4069,173375
+  }$.photoBrowser4155,176977
+
+app/assets/javascripts/mobile.js,0
+
+app/assets/javascripts/pingpp/pingpp.js,0
+
+app/channels/application_cable/channel.rb,104
+module ApplicationCableApplicationCable2,30
+  class Channel < ActionCable::Channel::BaseChannel3,54
+
+app/channels/application_cable/connection.rb,113
+module ApplicationCableApplicationCable2,30
+  class Connection < ActionCable::Connection::BaseConnection3,54
+
+app/controllers/admin/advertisements_controller.rb,410
+class Admin::AdvertisementsController < Admin::ApplicationControllerAdmin2,30
+  def indexindex7,230
+  def newnew12,371
+  def createcreate16,443
+  def show; endshow24,679
+  def edit; endedit26,696
+  def updateupdate28,713
+  def destroydestroy35,893
+  def set_advertisementset_advertisement43,1066
+  def advertisement_paramsadvertisement_params47,1166
+  def set_platformset_platform52,1293
+
+app/controllers/admin/application_controller.rb,122
+class Admin::ApplicationController < ApplicationControllerAdmin2,30
+  def authenticate_admin!authenticate_admin!7,157
+
+app/controllers/admin/car_configurations_controller.rb,312
+class Admin::CarConfigurationsController < Admin::ApplicationControllerAdmin2,30
+  def showshow3,102
+  def updateupdate11,343
+  def deal_down_payments(values)deal_down_payments25,759
+  def deal_loan_periods(values)deal_loan_periods32,971
+  def car_configuration_paramscar_configuration_params43,1329
+
+app/controllers/admin/cars_controller.rb,151
+class Admin::CarsController < Admin::ApplicationControllerAdmin2,30
+  def indexindex3,89
+  def seriesseries16,564
+  def sellablesellable21,708
+
+app/controllers/admin/dashboard_controller.rb,103
+class Admin::DashboardController < Admin::ApplicationControllerAdmin2,30
+  def index; endindex3,94
+
+app/controllers/admin/inspection_report_controller.rb,316
+class Admin::InspectionReportController < Admin::ApplicationControllerAdmin1,0
+  def indexindex6,155
+  def createcreate10,240
+  def destroydestroy15,370
+    def set_carset_car20,450
+    def set_inspection_reportset_inspection_report24,551
+    def inspection_report_paramsinspection_report_params28,677
+
+app/controllers/admin/insurance_records_controller.rb,320
+module AdminAdmin2,30
+  class InsuranceRecordsController < ApplicationControllerInsuranceRecordsController3,43
+    def createcreate4,102
+    def show; endshow17,507
+    def newnew19,526
+    def new_with_imported(car_id)new_with_imported38,1051
+    def insurance_record_paramsinsurance_record_params49,1406
+
+app/controllers/admin/maintenance_records_controller.rb,266
+module AdminAdmin3,31
+  class MaintenanceRecordsController < ApplicationControllerMaintenanceRecordsController4,44
+    def newnew5,105
+    def importimport10,295
+    def createcreate15,455
+    def maintenance_record_paramsmaintenance_record_params23,675
+
+app/controllers/admin/recommended_cars_controller.rb,307
+class Admin::RecommendedCarsController < Admin::ApplicationControllerAdmin2,30
+  def indexindex5,157
+  def newnew13,408
+  def createcreate22,715
+  def updateupdate28,889
+  def destroydestroy33,996
+  def find_recordfind_record40,1092
+  def recommended_car_paramsrecommended_car_params44,1174
+
+app/controllers/admin/sessions_controller.rb,360
+class Admin::SessionsController < Admin::ApplicationControllerAdmin2,30
+  def new; endnew6,168
+  def createcreate8,184
+  def destroydestroy27,660
+  def codecode33,783
+  def phone_valid?(phone)phone_valid?52,1360
+  def code_valid?(phone, code, code_expired_at)code_valid?56,1446
+  def cleanclean63,1683
+  def generate_codegenerate_code69,1789
+
+app/controllers/admin/site_configurations_controller.rb,198
+class Admin::SiteConfigurationsController < Admin::ApplicationControllerAdmin2,30
+  def showshow3,103
+  def updateupdate11,352
+  def site_configuration_paramssite_configuration_params24,730
+
+app/controllers/admin/tenants_controller.rb,293
+class Admin::TenantsController < Admin::ApplicationControllerAdmin2,30
+  def showshow4,141
+  def updateupdate15,506
+  def companiescompanies20,642
+  def companycompany36,1016
+  def alliancesalliances40,1117
+  def alliancealliance55,1463
+  def tenant_paramstenant_params61,1580
+
+app/controllers/admin/transfer_histories_controller.rb,273
+class Admin::TransferHistoriesController < Admin::ApplicationControllerAdmin2,30
+  def indexindex3,102
+  def newnew7,210
+  def createcreate11,262
+  def updateupdate17,404
+  def destroydestroy24,599
+  def transfer_historiy_paramstransfer_historiy_params33,768
+
+app/controllers/advertisements_controller.rb,130
+class AdvertisementsController < ApplicationControllerAdvertisementsController2,30
+  def indexindex3,85
+  def showshow7,174
+
+app/controllers/api_controller.rb,269
+class ApiController < ActionController::BaseApiController2,30
+  def company_urlcompany_url3,75
+  def all_companies_urlall_companies_url9,271
+  def create_tenantcreate_tenant21,552
+  def company_paramscompany_params37,992
+  def initials(name)initials42,1123
+
+app/controllers/application_controller.rb,468
+class ApplicationController < ActionController::BaseApplicationController2,30
+  def basic_params_validationsbasic_params_validations19,623
+  def contact_phonecontact_phone26,830
+  def favorite_car?(car)favorite_car?32,982
+  def recommended_car?(car)recommended_car?36,1082
+  def bargin_car?(car)bargin_car?40,1182
+  def in_stock_car?(car)in_stock_car?44,1230
+  def group_brands(brands)group_brands48,1337
+  def down_payment(price)down_payment58,1638
+
+app/controllers/cars_controller.rb,1157
+class CarsController < ApplicationControllerCarsController2,30
+  def indexindex7,185
+  def shared_indexshared_index26,553
+  def showshow37,875
+  def insurance_detailinsurance_detail86,3333
+  def maintenance_detailmaintenance_detail94,3668
+  def buybuy102,4010
+  def detail_configdetail_config128,5211
+  def likelike132,5308
+  def alliance_similaralliance_similar152,5811
+  def snippetsnippet165,6371
+  def brand_and_seriesbrand_and_series174,6625
+  def loan_dataloan_data195,7155
+  def public_praisespublic_praises204,7352
+  def praisespraises216,7697
+  def inspection_reportinspection_report225,7901
+  def index_carsindex_cars237,8221
+  def load_desktop_brandsload_desktop_brands256,8760
+  def onsale_carsonsale_cars264,9103
+  def similar_cars(similar_type)similar_cars279,9601
+  def fetch_hot_brands(all_brands)fetch_hot_brands300,10354
+  def init_paramsinit_params310,10679
+  def load_enumsload_enums317,10915
+  def alliance_main_site(company_id)alliance_main_site330,11525
+  def alliance_name(company_id)alliance_name337,11748
+  def alliance_main_site_info(company_id)alliance_main_site_info341,11847
+
+app/controllers/concerns/seller_filter.rb,79
+module SellerFilterSellerFilter2,30
+  def current_sellercurrent_seller5,83
+
+app/controllers/concerns/tenant_filter.rb,123
+module TenantFilterTenantFilter5,117
+  def current_tenantcurrent_tenant12,258
+  def valid_tenant?valid_tenant?28,910
+
+app/controllers/concerns/user_agent_concern.rb,426
+module UserAgentConcernUserAgentConcern2,30
+    def self.change_view_by_device(*before_filter_args)change_view_by_device7,156
+  def device_detect_helperdevice_detect_helper13,363
+  class DeviceDetectHelperDeviceDetectHelper17,456
+    def self.before(controller)before18,483
+    def initialize(controller)initialize26,699
+    def detectdetect31,790
+    def mobile?mobile?47,1291
+    def wechat?wechat?51,1342
+
+app/controllers/concerns/wechat_filter.rb,198
+module WechatFilterWechatFilter3,45
+    def self.ensure_wechat_loginensure_wechat_login11,195
+  def current_usercurrent_user16,288
+  def current_wechat_app_usercurrent_wechat_app_user20,342
+
+app/controllers/contact_controller.rb,95
+class ContactController < ApplicationControllerContactController2,30
+  def indexindex5,103
+
+app/controllers/enquiries_controller.rb,174
+class EnquiriesController < ApplicationControllerEnquiriesController3,39
+  def createcreate9,249
+  def index; endindex31,798
+  def enquiry_paramsenquiry_params35,827
+
+app/controllers/home_controller.rb,559
+class HomeController < ApplicationControllerHomeController2,30
+  def indexindex7,211
+  def intro; endintro46,1717
+  def search_pagesearch_page48,1735
+  def short_searchshort_search54,1898
+  def condition_searchcondition_search61,2153
+  def ids_searchids_search69,2483
+  def bargain_carsbargain_cars76,2686
+  def load_onsale_carsload_onsale_cars83,2896
+  def tenant_company_idtenant_company_id91,3182
+  def alliance_main_site(company_id)alliance_main_site95,3236
+  def alliance_main_site_info(company_id)alliance_main_site_info102,3459
+
+app/controllers/me_controller.rb,155
+class MeController < ApplicationControllerMeController2,30
+  def index; endindex6,120
+  def enquiriesenquiries8,138
+  def favoritesfavorites22,583
+
+app/controllers/pay_controller.rb,498
+class PayController < ApplicationControllerPayController2,30
+  def indexindex8,288
+  def createcreate15,544
+  def pay_result_querypay_result_query57,1996
+  def paypay68,2286
+  def notifynotify115,3926
+  def pay_data encrypt_tokenpay_data131,4335
+  def set_carset_car142,4622
+  def event_processevent_process146,4717
+  def verify_signature(raw_data, signature, pub_key_path)verify_signature166,5189
+  def order_successorder_success171,5412
+  def pay_paramspay_params178,5669
+
+app/controllers/sessions_controller.rb,135
+class SessionsController < ApplicationControllerSessionsController2,30
+  def createcreate3,79
+  def user_paramsuser_params18,447
+
+app/controllers/util_controller.rb,135
+class UtilController < ApplicationControllerUtilController2,30
+  def testtest6,151
+  def invalid_tenant; endinvalid_tenant13,246
+
+app/controllers/wechats_controller.rb,664
+class WechatsController < ApplicationControllerWechatsController2,30
+  def newnew8,351
+  def destroydestroy14,565
+  def scanedscaned24,827
+  def login_loop_querylogin_loop_query28,928
+  def authorizationauthorization42,1452
+  def pre_authpre_auth54,1753
+  def authorize_callbackauthorize_callback60,1899
+  def authorized_callbackauthorized_callback67,2053
+  def events_callbackevents_callback81,2565
+  def oauthoauth92,2834
+  def oauth_callbackoauth_callback101,3005
+  def encrypted_messageencrypted_message133,4602
+  def generate_authorization_urlgenerate_authorization_url139,4728
+  def oauth_callback_urloauth_callback_url160,5393
+
+app/decorators/application_decorator.rb,98
+class ApplicationDecorator < Draper::DecoratorApplicationDecorator2,30
+  def domaindomain3,77
+
+app/decorators/insurance_record_decorator.rb,131
+class InsuranceRecordDecorator < ApplicationDecoratorInsuranceRecordDecorator2,30
+  def pay_link(car, user = nil)pay_link5,100
+
+app/decorators/maintenance_record_decorator.rb,135
+class MaintenanceRecordDecorator < ApplicationDecoratorMaintenanceRecordDecorator2,30
+  def pay_link(car, user = nil)pay_link5,102
+
+app/helpers/application_helper.rb,156
+module ApplicationHelperApplicationHelper2,30
+  def nav_active(current_path, path)nav_active3,55
+  def truncate_string(str, size)truncate_string8,227
+
+app/helpers/cars_helper.rb,819
+module CarsHelperCarsHelper2,30
+  def date_format(date_string)date_format3,48
+  def price_format(price_string)price_format8,167
+  def mileage_format(mileage_string)mileage_format12,256
+  def year_month_ch(date_string)year_month_ch16,353
+  def date_simple(date_string)date_simple21,494
+  def car_cover(url, scale_str = nil)car_cover26,631
+  def img_scale(url, scale_str)img_scale30,743
+  def licensed_info(car)licensed_info39,1066
+  def detail_contact_phonedetail_contact_phone56,1584
+  def favorite_image(car)favorite_image65,1763
+  def car_detail_pay_report_link(car, tenant, user, report_object)car_detail_pay_report_link69,1895
+  def inspection_report_link car, inspection_report, browser = 'desktop'inspection_report_link105,3473
+  def status_with_color(result)status_with_color118,4088
+
+app/helpers/me_helper.rb,97
+module MeHelperMeHelper2,30
+  def slide_bar_action_menu(name, path)slide_bar_action_menu3,46
+
+app/helpers/mobile_menu_helper.rb,237
+module MobileMenuHelperMobileMenuHelper3,57
+  def mobile_menumobile_menu4,81
+  def tab_item(controller_name, img_name, alt)tab_item13,354
+  def tab_on(controller_name)tab_on25,761
+  def img_on(controller_name, alt)img_on29,883
+
+app/jobs/application_job.rb,59
+class ApplicationJob < ActiveJob::BaseApplicationJob2,30
+
+app/mailers/application_mailer.rb,68
+class ApplicationMailer < ActionMailer::BaseApplicationMailer2,30
+
+app/models/advertisement.rb,61
+class Advertisement < ApplicationRecordAdvertisement18,722
+
+app/models/application_record.rb,68
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord2,30
+
+app/models/car_configuration.rb,67
+class CarConfiguration < ApplicationRecordCarConfiguration15,654
+
+app/models/enquiry.rb,49
+class Enquiry < ApplicationRecordEnquiry16,567
+
+app/models/enum_type.rb,51
+class EnumType < ApplicationRecordEnumType14,495
+
+app/models/enum_value.rb,53
+class EnumValue < ApplicationRecordEnumValue16,626
+
+app/models/favorite_car.rb,57
+class FavoriteCar < ApplicationRecordFavoriteCar16,579
+
+app/models/inspection_report.rb,67
+class InspectionReport < ApplicationRecordInspectionReport14,541
+
+app/models/insurance_record.rb,469
+class InsuranceRecord < ApplicationRecordInsuranceRecord24,1340
+    def initialize_with_result(car_id, res_data)initialize_with_result44,2058
+    def latest_claim_date(res_data)latest_claim_date67,2845
+    def calculate_claims_abstract(res_data)calculate_claims_abstract73,3024
+  def latest_recordlatest_record98,3788
+  def max_amount_recordmax_amount_record103,3890
+  def records_countrecords_count115,4188
+  def record_abstractrecord_abstract119,4245
+
+app/models/maintenance_record.rb,142
+class MaintenanceRecord < ApplicationRecordMaintenanceRecord22,1049
+  def record_abstractrecord_abstract46,1764
+  def itemsitems63,2214
+
+app/models/order.rb,46
+class Order < ApplicationRecordOrder26,1148
+
+app/models/recommended_car.rb,63
+class RecommendedCar < ApplicationRecordRecommendedCar16,525
+
+app/models/site_configuration.rb,69
+class SiteConfiguration < ApplicationRecordSiteConfiguration20,970
+
+app/models/tenant.rb,102
+class Tenant < ApplicationRecordTenant28,1503
+  def appapp44,1933
+  def full_urlfull_url48,1987
+
+app/models/transfer_history.rb,65
+class TransferHistory < ApplicationRecordTransferHistory16,608
+
+app/models/user.rb,43
+class User < ApplicationRecordUser15,537
+
+app/models/wechat_app.rb,130
+class WechatApp < ApplicationRecordWechatApp26,1432
+  def verify_service?verify_service?48,2567
+  def verify?verify?52,2638
+
+app/models/wechat_app_user_relation.rb,77
+class WechatAppUserRelation < ApplicationRecordWechatAppUserRelation20,909
+
+app/models/wechat_message.rb,110
+class WechatMessage < ApplicationRecordWechatMessage15,539
+  def deliver_xml(from:, to:)deliver_xml22,726
+
+app/models/wechat_record.rb,59
+class WechatRecord < ApplicationRecordWechatRecord14,504
+
+app/models/wechat_user.rb,128
+class WechatUser < ApplicationRecordWechatUser24,1157
+  def subscribesubscribe30,1384
+  def unsubscribeunsubscribe34,1434
+
+app/policies/application_policy.rb,424
+class ApplicationPolicyApplicationPolicy3,31
+  def initialize(user, tenant, record)initialize6,94
+  def index?index?12,199
+  def show?show?16,229
+  def create?create?20,290
+  def new?new?24,321
+  def update?update?28,351
+  def edit?edit?32,382
+  def destroy?destroy?36,413
+  def scopescope40,445
+  class ScopeScope44,509
+    def initialize(user, scope)initialize47,554
+    def resolveresolve52,635
+
+app/policies/car_policy.rb,189
+class CarPolicy < ApplicationPolicyCarPolicy3,31
+  def insurance_detail?(insurance_record)insurance_detail?4,67
+  def maintenance_detail?(maintenance_record)maintenance_detail?15,379
+
+app/services/chelaike/brand_service.rb,214
+module ChelaikeChelaike2,30
+  class BrandServiceBrandService3,46
+    def self.fetch_brands(company_id)fetch_brands4,67
+    def self.fetch_series(brand_name, company_id, fetch_all = false)fetch_series11,303
+
+app/services/chelaike/car_service.rb,747
+module ChelaikeChelaike2,30
+  class CarServiceCarService3,46
+      def fetch_by_ids(ids, company_id)fetch_by_ids5,83
+      def find(id, company_id)find23,681
+      def query(conditions, company_id)query32,946
+      def similar(conditions, company_id)similar37,1149
+      def similar_count(conditions, company_id)similar_count42,1362
+      def subscribe(company_id, enquiry_params)subscribe47,1527
+      def insurance_record(car_id)insurance_record60,1970
+      def maintenance_summary(id, company_id)maintenance_summary73,2358
+      def maintenance_detail(id, company_id)maintenance_detail78,2545
+      def update(car_params, company_id)update85,2776
+      def detection_report(car_id, company_id)detection_report91,2974
+
+app/services/chelaike/company_service.rb,535
+module ChelaikeChelaike2,30
+  class CompanyServiceCompanyService3,46
+      def fetch_company_info(id)fetch_company_info5,87
+      def delete_company_cache(id)delete_company_cache12,301
+      def alliance_owner_info(company_id)alliance_owner_info17,441
+      def alliance_members(company_id)alliance_members24,786
+      def company_cache_key(id)company_cache_key33,1067
+      def company_alliance_cache_key(id)company_alliance_cache_key37,1148
+      def alliance_members_cache_key(id)alliance_members_cache_key41,1250
+
+app/services/chelaike/fetch_service.rb,575
+module ChelaikeChelaike2,30
+  class FetchServiceFetchService3,46
+      def get(url, company_id = nil, params = nil, struct_response = true)get6,137
+      def post(url, company_id = nil, params = nil, struct_response = true)post10,287
+      def patch(url, company_id = nil, params = nil, struct_response = true)patch14,439
+      def request(method, url, company_id = nil, params = nil, struct_response = true)request18,593
+      def hosthost46,1572
+      def secretsecret50,1632
+class OpenStructOpenStruct58,1761
+  def as_json(options = nil)as_json59,1778
+
+app/services/chelaike/public_praise_service.rb,197
+module ChelaikeChelaike2,30
+  class PublicPraiseServicePublicPraiseService3,46
+      def fetch_sumup(car_id)fetch_sumup5,92
+      def fetch_public_praises(params)fetch_public_praises11,315
+
+app/services/chelaike/seller_service.rb,141
+module ChelaikeChelaike2,30
+  class SellerServiceSellerService3,46
+    def self.fetch_seller_info(id, company_id)fetch_seller_info4,68
+
+app/services/chelaike/util.rb,101
+module ChelaikeChelaike2,30
+  class UtilUtil3,46
+    def self.shorten_url(url)shorten_url5,103
+
+app/services/enum_service.rb,142
+class EnumServiceEnumService2,30
+  def self.fetch_enums(type_code)fetch_enums3,48
+  def self.find_enum(type_code, value)find_enum11,283
+
+app/services/wechat/app.rb,420
+module WechatWechat2,30
+  class AppApp3,44
+      def profile(app_id)profile8,115
+      def app_access_token(app_id)app_access_token19,518
+      def long2short(long_url, app_id)long2short42,1441
+      def set_app_access_token(app_id, access_token)set_app_access_token51,1773
+      def save_refresh_token(app, refresh_token)save_refresh_token59,1975
+      def application_info(data)application_info64,2095
+
+app/services/wechat/authorization_service.rb,481
+module WechatWechat4,69
+  class AuthorizationServiceAuthorizationService5,83
+    def initialize(auth_code, tenant)initialize8,163
+    def executeexecute13,262
+    def save_wechat_app(wechat_app)save_wechat_app26,662
+    def find_wechat_appfind_wechat_app40,1155
+    def new_wechat_appnew_wechat_app44,1231
+    def fetch_users(wechat_app_id)fetch_users48,1329
+    def batch_upsert_users(wechat_users)batch_upsert_users53,1482
+    def app_paramsapp_params59,1637
+
+app/services/wechat/component.rb,580
+module WechatWechat2,30
+  module ComponentComponent3,44
+    class TicketError < StandardError; endTicketError7,102
+    class IPWhitelistError < StandardError; endIPWhitelistError8,145
+    def signature?(timestamp, nonce, signature)signature?10,194
+    def set_component_verify_ticket(messages, encrypted_message)set_component_verify_ticket14,321
+    def component_verify_ticketcomponent_verify_ticket31,929
+    def component_access_tokencomponent_access_token37,1082
+    def authorize_app(auth_code)authorize_app50,1581
+    def preauth_codepreauth_code59,1874
+
+app/services/wechat/crypto.rb,373
+module WechatWechat2,30
+  module CryptoCrypto3,44
+    def generate_signature(*keys)generate_signature4,60
+    def decrypt(encrypted_message)decrypt9,164
+    def encrypt(message)encrypt23,575
+    def handle_cipher(action, aes_key, message)handle_cipher38,1018
+    def pkcs7_decode(message)pkcs7_decode47,1282
+    def pkcs7_encode(message)pkcs7_encode55,1443
+
+app/services/wechat/desktop_auth.rb,268
+module WechatWechat1,0
+  module DesktopAuthDesktopAuth2,14
+    def encode(data = nil)encode5,52
+    def verify?(token)verify?15,247
+    def set_user open_id_tokenset_user20,342
+    def parse_token tokenparse_token26,518
+    def decode(token)decode33,694
+
+app/services/wechat/error.rb,166
+module WechatWechat2,30
+  module ErrorError3,44
+    class Menu < StandardError; endMenu4,59
+    class Unauthenticated < StandardError; endUnauthenticated5,95
+
+app/services/wechat/message/article_item.rb,95
+module WechatWechat4,47
+  module MessageMessage5,61
+    class ArticleItemArticleItem6,78
+
+app/services/wechat/message/articles.rb,141
+module WechatWechat25,646
+  module MessageMessage26,660
+    class Articles < BaseArticles27,677
+      def initializeinitialize31,870
+
+app/services/wechat/message/base.rb,151
+module WechatWechat4,47
+  module MessageMessage5,61
+    class BaseBase6,78
+      def initializeinitialize16,353
+      def to_xmlto_xml21,468
+
+app/services/wechat/message/encrypt_message.rb,138
+module WechatWechat13,281
+  module MessageMessage14,295
+    class EncryptMessageEncryptMessage15,312
+      def to_xmlto_xml24,548
+
+app/services/wechat/message/text.rb,133
+module WechatWechat11,276
+  module MessageMessage12,290
+    class Text < BaseText13,307
+      def initializeinitialize16,413
+
+app/services/wechat/message/transfer_customer_service.rb,171
+module WechatWechat14,333
+  module MessageMessage15,347
+    class TransferCustomerService < BaseTransferCustomerService16,364
+      def initializeinitialize18,448
+
+app/services/wechat/mp/menu.rb,122
+module WechatWechat2,30
+  module MpMp3,44
+    class MenuMenu4,56
+      def self.update(app_id, menus)update13,338
+
+app/services/wechat/mp/message.rb,239
+module WechatWechat2,30
+  module MpMp3,44
+    class MessageMessage4,56
+        def text(app_id, open_id, content)text8,116
+        def articles(app_id, open_id, content)articles12,257
+        def reply(app_id, data)reply18,420
+
+app/services/wechat/mp/qrcode.rb,129
+module WechatWechat2,30
+  module MpMp3,44
+    class QrcodeQrcode4,56
+      def self.generate(app_id, scene)generate8,119
+
+app/services/wechat/mp/user.rb,418
+module WechatWechat2,30
+  module MpMp3,44
+    class UserUser4,56
+        def all(app_id)all8,113
+        def details(app_id, open_ids)details12,174
+        def detail(app_id, open_id)detail29,838
+        def info(app_id, user)info42,1234
+        def fetch(app_id, open_ids = [], next_id = nil)fetch63,1860
+        def finish?(next_id, open_ids)finish?83,2491
+        def gender(value)gender87,2631
+
+app/services/wechat/open.rb,411
+module WechatWechat7,282
+  class OpenOpen8,296
+      def oauth_url(tenant, silent = true, callback_url = nil, state = "")oauth_url14,396
+      def oauth_callback(tenant, code)oauth_callback35,1424
+      def refresh_token(tenant, refresh_token)refresh_token73,2865
+      def set_wechat_app_user(tenant, data)set_wechat_app_user90,3445
+      def get_user_detail(current_user)get_user_detail122,4435
+
+app/services/wechat/reducer/click.rb,139
+module WechatWechat2,30
+  class ReducerReducer3,44
+    module ClickClick4,60
+      def handle_click(app_id, data)handle_click6,101
+
+app/services/wechat/reducer/event.rb,182
+module WechatWechat4,69
+  class ReducerReducer5,83
+    module EventEvent6,99
+      def subscribe(app_id, event)subscribe9,206
+      def unsubscribe(event)unsubscribe21,600
+
+app/services/wechat/reducer/msg.rb,169
+module WechatWechat2,30
+  class ReducerReducer3,44
+    module MsgMsg4,60
+      def transfer_customer_service_message(data)transfer_customer_service_message7,104
+
+app/services/wechat/reducer/scene.rb,391
+module WechatWechat2,30
+  class ReducerReducer3,44
+    module SceneScene4,60
+      def price_tag_scan(message, _app_id, data)price_tag_scan7,129
+      def scan_scene(type, id)scan_scene25,661
+      def find_car(data)find_car40,947
+      def find_channel(data)find_channel44,1025
+      def car_description(car)car_description48,1111
+      def car_cover(car)car_cover58,1426
+
+app/services/wechat/reducer/test.rb,126
+module WechatWechat2,30
+  class ReducerReducer3,44
+    module TestTest4,60
+      def test_case(message)test_case6,109
+
+app/services/wechat/reducer.rb,432
+module WechatWechat2,30
+  class ReducerReducer3,44
+      def execute(app_id, messages, encrypted_message)execute20,396
+      def handle_event(app_id, event, message)handle_event45,1075
+      def handle_scene(app_id, scene, message, subscribe = false)handle_scene60,1560
+      def record_action(app_id, open_id, data, action)record_action77,2087
+      def handle_customer_message(message)handle_customer_message88,2306
+
+app/services/wechat/reply.rb,617
+module WechatWechat2,30
+  module ReplyReply3,44
+    def reply_text_message(from:, to:, content:)reply_text_message6,79
+    def reply_articles_message(from:, to:, articles:)reply_articles_message14,320
+    def generate_article(title:, desc:, pic_url:, link_url:)generate_article24,653
+    def reply_transfer_customer_service_message(from:, to:)reply_transfer_customer_service_message33,898
+    def encrypt_message(msg_xml)encrypt_message42,1144
+    def generate_encrypt_message(encrypt_xml)generate_encrypt_message49,1318
+    def generate_msg_signature(encrypt_msg, msg)generate_msg_signature60,1744
+
+app/services/wechat/request.rb,182
+module WechatWechat2,30
+  module RequestRequest3,44
+    def wechat_post(url, params = {}, _options = {})wechat_post4,61
+    def wechat_get(url, _options = {})wechat_get8,203
+
+app/services/wechat.rb,77
+module WechatWechat6,209
+  def self.find_app_by(app_id)find_app_by19,721
+
+app/uploaders/image_uploader.rb,187
+class ImageUploader < CarrierWave::Uploader::BaseImageUploader2,30
+  def store_dirstore_dir13,426
+  def extension_whitelistextension_whitelist33,985
+  def filenamefilename39,1178
+
+app/uploaders/inspection_uploader.rb,197
+class InspectionUploader < CarrierWave::Uploader::BaseInspectionUploader1,0
+  def store_dirstore_dir13,402
+  def extension_whitelistextension_whitelist41,1313
+  def filenamefilename47,1506
+
+app/views/util/invalid_tenant.html,0
+
+bin/bundle,0
+
+bin/rails,0
+
+bin/rake,0
+
+bin/setup,33
+def system!(*args)system!9,173
+
+bin/spring,0
+
+bin/update,33
+def system!(*args)system!9,173
+
+config/application.rb,100
+module OfficialSiteOfficialSite19,504
+  class Application < Rails::ApplicationApplication20,524
+
+config/boot.rb,0
+
+config/deploy/prerelease.rb,0
+
+config/deploy/production.rb,0
+
+config/deploy/staging.rb,0
+
+config/deploy.rb,0
+
+config/environment.rb,0
+
+config/environments/development.rb,0
+
+config/environments/prerelease.rb,0
+
+config/environments/production.rb,0
+
+config/environments/staging.rb,0
+
+config/environments/test.rb,0
+
+config/initializers/application_controller_renderer.rb,0
+
+config/initializers/assets.rb,0
+
+config/initializers/backtrace_silencers.rb,0
+
+config/initializers/carrierwave.rb,0
+
+config/initializers/cookies_serializer.rb,0
+
+config/initializers/device_detector.rb,0
+
+config/initializers/filter_parameter_logging.rb,0
+
+config/initializers/inflections.rb,0
+
+config/initializers/mime_types.rb,0
+
+config/initializers/new_framework_defaults.rb,0
+
+config/initializers/pingpp.rb,0
+
+config/initializers/session_store.rb,0
+
+config/initializers/wrap_parameters.rb,0
+
+config/initializers/yunpian_sms.rb,0
+
+config/puma.rb,0
+
+config/routes.rb,0
+
+config/spring.rb,0
+
+db/migrate/20170207092637_create_users.rb,90
+class CreateUsers < ActiveRecord::Migration[5.0]CreateUsers1,0
+  def changechange2,49
+
+db/migrate/20170207101118_create_tenants.rb,94
+class CreateTenants < ActiveRecord::Migration[5.0]CreateTenants1,0
+  def changechange2,51
+
+db/migrate/20170208023540_add_tenant_id_to_users.rb,104
+class AddTenantIdToUsers < ActiveRecord::Migration[5.0]AddTenantIdToUsers1,0
+  def changechange2,56
+
+db/migrate/20170209021123_create_recommended_cars.rb,110
+class CreateRecommendedCars < ActiveRecord::Migration[5.0]CreateRecommendedCars1,0
+  def changechange2,59
+
+db/migrate/20170209021907_create_advertisements.rb,108
+class CreateAdvertisements < ActiveRecord::Migration[5.0]CreateAdvertisements1,0
+  def changechange2,58
+
+db/migrate/20170209022703_create_site_configurations.rb,116
+class CreateSiteConfigurations < ActiveRecord::Migration[5.0]CreateSiteConfigurations1,0
+  def changechange2,62
+
+db/migrate/20170220062341_add_company_id_to_site_configurations.rb,132
+class AddCompanyIdToSiteConfigurations < ActiveRecord::Migration[5.0]AddCompanyIdToSiteConfigurations1,0
+  def changechange2,70
+
+db/migrate/20170224042314_add_type_and_company_to_tenants.rb,120
+class AddTypeAndCompanyToTenants < ActiveRecord::Migration[5.0]AddTypeAndCompanyToTenants1,0
+  def changechange2,64
+
+db/migrate/20170228043151_add_phone_to_tenants.rb,102
+class AddPhoneToTenants < ActiveRecord::Migration[5.0]AddPhoneToTenants1,0
+  def changechange2,55
+
+db/migrate/20170301025850_create_enum_types.rb,98
+class CreateEnumTypes < ActiveRecord::Migration[5.0]CreateEnumTypes1,0
+  def changechange2,53
+
+db/migrate/20170301030209_create_enum_values.rb,100
+class CreateEnumValues < ActiveRecord::Migration[5.0]CreateEnumValues1,0
+  def changechange2,54
+
+db/migrate/20170308062730_create_wechat_apps.rb,100
+class CreateWechatApps < ActiveRecord::Migration[5.0]CreateWechatApps1,0
+  def changechange2,54
+
+db/migrate/20170308063343_create_wechat_users.rb,102
+class CreateWechatUsers < ActiveRecord::Migration[5.0]CreateWechatUsers1,0
+  def changechange2,55
+
+db/migrate/20170308063515_create_wechat_app_user_relations.rb,124
+class CreateWechatAppUserRelations < ActiveRecord::Migration[5.0]CreateWechatAppUserRelations1,0
+  def changechange2,66
+
+db/migrate/20170308063608_create_wechat_records.rb,106
+class CreateWechatRecords < ActiveRecord::Migration[5.0]CreateWechatRecords1,0
+  def changechange2,57
+
+db/migrate/20170308065938_create_wechat_messages.rb,108
+class CreateWechatMessages < ActiveRecord::Migration[5.0]CreateWechatMessages1,0
+  def changechange2,58
+
+db/migrate/20170309025659_add_columns_to_recommended_car.rb,120
+class AddColumnsToRecommendedCar < ActiveRecord::Migration[5.0]AddColumnsToRecommendedCar1,0
+  def changechange2,64
+
+db/migrate/20170309080442_create_favorite_cars.rb,104
+class CreateFavoriteCars < ActiveRecord::Migration[5.0]CreateFavoriteCars1,0
+  def changechange2,56
+
+db/migrate/20170311045619_add_order_to_enum_values.rb,108
+class AddOrderToEnumValues < ActiveRecord::Migration[5.0]AddOrderToEnumValues1,0
+  def changechange2,58
+
+db/migrate/20170315064625_create_enquiries.rb,98
+class CreateEnquiries < ActiveRecord::Migration[5.0]CreateEnquiries1,0
+  def changechange2,53
+
+db/migrate/20170316132139_add_platform_to_advertisements.rb,122
+class AddPlatformToAdvertisements < ActiveRecord::Migration[5.0]AddPlatformToAdvertisements1,0
+  def changechange2,65
+
+db/migrate/20170319065918_add_icon_to_site_configurations.rb,122
+class AddIconToSiteConfigurations < ActiveRecord::Migration[5.0]AddIconToSiteConfigurations1,0
+  def changechange2,65
+
+db/migrate/20170319073126_create_car_configurations.rb,114
+class CreateCarConfigurations < ActiveRecord::Migration[5.0]CreateCarConfigurations1,0
+  def changechange2,61
+
+db/migrate/20170409055417_add_default_wechat_app_to_tenants.rb,124
+class AddDefaultWechatAppToTenants < ActiveRecord::Migration[5.0]AddDefaultWechatAppToTenants1,0
+  def changechange2,66
+
+db/migrate/20170411093900_add_logo_to_site_configuration.rb,120
+class AddLogoToSiteConfiguration < ActiveRecord::Migration[5.0]AddLogoToSiteConfiguration1,0
+  def changechange2,64
+
+db/migrate/20170417061012_add_phone_to_wechat_user.rb,108
+class AddPhoneToWechatUser < ActiveRecord::Migration[5.0]AddPhoneToWechatUser1,0
+  def changechange2,58
+
+db/migrate/20170418031716_add_tenant_to_favories_and_enquiries.rb,130
+class AddTenantToFavoriesAndEnquiries < ActiveRecord::Migration[5.0]AddTenantToFavoriesAndEnquiries1,0
+  def changechange2,69
+
+db/migrate/20170428111416_add_loan_data_to_car_configuration.rb,126
+class AddLoanDataToCarConfiguration < ActiveRecord::Migration[5.0]AddLoanDataToCarConfiguration1,0
+  def changechange2,67
+
+db/migrate/20170428112548_remove_fields_from_car_configuration.rb,132
+class RemoveFieldsFromCarConfiguration < ActiveRecord::Migration[5.0]RemoveFieldsFromCarConfiguration1,0
+  def changechange2,70
+
+db/migrate/20170503185732_create_orders.rb,92
+class CreateOrders < ActiveRecord::Migration[5.0]CreateOrders1,0
+  def changechange2,50
+
+db/migrate/20170504035056_change_order_status_to_string.rb,118
+class ChangeOrderStatusToString < ActiveRecord::Migration[5.0]ChangeOrderStatusToString1,0
+  def changechange2,63
+
+db/migrate/20170504074554_create_insurance_records.rb,112
+class CreateInsuranceRecords < ActiveRecord::Migration[5.0]CreateInsuranceRecords1,0
+  def changechange2,60
+
+db/migrate/20170504075227_change_car_configuration_loan_data_default.rb,142
+class ChangeCarConfigurationLoanDataDefault < ActiveRecord::Migration[5.0]ChangeCarConfigurationLoanDataDefault1,0
+  def changechange2,75
+
+db/migrate/20170505034914_add_make_to_insurance_records.rb,119
+class AddMakeToInsuranceRecords < ActiveRecord::Migration[5.0]AddMakeToInsuranceRecords2,30
+  def changechange3,93
+
+db/migrate/20170509055534_create_transfer_histories.rb,114
+class CreateTransferHistories < ActiveRecord::Migration[5.0]CreateTransferHistories1,0
+  def changechange2,61
+
+db/migrate/20170510030759_add_slogan_to_site_configuration.rb,124
+class AddSloganToSiteConfiguration < ActiveRecord::Migration[5.0]AddSloganToSiteConfiguration1,0
+  def changechange2,66
+
+db/migrate/20170511231937_create_maintenance_records.rb,116
+class CreateMaintenanceRecords < ActiveRecord::Migration[5.0]CreateMaintenanceRecords1,0
+  def changechange2,62
+
+db/migrate/20170512020642_add_maintenance_price_for_car_configurations.rb,146
+class AddMaintenancePriceForCarConfigurations < ActiveRecord::Migration[5.0]AddMaintenancePriceForCarConfigurations1,0
+  def changechange2,77
+
+db/migrate/20170512120411_add_insurance_price_cents_to_car_configurations.rb,150
+class AddInsurancePriceCentsToCarConfigurations < ActiveRecord::Migration[5.0]AddInsurancePriceCentsToCarConfigurations1,0
+  def changechange2,79
+
+db/migrate/20170515111002_add_product_id_to_order.rb,106
+class AddProductIdToOrder < ActiveRecord::Migration[5.0]AddProductIdToOrder1,0
+  def changechange2,57
+
+db/migrate/20170515115918_addqr_code_to_order.rb,100
+class AddqrCodeToOrder < ActiveRecord::Migration[5.0]AddqrCodeToOrder1,0
+  def changechange2,54
+
+db/migrate/20170517030338_add_statistics_code_to_site_configuration.rb,140
+class AddStatisticsCodeToSiteConfiguration < ActiveRecord::Migration[5.0]AddStatisticsCodeToSiteConfiguration1,0
+  def changechange2,74
+
+db/migrate/20170517095132_add_super_manager_to_wechat_user.rb,123
+class AddSuperManagerToWechatUser < ActiveRecord::Migration[5.0]AddSuperManagerToWechatUser2,30
+  def changechange3,95
+
+db/migrate/20170526005733_add_default_maintenance_and_insurance_price.rb,144
+class AddDefaultMaintenanceAndInsurancePrice < ActiveRecord::Migration[5.0]AddDefaultMaintenanceAndInsurancePrice1,0
+  def changechange2,76
+
+db/migrate/20170527000319_create_inspection_reports.rb,114
+class CreateInspectionReports < ActiveRecord::Migration[5.0]CreateInspectionReports1,0
+  def changechange2,61
+
+db/migrate/20170530155231_add_external_to_inspection_report.rb,126
+class AddExternalToInspectionReport < ActiveRecord::Migration[5.0]AddExternalToInspectionReport1,0
+  def changechange2,67
+
+db/schema.rb,0
+
+db/seeds.rb,0
+
+public/404.html,0
+
+public/422.html,0
+
+public/500.html,0
+
+services/user_service/login.rb,110
+class UserServiceUserService2,30
+  class LoginLogin3,48
+    def login(username, password); endlogin4,62
+
+spec/controllers/admin/car_configurations_controller_spec.rb,0
+
+spec/controllers/admin/inspection_report_controller_spec.rb,0
+
+spec/controllers/admin/recommended_car_controller_spec.rb,0
+
+spec/controllers/admin/recommended_cars_controller_spec.rb,0
+
+spec/controllers/admin/sessions_controller_spec.rb,0
+
+spec/controllers/admin/site_configurations_controller_spec.rb,0
+
+spec/controllers/admin/tenants_controller_spec.rb,0
+
+spec/controllers/advertisements_controller_spec.rb,0
+
+spec/controllers/api_controller_spec.rb,0
+
+spec/controllers/cars_controller_spec.rb,0
+
+spec/controllers/contact_controller_spec.rb,0
+
+spec/controllers/enquiries_controller_spec.rb,0
+
+spec/controllers/home_controller_spec.rb,0
+
+spec/controllers/me_controller_spec.rb,0
+
+spec/controllers/sessions_controller_spec.rb,0
+
+spec/controllers/wechats_controller_spec.rb,0
+
+spec/decorators/insurance_record_decorator_spec.rb,0
+
+spec/models/advertisement_spec.rb,0
+
+spec/models/car_configuration_spec.rb,0
+
+spec/models/enquiry_spec.rb,0
+
+spec/models/enum_type_spec.rb,0
+
+spec/models/enum_value_spec.rb,0
+
+spec/models/inspection_report_spec.rb,0
+
+spec/models/insurance_record_spec.rb,42
+  def response_dataresponse_data28,1533
+
+spec/models/recommended_car_spec.rb,0
+
+spec/models/site_configuration_spec.rb,0
+
+spec/models/user_spec.rb,0
+
+spec/rails_helper.rb,0
+
+spec/spec_helper.rb,0
+
+spec/support/authentication_helper.rb,91
+module AuthenticationHelperAuthenticationHelper2,30
+  def login_tenantlogin_tenant3,58
+
+spec/support/company_helper.rb,89
+module CompanyHelperCompanyHelper2,30
+  def mock_company(attrs = {})mock_company3,51
+
+spec/support/mock_chelaike_helper.rb,99
+module MockChelaikeHelperMockChelaikeHelper2,30
+  def mock_car_subscribemock_car_subscribe3,56
+
+spec/support/mock_device_helper.rb,121
+module MockDeviceHelperMockDeviceHelper2,30
+  def mock_mobilemock_mobile3,54
+  def mock_descktopmock_descktop8,242
+
+spec/support/response_helper.rb,81
+module ResponseHelperResponseHelper2,30
+  def response_jsonresponse_json3,52
+
+spec/views/cars/index.html.erb_spec.rb,0
+
+spec/views/contact/index.html.erb_spec.rb,0
+
+spec/views/home/index.html.erb_spec.rb,0
+
+spec/views/me/enquiries.html.erb_spec.rb,0
+
+spec/views/me/favorites.html.erb_spec.rb,0
+
+spec/views/me/index.html.erb_spec.rb,0

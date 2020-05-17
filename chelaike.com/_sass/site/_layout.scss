@@ -1,0 +1,148 @@
+.nav-wrapper {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2px;
+}
+
+.nav {
+  @extend %clearfix;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  .logo {
+    float: left;
+    width: 210px;
+    height: 100px;
+    padding-top: 10px;
+  }
+
+  .menu {
+    float: right;
+    line-height: 100px;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      width: 88px;
+      margin-left: 8px;
+      text-align: center;
+      position: relative;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+
+      &:hover:before, &:focus:before, &:active:before {
+        transform: scaleY(1);
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #02c05c;
+        transform: scaleY(0);
+        transform-origin: 50% 0;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+
+      &.active {
+        a {
+          color: #fff;
+          background: #02c05c;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        color: #000;
+        text-decoration: none;
+        display: block;
+        background-color: transparent;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  .info-wrapper {
+    min-width: 1280px;
+    height: 220px;
+    background: #333333;
+    color: #fff;
+
+    .info {
+      width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      @extend %clearfix;
+
+      .box {
+        width: 320px;
+        padding: 34px 64px 0 64px;
+        float: left;
+      }
+
+      .item {
+        margin-bottom: 8px;
+      }
+
+      .title {
+        font-size: 16px;
+      }
+
+      .qrcodes {
+        display: flex;
+        text-align: center;
+
+        .qrcode:first-child {
+          margin-right: 26px;
+        }
+
+        .qrcode img {
+          width: 74px;
+          height: 74px;
+        }
+
+        .text {
+          margin-top: 5px;
+          font-size: 14px;
+        }
+      }
+
+      .download {
+        display: flex;
+
+        .app {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+
+  .copyright-wrapper {
+    min-width: 1280px;
+    line-height: 80px;
+    background: #404040;
+    color: #fff;
+
+    .copyright {
+      width: 1280px;
+      background: #404040;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 64px;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+<% content_for :title, @car.system_name %>
+<% @without_menu = true %>
+<div class="weui-tab__bd car-detail">
+  <!-- car images -->
+  <%= render "images_swiper"%>
+
+
+  <% content_for :append_doms do %>
+    <!-- gallery -->
+    <%= render "photo_gallery"%>
+  <% end %>
+
+  <!-- car 基本信息 -->
+  <div class="car-info-header white-background">
+    <div class="car-basic-info">
+      <div class="tc-car-title">
+        <%= @car.system_name %>
+        <input type="hidden" id="id" value="<%= @car.id %>" >
+      </div>
+      <div class="car-price-info">
+        <div class="tc-price">
+          <% if bargin_car?(@car) %>
+            特惠价：<b><%= @car.onsale_price_wan %></b>万
+              <span>新车含税价：<s><%= @car.new_car_final_price_wan %>万元</s></span>
+          <% elsif @car.show_price_wan %>
+            <% if @car.is_fixed_price %>
+              一口价
+            <% end %>
+            ￥<b><%= @car.show_price_wan %></b>万
+              <span>新车含税价：<s><%= @car.new_car_final_price_wan %>万元</s></span>
+          <% else %>
+            即将开售
+          <% end %>
+        </div>
+      </div>
+      <% if @car.reserved %>
+        <div class="tc-car-reserved">
+          <span>定</span> 该车已被预定
+        </div>
+      <% end %>
+      <div class="tc-loan">
+        <%= image_tag "common/loan.png" %>
+        首付<%= down_payment(@car.onsale_price_wan || @car.show_price_wan) %>万
+        <% if (@tenant.car_configuration.try(:loan_periods).try(:size) || 0) > 0 &&
+              (@tenant.car_configuration.try(:down_payments).try(:size) || 0) > 0
+        %>
+          <a href="javascript:;" class="open-popup">分期试算</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="car-info-body white-background">
+    <div class="tc-car-basic">
+      <div class="weui-flex">
+        <div class="weui-flex__item tc-cell">
+          <div><%= @car.mileage.presence || "-" %>万公里</div>
+          <div>行驶里程</div>
+        </div>
+        <div class="weui-flex__item tc-cell">
+          <% info = licensed_info(@car) %>
+          <div><%= info[0] %></div>
+          <div><%= info[1] %></div>
+        </div>
+        <div class="weui-flex__item tc-cell">
+          <div><%= @car.shop.city.presence || "-" %></div>
+          <div>车牌所在地</div>
+        </div>
+      </div>
+      <div class="weui-flex">
+        <div class="weui-flex__item tc-cell">
+          <div><%= @car.emission_standard_text.presence || "-"%></div>
+          <div>排放标准</div>
+        </div>
+        <div class="weui-flex__item tc-cell">
+          <div><%= @transmission_name.presence || "-" %></div>
+          <div>变速箱</div>
+        </div>
+        <div class="weui-flex__item tc-cell">
+          <div><%= @car.displacement_text.presence || "-" %></div>
+          <div>排量</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 特惠说明 -->
+  <%= render partial: "text_partial", locals: { title: "特惠说明", content: bargin_car?(@car) && @car.onsale_description} %>
+
+  <!-- 销售员信息 -->
+  <% if @seller %>
+    <%= render "seller_basic_info" %>
+  <% end %>
+
+  <!-- 卖点描述 -->
+  <%= render partial: "text_partial", locals: { title: "卖点描述", content: @car.selling_point} %>
+
+  <!-- 亮点配置 -->
+  <%= render "car_import_config" %>
+
+  <!-- 整备内容 -->
+  <!-- <%= render "prepare_content" %> -->
+
+  <!-- 维保记录 -->
+  <% if @maintenance_summary.present? %>
+    <%= render "maintenance_record", maintenance_record: @maintenance_summary.decorate %>
+  <% end %>
+
+  <!-- 保险理赔记录 -->
+  <% if @insurance_record %>
+    <%= render partial: "insurance_record", locals: { insurance_record: @insurance_record.decorate } %>
+  <% end %>
+
+  <!-- 检测报告 -->
+  <%= render "inspection_report" %>
+
+  <!-- 过户历史 -->
+  <%= render "transfer_history" %>
+
+  <!-- 车型口碑 -->
+  <%= render "public_praise" %>
+
+  <!-- 本店相似车辆 -->
+  <% if @similar_cars.size > 0 %>
+    <%= render partial: "similar_cars", locals: { cars: @similar_cars, title: "本店", type: :local } %>
+  <% end %>
+
+  <!-- 联盟相似车辆 -->
+  <% if @alliance_similar_cars.size > 0 %>
+    <%= render partial: "similar_cars", locals: { cars: @alliance_similar_cars, title: "联盟", type: :alliance } %>
+  <% end %>
+
+  <!-- 分享页面里的去主页 -->
+  <% if @shared %>
+    <%= render "shared_go_home" %>
+  <% end %>
+</div>
+
+<!-- 最低价 -->
+<%= render "ask_low_price" %>
+
+<% content_for :bottom_bar do %>
+  <%= render "detail_footer" %>
+<% end %>

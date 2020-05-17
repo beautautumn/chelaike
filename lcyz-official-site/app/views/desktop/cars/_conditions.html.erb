@@ -1,0 +1,155 @@
+<div class="container conditions-wraper">
+  <div class="query-conditions-panel">
+    <div class="query-codition-category clearfix">
+      <div>品牌：</div>
+      <div data-field="brand_name">
+        <a href="javascript:;" data-value="" class="active">不限</a>
+        <% @hot_brands.each do |brand| %>
+          <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+        <% end %>
+      </div>
+      <div class="pull-right">
+        <a href="javascript:;" data-behavior="show_all_brands">
+          更多
+          <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+    <div class="query-codition-category clearfix">
+      <div>车系：</div>
+      <div data-field="series_name">
+        <a href="javascript:;" data-value="" class="active">不限</a>
+        <% @series.each do |s| %>
+          <a href="javascript:;" data-value="<%= s.name %>"><%= s.name %></a>
+        <% end %>
+      </div>
+    </div>
+    <div class="query-codition-category clearfix">
+      <div>价格：</div>
+      <div data-field="show_price_cents" class="online_price_cents_links">
+        <a href="javascript:;" data-value="-" class="active">不限</a>
+        <% for price in @price_enums %>
+          <a data-value="<%= price.value %>" href="javascript:;"><%= price.name %></a>
+        <% end %>
+      </div>
+      <form class="form-inline" data-field="show_price_cents" data-scalage="1000000">
+        <input type="text" class="form-control" data-begin="" placeholder="自定义">
+        <label>-</label>
+        <input type="text" class="form-control" data-end="" placeholder="自定义">
+        <label>万</label>
+        <button type="button" class="btn btn-default">确定</button>
+      </form>
+    </div>
+    <div class="query-codition-category clearfix">
+      <div>车龄：</div>
+      <div data-field="age" class="age_links">
+        <a href="javascript:;" data-value="-" class="active">不限</a>
+        <% for age in @age_enums %>
+          <a data-value="<%= age.value %>" href="javascript:;"><%= age.name %></a>
+        <% end %>
+      </div>
+      <form class="form-inline" data-field="age" data-scalage="365">
+        <input type="text" class="form-control" data-begin="" placeholder="自定义">
+        <label>-</label>
+        <input type="text" class="form-control" data-end="" placeholder="自定义">
+        <label>年</label>
+        <button type="button" class="btn btn-default">确定</button>
+      </form>
+    </div>
+    <div class="query-codition-category clearfix">
+      <div>更多：</div>
+      <div class="inline-selects">
+        <select data-field="car_type">
+          <option value="" selected>车型</option>
+          <% @car_type_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+        <select data-field="mileage">
+          <option value="" selected>里程</option>
+          <% @mileage_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+        <select data-field="displacement">
+          <option value="" selected>排量</option>
+          <% @displacement_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+        <select data-field="emission_standard">
+          <option value="" selected>排放标准</option>
+          <% @emission_standard_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+        <select data-field="fuel_type">
+          <option value="" selected>燃料</option>
+          <% @fuel_type_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+        <select data-field="transmission">
+          <option value="" selected>变速箱</option>
+          <% @transmission_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+        <select data-field="exterior_color">
+          <option value="" selected>颜色</option>
+          <% @color_enums.each do |e| %>
+            <option value="<%= e.value %>" ><%= e.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div id="all_brands_panel" class="full-width-more-brands hidden">
+    <div class="hide-brands pull-right">
+      <a href="javascript:;" data-behavior="show_all_brands">
+        收起
+        <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="brans-panel row" data-field="brand_name">
+      <div class="col-xs-4">
+        <% @group_brands.take(7).each do |group| %>
+          <div class="brand-alphabet">
+            <div><%= group[0] %></div>
+            <div>
+              <% group[1].each do |brand| %>
+                <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        </div>
+        <div class="col-xs-4">
+          <% @group_brands.drop(7).take(7).each do |group| %>
+            <div class="brand-alphabet">
+              <div><%= group[0] %></div>
+              <div>
+                <% group[1].each do |brand| %>
+                  <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-xs-4">
+          <% @group_brands.drop(14).each do |group| %>
+            <div class="brand-alphabet">
+              <div><%= group[0] %></div>
+              <div>
+                <% group[1].each do |brand| %>
+                  <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

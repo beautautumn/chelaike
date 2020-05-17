@@ -1,0 +1,28 @@
+<h1>平行进口车-品牌列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th> 名称 </th>
+        <th> 图片 </th>
+        <th> 创建时间 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parallel_brands.each do |parallel_brand| %>
+        <%= render partial: "row", locals: { parallel_brand: parallel_brand } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="9">
+          共 <%=@parallel_brands.count%> 条记录
+          <%= paginate @parallel_brands %>
+        </th>
+    </tfoot>
+  </table>
+</div>

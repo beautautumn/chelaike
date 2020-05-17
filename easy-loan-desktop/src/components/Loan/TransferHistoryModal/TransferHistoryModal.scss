@@ -1,0 +1,69 @@
+.transferHistoryModal {
+  .column {
+    display: flex;
+    flex: 1;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .historyHeader {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .car {
+    flex: none;
+    border-bottom: 1px solid #f2f2f2;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .carImg {
+    flex: none;
+    margin-right: 20px;
+    img {
+      height: 75px;
+    }
+  }
+  .carInfo {
+    flex: none;
+    margin-right: 20px;
+    div {
+      max-width: 400px;
+      width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .carList {
+    padding-right: 10px;
+  }
+
+  .lastStatus {
+    margin: 0 10px;
+    margin-bottom: 5px;
+  }
+  .alignLeft {
+    text-align: left;
+  }
+  .alignRight {
+    text-align: right;
+  }
+  .item {
+    flex: 1;
+  }
+  .historyItem {
+    border-bottom: 10px solid #f2f2f2;
+    padding: 10px;
+    padding-bottom: 0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

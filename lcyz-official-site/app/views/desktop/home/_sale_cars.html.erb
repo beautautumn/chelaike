@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="car-list-title">
+    <span>在售车辆</span>
+    <a class="pull-right" href="<%= cars_path %>">
+      查看全部<%= @cars_count %>辆
+      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </a>
+  </div>
+
+
+  <div class="car-list">
+    <%= render partial: "/cars/car_card", collection: @selling_cars, as: :car %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<% content_for :navigation_bar do %>
+  <%= link_to  "首页", home_path %> > 特价优惠
+<% end %>
+
+<%
+  total_count = @onsale_cars.total
+  paginatable_array = Kaminari
+    .paginate_array([], total_count: total_count)
+    .page(params[:page])
+    .per(20)
+%>
+
+<div class="container car-list">
+  <%= render partial: "bargain_car", collection: @onsale_cars.data, as: :car %>
+</div>
+
+<div class="container <%= total_count <= 20 ? 'no-paginate' : nil %>">
+  <div class="tc-paginate-wraper">
+    <%= paginate paginatable_array, window: 4, outer_window: 1 %>
+  </div>
+</div>

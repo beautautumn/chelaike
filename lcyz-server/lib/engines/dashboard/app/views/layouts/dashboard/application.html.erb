@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>内部运营分析系统</title>
+    <%= stylesheet_link_tag "//cdn.bootcss.com/semantic-ui/2.1.6/semantic.min.css" %>
+    <%= stylesheet_link_tag    "dashboard/application", media: "all" %>
+    <%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-daterangepicker/2.1.18/daterangepicker.min.css" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="wrapper pusher">
+      <div id="sidebar" class="ui left vertical menu sidebar visible">
+        <div class="item">
+          <img class="ui centered small image" src="http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/images/logo.jpg">
+        </div>
+        <% if policy(:dashboard_company).index? %>
+          <%= link_to "车商信息管理", companies_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_user).index? %>
+          <%= link_to "车商账号管理", users_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_intention).index? %>
+           <%= link_to "B2B批车-意向列表", intentions_path, class: "item" %>
+         <% end %>
+        <% if policy(:dashboard_sale).index? %>
+          <%= link_to "B2B批车-出库列表", sales_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_stock).index? %>
+          <%= link_to "B2B批车-在库列表", stocks_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_order).index? %>
+          <%= link_to "车商充值查询", orders_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_maintenance).index? %>
+          <%= link_to "车商维保查询", maintenances_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_vin_image).index? %>
+          <%= link_to "维保图片识别", vin_images_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_alliance).index? %>
+          <%= link_to "车商联盟管理", alliances_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_app).index? %>
+          <%= link_to "APP管理", apps_path, class: "item" %>
+        <% end %>
+        <%= link_to "车商活跃查询", daily_actives_path, class: "item" %>
+        <% if policy(:dashboard_brand).index? %>
+          <%= link_to "车型库管理", brands_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_parallel_brand).index? %>
+          <%= link_to "平进车管理", parallel_brands_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_ad).index? %>
+          <%= link_to "广告管理", ads_path, class: "item" %>
+        <% end %>
+        <% if policy(::Dashboard::Staff).index? %>
+          <%= link_to "天车员工管理", staffs_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_old_driver).index? %>
+          <%= link_to "老司机查询", old_drivers_path, class: "item" %>
+        <% end %>
+        <%= link_to "后台操作日志", operation_records_path, class: "item" %>
+        <% if policy(:dashboard_xiao_che_che).new? %>
+          <%= link_to "小车车", new_xiao_che_che_path, class: "item" %>
+        <% end %>
+        <% if policy(:dashboard_easy_loan_setting).new? %>
+          <%= link_to "车融易-权重及其它", setting_path, class: "item" %>
+          <%= link_to "车融易-地域评分参数", cities_path, class: "item" %>
+          <%= link_to "车融易-等级说明", rating_statements_path, class: "item" %>
+          <%= link_to "车融易-资金方设置", funder_companies_path, class: "item" %>
+          <%= link_to "车融易-车商等级设置", rating_companies_path, class: "item" %>
+          <%= link_to "发布库融评级", publish_page_debits_path, class: "item" %>
+        <% end %>
+        <%= link_to "退出", session_path, class: "item", method: :delete %>
+      </div>
+
+      <div class="main">
+        <div class="main-container ui container">
+          <% flash.each do |message_type, message| %>
+            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_include_tag "dashboard/application" %>
+    <%= javascript_include_tag "//cdn.bootcss.com/semantic-ui/2.1.6/semantic.min.js" %>
+    <%= javascript_include_tag "//cdn.bootcss.com/moment.js/2.11.2/moment.min.js" %>
+    <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-daterangepicker/2.1.18/daterangepicker.min.js" %>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<% content_for :content_header  do %>
+  <h1>检测报告</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">检测报告</li>
+  </ol>
+<% end %>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <%= form_for InspectionReport.new, url: admin_car_inspection_report_index_path(@car.id), html: { class: 'form-group' } do |f| %>
+            <input type="hidden" name="inspection_report[car_id]" value=<%= @car.id %>>
+            <div class="form-group">
+              <label class="radio-inline link-label">
+                <input type="radio" name="inspection_report[report_type]" value="link", id="link" checked>添加链接
+              </label>
+              <label class="radio-inline photo-label">
+                <input type="radio" name="inspection_report[report_type]" value="photo", id="photo">上传图片
+              </label>
+              <label class="radio-inline pdf-label">
+                <input type="radio" name="inspection_report[report_type]" value="pdf", id="pdf-input">上传 PDF (限制一件)
+              </label>
+            </div>
+            <div class="collapse-link">
+              <input type="url" name="inspection_report[external_url]" class="form-control link-input" value="" placeholder="添加检测报告链接" required>
+            </div>
+
+            <div class="collapse-uploader">
+              <%= f.file_field :source_link, class: "form-control upload-input", placeholder: "上传文件" %>
+            </div>
+            <button type="submit" class="btn btn-primary add-detection-btn">添加</button>
+          <% end %>
+        </div>
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <% if @inspection_reports.present? %>
+              <% @inspection_reports.each do |report| %>
+                <tr>
+                  <% if report.report_type == 'photo' %>
+                    <td><%= image_tag report.source_link, class: "tc-dashboard-list-ad-img" %></td>
+                  <% elsif report.report_type == 'pdf' %>
+                    <td>
+                      <label id="pdf"><%= report.source_link %></label>
+                    </td>
+                    <% elsif report.report_type == 'link' %>
+                    <td>
+                      <%= link_to report.external_url, report.external_url, target: '_blank' %>
+                    </td>
+                  <% end %>
+                  <td><%= link_to "删除", admin_car_inspection_report_path(@car.id, report.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

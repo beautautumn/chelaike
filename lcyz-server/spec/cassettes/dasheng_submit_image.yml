@@ -1,0 +1,243 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v3
+    body:
+      encoding: UTF-8
+      string: partner=7066715120801321&interface=get_available_car_brands_list
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 12 Jan 2017 08:02:08 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22f6c215b0205500fbcdcd9886ee996588%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22117.151.98.6%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1484208128%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dcd6796b110f2e631ed2629a17846eed3;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 08:02:08 GMT
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v3
+    body:
+      encoding: UTF-8
+      string: partner=7066715120801321&interface=get_available_car_brands_list
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 12 Jan 2017 08:02:08 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%229c31b70f81ddf3664051d95a694ef026%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22117.151.98.6%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1484208128%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Df0e83ae98afd3f7c9bef554b60be0085;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+1cS3MjNRD+Lz7noPcjN2CLZReyVbAHWAiVmoe0lYI4wbEP
+        1Nb+d9Qaj+O4ldBO4rUMvkzZM2NFn9TdX7+UT5Mwm13PLrrrPkxO2cny69Xt
+        x8np5PqPyclkFm5vrqe36elvnybtrJn2F5f95JQLe7L8Om2u0tPJ+cJrG88X
+        unU+fbZGpM+S6fOFi8ZMxrdvZpddel348cafYT4PszTA6pX55c3t8P3y9mIa
+        Qn8Rph8vp+Fiurhq86ssPftrEWZ/X9zOm9k8/SJPYXU35FHGe2mUZjG/vmrm
+        l9fT/OvPJ/ewcARFe5MnHhrCxL96/syZP2WsNH3BhgebGPgmBoG3w8i0HUY3
+        6eodbI1vTHe+UIHxTVScsX+HlQZrjUqLozp+vrBCwWCx7+EaQlqutmXpadRp
+        6TQ3Ll1NTE8d0+lXNmoOEhFgUjakd2JkqxE0ty2M7PIEXQsTV+kdG6IqjW90
+        SJ9N1+txNNcGMY5pjABJVMLACMHmaw9PeXzBzeG2vDlYwPDuGMfStByPiiBh
+        X9cgYQZhUIF3IFtdgE0Q6bNNGk/A86oGPBprfQAtMZ3tt8TzugY82CDr1veD
+        1h+KjDmMQXILktZ0484Q6aQKPL7ALGAMfWMpclUDBsEwBiHAWHPV7hkD1QCL
+        AsO3bchIPIULqwCBSWTgTqNj4jkjra1UpBASiemw7YHng2/IblcVyqEeUHDH
+        bTgUDAUiXBKHi4eCATsnugfPUUvdDE5wpaYKO/IFKJkDB/bTDeNZ5Q9GRTAH
+        LgNF21FU5JsKMEjMgXfB7p4xUOlDlkyVAN8qgnS52Lc5PJMH4r9LTCIpsgVl
+        761dx0bA874GPAV6D4yt9H4bPB9qwINpxTMtAYmiYKhCxh6KeROt2C3jkV3i
+        IdsAHCOux/DD1XpNsctV4NnkllfvD2TmCjPKMpklOk+PS77dhLJVji5n2zxX
+        PWTnTMhifczdbWwUppn1NJEKkh1Wmohhf+yO+7cE9LYCQOpx3twKTw28yflj
+        ziaYZxdBsy3F8UT2YQ8RjcKOgJNRjNH+U5GULJ2Onc7FDrBBsgeLI3uwXKJx
+        YGtkA3ciULcAq7du0dZtkGujHd1JFUUaxzkY3zfWwNP8F7mx+e/akycbLb6j
+        BAtneM0HudEhNlsmIfchQ8gKF4LidSuc98h6SwmKkRU+StIjC4/ZYoiviFWF
+        7yqwqLqQwZYKalZdpCjALjFQFUDjDLYNjQBnqqdEU1XsQ8GVUh24mrSotgoM
+        hSyKYg947F/YYyLLEiYHKB4kc9SRqLgGr09vEsLbEG4OZe44CjedBvroAyXy
+        rkKGcKV2wOBVR8kgVoGhUJ3lqgX3tOVj54wWvSDg+b4CuTIFnuPglkBBbZVZ
+        oFVt94Fnc39MoWqb8dgYKb7HLjGQW39KFcII4alVpDRbDSBMgbi5ZWN1LQWn
+        cO0k2pRSyuoHesrqXmLp+Y1m/7XUlMGi5fqs70ZRRAvtxD5sFg7svIGQaWmJ
+        lXDk8u0u8ZD35MFq59AWm9gx95Y5Ah5UNTwGqg8Lki21KbVypPE7Sj/aqC+p
+        D7Zgo2SbZutEi7qQK9Vpuxkvnb0mzPyshplvWtezN+/e7HnuZIXGUZKVPnvn
+        LozerFMOeeclhUaAjnWyFxY193jVYjh64HjI/X3tvht/yAqE6Xy9uPQEVKjE
+        9H8kdbJQ4QjQxZwxzHFggoQ6L56p/Uc6f3xDcLHVhuxlGduQe5DfHXWAXj51
+        hfZcryw5gfBjBVzOC4cI7h0eYo0ZLCiEsNYOteEDAecKB2+UyGm3llJeqgID
+        Tuc6aeTQbkzA8FMFXM05jjXuCZkG06BCQzFRuwRE7wQpdE6steo8DxC2uVzm
+        qnq+x8LQ2AhXZzb4b2Vp97AoftOSvL9KwxMWoIYeX4/9mWWVIR9W8J2jKFsV
+        SAonWjOSJBaR7AxXgQQr2XqPb3IcfG5YouxMDZ2lvlBwuNewuAWeY6vMNgtf
+        Kus6sKkdV8NnwpL/XIFK8MJRw/VzuFYCGahAOivySw2ACofXvQlZ0HQ7VLMq
+        hYK9HOyqrSda7v6vwAjRZ1310VN6O6rYLVYI+0XkY98oVBrJp0R32dJL9kxZ
+        4axSHM70kTrQfq1hVwrnRD3Lhr7vt3WvXwBQCUt5L37//A+v9VCX50YAAA==
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 08:02:08 GMT
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v3
+    body:
+      encoding: UTF-8
+      string: partner=7066715120801321&interface=get_available_car_brands_list
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 12 Jan 2017 08:02:08 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22b84b42fd891726778bf6e3c221b081f0%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22117.151.98.6%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1484208128%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dc18c1171be2bb713192f702575c76d43;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+1cS3MjNRD+Lz7noPcjN2CLZReyVbAHWAiVmoe0lYI4wbEP
+        1Nb+d9Qaj+O4ldBO4rUMvkzZM2NFn9TdX7+UT5Mwm13PLrrrPkxO2cny69Xt
+        x8np5PqPyclkFm5vrqe36elvnybtrJn2F5f95JQLe7L8Om2u0tPJ+cJrG88X
+        unU+fbZGpM+S6fOFi8ZMxrdvZpddel348cafYT4PszTA6pX55c3t8P3y9mIa
+        Qn8Rph8vp+Fiurhq86ssPftrEWZ/X9zOm9k8/SJPYXU35FHGe2mUZjG/vmrm
+        l9fT/OvPJ/ewcARFe5MnHhrCxL96/syZP2WsNH3BhgebGPgmBoG3w8i0HUY3
+        6eodbI1vTHe+UIHxTVScsX+HlQZrjUqLozp+vrBCwWCx7+EaQlqutmXpadRp
+        6TQ3Ll1NTE8d0+lXNmoOEhFgUjakd2JkqxE0ty2M7PIEXQsTV+kdG6IqjW90
+        SJ9N1+txNNcGMY5pjABJVMLACMHmaw9PeXzBzeG2vDlYwPDuGMfStByPiiBh
+        X9cgYQZhUIF3IFtdgE0Q6bNNGk/A86oGPBprfQAtMZ3tt8TzugY82CDr1veD
+        1h+KjDmMQXILktZ0484Q6aQKPL7ALGAMfWMpclUDBsEwBiHAWHPV7hkD1QCL
+        AsO3bchIPIULqwCBSWTgTqNj4jkjra1UpBASiemw7YHng2/IblcVyqEeUHDH
+        bTgUDAUiXBKHi4eCATsnugfPUUvdDE5wpaYKO/IFKJkDB/bTDeNZ5Q9GRTAH
+        LgNF21FU5JsKMEjMgXfB7p4xUOlDlkyVAN8qgnS52Lc5PJMH4r9LTCIpsgVl
+        761dx0bA874GPAV6D4yt9H4bPB9qwINpxTMtAYmiYKhCxh6KeROt2C3jkV3i
+        IdsAHCOux/DD1XpNsctV4NnkllfvD2TmCjPKMpklOk+PS77dhLJVji5n2zxX
+        PWTnTMhifczdbWwUppn1NJEKkh1Wmohhf+yO+7cE9LYCQOpx3twKTw28yflj
+        ziaYZxdBsy3F8UT2YQ8RjcKOgJNRjNH+U5GULJ2Onc7FDrBBsgeLI3uwXKJx
+        YGtkA3ciULcAq7du0dZtkGujHd1JFUUaxzkY3zfWwNP8F7mx+e/akycbLb6j
+        BAtneM0HudEhNlsmIfchQ8gKF4LidSuc98h6SwmKkRU+StIjC4/ZYoiviFWF
+        7yqwqLqQwZYKalZdpCjALjFQFUDjDLYNjQBnqqdEU1XsQ8GVUh24mrSotgoM
+        hSyKYg947F/YYyLLEiYHKB4kc9SRqLgGr09vEsLbEG4OZe44CjedBvroAyXy
+        rkKGcKV2wOBVR8kgVoGhUJ3lqgX3tOVj54wWvSDg+b4CuTIFnuPglkBBbZVZ
+        oFVt94Fnc39MoWqb8dgYKb7HLjGQW39KFcII4alVpDRbDSBMgbi5ZWN1LQWn
+        cO0k2pRSyuoHesrqXmLp+Y1m/7XUlMGi5fqs70ZRRAvtxD5sFg7svIGQaWmJ
+        lXDk8u0u8ZD35MFq59AWm9gx95Y5Ah5UNTwGqg8Lki21KbVypPE7Sj/aqC+p
+        D7Zgo2SbZutEi7qQK9Vpuxkvnb0mzPyshplvWtezN+/e7HnuZIXGUZKVPnvn
+        LozerFMOeeclhUaAjnWyFxY193jVYjh64HjI/X3tvht/yAqE6Xy9uPQEVKjE
+        9H8kdbJQ4QjQxZwxzHFggoQ6L56p/Uc6f3xDcLHVhuxlGduQe5DfHXWAXj51
+        hfZcryw5gfBjBVzOC4cI7h0eYo0ZLCiEsNYOteEDAecKB2+UyGm3llJeqgID
+        Tuc6aeTQbkzA8FMFXM05jjXuCZkG06BCQzFRuwRE7wQpdE6steo8DxC2uVzm
+        qnq+x8LQ2AhXZzb4b2Vp97AoftOSvL9KwxMWoIYeX4/9mWWVIR9W8J2jKFsV
+        SAonWjOSJBaR7AxXgQQr2XqPb3IcfG5YouxMDZ2lvlBwuNewuAWeY6vMNgtf
+        Kus6sKkdV8NnwpL/XIFK8MJRw/VzuFYCGahAOivySw2ACofXvQlZ0HQ7VLMq
+        hYK9HOyqrSda7v6vwAjRZ1310VN6O6rYLVYI+0XkY98oVBrJp0R32dJL9kxZ
+        4axSHM70kTrQfq1hVwrnRD3Lhr7vt3WvXwBQCUt5L37//A+v9VCX50YAAA==
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 08:02:08 GMT
+recorded_with: VCR 3.0.1

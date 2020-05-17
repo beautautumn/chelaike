@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: tokens # 车币
+#
+#  id         :integer          not null, primary key # 车币
+#  company_id :integer
+#  balance    :decimal(12, 2)   default(0.0)
+#  user_id    :integer                                # 用户个人的车币
+#  token_type :string           default("company")    # 标记个人或公司的车币
+#
+
+company_token:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche)%>
+  balance: 100.23
+  user_id: nil
+  token_type: company
+
+user_token:
+  company_id: nil
+  user_id: <%= ActiveRecord::FixtureSet.identify(:zhangsan)%>
+  balance: 102.34
+  token_type: user
+
+

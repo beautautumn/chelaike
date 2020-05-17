@@ -1,0 +1,2 @@
+class InsuranceCompanyPolicy < SystemSettingPolicy
+end

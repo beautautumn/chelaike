@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.ct.erp.lib.entity.ParkingCards" table="parking_cards">
+        <id name="id" type="java.lang.Long">
+            <column name="id" not-null="true" />
+            <generator class="identity" />
+        </id>
+        <property name="shop_id" type="java.lang.Long">
+            <column name="shop_id" length="32" />
+        </property>
+        <property name="operator_id" type="java.lang.Long">
+            <column name="operator_id" length="32" />
+        </property>
+        <property name="no" type="java.lang.String">
+            <column name="no" />
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note" />
+        </property>
+        <property name="created_at" type="java.sql.Timestamp">
+            <column name="created_at" not-null="true" />
+        </property>
+        <property name="updated_at" type="java.sql.Timestamp">
+            <column name="updated_at" not-null="true" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="1">
+                <comment>disable：禁用 enable：启用</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

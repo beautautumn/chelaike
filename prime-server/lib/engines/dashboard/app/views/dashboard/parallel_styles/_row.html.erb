@@ -1,0 +1,19 @@
+<tr>
+  <td> <%= parallel_style.id %> </td>
+  <td> <%= parallel_style.name %> </td>
+  <td> <%= parallel_style.origin %> </td>
+  <td> <%= parallel_style.color %> </td>
+  <td> <%= parallel_style.configuration.truncate(15) %> </td>
+  <td> <%= parallel_style.status %> </td>
+  <td> <%= parallel_style.suggested_price_wan.nil? ? "-" :
+      parallel_style.suggested_price_wan.to_s + "万" %></td>
+  <td>
+    <%= parallel_style.sell_price_wan.nil? ? "待定价" :
+    parallel_style.sell_price_wan.to_s + "万" %>
+  </td>
+  <td> <%= parallel_style.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+  <td>
+    <%= link_to "编辑", edit_parallel_style_path(parallel_style) %> |
+    <%= link_to '删除', parallel_style, method: :delete, data: { confirm: '确定要删除吗?' } %>
+  </td>
+</tr>

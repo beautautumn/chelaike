@@ -1,0 +1,31 @@
+# == Schema Information
+#
+# Table name: old_driver_record_hubs # 老司机报告内容
+#
+#  id          :integer          not null, primary key # 老司机报告内容
+#  vin         :string                                 # vin码
+#  order_id    :string                                 # 对方订单ID
+#  engine_num  :string                                 # 发动机号
+#  license_no  :string                                 # 车牌号
+#  id_numbers  :string                                 # 身份证号，以逗号分隔
+#  sent_at     :datetime                               # 发送时间
+#  notify_at   :datetime                               # 回调通知时间
+#  make        :string                                 # 车型信息
+#  insurance   :jsonb                                  # 保险区间
+#  claims      :jsonb                                  # 事故
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  meter_error :boolean                                # 里程表是否异常
+#  smoke_level :string                                 # 排放标准
+#  year        :string                                 # 生产年份
+#  nature      :string                                 # 车辆性质
+#
+
+old_driver_record_hub:
+  vin: <%= ActiveRecord::FixtureSet.identify(:aodi) %>
+  order_id: 2174
+  make: "2014 东风悦达起亚 福瑞迪"
+  insurance: [
+    { StartDate: "2015-02", EndDate: "2018-02" }
+  ]
+  claims: [{ClaimDate: "2016-07-11", Owner: "车主 A", Plate: "车牌 A", Description: "追尾三者车，均损，无人伤，提醒报警，现场，商交关联   三者车：不详", TotalFee: 2100.0, LaborFee: 0.0, RepairDetail: "喷漆:后保险杠皮", MaterialFee: 0.0, Material: {}}, {ClaimDate: "2016-07-11", Owner: "车主 A", Plate: "车牌 A", Description: "追尾三者车，均损，无人伤，提醒报警，现场，三者车：不详。", TotalFee: 657.0, LaborFee: 0.0, RepairDetail: "", MaterialFee: 0.0, Material: {}}, {ClaimDate: "2016-05-04", Owner: "车主 A", Plate: "车牌 A", Description: "追尾三者丰田 均损 无人伤无他损 提醒报警 现场 商交关联", TotalFee: 600.0, LaborFee: 0.0, RepairDetail: "低碳:前保险杠皮外修，拆装:前雾灯（右），低碳:前大灯（右）外修，喷漆:前保险杠皮", MaterialFee: 0.0, Material: {}}]

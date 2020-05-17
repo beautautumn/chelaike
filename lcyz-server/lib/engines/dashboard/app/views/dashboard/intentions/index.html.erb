@@ -1,0 +1,30 @@
+<h1>客户意向列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th width="8%"> 意向ID</th>
+        <th width="8%"> 所属地区</th>
+        <th width="12%"> 车商名称 </th>
+        <th width="16%"> 客户信息 </th>
+        <th width="8%"> 意向等级 </th>
+        <th width="20%"> 意向车型 </th>
+        <th width="28%"> 最后跟进 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @intentions.each do |intention| %>
+        <%= render partial: "row", locals: { intention: intention } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="7">
+          共 <%=@counter%> 条记录
+          <%= paginate @intentions %>
+        </th>
+    </tfoot>
+  </table>
+</div>

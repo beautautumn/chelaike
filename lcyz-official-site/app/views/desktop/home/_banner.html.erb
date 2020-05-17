@@ -1,0 +1,96 @@
+<div class="tc-home-banner">
+  <div class="container">
+    <div class="quick-search">
+      <div class="category">
+        <h4>
+          <a href="javascript:;" data-behavior="show_all_brands">
+            <div>
+              <span>品牌</span>
+              <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
+            </div>
+          </a>
+        </h4>
+        <ul class="list-inline" data-field="brand_name">
+          <% @hot_brands.each do |brand| %>
+            <li><a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="category">
+        <h4>价格</h4>
+        <ul class="list-inline" data-field="show_price_cents">
+          <li><a data-value="-20000000" href="javascript:;">20万及以下</a></li>
+          <li><a data-value="20000000-25000000" href="javascript:;">20-25万</a></li>
+          <li><a data-value="50000000-" href="javascript:;">50万以上</a></li>
+        </ul>
+      </div>
+      <div class="category">
+        <h4>车龄</h4>
+        <ul class="list-inline" data-field="age">
+          <li class="age-item"><a data-value="-1095" href="javascript:;">3年以内</a></li>
+          <li class="age-item"><a data-value="1095-1825" href="javascript:;">3-5年</a></li>
+          <li class="age-item"><a data-value="1825-2920" href="javascript:;">5-8年</a></li>
+          <li class="age-item"><a data-value="2920-" href="javascript:;">8年以上</a></li>
+        </ul>
+      </div>
+      <div class="category">
+        <h4>
+          <a href="<%= cars_path %>">
+            <div>
+              <span>更多筛选</span>
+              <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
+            </div>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <div class="banner-img">
+      <% if @top_banner %>
+        <%= link_to @top_banner.link do %>
+          <%= image_tag @top_banner.image_url %>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- all brands -->
+    <div id="all_brands_panel" class="more-brands hidden">
+      <div class="row brans-panel" data-field="brand_name">
+        <div class="col-xs-4">
+          <% @group_brands.take(5).each do |group| %>
+            <div class="brand-alphabet">
+              <div><%= group[0] %></div>
+              <div>
+                <% group[1].each do |brand| %>
+                  <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-xs-4">
+          <% @group_brands.drop(5).take(5).each do |group| %>
+            <div class="brand-alphabet">
+              <div><%= group[0] %></div>
+              <div>
+                <% group[1].each do |brand| %>
+                  <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-xs-4">
+          <% @group_brands.drop(10).each do |group| %>
+            <div class="brand-alphabet">
+              <div><%= group[0] %></div>
+              <div>
+                <% group[1].each do |brand| %>
+                  <a href="javascript:;" data-value="<%= brand.name %>"><%= brand.name %></a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

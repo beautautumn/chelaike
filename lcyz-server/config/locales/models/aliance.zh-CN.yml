@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    models:
+      aliance: 联盟
+    attributes:
+      aliance:
+        name: 联盟名称
+        owner_id: 所属公司ID
+        deleted_at: 删除时间
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        convention: 联盟公约

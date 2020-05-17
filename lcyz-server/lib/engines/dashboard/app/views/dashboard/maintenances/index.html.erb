@@ -1,0 +1,34 @@
+<h1>维保记录查询列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th width="6%">ID</th>
+        <th width="8%">地区</th>
+        <th width="9%">车商</th>
+        <th width="10%">查询时间</th>
+        <th width="10%">查询结果</th>
+        <th width="9%">查询员工</th>
+        <th width="9%">车型</th>
+        <th width="12%">VIN</th>
+        <th width="9%">来源</th>
+        <th width="9%">车币</th>
+        <th width="9%">顾问</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @maintenances.each do |r| %>
+        <%= render partial: "row", locals: { maintenance: r} %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="11">
+          共 <%= @counter %> 条记录
+          <%= paginate @maintenances %>
+        </th>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://prime.lina.che3bao.com/api/open/v2/companies/167
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.0p0
+      Autobotsopentoken:
+      - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6bnVsbCwiZXhwaXJlZF9hdCI6IjIwMTctMDItMjcgMjI6NTI6MDQgKzA4MDAifQ.7iso4OzvcdH-sVKhZ_yHDQU0fLe5hSYuRoR4Mh0K4hE
+      Host:
+      - prime.lina.che3bao.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Mon, 27 Feb 2017 13:52:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Autobots
+      Etag:
+      - W/"d1c49e4098c228c39c349b3fa06dbbf4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2267a2d7-8933-4482-8d38-ede20828d7f3
+      X-Runtime:
+      - '0.041310'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7ImlkIjoxNjcsIm5hbWUiOiLovabmnaXlrqLmtYvor5UiLCJj
+        b250YWN0Ijoi5bCP5bCP5bCPIiwiY29udGFjdF9tb2JpbGUiOiIxMzMxMjM0
+        MTIzNCIsImFjcXVpc2l0aW9uX21vYmlsZSI6IjEzMzQzMjE0MzIxIiwic2Fs
+        ZV9tb2JpbGUiOiIxMzMxMTExMjIyMiIsImxvZ28iOm51bGwsIm5vdGUiOm51
+        bGwsInByb3ZpbmNlIjoi5rWZ5rGf55yBIiwiY2l0eSI6IuadreW3nuW4giIs
+        ImRpc3RyaWN0IjpudWxsLCJzdHJlZXQiOiLmi7HlooXljLrlkoznnabot681
+        NTXlj7ciLCJvd25lcl9pZCI6MzU0LCJjcmVhdGVkX2F0IjoiMjAxNi0wNy0w
+        NlQxNToyMjo1NS4yNjMrMDg6MDAiLCJzZXR0aW5ncyI6eyJhdXRvbWF0ZWRf
+        c3RvY2tfbnVtYmVyIjpmYWxzZSwiZGFpbHlfcmVwb3J0ZWRfYXQiOiIxODoz
+        MCIsInVuaWZpZWRfbWFuYWdlbWVudCI6dHJ1ZSwic3RvY2tfbnVtYmVyX2J5
+        X3ZpbiI6ZmFsc2V9LCJpbl9hbGxpYW5jZXMiOnRydWUsImNhcnNfY291bnQi
+        OjE0LCJxcmNvZGUiOm51bGwsImJhbm5lcnMiOltdLCJzaG9wc19jb3VudCI6
+        Miwibmlja25hbWUiOiIiLCJzbG9nYW4iOiLmiJDpg73nlLDkuK3lm63kuozm
+        iYvovabnu4/plIDmnInpmZDlhazlj7jvvIjmiJDpg73nlLDlm63kuozmiYvo
+        vabvvInvvIzmmK/kuIDlrrbkuJPkuJrku47kuovkuK3pq5jmoaPkuozmiYvo
+        vabnmoTplIDllK7vvIznva7mjaLvvIzor4TkvLDvvIzmlLbotK3vvIzlr4Tl
+        lK7nmoTlhazlj7jjgILmnKzlhazlj7jovablnovkvJflpJrvvIzor5rkv6Hn
+        u4/okKXjgILmrKLov47lkITkvY3liLDlupflj4Lop4LvvIEg5oiR5Lus55qE
+        5pyN5Yqh5a6X5peo77ya55So5b+D5pyN5Yqh5aW95q+P5LiA5L2N6aG+5a6i
+        77yBIiwib3duZXIiOnsiaWQiOjM1NCwidXNlcm5hbWUiOiIxMzM5NjUyNTI4
+        NSIsInBob25lIjoiMTMzOTY1MjUyODUiLCJhdXRob3JpdHlfdHlwZSI6ImN1
+        c3RvbSIsImF1dGhvcml0aWVzIjpbIuWcqOW6k+i9pui+huafpeivoiIsIui9
+        pui+huS/oeaBr+e8lui+kSIsIuWHuuW6k+i9pui+hue8lui+kSIsIui9pui+
+        huaWsOWinuWFpeW6kyIsIuWcqOW6k+i9pui+humihOWumiIsIui9pui+humU
+        gOWUruWumuS7tyIsIui9pui+hueKtuaAgeS/ruaUuSIsIuWcqOW6k+i9pui+
+        huWHuuW6kyIsIumUgOWUruW6leS7t+afpeeciyIsIue7j+eQhuW6leS7t+af
+        peeciyIsIui9puS4u+WvhOWNluS/oeaBr+afpeeciyIsIuaUtui0reS/oeaB
+        r+afpeeciyIsIuaUtui0reS7t+agvOafpeeciyIsIuWQiOS9nOS/oeaBr+af
+        peeciyIsIuW6k+WtmOi9rOW4ruWUriIsIui9pui+huaTjeS9nOWOhuWPsuaf
+        peeciyIsIui9pui+huW6k+m+hOafpeeciyIsIue9keermei9pui+huWvvOWF
+        pSIsIuW6k+WtmOaYjue7huWvvOWHuiIsIuWcqOW6k+i9pui+huWIoOmZpCIs
+        Iui9pui+huWbvueJh+S4iuS8oCIsIue7tOS/neivpuaDheafpeeciyIsIuW3
+        suWHuuW6k+i9pui+huafpeivoiIsIuWHuuW6k+i9pui+huWbnuW6kyIsIuaM
+        ieaPreS/oeaBr+afpeeciyIsIuS/nemZqeS/oeaBr+afpeeciyIsIumUgOWU
+        ruaIkOS6pOS/oeaBr+afpeeciyIsIumUgOWUruaYjue7huWvvOWHuiIsIuiB
+        lOebn+i9pui+huafpeivoiIsIuiBlOebn+W6leS7t+afpeeciyIsIuiBlOeb
+        n+euoeeQhiIsIuaVtOWkh+S/oeaBr+W9leWFpSIsIuaVtOWkh+S/oeaBr+af
+        peeciyIsIuaVtOWkh+i0ueeUqOafpeeciyIsIueJjOivgeS/oeaBr+afpeec
+        iyIsIueJjOivgeWbvueJh+afpeeciyIsIueJjOivgeS/oeaBr+W9leWFpSIs
+        IuivgeS7tui1hOaWmeWvvOWHuiIsIuWIoOmZpOWuouaItyIsIuS7o+WKnuWu
+        ouaIt+mihOWumi/lh7rlupMiLCLlhajpg6jlrqLmiLfnrqHnkIYiLCLmsYLo
+        tK3lrqLmiLfot5/ov5siLCLmsYLotK3lrqLmiLfnrqHnkIYiLCLlhajpg6jm
+        sYLotK3lrqLmiLfnrqHnkIYiLCLlh7rllK7lrqLmiLfnrqHnkIYiLCLlh7rl
+        lK7lrqLmiLfot5/ov5siLCLlhajpg6jlh7rllK7lrqLmiLfnrqHnkIYiLCLl
+        nZDluK3lvZXlhaUiLCLovabluIHlhYXlgLwiLCLnu7Tkv53miqXlkYrmn6Xo
+        r6IiLCLmiZPljbDlm57ljZUiLCLlhazlj7jkv6Hmga/orr7nva4iLCLlkZjl
+        t6XnrqHnkIYiLCLop5LoibLnrqHnkIYiLCLkuJrliqHorr7nva4iLCLlupPl
+        rZjnu5/orqHmn6XnnIsiLCLlvq7lupfnrqHnkIbmnYPpmZAiLCLnu7Tkv53n
+        u5/orqHmn6XnnIsiLCLotKLliqHnrqHnkIYiLCLovabluIHlhYXlgLwiXSwi
+        Y3JlYXRlZF9hdCI6IjIwMTYtMDctMDZUMTU6MjI6NTUuMjg2KzA4OjAwIiwi
+        bmFtZSI6IuWwj+Wwj+WwjyIsImVtYWlsIjpudWxsLCJmaXJzdF9sZXR0ZXIi
+        OiJYIn19fQ==
+    http_version: 
+  recorded_at: Mon, 27 Feb 2017 13:52:05 GMT
+recorded_with: VCR 3.0.3

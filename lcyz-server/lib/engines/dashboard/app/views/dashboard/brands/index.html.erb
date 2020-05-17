@@ -1,0 +1,29 @@
+<h1>车型管理</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table striped">
+    <thead>
+      <tr>
+        <th> 品牌 </th>
+        <th> 首字母 </th>
+        <th> 编码 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @brands.each do |brand| %>
+        <tr>
+          <td><%= brand["name"] %></td>
+          <td> <%= brand["first_letter"] %></td>
+          <td> <%= brand["code"] %></td>
+          <td>
+            <%= link_to '详情', brand_path(brand['_id']) %>
+            <%= link_to '编辑', edit_brand_path(brand["_id"]) %>
+            <%#= link_to '删除', brand_path(brand["_id"]), method: :delete, data: { confirm: '确定要删除吗?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

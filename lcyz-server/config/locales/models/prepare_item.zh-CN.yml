@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    models:
+      prepare_item: 整备项目
+    attributes:
+      prepare_item:
+        name: 项目名
+        amount_yuan: 费用
+        prepare_record_id: 整备记录ID
+        note: 备注
+        created_at: 创建时间
+        updated_at: 最后更新时间

@@ -1,0 +1,168 @@
+.insurance_detail {
+  .weui-tab__panel {
+    background: white;
+    padding-bottom: 13px;
+  }
+}
+
+.tc-insurance-car {
+  .insurance-car-abstract {
+    margin-top: 30px;
+  }
+
+  .insurance-border {
+    margin: 10px 11px 0px;
+    border: 1px solid #9e6108;
+    border-radius: 5px;
+  }
+
+  .insurance-car-title {
+    text-align: center;
+    color: black;
+  }
+
+  .insurance-car-vin {
+    padding: 11px;
+    position: relative;
+    font-size: 12px;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      border-bottom: 1px solid #E5E5E5;
+      color: #E5E5E5;
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .weui-flex__item {
+    font-size: 12px;
+
+    div {
+      text-align: center;
+
+      &:first-of-type {
+        padding-top: 5px;
+      }
+
+      &:nth-of-type(2) {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .right-divider {
+    position: relative;
+    /* border-left: 1px solid #E5E5E5; */
+  }
+  .right-divider:after {
+    content: " ";
+    position: absolute;
+    bottom: 12%;
+    right: 0;
+    height: 150%;
+    border-left: 1px solid green;
+    color: #E5E5E5;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+
+  .insurance-abstract-title {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 10px;
+    font-size: 12px;
+    position: relative;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      border-bottom: 1px solid #9e6108;
+      color: #E5E5E5;
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+
+  .insurance-abstract-item {
+    font-size: 12px;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    position: relative;
+
+    .weui-flex__item:nth-of-type(2) {
+      text-align: right;
+      padding-right: 15px;
+    }
+
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      border-bottom: 1px solid #f2f2f2;
+      color: #E5E5E5;
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+
+  .detail-item-title {
+    font-size: 12px;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    position: relative;
+    background-color: rgba(250,199,44, 0.1);
+
+    .weui-flex__item:nth-of-type(2) {
+      text-align: right;
+      margin-right: 16px;
+    }
+  }
+
+  .detail-item-body {
+    margin-bottom: 20px;
+
+    .detail-item-item {
+      font-size: 12px;
+      padding-left: 10px;
+      padding-top: 10px;
+      position: relative;
+
+      label {
+        float: left;
+      }
+
+      span {
+        display: block;
+        overflow: hidden;
+        text-align: left;
+      }
+    }
+  }
+}

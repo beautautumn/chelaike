@@ -1,0 +1,5 @@
+<% if @url.nil? %>
+  已授权
+<% else %>
+  <%= link_to "授权", @url %>
+<% end %>

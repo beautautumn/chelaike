@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: easy_loan_debits # 借款方统计信息
+#
+#  id                    :integer          not null, primary key # 借款方统计信息
+#  inventory_amount      :integer                                # 计算月库存资金量
+#  operating_health      :decimal(, )                            # 计算月经营健康评级
+#  industry_rating       :decimal(, )      default(3.0)          # 设置借方行业风评
+#  assets_debts_rating   :decimal(, )      default(0.6)          # 设置借方资产负债率
+#  comprehensive_rating  :decimal(, )                            # 计算月综合评级
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  company_id            :integer                                # 统计数据和公司关联
+#  beat_global           :decimal(, )                            # 综合评分打败全国车商数据
+#  beat_local            :decimal(, )                            # 综合评分打败本地车商数据
+#  real_inventory_amount :integer                                # 真实库存资金量数据
+#  cash_turnover_rate    :decimal(, )                            # 资金周转率
+#  car_gross_profit_rate :decimal(, )                            # 月利润率
+#
+
+debit_a:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  comprehensive_rating: <%= BigDecimal.new("3.511") %>
+debit_b:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  created_at: <%= Time.now.last_month %>
+debit_c:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>

@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.weixin.qq.com/cgi-bin/component/api_component_token
+    body:
+      encoding: UTF-8
+      string: '{"component_appid":"wxefe9e45b217bc492","component_appsecret":"ae3cab8e1cabbe462e537b6335d40fc3","component_verify_ticket":null}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Tue, 08 Dec 2015 05:19:44 GMT
+      Content-Type:
+      - application/json; encoding=utf-8
+      Content-Length:
+      - '79'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errcode":61006,"errmsg":"component ticket is invalid hint: [OAxKaa0984vr19]"}'
+    http_version: 
+  recorded_at: Tue, 08 Dec 2015 05:19:44 GMT
+- request:
+    method: post
+    uri: https://api.weixin.qq.com/cgi-bin/component/api_query_auth?component_access_token=
+    body:
+      encoding: UTF-8
+      string: '{"component_appid":"wxefe9e45b217bc492","authorization_code":null}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Tue, 08 Dec 2015 05:19:44 GMT
+      Content-Type:
+      - application/json; encoding=utf-8
+      Content-Length:
+      - '72'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errcode":41001,"errmsg":"access_token missing hint: [RYxh1a0984vr19]"}'
+    http_version: 
+  recorded_at: Tue, 08 Dec 2015 05:19:44 GMT
+recorded_with: VCR 3.0.0

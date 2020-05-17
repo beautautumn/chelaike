@@ -1,0 +1,263 @@
+.tc-home-banner {
+  margin-top: -17px;
+  height: 284px;
+
+  .container {
+    position: relative;
+  }
+
+  .quick-search {
+    position: absolute;
+    top: 0px;
+    padding-top: 16px;
+    width: 250px;
+    height: 284px;
+    background: #f5f5f5;
+
+    a {
+      color: #666666;
+    }
+
+    .category {
+      margin: 0 19px;
+      border-bottom: 1px solid #a6a6a6;
+
+      h4 {
+        margin-top: 15px;
+        margin-bottom: 13px;
+        font-size: 16px;
+        color: #666666;
+      }
+
+      ul {
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+
+
+        li {
+          display: inline;
+        }
+        li.age-item {
+          width: 60px;
+        }
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .category:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  .banner-img {
+    position: absolute;
+    top: 0;
+    left: 269px;
+    img {
+      width: 879px;
+      height: 284px;
+    }
+  }
+
+  .more-brands {
+    position: absolute;
+    top: 0px;
+    left: 265px;
+    width: 883px;
+    min-height: 284px;
+    z-index: 100;
+    opacity: 0.8;
+    background-color: #f5f5f5;
+
+  }
+}
+
+.row.brans-panel {
+  padding-top: 23px;
+
+  .col-xs-4 {
+    border-right: 1px solid #d9d9d9;
+
+    .brand-alphabet {
+      margin: 0 0 16px 18px;
+
+      div {
+        display: inline-block
+      }
+
+      div:first-child {
+        font-size: 14px;
+        color: #ff7403;
+        vertical-align: top;
+        width: 10%;
+      }
+      div:last-child {
+        width: 88%;
+      }
+
+      a {
+        margin-right: 10px;
+        word-break: keep-all;
+        color: #000000;
+        font-size: 14px;
+      }
+      a.active {
+        background-color: #ff7403;
+        color: white;
+      }
+    }
+  }
+  .col-xs-4:last-child {
+    border-right: 0px;
+  }
+}
+
+
+.service-promise {
+  background-color: #f2f2f2;
+  min-width: 1170px;
+
+  h3 {
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+  }
+
+  .row {
+    padding-top: 10px;
+    padding-bottom: 50px;
+  }
+
+  img {
+    width: 55px;
+    height: 57px;
+    float: left;
+    margin: 15px 10px 0 50px;
+  }
+
+  h4 {
+    font-size: 24px;
+    color: #ff7403;
+  }
+
+  p {
+    font-size: 18px;
+    color: #000000;
+  }
+}
+
+.intro {
+  .page-navigation-bar {
+    margin-bottom: 20px;
+  }
+}
+
+
+.home-recommended-cars {
+  padding-top: 50px;
+  .car-list {
+    margin-top: 0px;
+    .car-card {
+      margin-bottom: 0px;
+    }
+  }
+
+  .top {
+    display: flex;
+    .default-img {
+      flex: 0 0 275px;
+      img {
+        width: 275px;
+        height: 649px;
+      }
+    }
+    .car-list {
+      flex: auto;
+      padding-left: 11px;
+      .car-card {
+        margin-bottom: 29px;
+      }
+    }
+
+  }
+}
+
+.home-bargain-cars {
+  padding-top: 50px;
+  .car-list {
+    margin-top: 0px;
+    .tow-colums-car-card {
+      margin-bottom: 0px;
+    }
+  }
+  .top {
+    display: flex;
+    .default-img {
+      flex: 0 0 561px;
+      img {
+        width: 561px;
+        height: 461px;
+      }
+      .default-img-overlay,
+      .default-img-overlay-desc {
+        position: absolute;
+        height: 60px;
+        width: 561px;
+        margin-top: -60px;
+        line-height: 60px;
+        text-align: center;
+      }
+      .default-img-overlay {
+        background: black;
+        opacity: 0.6;
+      }
+      .default-img-overlay-desc {
+        a {
+          font-size: 18px;
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+    .car-list {
+      flex: auto;
+      padding-left: 10px;
+      .tow-colums-car-card {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.tc-home-mid-banner {
+  padding-top: 20px;
+  a {
+    img {
+      width: 1133px;
+      height: 350px;
+    }
+  }
+}
+
+.tc-home-union-link {
+  padding-top: 21px;
+  padding-bottom: 50px;
+  & > div {
+    width: 310px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    margin: 0 auto;
+    color: white;
+    background: #ff7403;
+    text-align: center;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

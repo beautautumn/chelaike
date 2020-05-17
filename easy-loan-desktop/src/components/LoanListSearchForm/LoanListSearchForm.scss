@@ -1,0 +1,24 @@
+.form {
+  :global {
+    .ant-form-item {
+      margin-bottom: 5px;
+    }
+
+    .ant-radio-button-wrapper {
+      margin-right: 20px;
+      margin-bottom: 5px;
+      border-radius: 0;
+    }
+
+    .ant-form-item-label {
+      text-align: left;
+    }
+  }
+  .keyWord {
+    margin-bottom: 10px;
+  }
+  .moreBrands {
+    line-height: 31px;
+    margin-left: -10px;
+  }
+}

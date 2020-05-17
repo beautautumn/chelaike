@@ -1,0 +1,8 @@
+$("#qrcode").html('');
+$('#LoginModal').modal();
+var token = "<%= @token %>"
+$("#LoginModal input").val(token);
+var qrcode = new QRCode(document.getElementById("qrcode"));
+qrcode.clear();
+var qr_code_url = "<%= @qr_code %>"
+qrcode.makeCode(qr_code_url);

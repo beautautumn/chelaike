@@ -1,0 +1,9 @@
+<% if bargin_car? @car %>
+  <div class="container">
+    <div class="tc-sub-title">特惠说明</div>
+    <div class="tc-car-detail-bargin-desc">
+      <%= image_tag "common/bargin_detail.png" %>
+      <p><%= @car.onsale_description %></p>
+    </div>
+  </div>
+<% end %>

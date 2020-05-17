@@ -1,0 +1,2 @@
+class IntentionLevelPolicy < SystemSettingPolicy
+end

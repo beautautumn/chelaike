@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: maintenance_settings
+#
+#  id                      :integer          not null, primary key
+#  chejianding_unit_price  :decimal(8, 2)    default(17.0)
+#  ant_queen_unit_price    :decimal(8, 2)    default(29.0)
+#  cha_doctor_unit_price   :decimal(8, 2)    default(12.0)
+#  dashenglaile_unit_price :decimal(8, 2)    default(12.0)
+#
+
+default:
+  chejianding_unit_price: 29
+  ant_queen_unit_price: 30
+

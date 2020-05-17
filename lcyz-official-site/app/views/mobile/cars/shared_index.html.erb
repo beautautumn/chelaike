@@ -1,0 +1,16 @@
+<% @without_menu = true %>
+<div class="weui-panel weui-panel_access tc-cars-list-with-seller-container">
+  <div class="weui-panel__bd">
+    <%= render "index_seller_info" %>
+
+    <div class="cars-count">
+      本店共有 <%= @result.cars_count %> 辆
+    </div>
+    <div class="tc-cars-list list-view">
+      <%= render partial: "car", collection: @result.data, as: :car %>
+    </div>
+
+    <div class="tc-cars-loading hide">数据加载中......</div>
+    <%= render "shared_go_home" %>
+  </div>
+</div>

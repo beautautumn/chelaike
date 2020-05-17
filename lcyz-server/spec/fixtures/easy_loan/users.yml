@@ -1,0 +1,31 @@
+# == Schema Information
+#
+# Table name: easy_loan_users # 车融易用户模型
+#
+#  id                          :integer          not null, primary key    # 车融易用户模型
+#  phone                       :string                                    # 手机号码
+#  token                       :string                                    # 验证码
+#  created_at                  :datetime         not null
+#  updated_at                  :datetime         not null
+#  expired_at                  :datetime                                  # 短信验证码失效时间
+#  current_device_number       :string                                    # 车融易当前登录设备号码
+#  name                        :string                                    # 车融易用户姓名
+#  easy_loan_sp_company_id     :integer                                   # 所属sp公司
+#  authorities                 :text             default([]), is an Array # 权限清单
+#  city                        :text                                      # 员工所属地区
+#  status                      :boolean          default(TRUE)            # 员工状态
+#  easy_loan_authority_role_id :integer                                   # 角色关联
+#  rc_token                    :string                                    # 融云token
+#
+
+easy_loan_user_a:
+  phone:  "13800138000"
+  name: "zhangsan"
+  easy_loan_sp_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche_sp) %>
+easy_loan_user_b:
+  phone:  "13800138001"
+  name: "lisi"
+  easy_loan_sp_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche_sp) %>
+easy_loan_user_c:
+  name: "wangwu"
+  phone: "15012626164"

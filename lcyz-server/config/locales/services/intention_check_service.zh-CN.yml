@@ -1,0 +1,20 @@
+zh-CN:
+  service:
+    intention:
+      check_service:
+        error_messages:
+          no_customers: 您录入的意向已被其他同事录入
+          occupied: "客户%{customer_name}（电话：%{customer_phone}）的%{intention_type}意向，已被 %{assignee_name} 跟踪, 您无代办权限。"
+          processing: 您已在跟踪同号码的客户意向，请核查！
+          duplicated: "电话%{customer_phone}的客户%{customer_name} 的意向，已被 %{assignee_name} 跟踪, 不能重复录入，请核查！"
+
+  activerecord:
+    models:
+      aliance: 联盟
+    attributes:
+      aliance:
+        name: 联盟名称
+        owner_id: 所属公司ID
+        deleted_at: 删除时间
+        created_at: 创建时间
+        updated_at: 最后更新时间

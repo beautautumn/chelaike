@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: intention_expirations # 意向过期时间
+#
+#  id            :integer          not null, primary key # 意向过期时间
+#  company_id    :integer                                # 公司ID
+#  recovery_time :integer          not null              # 过期天数
+#  note          :text                                   # 备注
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  recovery_hour :integer                                # 过期小时
+#
+
+intention_expiration_tianche:
+  company: tianche
+  recovery_time: 3
+  note: 默认3天过期
+  recovery_hour: 2
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

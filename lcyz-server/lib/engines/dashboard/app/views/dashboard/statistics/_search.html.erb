@@ -1,0 +1,8 @@
+<div class="ui action input">
+  <%= form_tag statistics_path, method: :get do %>
+    <%= text_field_tag "q[name_or_owner_name_or_owner_phone_cont]",
+        nil, placeholder: "搜索 名称/老板"
+    %>
+    <%= submit_tag "搜索", class: "ui green basic button" %>
+  <% end %>
+</div>

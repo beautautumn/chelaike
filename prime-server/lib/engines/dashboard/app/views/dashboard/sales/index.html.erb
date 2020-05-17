@@ -1,0 +1,36 @@
+<h1>出库车辆列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>库存ID</th>
+        <th width="8%"> 地区 </th>
+        <th width="16%"> 车辆名称 </th>
+        <th width="10%"> 基本信息 </th>
+        <th width="6%"> 收购价 </th>
+        <th width="6%"> 标价 </th>
+        <th width="6%"> 成交价 </th>
+        <th width="6%"> 入库 </th>
+        <th width="6%"> 出库 </th>
+        <th width="5%"> 库龄 </th>
+        <th width="9%"> 车商 </th>
+        <th width="8%"> 出库类型 </th>
+        <th width="12%"> 业务员 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sales.each do |sale| %>
+        <%= render partial: "row", locals: { sale: sale } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="13">
+          共 <%=@counter%> 条记录
+          <%= paginate @sales %>
+        </th>
+    </tfoot>
+  </table>
+</div>

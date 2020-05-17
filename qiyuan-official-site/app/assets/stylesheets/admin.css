@@ -1,0 +1,6 @@
+/*
+ *= require ./admin/import.css.scss
+ *= require_tree ./admin/
+ *= require ./common.css.scss
+ *= require_self
+ */

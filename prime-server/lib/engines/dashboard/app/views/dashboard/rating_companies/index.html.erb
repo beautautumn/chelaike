@@ -1,0 +1,32 @@
+<h1>车融易 - 评级设置</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th> 省份 </th>
+        <th> 城市 </th>
+        <th> 老板 </th>
+        <th> 公司名称 </th>
+        <th> 行业风评 </th>
+        <th> 资产负债率 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @companies.each do |company| %>
+        <%= render partial: "row", locals: { company: company } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="7">
+          共 <%=@counter%> 条记录
+          <%= paginate @companies %>
+        </th>
+    </tfoot>
+  </table>
+</div>
+<div class="append-modal"></div>

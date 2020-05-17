@@ -1,0 +1,21 @@
+body {
+  font-family: PingFangSC-Regular, sans-serif;
+  background-color: #eee;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

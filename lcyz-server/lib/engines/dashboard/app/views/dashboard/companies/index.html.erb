@@ -1,0 +1,40 @@
+<h1>车商列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "search" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th width="8%"> 车商ID </th>
+        <th width="8%"> 城市 </th>
+        <th width="17%"> 车商名称 </th>
+        <th width="6%"> 在库 </th>
+        <th width="11%"> 老板 </th>
+        <th width="8%"> 服务顾问 </th>
+        <th width="5%"> 车币 </th>
+        <th width="8%"> 业务活跃 </th>
+        <th width="8%"> 考核活跃 </th>
+        <th width="12%"> 车商标签 </th>
+        <th width="9%"> 操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @companies.each do |company| %>
+        <%= render partial: "row", locals: { company: company} %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="11">
+          共 <%=@counter%> 条记录
+          <% if policy(:dashboard_company).clear_tag? %>
+           <%= link_to '清除业务活跃', clear_tag_companies_path(type: "active_tag"), data: { confirm: "确定清空？" }, class: "ui green basic button" %>
+          <% end %>
+          <% if policy(:dashboard_company).clear_manage_tag? %>
+           <%= link_to '清除考核活跃', clear_manage_tag_companies_path(type: "active_tag"), data: { confirm: "确定清空？" }, class: "ui green basic button" %>
+          <% end %>
+          <%= paginate @companies %>
+        </th>
+    </tfoot>
+  </table>
+</div>

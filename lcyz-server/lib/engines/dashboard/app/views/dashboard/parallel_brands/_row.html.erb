@@ -1,0 +1,11 @@
+<tr>
+  <td> <%= parallel_brand.id %> </td>
+  <td> <%= parallel_brand.name %> </td>
+  <td> <%= image_tag parallel_brand.logo_url %> </td>
+  <td> <%= parallel_brand.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+  <td>
+    <%= link_to "车型", parallel_brand_parallel_styles_path(parallel_brand) %> |
+    <%= link_to "编辑", edit_parallel_brand_path(parallel_brand) %>
+    <!-- | <%= link_to '删除', parallel_brand_path(parallel_brand), method: :delete, data: { confirm: '确定要删除吗?' } %> -->
+  </td>
+</tr>

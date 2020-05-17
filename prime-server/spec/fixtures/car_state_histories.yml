@@ -1,0 +1,65 @@
+# == Schema Information
+#
+# Table name: car_state_histories # 车辆状态修改历史
+#
+#  id                     :integer          not null, primary key # 车辆状态修改历史
+#  car_id                 :integer                                # 车辆ID
+#  previous_state         :string                                 # 上一个状态
+#  state                  :string                                 # 当前状况
+#  sellable               :boolean                                # 是否可售
+#  occurred_at            :datetime                               # 修改时间
+#  note                   :text                                   # 描述
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  predicted_restocked_at :datetime                               # 预计回厅时间
+#
+
+aodi_preparing_history:
+  car: aodi
+  previous_state: in_hall
+  state: preparing
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-02").utc.to_s(:db) %>
+
+aodi_shipping_history:
+  car: aodi
+  previous_state: preparing
+  state: shipping
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-05").utc.to_s(:db) %>
+
+aodi_driven_back_history:
+  car: aodi
+  previous_state: shipping
+  state: driven_back
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-08").utc.to_s(:db) %>
+
+aodi_preparing_again_history:
+  car: aodi
+  previous_state: driven_back
+  state: preparing
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+aodi_in_hall_history:
+  car: aodi
+  previous_state: preparing
+  state: in_hall
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-12").utc.to_s(:db) %>
+
+aodi_in_hall_history:
+  car: aodi
+  previous_state: in_hall
+  state: preparing
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-12").utc.to_s(:db) %>
+
+aodi_in_hall_history:
+  car: aodi
+  previous_state: preparing
+  state: in_hall
+  sellable: true
+  occurred_at: <%= Time.zone.parse("2015-01-12").utc.to_s(:db) %>
+

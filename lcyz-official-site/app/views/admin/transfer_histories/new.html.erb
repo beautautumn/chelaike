@@ -1,0 +1,11 @@
+<% content_for :content_header  do %>
+  <h1>新增过户记录</h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li><a href="/admin"><i class="fa fa-dashboard"></i>在库车辆</a></li>
+    <li><a href="<%= @url %>"><i class="fa fa-dashboard"></i>过户历史</a></li>
+    <li class="active">新增过户记录</li>
+  </ol>
+<% end %>
+
+<%= render 'form' %>

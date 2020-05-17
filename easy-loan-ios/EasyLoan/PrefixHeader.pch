@@ -1,0 +1,17 @@
+#define kDevcode @"5PIF5PWW57UC56E"
+
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//焦距倍数
+#define kFocalScale 1.7
+
+//分辨率 与相机分辨率对应：AVCaptureSessionPreset1920x1080
+#define kResolutionWidth 1920.0
+#define kResolutionHeight 1080.0
+
+//隐藏掉导航栏
+#define kSafeTopNoNavHeight ((kScreenHeight == 812.0 && kScreenWidth == 375.0) ? 44 : 0)
+#define kSafeBottomHeight ((kScreenHeight == 812.0 && kScreenWidth == 375.0) ? 34 : 0)
+#define kSafeLRX ((kScreenWidth == 812.0 && kScreenHeight == 375.0) ? 44 : 0)
+#define kSafeBY ((kScreenWidth == 812.0 && kScreenHeight == 375.0) ? 21 : 0)

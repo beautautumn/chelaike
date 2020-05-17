@@ -1,0 +1,46 @@
+.carInfo {
+  background: #f4f4f4;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  color: #666;
+
+  .carImage {
+    float: left;
+    margin: 12px 10px 10px 12px;
+  }
+
+  .carDesc {
+    float: left;
+    padding: 10px 0 10px 0;
+    font-size: 12px;
+    b {
+      font-size: 13px;
+    }
+  }
+}
+.publishers {
+  margin: 10px 0 0 0;
+}
+.publishStatus {
+  margin-top: 10px;
+  width: 400px;
+  padding: 0 20px;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+.placeholder {
+  height: 45px;
+}
+.carInfoSpan {
+  margin-right: 20px;
+}
+.operationCell {
+  a {
+    margin-right: 10px;
+  }
+}
+.red {
+  color: red;
+}

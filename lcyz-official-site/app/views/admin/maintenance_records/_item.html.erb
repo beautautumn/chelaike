@@ -1,0 +1,35 @@
+<% field_name = "maintenance_record[record_detail][]" %>
+<div class="item">
+  <div class="form-group">
+    <label class="col-sm-1 control-label">类别</label>
+    <div class="col-sm-3">
+      <input class="form-control", name='<%= "#{field_name}[category]" %>', value="<%= item['category'] %>">
+    </div>
+    <label class="col-sm-1 control-label">日期</label>
+    <div class="col-sm-2">
+      <input class="form-control", name='<%= "#{field_name}[date]" %>', value="<%= item['date'] %>">
+    </div>
+    <label class="col-sm-1 control-label">里程</label>
+    <div class="col-sm-2">
+      <input class="form-control", name='<%= "#{field_name}[mileage]" %>', value="<%= item['mileage'] %>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">项目</label>
+    <div class="col-sm-10">
+      <textarea rows="4" class="form-control", name='<%= "#{field_name}[item]" %>'><%= item['item'] %></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">材料</label>
+    <div class="col-sm-10">
+      <textarea rows="4" class="form-control", name='<%= "#{field_name}[material]" %>'><%= item['material'] %></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2 col-sm-offset-1">
+      <button class="btn btn-primary delete-item">删除</button>
+    </div>
+  </div>
+  <hr>
+</div>

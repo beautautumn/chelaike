@@ -1,0 +1,17 @@
+<div class="weui-cells tc-low-price-container">
+  <div class="tc-low-price-header">
+    请填写您的信息进行询价
+  </div>
+
+  <div class="weui-cell">
+    <div class="weui-cell__bd weui-cell_primary">
+      <%= text_field_tag "enquiry[phone]", @wechat_user&.phone, class: "weui-input", placeholder: "手机号" %>
+    </div>
+  </div>
+  <%= hidden_field_tag "enquiry[car_id]", @car.id %>
+
+  <div class="fill-full tc-tool-bar">
+    <%= button_tag "确定", type: "button", class: "weui-btn weui-btn_primary", id: "low-price-confirm"%>
+  </div>
+</div>
+</div>

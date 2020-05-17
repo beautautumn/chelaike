@@ -1,0 +1,24 @@
+<div class="car-detail-images-swiper">
+  <% if @car.images.size > 0 %>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <% @car.images.each do |image| %>
+          <div class="swiper-slide">
+            <%= image_tag img_scale(image.url,"540x360") %>
+          </div>
+        <% end %>
+      </div>
+      <div class="swiper-pagination tc-detail-images-swiper"></div>
+    </div>
+  <% else %>
+    <%= image_tag "common/car.png", class: "car-detail-default-image" %>
+  <% end %>
+  <% if !in_stock_car?(@car) %>
+    <div class="tc-saled-mask"></div>
+    <div class="tc-saled-label">已出售</div>
+  <% elsif bargin_car?(@car) %>
+    <em class="tc-bargin-badges"></em>
+  <% elsif recommended_car?(@car) %>
+    <em class="tc-recommended-badges"></em>
+  <% end %>
+</div>

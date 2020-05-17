@@ -1,0 +1,22 @@
+<tr>
+  <td> <%= intention.id %></td>
+  <td> <%= intention.company.province %>-<%= intention.company.city %></td>
+  <td>
+    <%= intention.try(:company).try(:name).try(:truncate, 12) %>
+    <% active_tag = (!intention.company.active_tag.nil?) &&intention.company.active_tag? %>
+    <% if active_tag %><br/><font color="red">（活跃）</font> <% end %>
+  </td>
+  <td> <%= intention.customer_name %>（<%= intention.customer_phone %> ）</td>
+  <td> <%= intention.try(:intention_level).try(:name) %> </td>
+  <td>
+    需求：<%= build_car(intention) %><br/>
+    价格：<%= intention.minimum_price_wan %>-<%= intention.maximum_price_wan %>万<br/>
+    备注：<%= wrap(intention.intention_note) %>
+  </td>
+  <td>
+    创建：<%= intention.try(:created_at).try(:strftime, "%Y-%m-%d") %><br/>
+    跟进：<%= intention.try(:latest_intention_push_history).try(:executor).try(:name) %><br/>
+    日期：<%= readable_time(intention) %><br/>
+    描述：<%= wrap(intention.try(:latest_intention_push_history).try(:note)) %>
+  </td>
+</tr>

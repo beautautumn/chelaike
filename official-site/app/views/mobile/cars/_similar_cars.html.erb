@@ -1,0 +1,29 @@
+<div class="tc-similar-cars tc-car-detail-part">
+  <div class="title"><%= title %>相似车</div>
+  <div class="similar-cars-list weui-grids">
+      <% cars.take(2).each do |car| %>
+      <div class="similar-car-item weui-grid js_grid tc-grid-car">
+        <%= render partial: "similar_car", locals: { car: car } %>
+      </div>
+      <% end %>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="tc-more-similar-cars car-detail-more-link">
+    <% if type == :alliance %>
+      <% cars_index_url = "http://#{@alliance_main_site}/cars?car_id=#{@car.id}&index_type=similar_index&similar_type=alliance" %>
+      <% similar_text = "#{@alliance_name}更多相似" %>
+    <% else %>
+      <% cars_index_url = cars_path(index_type: "similar_index", car_id: @car.id, similar_type: "company") %>
+      <% similar_text = "本店更多相似" %>
+    <% end %>
+    <%= link_to cars_index_url do %>
+      <% similar_count = cars.size > 20 ? 20 : cars.size %>
+      <span><%= similar_text%>(<%= similar_count %>辆)</span>
+      <div class="arrow">
+        <%= image_tag "mobile/arrow.png" %>
+      </div>
+    <% end %>
+  </div>
+</div>

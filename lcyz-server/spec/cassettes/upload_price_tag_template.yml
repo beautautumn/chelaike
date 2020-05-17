@@ -1,0 +1,199 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/price_tag_templates/a/images/girl.png
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - OSS oppOculaV6cUtaeB:SCZjMrxbVRimJIK+bB19TvDkebY=
+      Content-Type:
+      - image/png
+      Content-Length:
+      - '0'
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Host:
+      - tianche-playground.oss-cn-hangzhou.aliyuncs.com
+      Expect:
+      - 100-Continue
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"D41D8CD98F00B204E9800998ECF8427E"'
+      Server:
+      - AliyunOSS
+      X-Oss-Request-Id:
+      - 5603EB071790CFC383B56932
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 24 Sep 2015 12:22:31 GMT
+- request:
+    method: put
+    uri: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/price_tag_templates/a/images/logo.jpg
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - OSS oppOculaV6cUtaeB:t2/46RUvL1qVADWZiUGLs9o36hQ=
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '0'
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Host:
+      - tianche-playground.oss-cn-hangzhou.aliyuncs.com
+      Expect:
+      - 100-Continue
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"D41D8CD98F00B204E9800998ECF8427E"'
+      Server:
+      - AliyunOSS
+      X-Oss-Request-Id:
+      - 5603EB07B29534B56DC5E6EB
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 24 Sep 2015 12:22:31 GMT
+- request:
+    method: put
+    uri: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/price_tag_templates/a/css/index.css
+    body:
+      encoding: UTF-8
+      string: |
+        .title {
+          color: red;
+        }
+
+        body {
+          background-image: url("http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/price_tag_templates/a/images/girl.png");
+        }
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - OSS oppOculaV6cUtaeB:CJU/DE5OCRx/cTjbJvfbZhu8NXw=
+      Content-Type:
+      - text/css
+      Content-Length:
+      - '162'
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Host:
+      - tianche-playground.oss-cn-hangzhou.aliyuncs.com
+      Expect:
+      - 100-Continue
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"75832B4F7CC4EA45035412FF2F35BA28"'
+      Server:
+      - AliyunOSS
+      X-Oss-Request-Id:
+      - 5603EB07770DFE9C34C6F09D
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 24 Sep 2015 12:22:31 GMT
+- request:
+    method: put
+    uri: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/price_tag_templates/a/js/index.js
+    body:
+      encoding: UTF-8
+      string: |
+        alert("abc");
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - OSS oppOculaV6cUtaeB:kwaVgsEvwOT2+A4XFVVa2GO9rf8=
+      Content-Type:
+      - application/javascript
+      Content-Length:
+      - '14'
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Host:
+      - tianche-playground.oss-cn-hangzhou.aliyuncs.com
+      Expect:
+      - 100-Continue
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Sep 2015 12:22:31 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"F41F5B2A832877365F5414AADAB5C3C7"'
+      Server:
+      - AliyunOSS
+      X-Oss-Request-Id:
+      - 5603EB0768248C3652CBA5A8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 24 Sep 2015 12:22:31 GMT
+recorded_with: VCR 2.9.3

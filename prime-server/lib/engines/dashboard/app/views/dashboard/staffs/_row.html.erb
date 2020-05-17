@@ -1,0 +1,13 @@
+<tr>
+  <td> <%= staff.phone %> </td>
+  <td> <%= staff.name %> </td>
+  <td> <%= staff.state == "enabled" ? "启用" : "禁用" %> </td>
+  <td> <%= staff.role %> </td>
+  <td> <%= staff.manager.try(:name) %> </td>
+  <td>
+    <%= link_to "编辑", edit_staff_path(staff) %>
+    <% if current_staff!=staff %>
+      <%= link_to "删除", staff, method: :delete, data: { confirm: "确定删除？" } %>
+    <% end %>
+  </td>
+</tr>

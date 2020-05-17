@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#mymessage{
+	right: 0px;
+	bottom: 0px;
+	position: absolute;
+	z-index: 999;
+/*
+	display:none;
+*/
+	position:fixed;
+}
+* html #mymessage{
+	position:absolute;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+#mymessage #mes_close {
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	background:url(../images/layer/message_box_top.png)
+}
+
+#mymessage #message_close{
+	text-decoration: none;
+	display: inline;
+	float: right;
+	background-image: url(../images/layer/vip_tips.png);
+	background-repeat: no-repeat;
+	background-position: -502px -51px;
+	height: 10px;
+	width: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+#mymessage #mes_close .tips_title {
+	font-family: "宋体";
+	font-size: 14px;
+	color: #4F6266;
+	display: inline;
+	float: left;
+	margin-left: 10px;
+}
+#mymessage .list{ width:390px; height:auto;background:url(../images/layer/message_box_body.png); background-repeat:repeat-y; padding:2px 15px 10px 15px;}
+#mymessage .list a{	font-family: "宋体";
+	font-size: 12px;
+	text-decoration: none;}
+
+#mymessage .new_list li{
+	height: 18px;
+}
+
+#mymessage .new_list .info{
+	margin-top: 5px;
+}
+#mymessage .new_list  ul{
+	list-style-type:circle;
+}
+#mymessage .new_list .info a{
+	font-family: "宋体";
+	font-size: 12px;
+	color: #FA8900;
+	text-decoration: none;
+}	
+#mymessage .list a:hover{
+	text-decoration: underline;
+}
+#mymessage .index_tips_bottom{
+    width:420px;
+	line-height: 20px;
+	height: 30px;
+	background:url(../images/layer/message_box_bottom.png);
+}
+#mymessage .index_tips_bottom .get_reward {
+display:block; float:right;
+	font-family: "宋体";
+	font-size: 12px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-indent: 20px;
+	text-decoration: none;
+	margin-right: 10px;
+}
+#mymessage .index_tips_bottom .more{
+	display: inline;
+	float: right;
+	text-decoration: none;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #FA8900;
+	margin-right: 10px;
+	} 
+#mymessage .index_tips_bottom a:hover{
+	text-decoration: underline;
+}

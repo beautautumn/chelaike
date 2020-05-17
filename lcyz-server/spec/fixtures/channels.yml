@@ -1,0 +1,69 @@
+# == Schema Information
+#
+# Table name: channels # 渠道设置
+#
+#  id           :integer          not null, primary key # 渠道设置
+#  company_id   :integer                                # 公司ID
+#  name         :string                                 # 名称
+#  note         :text                                   # 备注
+#  deleted_at   :datetime                               # 删除时间
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  company_type :string                                 # 渠道所属公司多态
+#
+
+aodi_4s:
+  name: "奥迪4S店"
+  note: "大店哦"
+  company: tianche
+  company_type: "Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+aodi_5s:
+  name: "奥迪5S店"
+  note: "大店哦"
+  company: tianche
+  company_type: "Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+individual:
+  name: "个人买家"
+  note: "蛮有钱"
+  company: tianche
+  company_type: "Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+douyu:
+  name: "斗鱼直播"
+  note: "主播就靠这个赚钱了"
+  company: github
+  company_type: "Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+alliance_aodi_4s:
+  name: "奥迪4S店"
+  note: "大店哦"
+  company: alliance_tianche
+  company_type: "AllianceCompany::Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+alliance_aodi_5s:
+  name: "奥迪5S店"
+  note: "大店哦"
+  company: alliance_tianche
+  company_type: "AllianceCompany::Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+alliance_individual:
+  name: "个人买家"
+  note: "蛮有钱"
+  company: alliance_tianche
+  company_type: "AllianceCompany::Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+alliance_douyu:
+  name: "斗鱼直播"
+  note: "主播就靠这个赚钱了"
+  company: alliance_tianche
+  company_type: "AllianceCompany::Company"
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

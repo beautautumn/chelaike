@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id             :integer          not null, primary key
+#  company_id     :integer
+#  user_id        :integer
+#  channel        :string
+#  amount_cents   :integer
+#  currency       :string
+#  client_ip      :string
+#  status         :string
+#  orderable_id   :integer
+#  orderable_type :string
+#  quantity       :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  charge_id      :string                                 # ChargeID，由pingpp返回
+#  action         :string                                 # 订单类别
+#  shop_id        :integer
+#  token_type     :string                                 # 标记个人或公司的车币
+#
+
+order_a:
+  user_id: <%= ActiveRecord::FixtureSet.identify(:zhangsan) %>
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  channel: upacp
+  amount_cents: 10010
+  currency: cny
+  status: charge
+  token_type: company
+  id: 123456789

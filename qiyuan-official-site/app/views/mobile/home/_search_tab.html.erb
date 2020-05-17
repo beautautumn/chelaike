@@ -1,0 +1,155 @@
+<div class="weui-tab quick-search-panel" style="height:44px;"  id="tab4">
+  <div class="weui-navbar" style="height:44px;">
+    <div class="weui-navbar__item switch_item active" data-item-id="brand_item" >
+      品牌
+    </div>
+    <div class="weui-navbar__item switch_item" data-item-id="price_item" >
+      价格
+    </div>
+    <div class="weui-navbar__item switch_item" data-item-id="car_type_item" >
+      车型
+    </div>
+  </div>
+  <div class="weui-tab_bd"></div>
+</div>
+
+<div class="page-bd select-field" style="font-size: 12px; text-align: center; background:white; color: #000000;" >
+  <div id="price_item" class="hidden_item">
+    <div class="weui-flex item-height">
+      <div class="weui-flex__item short_search"><%= link_to '10万及以下', cars_path("query[show_price_cents_lteq]": "10000000"), class: 'price-select price-select-div' %></div>
+      <div class="weui-flex__item short_search"><%= link_to '10-20万', cars_path("query[show_price_cents_gteq]": "100000000", "query[show_price_cents_lteq]": "20000000"), class: 'price-select price-select-div' %></div>
+      <div class="weui-flex__item short_search"><%= link_to '20-30万', cars_path("query[show_price_cents_gteq]": "20000000", "query[show_price_cents_lteq]": "30000000"), class: 'price-select price-select-div' %></div>
+    </div>
+    <div class="weui-flex item-height">
+      <div class="weui-flex__item short_search"><%= link_to '30-50万', cars_path("query[show_price_cents_gteq]": "30000000", "query[show_price_cents_lteq]": "50000000"), class: 'price-select price-select-div' %></div>
+      <div class="weui-flex__item short_search"><%= link_to '50-100万', cars_path("query[show_price_cents_gteq]": "50000000", "query[show_price_cents_lteq]": "100000000"), class: 'price-select price-select-div' %></div>
+      <div class="weui-flex__item short_search"><%= link_to '100万以上', cars_path("query[show_price_cents_gteq]": "100000000"), class: 'price-select price-select-div' %></div>
+    </div>
+  </div>
+
+  <div id="car_type_item" class="hidden_item">
+    <div class="weui-flex item-height">
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "small_car"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/jc_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/jc.png') do %>
+          <%= image_tag "mobile/homepage/jc.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/jc_selected.png", class: "car-type-icon" %><br/>
+          小轿车
+        <% end %>
+      </div>
+
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "mvp"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/mpv_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/mpv.png') do %>
+          <%= image_tag "mobile/homepage/mpv.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/mpv_selected.png", class: "car-type-icon" %><br/>
+          MPV
+        <% end %>
+      </div>
+
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "suv"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/suv_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/suv.png') do %>
+          <%= image_tag "mobile/homepage/suv.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/suv_selected.png", class: "car-type-icon" %><br/>
+          SUV
+        <% end %>
+      </div>
+
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "sports_car"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/pc_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/pc.png') do %>
+          <%= image_tag "mobile/homepage/pc.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/pc_selected.png", class: "car-type-icon" %><br/>
+          跑车
+        <% end %>
+      </div>
+    </div>
+
+    <div class="weui-flex item-height">
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "pickup_trucks"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/pk_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/pk.png') do %>
+          <%= image_tag "mobile/homepage/pk.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/pk_selected.png", class: "car-type-icon" %><br/>
+          皮卡
+        <% end %>
+      </div>
+
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "small_van"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/wm_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/wm.png') do %>
+          <%= image_tag "mobile/homepage/wm.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/wm_selected.png", class: "car-type-icon" %><br/>
+          微面
+        <% end %>
+      </div>
+
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "electrocar"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/ddc_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/ddc.png') do %>
+          <%= image_tag "mobile/homepage/ddc.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/ddc_selected.png", class: "car-type-icon" %><br/>
+          电动车
+        <% end %>
+      </div>
+
+      <div class="weui-flex__item short_search">
+        <%= link_to cars_path("query[car_type_eq]": "other"), class: "car-type-link", "data-image-clicked": image_path('mobile/homepage/other_selected.png'), "data-image-not-clicked": image_path('mobile/homepage/other.png') do %>
+          <%= image_tag "mobile/homepage/other.png", class: "car-type-icon" %>
+          <%= image_tag "mobile/homepage/other_selected.png", class: "car-type-icon" %><br/>
+          其他
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div id="brand_item" class="shown_item" >
+    <div class="weui-flex item-height">
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "奔驰" do %>
+          <%= image_tag 'mobile/homepage/benz.png', class: "car-icon" %><br/>
+          奔驰
+        <% end %>
+      </div>
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "路虎" do %>
+          <%= image_tag 'mobile/homepage/luhu.png', class: "car-icon" %><br/>
+          路虎
+        <% end %>
+      </div>
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "保时捷" do %>
+          <%= image_tag 'mobile/homepage/porsche.png', class: "car-icon" %><br/>
+          保时捷
+        <% end %>
+      </div>
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "别克" do %>
+          <%= image_tag 'mobile/homepage/buick.png', class: "car-icon" %><br/>
+          别克
+        <% end %>
+      </div>
+    </div>
+
+    <div class="weui-flex item-height">
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "奥迪" do %>
+          <%= image_tag 'mobile/homepage/audi.png', class: "car-icon" %><br/>
+          奥迪
+        <% end %>
+      </div>
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "宝马" do %>
+          <%= image_tag 'mobile/homepage/bmw.png', class: "car-icon" %><br/>
+          宝马
+        <% end %>
+      </div>
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "本田" do %>
+          <%= image_tag 'mobile/homepage/bentian.png', class: "car-icon" %><br/>
+          本田
+        <% end %>
+      </div>
+      <div class="weui-flex__item tc-brand-search">
+        <%= link_to cars_path "query[brand_name_eq]": "丰田" do %>
+          <%= image_tag 'mobile/homepage/fengtian.png', class: "car-icon" %><br/>
+          丰田
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

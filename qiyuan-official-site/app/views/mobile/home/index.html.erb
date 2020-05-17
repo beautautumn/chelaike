@@ -1,0 +1,65 @@
+<div class="key-word-search">
+  <div class="weui-search-bar" id="searchBar">
+    <form class="weui-search-bar__form">
+      <div class="weui-search-bar__box">
+        <i class="weui-icon-search"></i>
+        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索车辆" required="">
+        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+      </div>
+      <label class="weui-search-bar__label" id="searchText">
+        <i class="weui-icon-search"></i>
+        <span>搜索车辆</span>
+      </label>
+    </form>
+    <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+  </div>
+</div>
+
+<%= render 'ad_swiper' %>
+
+<div>
+  <%= render 'home/search_tab' %>
+</div>
+
+<div class="recommend">
+  <div class="recommend-text">好车推荐</div>
+</div>
+<div>
+  <%= render 'home/hot_car_slide' %>
+</div>
+
+<!-- 特卖车 -->
+<%= render partial: "cars/bargain_cars" %>
+
+<% if @mid_banner %>
+  <div class="tc-home-mid-banner">
+    <%= link_to @mid_banner.link do %>
+      <%= image_tag @mid_banner.image_url %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="weui-panel weui-panel_access tc-home-selling-container">
+  <div class="tc-home-selling-titile">
+    在售车辆
+    <%= link_to cars_path do %>
+      <span>查看全部<%= @cars_count %>辆</span>
+      <div class="arrow"></div>
+    <% end %>
+  </div>
+  <div class="weui-panel_bd tc-cars-list list-view">
+    <%= render partial: "/cars/car", collection: @selling_cars, as: :car %>
+  </div>
+</div>
+
+<!-- 联盟主站link -->
+<% if @alliance_name %>
+  <div class="tc-cars-go-home">
+    <div class="tc-cars-go-home-text">
+      <%= "#{@alliance_name}在库#{@alliance_cars_count}台，欢迎选购!" %>
+    </div>
+    <div class="index-go-home">
+      <div><%= link_to "去看看", "http://#{@alliance_main_site}/cars" %></div>
+    </div>
+  </div>
+<% end %>

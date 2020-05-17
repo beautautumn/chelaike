@@ -1,0 +1,17 @@
+zh-CN:
+  activerecord:
+    models:
+      refund_inventory: 回库
+    attributes:
+      refund_inventory:
+        car_id: 车辆ID
+        refund_inventory_type: 回库类型
+        refunded_at: 回库日期
+        refund_price_wan: 退款金额
+        refund_price_cents: 退款金额
+        acquisition_price_wan: 收购价格
+        acquisition_price_cents: 收购价格
+        note: 描述
+        current: 是否为当前回库清单
+        created_at: 创建时间
+        updated_at: 最后更新时间

@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    models:
+      authority_role: 权限角色
+    attributes:
+      authority_role:
+        id: 权限名称
+        company_id: 公司ID
+        name: 名称
+        authorities: 权限
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        note: 备注

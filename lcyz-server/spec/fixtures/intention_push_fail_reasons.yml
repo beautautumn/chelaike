@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: intention_push_fail_reasons # 意向跟进失败原因
+#
+#  id         :integer          not null, primary key # 意向跟进失败原因
+#  company_id :integer                                # 公司id
+#  note       :text                                   # 备注
+#  name       :string                                 # 失败原因名
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+fail_reason_other_place:
+  note: "别的地方购买"
+
+fail_reason_sold_out:
+  note: "卖光啦"

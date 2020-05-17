@@ -1,0 +1,71 @@
+<div class="col-md-12">
+  <%= f.fields_for :record_abstract, @maintenance_record.record_abstract do |record_abstract| %>
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">记录概要</h3>
+      </div>
+      <div class="box-body">
+        <div class="form-group">
+          <div class="col-sm-8 col-sm-offset-2">
+            <%= record_abstract.text_area :summary, rows: 3, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= record_abstract.label :last_record_mileage, "最大里程", class: "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <%= record_abstract.text_field :last_record_mileage, class: "form-control"%>
+              <span class="input-group-addon">公里</span>
+            </div>
+          </div>
+          <div class="col-sm-6 comment">
+            车辆历史记录中所记载的最大里程数，最大里程数并不代表实际行驶里程
+          </div>
+        </div>
+        <div class="form-group">
+          <%= record_abstract.label :last_record_date, "最后记录日期", class: "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <%= record_abstract.text_field :last_record_date, class: "form-control"%>
+          </div>
+          <div class="col-sm-6 comment">
+             车辆历史记录中所记载的最后一条记录日期
+          </div>
+        </div>
+        <div class="form-group">
+          <%= record_abstract.label :ab, "安全气囊", class: "col-sm-2 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :ab, class: "form-control"%>
+          </div>
+          <%= record_abstract.label :en, "发动机", class: "col-sm-2 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :en, class: "form-control"%>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= record_abstract.label :mi, "里程表", class: "col-sm-2 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :mi, class: "form-control"%>
+          </div>
+          <%= record_abstract.label :sd, "结构部件", class: "col-sm-2 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :sd, class: "form-control"%>
+          </div>
+          <%= record_abstract.label :tr, "变速箱", class: "col-sm-1 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :tr, class: "form-control"%>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= record_abstract.label :fire, "火烧维修记录", class: "col-sm-2 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :fire, class: "form-control"%>
+          </div>
+          <%= record_abstract.label :water, "水泡维修记录", class: "col-sm-2 control-label" %>
+          <div class="col-sm-1">
+            <%= record_abstract.text_field :water, class: "form-control"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

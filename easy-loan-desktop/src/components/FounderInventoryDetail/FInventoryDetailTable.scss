@@ -1,0 +1,116 @@
+.table {
+  margin-top: 10px;
+
+  tr > td {
+    padding-bottom: 0;
+  }
+  .title {
+    border-bottom: 1px solid #d9d9d9;
+    span {
+      margin-right: 100px;
+    }
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .column {
+    display: flex;
+    flex: 1;
+    border-right: 1px solid #d9d9d9;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .car {
+    flex: none;
+    width: 550px;
+    border-right: none;
+  }
+
+  .color{
+    display: inline-block;
+    color:red;
+    img{
+      width:10px;
+      height: auto;
+    }
+  }
+
+  .carImg {
+    flex: none;
+    margin-right: 2px;
+    img {
+      height: 75px;
+    }
+  }
+  .carList {
+    border-right: 1px solid #d9d9d9;
+    padding-right: 10px;
+  }
+  .carInfo {
+    flex: none;
+    margin-right: 20px;
+  }
+  .certificate {
+    flex: 1;
+    margin-right: 20px;
+    a {
+      display: block;
+    }
+  }
+  .lastStatus {
+    margin: 0 10px;
+    margin-bottom: 5px;
+  }
+  .transferHistory {
+    color: #50a8e0;
+    cursor: pointer;
+  }
+  .contact {
+    padding: 10px;
+    width: 180px;
+  }
+}
+
+.addButton {
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.conceptPanel {
+  display: flex;
+  background-color: #74C8E4;
+
+  .debtor {
+    display: flex;
+    width: 520px;
+    margin: 25px 0 25px 40px;
+    color: #f2f2f2;
+    border-right: 1px solid #f2f2f2;
+    .left{
+
+      .title {
+
+      }
+      .name {
+        font-size: 20px;
+        padding: 40px 0;
+      }
+    }
+    .debtorImg{
+      flex: 1;
+      padding-left: 320px;
+    }
+  }
+  .pie {
+    flex:1;
+  }
+}
+

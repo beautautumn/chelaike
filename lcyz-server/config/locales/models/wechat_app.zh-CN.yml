@@ -1,0 +1,13 @@
+zh-CN:
+  enumerize:
+    wechat_app:
+      service_type_info:
+        subscription: 订阅号
+        old_subscription: 订阅号
+        service: 服务号
+      menus_state:
+        editing: 编辑中
+        published: 已发布
+      state:
+        enabled: 授权中
+        disabled: 授权解除

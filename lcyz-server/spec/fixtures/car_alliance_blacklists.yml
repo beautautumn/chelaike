@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: car_alliance_blacklists # 不允许车辆在某个平台展示
+#
+#  id          :integer          not null, primary key # 不允许车辆在某个平台展示
+#  car_id      :integer
+#  alliance_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+no_aodi_in_noaodi:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:noaodi) %>
+
+no_x5_in_hydra:
+  car_id: <%= ActiveRecord::FixtureSet.identify(:bmw_x5) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:hydra) %>

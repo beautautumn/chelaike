@@ -1,0 +1,53 @@
+# == Schema Information
+#
+# Table name: easy_loan_loan_bills # 借款单
+#
+#  id                :integer          not null, primary key # 借款单
+#  company_id        :integer                                # 借款公司
+#  car_id            :integer                                # 用哪辆车进行借款
+#  sp_company_id     :integer                                # 通过哪家sp公司
+#  funder_company_id :integer                                # 提供资金公司
+#  car_basic_info    :jsonb                                  # 冗余车辆基本信息
+#  state             :string                                 # 借款单当前状态
+#  state_history     :jsonb                                  # 状态变更历史记录概要
+#  apply_code        :string                                 # 申请编号
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
+tianche_bill_a:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi_sold) %>
+  state: "borrow_applied"
+  funder_company_id: <%= ActiveRecord::FixtureSet.identify(:gmc) %>
+  sp_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche_sp) %>
+tianche_bill_b:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:a4) %>
+  state: borrow_applied
+tianche_bill_c:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:tumbler) %>
+  state: "borrow_submitted"
+github_bill_a:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:gtr) %>
+  state: "borrow_submitted"
+github_bill_b:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:bmw_x5) %>
+  state: borrow_refused
+github_bill_c:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:bmw_x6) %>
+  state: borrow_confirmed
+
+aodi_gmc_loan:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  car_id: <%= ActiveRecord::FixtureSet.identify(:aodi) %>
+  sp_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche_sp) %>
+  funder_company_id: <%= ActiveRecord::FixtureSet.identify(:gmc) %>
+  state: :borrow_applied
+  car_basic_info:
+    name: "奥迪 A3 2014款 Sportback 35 TFSI 自动豪华型"
+    vin: "abc123"

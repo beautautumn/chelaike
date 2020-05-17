@@ -1,0 +1,33 @@
+<% if @car.prepare_items.present? %>
+<div class="tc-car-detail-part">
+  <div class="title">整备内容</div>
+  <div class="content">
+    <div class="weui-flex">
+      <div>项目：</div>
+      <div class="weui-flex__item">
+        <%= @car.prepare_items.map { |item| item.name }.join("，") %>
+      </div>
+    </div>
+  </div>
+  <div class="nav-more">
+    <a href="javascript:;">查看整备详情</a>
+  </div>
+</div>
+
+<% content_for :append_doms do %>
+  <div id="prepareDetailModal" class="weui-popup__container">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal">
+      <div class="tc-prepare-detail">
+        <div class="car-title"><%= @car.system_name %></div>
+        <% @car.prepare_items.each do |item| %>
+          <div class="prepare-item">
+            <div class="title"><%= item.name %></div>
+            <div class="content"><%= item.note %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>

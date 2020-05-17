@@ -1,0 +1,43 @@
+<div class="seller-info white-background">
+  <div class="weui-panel__bd">
+    <div class="weui-media-box weui-media-box_appmsg">
+      <div class="weui-media-box__hd seller-avatar">
+        <% seller_avatar = @seller.avatar.presence || "user2-160x160.jpg" %>
+        <%= image_tag seller_avatar %>
+      </div>
+      <div class="weui-media-box__bd">
+        <p class="seller-name"><%= @seller.name %></p>
+
+        <!-- 联系方式 -->
+        <div class="seller-contact-ways clearfix">
+          <!-- 电话 -->
+          <div class="seller-contact-way contact-phone">
+            <%= link_to image_tag("mobile/car_detail/phone.png") + "#{@seller.phone}", "tel:#{@seller.phone}" %>
+          </div>
+
+          <!-- 微信 -->
+          <% if @seller.qrcode_url.present? %>
+            <div class="seller-contact-way contact-wechat" id="seller-wechat-qrcode">
+              <%= image_tag("mobile/car_detail/wechat.png", class: "seller-wechat") + "加我微信"%>
+            </div>
+          <% end %>
+        </div>
+        <div class="seller-slogan"><%= @seller.self_description || "欢迎电话咨询，很高兴为您服务"%></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 二维码图 -->
+<% if @seller.qrcode_url.present? %>
+  <% content_for :append_doms do %>
+  <div id="seller-qrcode-modal" style="display:none">
+    <div class="weui-mask weui-mask--visible"></div>
+    <div class="weui-dialog weui-dialog--visible">
+      <div class="weui-dialog__bd seller-modal">
+        <%= image_tag @seller.qrcode_url %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,77 @@
+.pane {
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .category {
+    margin: -10px 0px 0 -10px;
+    color: #cccccc;
+  }
+
+  .keypoint {
+    margin-top: 10px;
+
+    li {
+      i {
+        margin-right: 5px;
+      }
+      :global{
+        .anticon {
+          font-size: 18px;
+        }
+        .anticon-question-circle {
+          color: #FF6100;
+        }
+        .anticon-check-circle {
+          color: #60BE29;
+        }
+      }
+      float: left;
+      width: 160px;
+      height: 20px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .noRepareRecord {
+    padding: 5px;
+    text-align: center;
+  }
+  .split {
+    padding: 10px;
+    clear: both;
+  }
+
+  :global {
+    .ant-card {
+      margin-bottom: 10px;
+    }
+
+    .ant-card-head {
+      height: 40px;
+      line-height: 40px;
+      background-color: #f9fafb;
+    }
+
+    .ant-card-body {
+      font-size: 14px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.imageCell {
+  margin-bottom: 10px;
+}
+
+.uploadCell {
+  width: 250px;
+}
+
+.deleteButton {
+  position: absolute;
+  font-size: 22px;
+  left: 228px;
+  text-align:center;
+  border-radius: 50%;
+}

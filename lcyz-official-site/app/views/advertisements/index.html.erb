@@ -1,0 +1,4 @@
+<% @advertisements.each do |ad| %>
+  <%= link_to ad.id, ad.link %>
+  <%= image_tag ad.image_url %>
+<% end %>

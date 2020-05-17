@@ -1,0 +1,8 @@
+<tr>
+  <td><%= company.id %></td>
+  <td><%= company.name %></td>
+  <td>
+    <%= link_to "改名", edit_funder_company_path(company) %>
+    <%= link_to "删除", "funder_companies/#{company.id}", method: :delete, data: { confirm: "确定删除？" } %>
+  </td>
+</tr>

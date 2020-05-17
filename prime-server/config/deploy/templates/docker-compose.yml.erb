@@ -1,0 +1,46 @@
+redis:
+  build: .
+  dockerfile: ./redis/Dockerfile
+  ports:
+    - "6379"
+
+memcached:
+  build: .
+  dockerfile: ./memcached/Dockerfile
+  ports:
+    - "11211"
+
+db:
+  build: .
+  dockerfile: ./postgres/Dockerfile
+  ports:
+    - "5432"
+  environment:
+    LC_ALL: C.UTF-8
+    POSTGRES_USER: <%= fetch(:docker_db_username) %>
+    POSTGRES_PASSWORD: <%= fetch(:docker_db_password) %>
+  volumes:
+    - /home/deploy/prime-server/pg_dump.sql:/pg_dump.sql
+  # volumes:
+  #   - ./pg_dump.sql:/var/lib/postgresql/data
+
+app_base: &app_base
+  build: .
+  volumes:
+    - ./<%= fetch(:application) %>:/<%= fetch(:application) %>
+  environment:
+    - RAILS_ENV=docker
+  links:
+    - redis
+    - memcached
+    - db
+
+web:
+  <<: *app_base
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  ports:
+    - "<%= fetch(:docker_rails_port) %>:3000"
+
+worker:
+  <<: *app_base
+  command: bundle exec sidekiq -c 25 -q default

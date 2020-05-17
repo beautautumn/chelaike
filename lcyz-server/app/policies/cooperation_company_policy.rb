@@ -1,0 +1,2 @@
+class CooperationCompanyPolicy < SystemSettingPolicy
+end

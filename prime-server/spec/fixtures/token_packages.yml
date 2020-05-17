@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: token_packages # 车币套餐
+#
+#  id            :integer          not null, primary key # 车币套餐
+#  name          :string                                 # 名称
+#  title         :string                                 # 标题
+#  description   :string                                 # 描述
+#  price_cents   :integer                                # 价格
+#  balance       :integer                                # 车币
+#  extra_balance :integer                                # 赠送车币
+#
+
+token_packages_a:
+  name: 280元
+  title: 充值280元得310车币
+  description: 赠送30车币
+  price_cents: 28000
+  balance: 310
+  extra_balance: 30
+
+token_packages_b:
+  name: 560元
+  title: 充值560元得630车币
+  description: 赠送70车币
+  price_cents: 56000
+  balance: 630
+  extra_balance: 70

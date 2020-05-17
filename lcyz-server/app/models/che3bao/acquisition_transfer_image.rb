@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: tf_t_vehicle_attach_files
+#
+#  attach_files_id :integer          not null, primary key
+#  vehicle_id      :integer
+#  upload_staff    :integer
+#  pic_name        :string(50)
+#  pic_addr        :string(255)
+#  upload_date     :datetime
+#  display_order   :integer
+#  show_tag        :string(1)
+#  pic_kind        :string(10)
+#  temp_id         :string(40)
+#  small_pic_addr  :string(255)
+#  list_pic_addr   :string(255)
+#  pic_src         :string(1)        default("0")
+#
+
+module Che3bao
+  class AcquisitionTransferImage < ActiveRecord::Base
+    # accessors .................................................................
+    # extends ...................................................................
+    # includes ..................................................................
+    include Che3baoConnection
+    # relationships .............................................................
+    belongs_to :vehicle
+
+    # validations ...............................................................
+    # callbacks .................................................................
+    # scopes ....................................................................
+    # additional config .........................................................
+    self.table_name = "tf_t_vehicle_attach_files"
+    # class methods .............................................................
+    # public instance methods ...................................................
+    # protected instance methods ................................................
+    # private instance methods ..................................................
+  end
+end

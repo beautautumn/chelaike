@@ -1,0 +1,27 @@
+<h1>发布评级数据</h1>
+
+<div class="ui segment">
+  <% if flash[:notice] %>
+    <div class="ui green message">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="ui red message">
+      <p><%= flash[:alert] %></p>
+    </div>
+  <% end %>
+
+  <%= form_tag "publish", method: "post", class: "ui form" do %>
+    <div class="required field">
+      <label>综合指数大于</label>
+      <%= text_field_tag :comprehensive_rating %>
+      <label>库存资金量(万)大于</label>
+      <%= text_field_tag :inventory_amount %>
+      <label>健康评级大于</label>
+      <%= text_field_tag :operating_health %>
+      <label>行业风评大于</label>
+      <%= text_field_tag :industry_rating %>
+    </div>
+    <%= submit_tag "发布" %>
+  <% end %>
+</div>

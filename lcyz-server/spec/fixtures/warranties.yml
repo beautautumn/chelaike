@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: warranties # 质保等级
+#
+#  id         :integer          not null, primary key # 质保等级
+#  company_id :integer                                # 公司ID
+#  name       :string                                 # 名称
+#  fee_cents  :integer                                # 费用
+#  deleted_at :datetime                               # 删除时间
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  note       :text                                   # 说明
+#
+
+a_level:
+  name: 一级
+  fee_cents: 100_000_000
+  company: tianche
+  note: abc
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+b_level:
+  name: 二级
+  fee_cents: 100_000_000
+  company: github
+  note: abc
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

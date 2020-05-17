@@ -1,0 +1,49 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  id             :integer          not null, primary key
+#  imageable_id   :integer                                # 多态ID
+#  imageable_type :string                                 # 多态名
+#  url            :string                                 # 图片URL
+#  name           :string                                 # 名称
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  location       :string                                 # 图片位置
+#  is_cover       :boolean          default(FALSE)        # 是否为LOGO
+#  sort           :integer          default(0)            # 排序
+#  image_style    :string                                 # 图片的类型
+#
+
+aodi_image_1:
+  imageable_id: <%= ActiveRecord::FixtureSet.identify(:aodi) %>
+  imageable_type: Car
+  url: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/images/00015e45dd3076c15a36c71397348a0c.jpg
+  name: 奥迪头部
+  location: 右侧面
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+aodi_image_2:
+  imageable_id: <%= ActiveRecord::FixtureSet.identify(:aodi_acquisition) %>
+  imageable_type: TransferRecord
+  url: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/images/00015e45dd3076c15a36c71397348a0c.jpg
+  name: 奥迪头部
+  location: 左侧面
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+parallel_aodi_q7_image_1:
+  imageable_id: <%= ActiveRecord::FixtureSet.identify(:q7) %>
+  imageable_type: Parallel::Style
+  url: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/images/00015e45dd3076c15a36c71397348a0c.jpg
+  name: 奥迪头部
+  location: 右侧面
+  is_cover: true
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>
+
+parallel_aodi_q7_image_2:
+  imageable_id: <%= ActiveRecord::FixtureSet.identify(:q7) %>
+  imageable_type: Parallel::Style
+  url: http://tianche-playground.oss-cn-hangzhou.aliyuncs.com/prime/images/00015e45dd3076c15a36c71397348a0c.jpg
+  name: 奥迪头部
+  location: 左侧面
+  created_at: <%= Time.zone.parse("2015-01-10").utc.to_s(:db) %>

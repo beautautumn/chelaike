@@ -1,0 +1,108 @@
+$margin: 25px;
+$width: 120px;
+$height: 35px;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 4px;
+  border: 1px solid #EAEAEA;
+
+  tr:last-child {
+    .label {
+      border: none;
+    }
+
+    .input {
+      border: none;
+    }
+  }
+
+  .label {
+    width: $width;
+    text-align: right;
+    padding-right: 15px;
+    background: #F4F4F4;
+    height: $height;
+    border-bottom: 1px solid #EAEAEA;
+  }
+
+  .input {
+    padding-left: 15px;
+    border-bottom: 1px solid #EAEAEA;
+
+    :global(.ant-input-group) {
+      width: 100%;
+    }
+
+    :global(.ant-tag) {
+      margin: 0;
+      margin-right: $margin;
+      cursor: pointer;
+    }
+
+    :global(.ant-calendar-picker) {
+      vertical-align: top;
+    }
+
+    :global(.ant-form-split) {
+      line-height: 25px;
+    }
+
+    .hasSplit {
+      padding-right: 0;
+
+      & ~ div {
+        padding-right: 0;
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      color: rgba(139, 139, 139, .7);
+      margin-right: $margin;
+      line-height: 40px;
+      vertical-align: middle;
+
+      &:hover {
+        color: rgba(139, 139, 139, 1);
+      }
+    }
+
+    .custom {
+      color: #2db7f5;
+
+      &:hover {
+        color: #4DC4F0;
+      }
+
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+.controller {
+  text-align: right;
+
+  a {
+    color: #2db7f5;
+  }
+
+  .split {
+    color: #EAEAEA;
+  }
+
+  i {
+    margin-left: 4px;
+  }
+}
+
+.row {
+  margin-top: 10px;
+}
+
+.customInputGroup {
+  width: 300px;
+}

@@ -1,0 +1,44 @@
+<div class="logo">
+  <%= image_tag current_app.logo %>
+</div>
+<h1 class="slogan">
+  <%= current_app.slogan %>
+</h1>
+<div class="appLink">
+  <% if @app_alias == "market" %>
+    <%= link_to "浏览车商端", "http://market-shop.d.chelaike.com" %>
+  <% elsif @app_alias == "market-shop" %>
+    <%= link_to "浏览市场端", "http://market.d.chelaike.com" %>
+  <% end %>
+</div>
+<div class="download">
+  <% if ios? %>
+    <%= link_to "下载安装", ios_link(@latest_version, @app_alias),  class: "link" %>
+  <% elsif android? %>
+    <%= link_to "下载安装", @latest_version.android_source,  class: "link" %>
+  <% else %>
+    <div class="downloads">
+      <div class="app">
+        <div class="appBox">
+          <div class="appIcon">
+            <%= image_tag qrcode("http://#{current_app.domain}"), class: "appImage" %>
+          </div>
+          <p class="boxText">下载手机版本</p>
+        </div>
+      </div>
+      <div class="desktop">
+        <div class="desktopBox">
+          <div class="icon">
+            <%= link_to current_app.pc_url do %>
+              <%= image_tag "download/desktop.png" %>
+            <% end %>
+          </div>
+          <p class="boxText">使用电脑版本</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% if current_app.name == "车来客" %>
+  <p class="rename">杭州天车网络科技有限公司有权自行或授权其许可的第三方依法使用车来客软件及数据</p>
+<% end %>

@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: alliance_stock_out_inventories # 联盟出库清单
+#
+#  id                    :integer          not null, primary key # 联盟出库清单
+#  from_car_id           :integer                                # 出库车辆 ID
+#  to_car_id             :integer                                # 入库(复制)车辆 ID
+#  alliance_id           :integer                                # 联盟 ID
+#  from_company_id       :integer                                # 出库公司 ID
+#  to_company_id         :integer                                # 入库公司 ID
+#  completed_at          :date                                   # 出库日期
+#  closing_cost_cents    :integer                                # 成交价格
+#  deposit_cents         :integer                                # 定金
+#  remaining_money_cents :integer                                # 余款
+#  note                  :text                                   # 备注
+#  refunded_at           :date                                   # 退车时间
+#  refunded_price_cents  :integer                                # 退车金额
+#  seller_id             :integer                                # 成交员工 ID
+#  current               :boolean                                # 是否为当前联盟出库记录
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  to_shop_id            :integer                                # 入库分店 ID
+#
+
+a4_tianche_to_warner:
+  from_car_id: <%= ActiveRecord::FixtureSet.identify(:a4) %>
+  to_car_id: <%= ActiveRecord::FixtureSet.identify(:a4_copied) %>
+  completed_at: 2016-01-01
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:avengers) %>
+  from_company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  to_company_id: <%= ActiveRecord::FixtureSet.identify(:warner) %>
+  closing_cost_cents: 18_000_000
+  deposit_cents: 5_000_000
+  remaining_money_cents: 13_000_000
+  note: 江湖救急
+  seller_id: <%= ActiveRecord::FixtureSet.identify(:zhangsan) %>
+  current: true
+  to_shop_id: <%= ActiveRecord::FixtureSet.identify(:pixar) %>

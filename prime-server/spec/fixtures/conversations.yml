@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id                :integer          not null, primary key
+#  user_id           :integer                                   # 所属用户
+#  target_id         :integer          not null                 # 会话类型
+#  conversation_type :string           not null                 # 目标 Id。根据不同的 conversationType，可能是用户 Id、讨论组 Id、群组 Id 或聊天室 Id。
+#  is_top            :boolean          default(FALSE), not null # 置顶
+#  is_blocked        :boolean          default(FALSE), not null # 免打扰
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
+zhangsan_conversation:
+  user: zhangsan
+  target_id: 10
+  conversation_type: "private"
+
+zhangsan_lisi_private:
+  user: zhangsan
+  target_id: lisi.id
+  conversation_type: "private"
+  is_top: true
+  is_blocked: false
+
+zhangsan_tianche_sale_group:
+  user: zhangsan
+  target_id: tianche_sale.id
+  conversation_type: "group"
+  is_top: true
+  is_blocked: true
+

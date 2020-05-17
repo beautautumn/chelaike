@@ -1,0 +1,27 @@
+<div class="weui-page detail-config">
+  <div class="car-name">
+    <%= @car.name %>
+  </div>
+  <div class="config-content">
+    <% @car.manufacturer_configuration.each do |group| %>
+    <div class="config-group">
+      <div class="title">
+        <%= image_tag "mobile/car_detail/title.png"%>
+        <span><%= group.name %></span>
+      </div>
+      <div class="title-divider"></div>
+      <% group.fields.each do |f| %>
+      <div class="config-item">
+        <div class="config-item-name">
+          <%= f.name %>
+        </div>
+        <div class="config-item-value">
+          <%= f.value %>
+        </div>
+      </div>
+      <div class="config-item-divider"></div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

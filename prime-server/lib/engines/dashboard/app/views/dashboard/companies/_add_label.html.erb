@@ -1,0 +1,23 @@
+<div class="ui small modal">
+  <i class="close icon"></i>
+  <%= form_tag({controller: :companies, action: "update_label", oper_type: :add}) do %>
+    <div class="content">
+      <div class="field">
+        <br/>
+        <label>为 <strong><%= @company.name %></strong> 添加标签</label>
+        <%= text_field_tag :label, nil, size: 20, placeholder: "输入任意文本" %>
+        <br/>
+        <br/>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="submit" class="ui positive right labeled icon button">
+        保存
+        <i class="checkmark icon"></i>
+      </button>
+      <div id="cancel-button" class="ui black deny button">
+        取消
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+<tr>
+  <td class="ui raised">
+    <% if app_version.version_type == "production" %>
+      <a class="ui green ribbon label"> 正式版 </a>
+    <% else %>
+      <a class="ui ribbon label"> 测试版 </a>
+    <% end %>
+    <%= app_version.version_number %>
+  </td>
+  <td> <%= link_to "地址", app_version.android_source %> </td>
+  <td>
+    <%= link_to "ipa 地址", app_version.ipa_source %> / <%= link_to "plist 地址", app_version.plist_source %>
+  </td>
+  <td> <%= app_version.created_at.strftime("%Y-%m-%d %H:%M")  %> </td>
+  <td>
+    <%= link_to '编辑', edit_app_app_version_path(@app, app_version) %>
+    <%= link_to '删除', app_app_version_path(@app, app_version), method: :delete, data: { confirm: '确定要删除吗?' } %>
+  </td>
+</tr>

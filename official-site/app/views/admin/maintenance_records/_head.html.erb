@@ -1,0 +1,36 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="box box-widget widget-user">
+    <div class="widget-user-header">
+      <span class="widget-user-username"><%= @car&.name %></span>
+    </div>
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-sm-4 border-right">
+          <div class="description-block">
+            <h5 class="description-header">外观颜色</h5>
+            <span class="description-text"><%= @car&.exterior_color %></span>
+          </div>
+          <!-- /.description-block -->
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 border-right">
+          <div class="description-block">
+            <h5 class="description-header">出厂日期</h5>
+            <span class="description-text"><%= @car&.manufactured_at %></span>
+          </div>
+          <!-- /.description-block -->
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4">
+          <div class="description-block">
+            <h5 class="description-header">公里数</h5>
+            <span class="description-text"><%= @car&.mileage || '-' %> 万公里</span>
+          </div>
+          <!-- /.description-block -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+</div>

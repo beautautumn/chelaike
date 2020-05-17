@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="5971520" />
+
+
+	<!-- 继承convention-default包，定义一个默认的拦截器，根据需要还可扩展 -->
+	<package name="erp-default" extends="convention-default">
+		<interceptors>
+			<!-- 登录验证拦截器 -->
+			<interceptor name="authority"
+				class="com.ct.erp.common.web.struts2.interceptor.AuthorityInterceptor" />
+			<!-- 异常处理拦截器 -->
+
+			<interceptor name="exceptionAuthority"
+				class="com.ct.erp.common.web.struts2.interceptor.ExceptionInterceptor" />
+
+			<interceptor-stack name="crudStack">
+				<!-- 将登录验证拦截器加入默认的拦截器栈中 -->
+				<interceptor-ref name="authority">
+					<!-- 2014-04-18 -->
+					<param name="excludeMethods">
+                        welcome,login,pageToLogin,doLogin,toRptIndex,authImg,interface,vehicleImg,
+						doUpload,toRegist,provinceLoad,cityLoad,toFindPwd,doRegist,save,
+                        north,prepareViewStock,checkAccount,checkcode,qrCode,doFindPwd,toAuctionInfo,
+                        toAuctionVechielJsonInfo,toVehicleDetail,
+                        saveAgencyAuth,existAuthByOpenid,
+                        getBrandList, getSeriesList, getKindList, doDelVehiclePic,
+                        doUploadImage, toVehicleInputPhone, doVehicleInputPhone
+                     </param>
+				</interceptor-ref>
+
+				<interceptor-ref name="exceptionAuthority" />
+
+				<interceptor-ref name="paramsPrepareParamsStack" />
+
+			</interceptor-stack>
+			<interceptor name="fileUpload" class="org.apache.struts2.interceptor.FileUploadInterceptor"/>
+			<!-- url param定义拦截器 -->
+			<!-- <interceptor name="urlParamsInterceptor" class="com.ct.erp.common.web.struts2.interceptor.UrlParamsInterceptor" 
+				/> -->
+		</interceptors>
+
+		<default-interceptor-ref name="crudStack" />
+
+		<global-results>
+			<result name="login" type="redirect">/jump7y.jsp</result>
+			<result name="login7y" type="redirect">/jump7y.jsp</result>
+			<result name="loginMarket" type="redirect">/jumpMarket.jsp</result>
+			<result name="noauthority" type="redirect">/common/403.jsp</result>
+		</global-results>
+
+		<action name="fileRedirect" class="com.ct.erp.common.web.FileRedirectAction"
+			method="redirect"></action>
+	</package>
+	<include file="struts/struts-wx.xml" />
+	<include file="struts/struts-list.xml" />
+	<include file="struts/struts-login.xml" />
+	<include file="struts/struts-sys.xml" />
+	<include file="struts/struts-core.xml" />
+	<include file="struts/struts-rent.xml" />
+	<include file="struts/struts-carin.xml" />
+	<include file="struts/struts-loan.xml" />
+	<include file="struts/struts-publish.xml" />
+	<include file="struts/struts-api.xml" />
+	<include file="struts/struts-form.xml" />
+    <include file="struts/struts-common.xml" />
+	<include file="struts/struts-market.xml" />
+	<include file="struts/struts-mtype.xml" />
+	<include file="struts/struts-cars.xml" />
+	<include file="struts/struts-checker.xml" />
+	<include file="struts/struts-rotation.xml" />
+	<include file="struts/struts-announcement.xml" />
+	<include file="struts/struts-checkTasks.xml" />
+	<include file="struts/struts-firstcheck.xml"/>
+	<include file="struts/struts-report.xml" />
+	<include file="struts/struts-parkingcard.xml" />
+	<include file="struts/struts-gateSystem.xml"/>
+</struts>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.ct.erp.lib.entity.User" table="users">
+        <id  name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name"/>
+        </property>
+        <property name="password_digest" type="java.lang.String">
+            <column name="password_digest"/>
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email"/>
+        </property>
+        <property name="pass_reset_token" type="java.lang.String">
+            <column name="pass_reset_token"/>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone"/>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state"/>
+        </property>
+        <property name="is_alliance_contact" type="boolean">
+            <column name="is_alliance_contact"/>
+        </property>
+        <property name="pass_reset_expired_at" type="timestamp">
+            <column name="pass_reset_expired_at"/>
+        </property>
+        <property name="last_sign_in_at" type="timestamp">
+            <column name="last_sign_in_at"/>
+        </property>
+        <property name="current_sign_in_at" type="timestamp">
+            <column name="current_sign_in_at"/>
+        </property>
+        <property name="company_id" type="java.lang.Integer">
+            <column name="company_id"/>
+        </property>
+        <property name="shop_id" type="java.lang.Integer">
+            <column name="shop_id"/>
+        </property>
+        <property name="manager_id" type="java.lang.Integer">
+            <column name="manager_id"/>
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note"/>
+        </property>
+        <property name="authority_type" type="java.lang.String">
+            <column name="authority_type"/>
+        </property>
+        <property name="authorities" type="java.lang.String">
+            <column name="authorities"/>
+        </property>
+        <property name="created_at" type="timestamp">
+            <column name="created_at"/>
+        </property>
+        <property name="updated_at" type="timestamp">
+            <column name="updated_at"/>
+        </property>
+        <property name="deleted_at" type="timestamp">
+            <column name="deleted_at"/>
+        </property>
+        <property name="avatar" type="java.lang.String">
+            <column name="avatar"/>
+        </property>
+
+        <property name="mac_address" type="java.lang.String">
+            <column name="mac_address"/>
+        </property>
+        <property name="cross_shop_authorities" type="java.lang.String">
+            <column name="cross_shop_authorities"/>
+        </property>
+        <property name="device_numbers" type="java.lang.String">
+            <column name="device_numbers"/>
+        </property>
+
+        <property name="first_letter" type="java.lang.String">
+            <column name="first_letter"/>
+        </property>
+        <property name="mobile_app_car_detail_menu" type="java.lang.String">
+            <column name="mobile_app_car_detail_menu"/>
+        </property>
+        <property name="rc_token" type="java.lang.String">
+            <column name="rc_token"/>
+        </property>
+        <property name="current_device_number" type="java.lang.String">
+            <column name="current_device_number"/>
+        </property>
+        <property name="qrcode_url" type="java.lang.String">
+            <column name="qrcode_url"/>
+        </property>
+        <property name="self_description" type="java.lang.String">
+            <column name="self_description"/>
+        </property>
+        <property name="user_type" type="java.lang.String">
+            <column name="user_type"/>
+        </property>
+        <property name="erp_staff_id" type="java.lang.Integer">
+            <column name="erp_staff_id"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

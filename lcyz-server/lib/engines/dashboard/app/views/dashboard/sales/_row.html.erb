@@ -1,0 +1,23 @@
+<tr>
+  <td> <%=sale.car.id%> </td>
+  <td> <%= sale.car.try(:company).try(:province) %>，<%= sale.car.try(:company).try(:city) %> </td>
+  <td>
+    <%= word_wrap(build_name(sale.car), line_width: 10) %>
+    <br/>
+    <%= link_to '详情', "http://fe.fighting.chelaike.com/cars/#{sale.car.id}", target: "_blank"%>
+  </td>
+  <td> <%= sale.car.try(:licensed_at).try(:strftime, "%Y-%m") %> <br/> <%= sale.car.try(:mileage) %>万公里<br/>外观：<%= sale.car.try(:exterior_color) %><br/>内饰：<%= sale.car.try(:interior_color) %></td>
+  <td> <%= sale.car.try(:acquisition_price_wan) %> </td>
+  <td> <%= sale.car.try(:show_price_wan) %> </td>
+  <td> <%= sale.try(:closing_cost_wan) %> </td>
+  <td> <%= sale.car.try(:acquired_at).try(:to_date) %> </td>
+  <td> <%= sale.try(:completed_at) %> </td>
+  <td> <%= sale.car.try(:stock_age_days) %> </td>
+  <td>
+    <%= sale.car.try(:company).try(:name).try(:truncate, 12) %>
+    <% active_tag = (!sale.car.company.active_tag.nil?) &&sale.car.company.active_tag? %>
+    <% if active_tag %><br/><font color="red">（活跃）</font> <% end %>
+  </td>
+  <td> <%= stock_out_inventory_type(sale) %> <br/><%= sales_type(sale) %> </td>
+  <td> 收购：<%= sale.car.try(:acquirer).try(:name) %><br/>销售： <%= sale.try(:seller).try(:name) %> </td>
+</tr>

@@ -1,0 +1,46 @@
+.me-weixin-avatar {
+  height: 100px;
+  background-color: #fac72c;
+  text-align:center;
+
+  img {
+    margin-top: 8px;
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    border: 2px solid #ffffff;
+    background-color: #fff;
+  }
+
+  h4 {
+    margin-top: -4px;
+    font-size: 13px;
+    color: #9e6108;
+    font-weight: bold;
+  }
+}
+
+.me-navigators {
+  margin-top: 11px;
+
+  .weui-cell {
+    font-size: 14px;
+  }
+
+  p.tc-alert {
+    height: 100px;
+    text-align: center;
+    padding-top: 80px;
+  }
+}
+
+.tc-enquiries-blank-alert {
+  padding: 50px 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tc-favorites-title {
+  padding: 9px 8px;
+  line-height: 14px;
+}

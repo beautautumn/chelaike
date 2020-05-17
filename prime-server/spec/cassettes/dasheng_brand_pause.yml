@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.dashenglaile.com/gateway/v3
+    body:
+      encoding: UTF-8
+      string: vin=LHGRB3855D8011186&partner=7066482972802319&interface=get_brand_info&sign=246631393330f382b4998da85750bf2f&sign_type=MD5
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '123'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 06 Mar 2017 03:32:25 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - x6cmssession=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2214de470986dd3ea99c79017aa35ff231%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A15%3A%22117.151.101.218%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A4%3A%22Ruby%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1488771145%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dcaec072715467fb86644f743ee2d9f91;
+        path=/
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA02OzQrDIBCE32XPOZiUVOqzBMToNkjxp6seQsi715iU9rIw
+        +83O7AZIFEjqYBAE6y7p0gICwgs6IEwx+FTpBjMpb6Q1IPqxu5RXrjKYyoj8
+        OZW75qZOPuip8PHG4OuLZDX+H2YbUz2sBptkVOWogP6UHtFI9Iv1KH1xM1Jl
+        R9a7IK0yZUW5BrRm9hDsh7AlNzCwE9Q8VXJwKtvgr47zBa0yLoHWttz3D7Nm
+        5fsNAQAA
+    http_version:
+  recorded_at: Mon, 06 Mar 2017 03:33:43 GMT
+recorded_with: VCR 3.0.1

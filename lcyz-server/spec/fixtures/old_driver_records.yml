@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: old_driver_records # 老司机查询记录
+#
+#  id                       :integer          not null, primary key # 老司机查询记录
+#  user_id                  :integer                                # 查询的用户
+#  user_name                :string                                 # 查询用户名
+#  company_id               :integer                                # 所属公司
+#  shop_id                  :integer                                # 所属shop
+#  order_id                 :string                                 # 返回的订单ID
+#  state                    :string                                 # 本记录状态
+#  payment_state            :string
+#  action_type              :string
+#  token_price              :decimal(, )                            # 花费的车币
+#  token_id                 :integer                                # 扣费的token
+#  token_type               :string                                 # 扣费的token类型
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  old_driver_record_hub_id :integer                                # 关联的hub
+#  vin                      :string                                 # vin码
+#  car_id                   :integer                                # 车辆ID
+#  before_update_hub_id     :integer                                # 更新前的报告id
+#
+
+default: &default
+  company: tianche
+  state: unchecked
+  payment_state: unpaid
+  action_type: new
+  token_type: company
+  token_price: 10
+  old_driver_record_hub: old_driver_record_hub
+  vin: LSVCX2A43FN089853
+
+old_driver_record_uncheck:
+  <<: *default
+  state: unchecked
+
+old_driver_record_updating:
+  <<: *default
+  state: updating

@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      car_state_history: 车辆状态
+    attributes:
+      car_state_history:
+        car_id: 车辆ID
+        previous_state: 上一个状态
+        state: 当前状况
+        sellable: 是否可售
+        occurred_at: 修改时间
+        note: 描述
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        predicted_restocked_at: 预计回厅时间

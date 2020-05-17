@@ -1,0 +1,59 @@
+# == Schema Information
+#
+# Table name: customers # 客户
+#
+#  id                  :integer          not null, primary key     # 客户
+#  company_id          :integer                                    # 公司ID
+#  name                :string                                     # 姓名
+#  note                :text                                       # 备注
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  phone               :string                                     # 客户主要联系电话
+#  phones              :string           default([]), is an Array  # 客户联系电话
+#  gender              :string                                     # 性别
+#  id_number           :string                                     # 证件号
+#  avatar              :string                                     # 客户头像
+#  user_id             :integer                                    # 客户所属员工ID
+#  first_letter        :string                                     # 客户姓名首字母
+#  deleted_at          :datetime
+#  source              :string           default("user_operation") # 客户产生来源
+#  alliance_user_id    :integer                                    # 联盟公司员工ID
+#  alliance_company_id :integer                                    # 联盟公司ID
+#  memory_dates        :jsonb                                      # 纪念节日
+#
+
+doraemon:
+  company: tianche
+  name: 哆啦A梦
+  phones: ["110", "112"]
+  user: zhangsan
+
+nobita:
+  company: tianche
+  name: 大雄
+  phone: "113"
+  user: zhangsan
+
+gian:
+  company: tianche
+  name: 胖虎
+  phone: "114"
+  user: zhangsan
+
+shizuka:
+  company: tianche
+  name: 静香
+  phone: "115"
+  user: zhangsan
+
+cruise:
+  name: Tom Cruise
+  note: 我是汤姆克鲁斯
+  company: warner
+  user: nolan
+  phones: ["13444444447", "13444444448"]
+  phone: "13744444446"
+  avatar: "http://i.cruise.avatar"
+  gender: man
+  id_number: "373727828737828"
+  first_letter: T

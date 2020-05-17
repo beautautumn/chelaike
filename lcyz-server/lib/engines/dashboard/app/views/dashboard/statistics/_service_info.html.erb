@@ -1,0 +1,4 @@
+<% staff = Dashboard::CompanyStaffRelationship.find_by(company_id: company.id).try(:staff) %>
+<p>
+  <%= staff.try(:name)  %>（<%= staff.try(:phone) %>）
+</p>

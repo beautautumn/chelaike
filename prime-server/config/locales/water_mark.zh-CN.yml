@@ -1,0 +1,12 @@
+zh-CN:
+  enumerize:
+    water_mark_position:
+      1: 左上
+      2: 中上
+      3: 右上
+      4: 左中
+      5: 中部
+      6: 右中
+      7: 左下
+      8: 中下
+      9: 右下

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianche.dao.SystemRightDao">
+
+    <resultMap id="fullMap" type="com.tianche.domain.SystemRight" >
+        <result column="right_code" property="rightCode" />
+        <result column="parent_right_code" property="parentRightCode" />
+        <result column="right_name" property="rightName" />
+        <result column="right_type" property="rightType" />
+        <result column="right_desc" property="rightDesc"/>
+        <result column="show_order" property="showOrder"/>
+    </resultMap>
+    
+    <select id="findByStaffId" resultMap="fullMap">
+        select distinct ss.* from td_s_sysright ss left join tf_m_staff_right sr on ss.right_code = sr.right_code where sr.staff_id = #{0} order by ss.show_order
+    </select>
+
+</mapper>

@@ -1,0 +1,26 @@
+<h1>“<%= @app.name %>”的所有版本</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 版本号 </th>
+        <th> 安卓版本 </th>
+        <th> 苹果版本 </th>
+        <th> 发布时间 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @app_versions %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="7">
+          共 <%=@counter%> 条记录
+          <%= paginate @app_versions %>
+        </th>
+    </tfoot>
+  </table>
+</div>

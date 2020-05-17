@@ -1,0 +1,14 @@
+<% if @detection_report.try(:data) %>
+<div class="container">
+  <div class="tc-sub-title">检测报告</div>
+  <div class="praises-container clearfix">
+    <div class="tc-center-wrapper">
+      <div class="tc-center-inner-wrapper">
+        <a class="more-button" href="<%= inspection_report_car_path(@car.id) %>">
+          查看检测报告 &gt;&gt;
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

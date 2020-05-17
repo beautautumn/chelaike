@@ -1,0 +1,40 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui action input">
+      <%= form_tag old_drivers_path, method: :get do%>
+        <%= text_field_tag "q[vin_cont]",
+        nil, placeholder: "搜索 vin码"
+        %>
+        <%= submit_tag "搜索", class: "ui green basic button" %>
+      <% end %>
+    </div>
+    <button id="old-driver-new-button" class="ui right floated teal button">
+      新查询
+    </button>
+    <div id="old-driver-new-modal" class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+        添加查询记录
+      </div>
+      <div class="content">
+        <%= form_for :old_driver, html: { class: "ui form" } do |f|%>
+          <div class="required field">
+            <label>vin码</label>
+            <%= f.text_field :vin %>
+          </div>
+          <div class="field">
+            <label>发动机号</label>
+            <%= f.text_field :engine_num %>
+          </div>
+          <div class="field">
+            <label>车牌号</label>
+            <%= f.text_field :license_no %>
+          </div>
+          <button type="submit" class="ui positive right labeled icon button">
+            保存
+          </button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

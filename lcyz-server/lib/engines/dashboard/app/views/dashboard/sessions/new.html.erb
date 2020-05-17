@@ -1,0 +1,52 @@
+<h2 class="ui teal image header">
+  <div class="content">
+    登录
+  </div>
+</h2>
+<% if Rails.env.dashboard? || Rails.env.production?%>
+  <div class="ui segment">
+    <%= form_tag code_session_path,
+      method: :get, class: "ui large form", remote: true do %>
+      <div class="ui left aligned">
+        <div class="fields">
+          <div class="code field ui left icon input">
+            <i class="phone icon"></i>
+            <%= text_field_tag "phone", nil, placeholder: "手机" %>
+          </div>
+          <div class="field">
+              <%= submit_tag "发送验证码", class: "ui code button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= form_tag session_path,
+      method: :post, class: "login-form ui large form" do %>
+      <div class="ui left aligned">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="barcode icon"></i>
+            <%= text_field_tag "code", nil, placeholder: "验证码" %>
+          </div>
+        </div>
+        <%= submit_tag "登录", class: "ui fluid teal large submit button" %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+<div class="ui segment">
+    <%= form_tag session_path,
+      method: :post, class: "login-form ui large form" do %>
+      <div class="ui left aligned">
+        <div class="fields">
+          <div class="code field ui left icon input">
+            <i class="phone icon"></i>
+            <%= text_field_tag "phone", nil, placeholder: "手机" %>
+          </div>
+        </div>
+        <br/>
+      <%= submit_tag "登录", class: "ui fluid teal large submit button" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

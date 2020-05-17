@@ -1,0 +1,18 @@
+common: &default_settings
+  license_key: 8190312279dd9e98246c75c01399a1fb0858806d
+
+  app_name: PrimeServer
+
+  log_level: info
+
+staging:
+  <<: *default_settings
+  app_name: PrimeServer(Staging)
+
+dashboard:
+  <<: *default_settings
+  app_name: PrimeServer(dashboard)
+
+production:
+  <<: *default_settings
+  app_name: PrimeServer(production)

@@ -1,0 +1,32 @@
+<div class="ui segment">
+  <%= form_for @app, html: { class: "ui form" } do |f| %>
+    <div class="required field">
+      <label>名称</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="required field">
+      <label>别名</label>
+      <%= f.text_field :alias %>
+    </div>
+    <div class="required field">
+      <label>域名（不要http://）</label>
+      <%= f.text_field :domain %>
+    </div>
+    <div class="required field">
+      <label>Logo</label>
+      <%= f.file_field :logo %>
+    </div>
+    <div class="required field">
+      <label>口号</label>
+      <%= f.text_field :slogan %>
+    </div>
+    <div class="field">
+      <label>PC版地址</label>
+      <%= f.text_field :pc_url %>
+    </div>
+    <button type="submit" class="ui positive right labeled icon button">
+      保存
+      <i class="checkmark icon"></i>
+    </button>
+  <% end %>
+</div>

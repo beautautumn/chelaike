@@ -1,0 +1,2 @@
+class ExpirationSettingPolicy < SystemSettingPolicy
+end

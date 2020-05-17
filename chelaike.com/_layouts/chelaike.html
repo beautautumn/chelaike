@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html chelaike="active" %}
+
+<script type="text/javascript" src="/assets/javascripts/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript">
+
+  function renderTip() {
+    var tip = $('.tips > ul li:first');
+    tip.animate({ 'margin-top' : '-20px' }, 'slow', function(){
+      tip.remove()
+      tip.removeAttr('style')
+      $('.tips > ul').append(tip)
+    });
+  }
+
+  $(document).ready(function(){
+    setInterval( renderTip , 3000 )
+  });
+</script> 
+
+<div id="chelaike">
+  <div class="hero-wrapper">
+    <div class="hero">
+      <div class="download">
+        <div class="app">
+          <div class="title">扫码下载APP</div>
+          <div class="image">
+            <img width="80" src="/assets/images/app.png" />
+          </div>
+        </div>
+        <div class="pc">
+          <div class="title">使用电脑版</div>
+          <div class="image">
+            <a href="http://pc.chelaike.com" target="_blank">
+              <img width="80" src="/assets/images/pc.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tips">
+        <ul>
+          <li><a href="/faq.html#download">车来客在哪里下载？</a></li>
+          <li><a href="/faq.html#signup">如何注册车来客账号？</a></li>
+          <li><a href="/faq.html#credit">苹果手机安装后提示没有授信？</a></li>
+          <li><a href="/faq.html#forgot">注册后忘记密码怎么办？</a></li>
+          <li><a href="/faq.html#contact">如何联系客服解决使用问题？</a></li>
+        </ul>
+        <a href="/faq.html">使用帮助</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-wrapper">
+    <div class="feature">
+      <div class="image box">
+        <img src="/assets/images/chelaike/feature1.png" />
+      </div>
+      <div class="text box right">
+        <h2>实时库存，共享车源销售</h2>
+        <ul>
+          <li>全员协作，随时随地准确管理库存</li>
+          <li>同行共享车源，实现共同销售</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-wrapper black">
+    <div class="feature">
+      <div class="text box left">
+        <h2>客户留存，网络服务推广</h2>
+        <ul>
+          <li>客户资料保存到公司，不再依赖个人</li>
+          <li>客户及时跟踪维系，提高成交及转介绍</li>
+          <li>自带网络微店，随时沟通客户展示商品</li>
+          <li>微信高级接口，针对性推送与服务</li>
+        </ul>
+      </div>
+      <div class="image box">
+        <img src="/assets/images/chelaike/feature2.png" />
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-wrapper">
+    <div class="feature">
+      <div class="image box">
+        <img src="/assets/images/chelaike/feature3.png" />
+      </div>
+      <div class="text box right">
+        <h2>精准统计，生意清楚明白</h2>
+        <ul>
+          <li>各种明细财务费用与收益管理</li>
+          <li>精准财务统计，明明白白做生意</li>
+          <li>帮助分析运营瓶颈，提高企业收益</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-wrapper black">
+    <div class="feature">
+      <div class="text box left">
+        <h2>发展联盟，自建流量官网</h2>
+        <ul>
+          <li>整套车商联盟解决方案，专家上门指导</li>
+          <li>零成本自建联盟官网，实时同步数据，最佳网站体验</li>
+          <li>联合车商资源，蚂蚁雄兵造流量，不再受制互联网平台</li>
+        </ul>
+      </div>
+      <div class="image box">
+        <img src="/assets/images/chelaike/feature4.png" />
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-wrapper">
+    <div class="feature">
+      <div class="image box">
+        <img src="/assets/images/chelaike/feature5.png" />
+      </div>
+      <div class="text box right">
+        <h2>对接资源，轻松增值收益</h2>
+        <ul>
+          <li>统一对接各类资源（车源、金融、保险、延保、检测、维保等）， 开店不再复杂</li>
+          <li>提供软件，自动导流连接售后修理，转一次性收益为反复性收入</li>
+          <li>上门指导培训各类增值业务，轻松扩展业务范围</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

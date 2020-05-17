@@ -1,0 +1,29 @@
+zh-CN:
+  activerecord:
+    models:
+      car_reservation: 车辆预约
+    attributes:
+      car_reservation:
+        car_id: 车辆ID
+        sales_type: 销售类型
+        reserved_at: 预约时间
+        customer_channel_id: 客户来源
+        seller_id: 成交员工
+        closing_cost_cents: 成交价格
+        closing_cost_wan: 成交价格
+        deposit_cents: 定金
+        deposit_wan: 定金
+        note: 备注
+        customer_location_province: 客户归属地省份
+        customer_location_city: 客户归属地城市
+        customer_location_address: 客户归属地详细地址
+        customer_name: 客户姓名
+        customer_phone: 客户电话
+        customer_idcard: 客户证件号
+        current: 是否是当前预定
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        cancelable_price_cents: 退款金额
+        cancelable_price_wan: 退款金额
+        canceled_at: 退定日期
+        seller_name: 销售员名字

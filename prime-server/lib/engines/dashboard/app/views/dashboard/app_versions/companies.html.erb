@@ -1,0 +1,18 @@
+<h1>版本关联车商列表</h1>
+
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="ui wide column">
+      <%= link_to '返回', apps_path, class: "ui button" %>
+    </div>
+  </div>
+  <div class="ui celled list">
+    <% @companies.each do |company| %>
+      <div class="item">
+        <div class="content">
+          <p> <%= company.name %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

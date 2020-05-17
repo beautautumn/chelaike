@@ -1,0 +1,69 @@
+zh-CN:
+  enumerize:
+    intention:
+      state:
+        untreated: 未指派
+        pending: 待跟进
+        processing: 跟进中
+        interviewed: 已预约
+        reserved: 已预定
+        cancel_reserved: 取消预定
+        completed: 已成交
+        acquired: 已收购
+        hall_consignment: 展厅寄卖
+        online_consignment: 网络寄卖
+        failed: 战败
+        invalid: 无效
+      alliance_state:
+        untreated: 未指派
+        pending: 待跟进
+        processing: 跟进中
+        interviewed: 已预约
+        reserved: 已预定
+        cancel_reserved: 取消预定
+        completed: 已成交
+        acquired: 已收购
+        hall_consignment: 展厅寄卖
+        online_consignment: 网络寄卖
+        failed: 战败
+        invalid: 无效
+      intention_type:
+        seek: 求购
+        sale: 出售
+      gender:
+        female: 女性
+        male: 男性
+
+  activerecord:
+    models:
+      intention: 意向
+    attributes:
+      intention:
+        customer_id: 客户ID
+        customer_name: 客户姓名
+        phones: 联系电话
+        intention_type: 意向类型
+        creator_id: 意向创建者
+        assignee_id: 分配员工ID
+        province: 省份
+        city: 城市
+        intention_level_id: 意向级别ID
+        channel_id: 客户渠道
+        created_at: 创建时间
+        company_id: 公司ID
+        shop_id: 店ID
+        customer_phones: 客户联系方式
+        state: 跟进状态
+        customer_phone: 客户电话
+        intention_note: 意向描述
+        gender: 性别
+        seeking_cars: 求购车辆
+        brand_name: 出售车辆品牌名称
+        series_name: 出售车辆车系名称
+        price_cents: 预算/期望价格(万)
+        color: 颜色
+        mileage: 里程(万公里)
+        licensed_at: 上牌日期
+        interviewed_time: 预约时间
+        processing_time: 跟进时间
+        earnest: 是否已收意向金

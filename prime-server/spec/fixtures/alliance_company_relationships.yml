@@ -1,0 +1,50 @@
+# == Schema Information
+#
+# Table name: alliance_company_relationships # 联盟公司关系表
+#
+#  id             :integer          not null, primary key # 联盟公司关系表
+#  company_id     :integer                                # 公司ID
+#  alliance_id    :integer                                # 联盟ID
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  nickname       :string                                 # 公司在联盟中的昵称
+#  contact        :string                                 # 联盟联系人，联盟后台使用
+#  contact_mobile :string                                 # 联盟联系电话，联盟后台使用
+#  street         :string                                 # 联盟看车电话，联盟后台使用
+#
+
+tianche_avengers:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:avengers) %>
+  nickname: "天车萌萌哒"
+
+tianche_noaodi:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:tianche) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:noaodi) %>
+  nickname: "不卖奥迪的天车"
+
+warner_avengers:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:warner) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:avengers) %>
+  nickname: "华纳酷酷哒"
+
+github_noaodi:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:noaodi) %>
+  nickname: "木有奥迪的基友"
+
+github_baoma:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:baoma) %>
+  nickname: "宝马家族的基友"
+
+github_hydra:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:github) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:hydra) %>
+  nickname: "九头蛇家的基友"
+
+avengers_hulk:
+  company_id: <%= ActiveRecord::FixtureSet.identify(:hulk) %>
+  alliance_id: <%= ActiveRecord::FixtureSet.identify(:avengers) %>
+  nickname: 绿巨人
+

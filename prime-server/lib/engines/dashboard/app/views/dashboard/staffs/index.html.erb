@@ -1,0 +1,29 @@
+<h1>员工列表</h1>
+
+<div class="ui segment">
+  <%= render partial: "toolbar" %>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th> 手机号 </th>
+        <th> 用户名 </th>
+        <th> 状态 </th>
+        <th> 角色 </th>
+        <th> 所属主管 </th>
+        <th> 操作 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @staffs.each do |staff| %>
+        <%= render partial: "row", locals: { staff: staff } %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="6">
+          共 <%=@counter%> 条记录
+          <%= paginate @staffs %>
+        </th>
+    </tfoot>
+  </table>
+</div>

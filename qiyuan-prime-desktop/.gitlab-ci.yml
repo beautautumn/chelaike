@@ -1,0 +1,22 @@
+before_script:
+  - . ~/.nvm/nvm.sh
+  - nvm use latest
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - lint
+  - test
+
+lint:
+  script:
+    - npm run lint
+  stage: lint
+
+test:
+  script:
+    - npm test
+  stage: test

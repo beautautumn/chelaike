@@ -1,0 +1,10 @@
+zh-CN:
+  enumerize:
+    maintenance_record:
+      state:
+        generating: 生成中
+        unchecked: 未查看
+        checked: 已查看
+        updating: 更新中
+        generating_fail: 生成失败
+        updating_fail: 更新失败

@@ -1,0 +1,252 @@
+zh-CN:
+  import:
+    transmission:
+      手动: manual
+      自动: auto
+      手自一体: manual_automatic
+      其他: other
+    emission_standard:
+      国I: guo_1
+      国II: guo_2
+      国III: guo_3
+      国IV: guo_4
+      国V: guo_5
+      欧I: eu_1
+      欧II: eu_2
+      欧III: eu_3
+      欧IV: eu_4
+      欧V: eu_5
+    car_type:
+      微型车: micro_car
+      小型车: compact_car
+      紧凑型: compact_car
+      紧凑型车: compact_car
+      中型车: mid_size_car
+      中大型: mid_size_car
+      大型车: full_size_car
+      MPV: mpv
+      SUV: suv
+      全部SUV: suv
+      小型SUV: suv
+      紧凑型SUV: suv
+      中型SUV: suv
+      中大型SUV: suv
+      大型SUV: suv
+      跑车: sports_car
+      皮卡: pickup_trucks
+
+  enumerize:
+    prepare_record:
+      state:
+        preparing: 待整备
+        progress: 整备中
+        finished: 整备已完成
+      repair_state:
+        first_time: 首次整修
+        second_time: 二次返修
+    car:
+      state:
+        in_hall: 在厅
+        preparing: 整备
+        shipping: 在途
+        transferred: 转场
+        loaning: 外借
+        driven_back: 车主开回
+        sold: 销售出库
+        acquisition_refunded: 收购退车
+        alliance_stocked_out: 联盟出库
+        alliance_refunded: 联盟退车
+      car_type:
+        micro_car: 微型车
+        small_car: 小型车
+        compact_car: 紧凑型
+        mid_size_car: 中型车
+        mid_full_size_car: 中大型车
+        full_size_car: 大型车
+        mpv: MPV
+        suv: SUV
+        sports_car: 跑车
+        pickup_trucks: 皮卡
+        small_van: 微面
+        electrocar: 电动车
+      acquisition_type:
+        acquisition: 收购
+        consignment: 寄卖
+        cooperation: 合作
+        permute:     置换
+        alliance:    联盟入库
+      emission_standard:
+        gasoline: 汽油
+        diesel:   柴油
+        electric: 电动
+        hybrid:   混合
+        other:    其他
+      transmission:
+        manual:           手动挡
+        auto:             自动
+        manual_automatic: 手自一体
+        dsg:              双离合
+        cvt:              无级变速
+        other:            其他
+      emission_standard:
+        guo_1: 国I
+        guo_2: 国II
+        guo_3: 国III
+        guo_4: 国IV
+        guo_5: 国V
+        eu_1: 欧I
+        eu_2: 欧II
+        eu_3: 欧III
+        eu_4: 欧IV
+        eu_5: 欧V
+      fuel_type:
+        gasoline: 汽油
+        diesel:   柴油
+        electric: 电动
+        hybrid:   混合
+        other:    其他
+      mileage_unit:
+        km: 公里
+        mile: 英里
+      license_info:
+        licensed: 已经上牌
+        unlicensed: 未上牌
+        new_car: 新车
+      new_car_warranty:
+        manufacturer: 厂商质保
+        seller: 商家质保
+        none: 无
+      exterior_color:
+        黑色: "black"
+        白色: "white"
+        红色: "red"
+        紫色: "purple"
+        银灰色: "silver_grey"
+        绿色: "green"
+        黄色: "yellow"
+        深灰色: "dark_grey"
+        棕色: "brown"
+        香槟色: "champagne"
+        橙色: "orange"
+        蓝色: "blue"
+        其他: "other"
+      interior_color:
+        双色: "double"
+        米黄: "cream"
+        米灰: "oyster_grey"
+        红色: "red"
+        黑色: "black"
+        棕色: "brown"
+      attachments:
+        vehicle_tools: 随车工具
+        first_aid_kit: 急救包
+        spare_tire: 备胎
+        tripod: 三脚架
+        instructions: 说明书
+        antenna: 天线
+        key: 车钥匙
+        cigarette_lighter: 点烟器
+        maintenance_manual: 保养手册
+        fire_extinguisher: 灭火器
+        ashtray: 烟灰缸
+        navigation_card: 导航卡/光盘
+      level:
+        a: A
+        b: B
+        c: C
+        d: D
+
+  activerecord:
+    models:
+      car: 车辆
+    attributes:
+      car:
+        id: 车辆
+        company_id: 公司ID
+        shop_id: 店ID
+        acquirer_id: 收购员
+        acquired_at: 收购日期
+        channel_id: 收购渠道
+        name: 车辆宣传标题
+        acquisition_type: 收购类型
+        acquisition_price_wan: 收购价
+        acquisition_price_cents: 收购价
+        stock_number: 库存编号
+        vin: 车架号
+        state: 车辆状态
+        state_note: 车辆备注
+        brand_name: 品牌名称
+        manufacturer_name: 厂商名称
+        series_name: 车系名称
+        style_name: 车型名称
+        car_type: 车辆类型
+        door_count: 门数
+        displacement: 排气量
+        fuel_type: 燃油类型
+        is_turbo_charger: 涡轮增压
+        transmission: 变速箱
+        exterior_color: 外饰颜色
+        interior_color: 内饰颜色
+        mileage: 表显里程
+        mileage_in_fact: 实际里程
+        emission_standard: 排放标准
+        license_info: 牌证信息
+        licensed_at: 首次上牌日期
+        manufactured_at: 出厂日期
+        show_price_wan: 展厅价格
+        show_price_cents: 展厅价格
+        online_price_wan: 网络标价
+        online_price_cents: 网络标价
+        sales_minimun_price_wan: 销售底价
+        sales_minimun_price_cents: 销售底价
+        manager_price_wan: 经理价
+        manager_price_cents: 经理价
+        alliance_minimun_price_wan: 联盟底价
+        alliance_minimun_price_cents: 联盟底价
+        new_car_guide_price_wan: 新车指导价
+        new_car_guide_price_cents: 新车指导价
+        new_car_additional_price_wan: 新车加价
+        new_car_additional_price_cents: 新车加价
+        new_car_discount: 新车优惠折扣
+        new_car_final_price_wan: 新车完税价
+        new_car_final_price_cents: 新车完税价
+        interior_note: 车辆内部描述
+        star_rating: 车辆星级
+        warranty_id: 质保等级
+        warranty_fee_yuan: 质保费用
+        warranty_fee_cents: 质保费用
+        is_fixed_price: 是否一口价
+        allowed_mortgage: 是否可按揭
+        mortgage_note: 按揭说明
+        selling_point: 卖点描述
+        maintain_mileage: 保养里程
+        has_maintain_history: 有无保养记录
+        new_car_warranty: 新车质保
+        standard_equipment: 厂家标准配置
+        personal_equipment: 车主个性配置
+        created_at: 创建时间
+        updated_at: 最后更新时间
+        stock_age_days: 库龄
+        age: 车龄
+        sellable: 是否可售
+        states_statistic: 状态统计
+        state_changed_at: 状态修改时间
+        yellow_stock_warning_days: 黄色库存预警
+        red_stock_warning_days: 红色库存预警
+        reserved_at: 预约时间
+        reserved: 是否已经预约
+        consignor_name: 寄卖人
+        consignor_phone: 寄卖人电话
+        consignor_price_wan: 寄卖价格
+        consignor_price_cents: 寄卖价格
+        deleted_at: 删除时间
+        stock_out_at: 出库时间
+        closing_cost_wan: 成交价格
+        closing_cost_cents: 成交价格
+        manufacturer_configuration: 厂商配置
+        predicted_restocked_at: 预计回厅时间
+        attachments: 车辆附件
+        stock_out_inventories: 出库记录
+        alliance_stock_out_inventories: 联盟出库记录
+        alliance_stock_out_inventory: 联盟出库记录
+        level: 车辆等级

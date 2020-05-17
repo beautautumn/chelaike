@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="tc-sub-title">亮点配置</div>
+  <div class="tc-car-important-configuration clearfix">
+    <% @car.configuration_note.present? &&
+        @car.configuration_note.split(/[,，]/).each do |name|
+    %>
+      <span class="label"><%= name %></span>
+    <% end %>
+  </div>
+  <div class="tc-car-configurations clearfix">
+    <% if @car.selling_point.present? %>
+      <h3>—卖点描述—</h3>
+      <p><%= @car.selling_point %></p>
+    <% end %>
+    <h3>—车辆配置—</h3>
+    <div id="configuration_panel" class="configuration-detail">
+      <ul class="nav nav-pills nav-stacked">
+        <% @car.manufacturer_configuration.each do |cate| %>
+          <li><a href="#<%= cate.object_id %>"><%= cate.name %></a></li>
+        <% end %>
+      </ul>
+      <div class="configuration-table" data-spy="scroll" data-target="#configuration_panel">
+        <table class="table table-bordered table-striped">
+          <% @car.manufacturer_configuration.each do |cate| %>
+            <tr id="<%= cate.object_id %>"><td colspan="3"><%= cate.name %></td></tr>
+            <%
+              rows = []
+              cate.fields.each do |field|
+                rows.push([]) if !rows.last || rows.last.size == 3
+                rows.last.push field
+              end
+              (3 - rows.last.size).times { rows.last.push nil }
+              rows.each do |row|
+            %>
+              <tr>
+                <td><label><%= row[0].try(:name) %></label><%= row[0].try(:value) %></td>
+                <td><label><%= row[1].try(:name) %></label><%= row[1].try(:value) %></td>
+                <td><label><%= row[2].try(:name) %></label><%= row[2].try(:value) %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

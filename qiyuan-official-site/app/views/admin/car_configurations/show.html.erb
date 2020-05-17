@@ -1,0 +1,106 @@
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>车辆发布设置</h1>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+      <li class="active">车辆发布设置</li>
+    </ol>
+  </section>
+<% end %>
+
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for(
+        [:admin, @tenant, @car_configuration],
+        url: admin_tenant_car_configuration_path(@tenant, @car_configuration),
+        method: :patch,
+        html: { role: "form" }
+      ) do |f| %>
+        <% if @car_configuration.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <h4><%= @car_configuration.errors.count %>个错误</h4>
+            <ul>
+            <% @car_configuration.errors.full_messages.each do |msg| %>
+              <li><% msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label "维保记录价格" %>
+          <div class="row">
+            <div class="col-xs-8">
+              <%= f.text_field :maintenance_price_cents, class: "form-control", value: @car_configuration.maintenance_price_cents / 100 %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "保险记录价格" %>
+          <div class="row">
+            <div class="col-xs-8">
+              <%= f.text_field :insurance_price_cents, class: "form-control", value: @car_configuration.insurance_price_cents / 100 %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "默认首付比例(%)" %>
+          <div class="row">
+            <div class="col-xs-8">
+              <%= f.text_field :default_loan, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "首付比例选项(%)" %>
+          <button id="addDownPayment" type="button" class="btn btn-default">添加</button>
+          <div class="row">
+            <div class="col-xs-8">
+              <ul class="list-group down-payments">
+                <% @car_configuration.down_payments&.each do |item| %>
+                  <li class="list-group-item">
+                    <%= text_field_tag "car_configuration[down_payments][]", item %>
+                    <a href="javascript:;">X</a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "分期利率选项" %>
+          <button id="addPeriodAndRate" type="button" class="btn btn-default">添加</button>
+          <div class="row">
+            <div class="col-xs-8">
+              <ul class="list-group loan-periods">
+                <% @car_configuration.loan_periods&.each do |item| %>
+                  <li class="list-group-item">
+                    <%= text_field_tag "car_configuration[loan_periods][][period]",
+                      item["period"],
+                      placeholder: "贷款期限"
+                    %>
+                    <%= text_field_tag "car_configuration[loan_periods][][rate]",
+                      item["rate"],
+                      placeholder: "贷款利率"
+                    %>
+                    <a href="javascript:;">X</a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "保存", class: "btn btn-primary" %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</section>

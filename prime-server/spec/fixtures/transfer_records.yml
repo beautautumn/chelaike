@@ -1,0 +1,211 @@
+# == Schema Information
+#
+# Table name: transfer_records # 过户信息
+#
+#  id                                :integer          not null, primary key    # 过户信息
+#  car_id                            :integer                                   # 车辆ID
+#  vin                               :string                                    # 车架号
+#  transfer_record_type              :string                                    # 过户类型
+#  state                             :string                                    # 状态
+#  items                             :text             default([]), is an Array # 手续项目
+#  key_count                         :integer                                   # 车钥匙
+#  contact_person                    :string                                    # 手续联系人
+#  contact_mobile                    :string                                    # 手续联系方式
+#  original_location_province        :string                                    # 车辆原属地省份
+#  original_location_city            :string                                    # 车辆原属地城市
+#  current_location_province         :string                                    # 车辆现属地省份
+#  current_location_city             :string                                    # 车辆现属地省份
+#  original_plate_number             :string                                    # 原车牌
+#  current_plate_number              :string                                    # 现车牌
+#  new_plate_number                  :string                                    # 新车牌
+#  original_owner                    :string                                    # 原车主
+#  original_owner_idcard             :string                                    # 原车主证件号
+#  original_owner_contact_mobile     :string                                    # 原车主联系方式
+#  transfer_recevier                 :string                                    # 落户人
+#  transfer_recevier_idcard          :string                                    # 落户人证件号
+#  new_owner                         :string                                    # 新车主
+#  new_owner_idcard                  :string                                    # 新车主证件号
+#  new_owner_contact_mobile          :string                                    # 新车主联系方式
+#  inspection_state                  :string                                    # 验车状态
+#  user_id                           :integer                                   # 收购/销售员ID
+#  estimated_archived_at             :date                                      # 提档预计完成时间
+#  archive_fee_cents                 :integer                                   # 提档费用
+#  estimated_transferred_at          :date                                      # 过户预计完成时间
+#  transferred_at                    :date                                      # 过户实际完成时间
+#  transfer_fee_cents                :integer                                   # 过户费用
+#  compulsory_insurance_end_at       :date                                      # 交强险到期日期
+#  annual_inspection_end_at          :date                                      # 年审到期日期
+#  commercial_insurance_end_at       :date                                      # 商业险到期日
+#  commercial_insurance_amount_cents :integer                                   # 商业险金额
+#  usage_type                        :string                                    # 使用性质
+#  registration_number               :string                                    # 登记证书号
+#  transfer_count                    :integer                                   # 过户次数
+#  engine_number                     :string                                    # 发动机号
+#  allowed_passengers_count          :integer                                   # 核定载客人数
+#  note                              :text                                      # 补充说明
+#  created_at                        :datetime         not null
+#  updated_at                        :datetime         not null
+#  user_name                         :string                                    # 收购/销售员名字
+#  data_completeness                 :jsonb                                     # 资料完整程度
+#  shop_id                           :integer                                   # 分店ID
+#  total_transfer_fee_cents          :integer                                   # 过户总费用
+#  images_count                      :integer          default(0)               # 图片数量
+#
+
+aodi_acquisition:
+  car: aodi
+  transfer_record_type: acquisition
+  state: "archiving" # 手续状态
+  transferred_at: 2015-01-01
+  vin: "abc123"
+  items: [
+    "registration_license", "purchase_tax",
+    "driving_license", "compulsory_insurance", "commercial_insurance",
+    "original_vehicle_archive", "instructions", "purchase_tax",
+    "maintenance_manual", "original_owner_idcard", "original_vehicle_invoice",
+    "original_license", "new_owner_idcard", "provisional_license",
+    "used_vehicle_trade_invoice", "nameplate"
+  ]
+  contact_person: "李四"
+  contact_mobile: "112"
+  original_location_province: "江苏省"
+  original_location_city: "南京"
+  original_plate_number: "浙A NBNBNB"
+  original_owner: "钢铁侠"
+  original_owner_idcard: "1234567890"
+  original_owner_contact_mobile: "112"
+  key_count: 2
+  usage_type: "personal_use"
+  registration_number: "abc"
+  engine_number: "abc123"
+  transfer_count: 5
+  allowed_passengers_count: 5
+
+  current_plate_number: "浙B SBSBSB"
+  transfer_recevier: "蝙蝠侠"
+  transfer_recevier_idcard: "0987654321"
+  estimated_archived_at: 2015-01-01
+  archive_fee_cents: 4000
+  estimated_transferred_at: 2015-01-01
+  transfer_fee_cents: 4000
+
+  user: zhangsan
+  user_name: Zhangsan
+  inspection_state: valid
+  compulsory_insurance_end_at: 2015-01-01
+  annual_inspection_end_at: 2015-01-01
+  commercial_insurance_end_at: 2015-01-01
+  commercial_insurance_amount_cents: 500000
+
+  note: "其他不说了, 来买!"
+  created_at: 2015-01-10
+  data_completeness:
+    finished: 3
+    total: 5
+
+aodi_sale:
+  car: aodi
+  transfer_record_type: sale
+  state: archiving # 手续状态
+  transferred_at: 2015-01-01
+  vin: abc123
+  items: [
+    "registration_license", "purchase_tax",
+    "driving_license", "compulsory_insurance", "commercial_insurance",
+    "original_vehicle_archive", "instructions", "purchase_tax",
+    "maintenance_manual", "original_owner_idcard", "original_vehicle_invoice",
+    "original_license", "new_owner_idcard", "provisional_license",
+    "used_vehicle_trade_invoice", "nameplate"
+  ]
+
+  contact_person: 李四
+  contact_mobile: 112
+
+  original_location_province: 江苏省
+  original_location_city: 南京
+  original_plate_number: "浙A NBNBNB"
+  original_owner: 钢铁侠
+  original_owner_idcard: 1234567890
+  original_owner_contact_mobile: 112
+  key_count: 2
+  usage_type: personal_use
+  registration_number: abc
+  engine_number: abc123
+  transfer_count: 5
+  allowed_passengers_count: 5
+
+  current_location_province: "浙江"
+  current_location_city: "杭州"
+  new_plate_number: "浙A 123456"
+  new_owner: "百变小樱"
+  new_owner_idcard: "1234567890"
+  new_owner_contact_mobile: "123456"
+  estimated_archived_at: 2015-01-01
+  archive_fee_cents: 50000
+  estimated_transferred_at: 2015-01-01
+  transfer_fee_cents: 50000
+
+  user: nolan # 销售成交员
+  inspection_state: "valid"
+  compulsory_insurance_end_at: 2015-01-01
+  annual_inspection_end_at: 2015-01-01
+  commercial_insurance_end_at: 2015-01-01
+  commercial_insurance_amount_cents: 500000
+
+  note: "其他不说了, 来买!"
+  created_at: 2015-01-10
+  data_completeness:
+    finished: 3
+    total: 5
+
+a4_copied_acquisition:
+  car: a4_copied
+  transfer_record_type: acquisition
+  state: "archiving" # 手续状态
+  transferred_at: 2015-01-01
+  vin: "abc123"
+  items: [
+    "registration_license", "purchase_tax",
+    "driving_license", "compulsory_insurance", "commercial_insurance",
+    "original_vehicle_archive", "instructions", "purchase_tax",
+    "maintenance_manual", "original_owner_idcard", "original_vehicle_invoice",
+    "original_license", "new_owner_idcard", "provisional_license",
+    "used_vehicle_trade_invoice", "nameplate"
+  ]
+  contact_person: "李四"
+  contact_mobile: "112"
+  original_location_province: "江苏省"
+  original_location_city: "南京"
+  original_plate_number: "浙A NBNBNB"
+  original_owner: "钢铁侠"
+  original_owner_idcard: "1234567890"
+  original_owner_contact_mobile: "112"
+  key_count: 2
+  usage_type: "personal_use"
+  registration_number: "abc"
+  engine_number: "abc123"
+  transfer_count: 5
+  allowed_passengers_count: 5
+
+  current_plate_number: "浙B SBSBSB"
+  transfer_recevier: "蝙蝠侠"
+  transfer_recevier_idcard: "0987654321"
+  estimated_archived_at: 2015-01-01
+  archive_fee_cents: 4000
+  estimated_transferred_at: 2015-01-01
+  transfer_fee_cents: 4000
+
+  user: nolan
+  user_name: nolan
+  inspection_state: valid
+  compulsory_insurance_end_at: 2015-01-01
+  annual_inspection_end_at: 2015-01-01
+  commercial_insurance_end_at: 2015-01-01
+  commercial_insurance_amount_cents: 500000
+
+  note: "其他不说了, 来买!"
+  created_at: 2015-01-10
+  data_completeness:
+    finished: 3
+    total: 5
+

@@ -1,0 +1,4 @@
+.idea/**/*
+erp/.idea/
+**/*.iml
+/catalina.base_IS_UNDEFINED/logs/erp/erp.2017-09-15.log

@@ -1,0 +1,8 @@
+jinrongzhuanyuan:
+  name: 金融专员
+  note: 线下跟踪贷款
+  authorities: ["查看申请单", "车看车商", "修改贷款状态"]
+fengkongrenyuan:
+  name: 风控专员
+  note: 负责放贷
+  authorities: ["查看申请单", "车看车商", "修改贷款状态", "受改授信额度"]

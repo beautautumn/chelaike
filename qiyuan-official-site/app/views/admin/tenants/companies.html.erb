@@ -1,0 +1,66 @@
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>查找商家</h1>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i>首页</a></li>
+      <li class="active"><%= link_to "网站设置", admin_tenant_path %></li>
+      <li class="active">查找商家</li>
+    </ol>
+  </section>
+<% end %>
+
+<%= form_tag companies_admin_tenant_path, :method => :get do %>
+  <%= hidden_field_tag 'page', 1 %>
+  <div class="row site-company-query">
+    <div class="col-xs-3">
+      <%= text_field_tag 'name', params[:name], placeholder: "商家名称", class: 'form-control' %>
+    </div>
+    <div class="col-xs-3">
+      <%= text_field_tag 'province', params[:province], placeholder: "省份", class: 'form-control' %>
+    </div>
+    <div class="col-xs-3">
+      <%= text_field_tag 'city', params[:city], placeholder: "城市", class: 'form-control' %>
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-default" type="submit">查询</div>
+  </div>
+<% end %>
+
+<%= form_tag company_admin_tenant_path, :method => :put do %>
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>所在地</th>
+      <th>商家名称</th>
+      <th>老板姓名</th>
+      <th>老板电话</th>
+      <th>注册日期</th>
+      <th>在库车辆数</th>
+    </tr>
+
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= radio_button_tag(:id, company[:id]) %></td>
+        <td><%= "#{company[:province]}#{company[:city]}" %></td>
+        <td><%= company[:name] %></td>
+        <td><%= company[:owner].try(:[], :name) %></td>
+        <td><%= company[:owner].try(:[], :phone) %></td>
+        <td><%= company[:created_at] %></td>
+        <td><%= company[:cars_count] %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <nav aria-label="...">
+    <ul class="pager">
+      <% prefix = request.url.include?("?") ? "&page=" : "?page=" %>
+      <% if params[:page] != 1 %>
+        <li><a href="<%= "#{request.url}#{prefix}#{params[:page] - 1}" %>">前一页</a></li>
+      <% end %>
+      <li><a href="<%= "#{request.url}#{prefix}#{params[:page] + 1}" %>">后一页</a></li>
+    </ul>
+  </nav>
+
+  <%= link_to "返回", admin_tenant_path, class: "pull-right btn btn-default btn-sub-page-back" %>
+  <button type="submit" class="pull-right btn btn-primary">确定</button>
+<% end %>

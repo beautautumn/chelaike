@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mobiscroll</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no"/>
+	
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<link href="css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.5.0.min.js" type="text/javascript"></script>
+	
+    <script type="text/javascript">
+	    $(function(){
+	        $("#scroller").mobiscroll().date();
+			
+			var currYear = (new Date()).getFullYear();  
+	
+	      	//初始化日期控件
+			var opt = {
+				preset: 'date', //日期，可选：date\datetime\time\tree_list\image_text\select
+				theme: 'default', //皮肤样式，可选：default\android\android-ics light\android-ics\ios\jqm\sense-ui\wp light\wp
+				display: 'modal', //显示方式 ，可选：modal\inline\bubble\top\bottom
+				mode: 'scroller', //日期选择模式，可选：scroller\clickpick\mixed
+				lang:'zh',
+				dateFormat: 'yyyy-mm-dd', // 日期格式
+				setText: '确定', //确认按钮名称
+				cancelText: '取消',//取消按钮名籍我
+				dateOrder: 'yyyymmdd', //面板中日期排列格式
+				dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+				showNow: false,  
+           		nowText: "今",  
+            	startYear:currYear, //开始年份  
+            	endYear:currYear + 100 //结束年份  
+            	//endYear:2099 //结束年份
+			};
+	        
+			$("#scroller").mobiscroll(opt);
+	    });
+    </script>
+  </head>
+  
+  <body>
+		<div>
+			日期选择：<input id="scroller" name="scroller" />
+		</div>
+  </body>
+</html>

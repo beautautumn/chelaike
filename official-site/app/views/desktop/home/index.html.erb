@@ -1,0 +1,27 @@
+<!-- jumbotron -->
+<%= render 'banner' %>
+
+<!-- car list -->
+<%= render 'recommended_cars' %>
+
+<%= render 'bargain_cars' %>
+
+<div class="container tc-home-mid-banner">
+  <!-- banner image -->
+  <% if @mid_banner %>
+    <%= link_to @mid_banner.link do %>
+      <%= image_tag @mid_banner.image_url %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render 'sale_cars' %>
+
+<% if @alliance_name %>
+  <div class="container tc-home-union-link">
+    <div><%= link_to "#{@alliance_name}在库(#{@alliance_cars_count})台，欢迎选购>>", "http://#{@alliance_main_site}/cars" %></div>
+  </div>
+<% end %>
+
+<!-- service promise -->
+<%= render '/cars/service_promise' %>

@@ -1,0 +1,38 @@
+<% content_for :attach_assets do %>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=<%= ENV.fetch("BAIDU_MAP_AK") %>"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<% end %>
+
+<div class="contact-backgroup">
+  <div class="contact-info">
+    <h2> <%= "#{@company.name} #{@shop&.name}" %> </h2>
+    <div class="tc-contact-detail clearfix">
+      <div class="tc-contact-detail-row">
+        <div>电话：</div>
+        <p><%= @shop&.phone || @company.contact_mobile %>&nbsp;</p>
+      </div>
+      <div class="tc-contact-detail-row">
+        <div>地址：</div>
+        <p><%= "#{@company[:province]}#{@company[:city]}#{@company[:street]} #{@shop&.address}" %></p>
+      </div>
+      <div class="tc-contact-detail-row">
+        <div>介绍：</div>
+        <p> <%= @company[:slogan] %></p>
+      </div>
+    </div>
+    <%= image_tag @company.facade %>
+
+    <div id="shop_address_map">
+      <input type="hidden" id="city" value="<%= @company[:city] %>" >
+      <input type="hidden" id="street" value="<%= @company[:street] %>" >
+      <input type="hidden" id="companyName" value="<%= @company[:name] %>" >
+    </div>
+  </div>
+
+  <div class="contact-me">
+    <a class="weui-btn weui-btn_primary" href="tel:<%= @shop&.phone || @company.contact_mobile %>">
+      <%= @shop&.phone || @company.contact_mobile %>
+    </a>
+  </div>
+</div>

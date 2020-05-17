@@ -1,0 +1,24 @@
+.bargain_cars {
+  .car-list {
+    margin-top: 0;
+    padding-top: 50px;
+    .tow-colums-car-card {
+      .img-panel {
+        .tag-img {
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          z-index: 10;
+          img {
+            width: 60px;
+            height: 51px;
+          }
+        }
+      }
+    }
+  }
+
+  .no-paginate {
+    margin-top: 40px;
+  }
+}

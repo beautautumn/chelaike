@@ -1,0 +1,71 @@
+<div class="tc-car-detail-part">
+  <div class="title">维保记录</div>
+  <div class="content maintenance-summary">
+    <div class="weui-flex maintenance-item">
+      <div>记录概要</div>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <% if maintenance_record&.record_abstract&.summary.present? %>
+        <%= maintenance_record&.record_abstract&.summary %>
+      <% else %>
+        <%= maintenance_record&.items&.last&.date %> <%= maintenance_record&.items&.last&.category %>
+        <br>
+        项目: <%= maintenance_record&.items&.last&.item %>
+      <% end %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      最大里程: <%= maintenance_record&.mileage %> 公里
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      记录条数: 共有 <%= maintenance_record&.items&.size || 0 %> 条记录
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      最后记录日期: <%= maintenance_record&.last_date %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">安全气囊</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.ab) %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">结构部件</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.sd) %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">发动机</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.en) %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">里程表</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.mi) %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">变速箱</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.tr) %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">火烧维修记录</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.fire || "无") %>
+    </div>
+    <div class="maintenance-item-divider"></div>
+    <div class="weui-flex maintenance-item">
+      <span class="item-name">水泡维修记录</span>
+      <%= status_with_color(maintenance_record&.record_abstract&.water || "无") %>
+    </div>
+  </div>
+  <div class="button_sp_area">
+    <%= maintenance_record.pay_link(@car) %>
+  </div>
+  <div class="text-description">
+    如购买此车，查询费用将退回
+  </div>
+</div>

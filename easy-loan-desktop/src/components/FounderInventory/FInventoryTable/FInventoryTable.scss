@@ -1,0 +1,25 @@
+.table {
+  tr {
+    th,
+    td {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.accreditedRecord {
+  span {
+    display: inline-block;
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}
+
+.button {
+  font-size: 12px;
+}
+
+.color{
+  color:red;
+}

@@ -1,0 +1,87 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"	language="java"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
+<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/common/meta.jsp"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<title>车辆发布</title>
+		<link rel="stylesheet" type="text/css" href="${ctx}/css/style.css" />
+		<script type="text/javascript" src="${ctx}/js/common/syUtil.js"></script>
+		<script type="text/javascript" src="${ctx}/js/common/ctutil.js"></script>
+		<script type="text/javascript" src="${ctx}/js/common/jquery.json-2.4.js"></script>
+		<script type="text/javascript" src="${ctx}/js/plugins/jquery/jquery.js"></script>
+		<script type="text/javascript" src="${ctx}/js/plugins/bootstrap-3.0.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="${ctx}/js/plugins/jstree/_lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="${ctx}/js/plugins/jstree/_lib/jquery.hotkeys.js"></script>
+
+<script>
+  var api = frameElement.api, W = api.opener;
+  
+  function onChk(a){     
+     if(a.checked)
+     {
+       a.value=1;
+     }
+     else
+     {
+       a.value=0;
+     } 
+  }   
+	
+	
+	function do_submit()
+	{
+	   
+		var data = $("#myForm").serialize();
+		ajaxPost(data);
+	}
+	
+	function ajaxPost(data2){
+	  var url1 =ctutil.bp()+"/web/publish!doPublish.action";
+	  $.ajax({
+				cache: false,
+				type: "POST",
+				url:url1,
+				data:data2,
+				async: false,
+				error: function() {
+				  html = "数据请求失败";
+				},
+				success: function(data) {
+				  if(data=="success"){
+					  alert("保存成功！");
+					  api.get("publish_vehicle",1).close();
+					  W.query1();  
+				  }else{
+					  alert("保存失败,请重试！");
+				  }
+				}
+			});
+	}	
+</script>
+
+</head>
+<body>
+		<form id="myForm">
+		  <input type="hidden" id="ids"   name="ids" value="${ids}" />
+		  <input type="hidden" id="publishInfo.certifyTag"   name="publishInfo.certifyTag" value="1" />
+      
+		  <!--        
+			<div class="box">
+				<table>
+					<tr>
+						<td class="text-r" width="100px">
+							 是否认证:
+						</td>
+						<td width="400px">
+              <input type="checkbox" id="publishInfo.certifyTag" name="publishInfo.certifyTag" onclick="onChk(this);" value="${publishInfo.certifyTag}" />
+						</td>
+					</tr>
+				</table>
+				-->
+			</div>
+		</form>
+	</body>
+</html>

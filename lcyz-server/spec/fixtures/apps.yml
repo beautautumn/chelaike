@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: apps
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  alias      :string
+#  logo       :string
+#  slogan     :string
+#  domain     :string
+#  pc_url     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+chelaike:
+  name: 车来客
+  alias: chelaike
+  domain: d.chelaike.com
+
+hongsheng:
+  name: 鸿升车来客
+  alias: hongsheng
+  domain: hs.chelaike.com

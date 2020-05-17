@@ -1,0 +1,100 @@
+<% content_for :title, @car.system_name %>
+<% @without_menu = true %>
+<div class="tenant-id" style="display: none;"><%= @tenant.id %></div>
+<div class="weui_tab_bd car-detail">
+  <!-- car images -->
+  <% if @car.images.size > 0 %>
+    <%= render "images_swiper"%>
+  <% else %>
+    <%= image_tag "common/car.png", class: "car-detail-default-image" %>
+  <% end %>
+
+  <!-- car 基本信息 -->
+  <div class="car-info-header white-background">
+    <div class="car-basic-info">
+      <div class="tc-car-title">
+        <%= @car.system_name %>
+      </div>
+      <div class="car-price-info">
+        <div class="tc-price">
+          <% if @car.show_price_wan %>
+            <% if @car.is_fixed_price %>
+              <b>一口价</b>
+            <% end %>
+            ￥<b><%= @car.show_price_wan %></b>万
+              <span>新车含税价：<s><%= @car.new_car_final_price_wan %>万元</s></span>
+          <% else %>
+            即将开售
+          <% end %>
+        </div>
+      </div>
+      <div class="tc-loan">
+        <%= image_tag "common/loan.png" %>
+        首付<%= down_payment(@car.show_price_wan) %>万
+      </div>
+    </div>
+  </div>
+
+  <div class="car-info-body white-background">
+    <div class="tc-car-basic">
+      <div class="weui-flex">
+        <div class="weui-flex-item tc-cell">
+          <div><%= @car.mileage.presence || "-" %>万公里</div>
+          <div>行驶里程</div>
+        </div>
+        <div class="weui-flex-item tc-cell">
+          <% info = licensed_info(@car) %>
+          <div><%= info[0] %></div>
+          <div><%= info[1] %></div>
+        </div>
+        <div class="weui-flex-item tc-cell">
+          <div><%= @car.company.city.presence || "-" %></div>
+          <div>车牌所在地</div>
+        </div>
+      </div>
+      <div class="weui-flex">
+        <div class="weui-flex-item tc-cell">
+          <div><%= @car.emission_standard_text.presence || "-"%></div>
+          <div>排放标准</div>
+        </div>
+        <div class="weui-flex-item tc-cell">
+          <div><%= @transmission_name.presence || "-" %></div>
+          <div>变速箱</div>
+        </div>
+        <div class="weui-flex-item tc-cell">
+          <div><%= @car.displacement_text.presence || "-" %></div>
+          <div>排量</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% if @order.present? %>
+    <a href="javascript:;" class="pay weui_btn bg-blue">已经买啦</a>
+  <% else %>
+    <a href="http://shop.anpxd.com/pay/index?tenant_id=<%= @tenant.id %>&orderable_id=<%= @car.id %>&orderable_type=Car&open_id=<%= @current_user.open_id %>" class="pay weui_btn weui_btn_primary">买买买</a>
+  <% end %>
+
+  <!-- 销售员信息 -->
+  <% if @seller %>
+    <%= render "seller_basic_info" %>
+  <% end %>
+
+  <!-- 亮点配置 -->
+  <%= render "car_import_config" %>
+
+  <!-- 车辆图片 -->
+  <div class="tc-car-images">
+    <%= render partial: "car_image", collection: @car.images, as: :image %>
+  </div>
+
+  <!-- 分享页面里的去主页 -->
+  <% if @shared %>
+    <%= render "shared_go_home" %>
+  <% end %>
+</div>
+
+<!-- 底部 -->
+<%= render "detail_footer" %>
+
+<!-- 最低价 -->
+<%= render "ask_low_price" %>

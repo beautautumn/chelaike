@@ -1,0 +1,15 @@
+<% if @histories.count > 0 %>
+  <div class="container">
+    <div class="tc-sub-title">过户历史</div>
+    <div class="transfer-history-container">
+      <% @histories.each_with_index do |history, index| %>
+        <div class="history-row <%= index % 2 == 0 ? 'odd' : 'even' %>">
+          <div><%= history.transfer_at.strftime("%Y-%m-%d") %></div>
+          <div><%= history.home_location %></div>
+          <div><%= history.transfer_type == 'person' ? '个人' : '商家' %></div>
+          <div><%= history.description %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

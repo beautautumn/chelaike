@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: maintenance_records # 维保记录
+#
+#  id                  :integer          not null, primary key
+#  vin                 :string                                 # 车架号
+#  car_name            :string                                 # 车辆名
+#  last_date           :string                                 # 最后入店日期
+#  mileage             :string                                 # 里程
+#  new_car_warranty    :string                                 # 新车质保
+#  emission_standard   :string                                 # 排放标准
+#  total_records_count :integer                                # 记录条数
+#  record_abstract     :jsonb                                  # 记录摘要
+#  record_detail       :jsonb                                  # 记录详情
+#  car_id              :integer                                # 关联 car id
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+chejianding_report:
+  vin: SALVA2BGXDH764737
+  car_name: 路虎 Range Rover Evoque [揽胜极光]
+  last_date: 2016-02-22
+  mileage: 51765
+  new_car_warranty: 2年3万公里
+  emission_standard: 欧IV
+  total_records_count: 11
+  record_abstract: {'ab': '正常', 'en': '正常', 'mi': '异常', 'sd': '正常', 'tr': '正常', 'mile': '51765', 'ronum': '11', 'lastdate': '2016-02-22'}
+  record_detail: [{'item':'项目：新车售前移交检查（删除运输模式）； ','material':'材料：','mileage':'6086','date':'2013-04-02','category':'P.D.I.'},{'item':'项目：执行Q261服务行动； ','material':'材料：','mileage':'10','date':'2013-04-02','category':'索赔'},{'item':'项目：更换前挡玻璃； ','material':'材料：','mileage':'6086','date':'2013-06-15','category':'钣金维修'},{'item':'项目：更换机油及机油滤清器； ','material':'材料：','mileage':'6086','date':'2013-06-15','category':'首保'},{'item':'项目：车内无其他贵重物品，洗车，保留； 更换机油机滤； 清洗节气门； ','material':'材料：','mileage':'14454','date':'2013-10-10','category':'保养'},{'item':'项目：车内无其他贵重物品，洗车，保留； 更换前挡玻璃； ','material':'材料：','mileage':'16173','date':'2013-10-28','category':'一般修理'},{'item':'项目：刷新 TCM - Range Rover Evoque； ','material':'材料：','mileage':'16173','date':'2013-10-28','category':'索赔'},{'item':'项目：【洗车   无贵重物品  旧件保留； 更换机油及机油滤清器； 清洗节气门； 引擎清洗保护/车身润滑/空调杀菌； ','material':'材料：','mileage':'27911','date':'2014-02-27','category':'保养'},{'item':'项目：','material':'材料：','mileage':'27911','date':'2014-02-27','category':'索赔'},{'item':'项目：Fuel Regulation； 洗车  无贵重物品  旧件保留； 基础保养服务包 第四次 路虎揽胜； 基础保养服务包(工时) 第四次 路； ','material':'材料：','mileage':'38742','date':'2014-09-19','category':'保养'},{'item':'项目：基础保养服务包 第五次 路虎揽胜； 基础保养服务包(工时) 第五次 路； 更换前轮刹车片； 更换后轮刹车片； ','material':'材料：Edge Professional A5 5W-3； 机油滤清器； 空滤芯； 发动机润滑系统清洗剂； 发动机润滑系统保护剂； 化清剂； 刹车片； 刹车片； ','mileage':'51765','date':'2016-02-22','category':'保养'}]
+  car_id: 402560

@@ -1,0 +1,8 @@
+zh-CN:
+  version_catagory:
+    chelaike:
+      name: "车来客"
+      download_url: "http://d.chelaike.com"
+    hongsheng:
+      name: "鸿升车来客"
+      download_url: "http://hs.chelaike.com"
